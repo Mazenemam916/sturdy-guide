@@ -1,2037 +1,926 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتب أ/ مازن عدوى | المحامي أون لاين</title>
-    <meta name="description" content="مكتب المحامي مازن عدوى - جميع الأعمال والخدمات القانونية أون لاين: صياغة العقود، التوكيلات، الاستشارات، المحاكم الأون لاين وأكثر">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0a1628;
-            --primary-light: #132337;
-            --gold: #c9a227;
-            --gold-light: #e8c547;
-            --gold-dark: #a6851a;
-            --white: #ffffff;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-600: #475569;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
-            --blue-plan: #1e3a5f;
-            --success: #10b981;
-            --danger: #ef4444;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: var(--gray-50);
-            color: var(--gray-800);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        button, .btn {
-            cursor: pointer;
-            border: none;
-            font-family: 'Cairo', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        /* ========== HEADER ========== */
-        .header {
-            background: var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-        }
-
-        .header-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: var(--primary);
-        }
-
-        .logo-text h1 {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--white);
-            line-height: 1.3;
-        }
-
-        .logo-text span {
-            font-size: 13px;
-            color: var(--gold);
-            font-weight: 500;
-        }
-
-        .nav {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav a {
-            color: #cbd5e1;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav a:hover, .nav a.active {
-            color: var(--gold);
-        }
-
-        .nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            right: 0;
-            left: 0;
-            height: 2px;
-            background: var(--gold);
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid var(--gold);
-            color: var(--gold);
-            padding: 8px 18px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .btn-outline:hover {
-            background: var(--gold);
-            color: var(--primary);
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: var(--primary);
-            padding: 10px 22px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(201, 162, 39, 0.4);
-        }
-
-        .btn-dark {
-            background: var(--primary);
-            color: var(--white);
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: 600;
-            border: 1.5px solid rgba(255,255,255,0.2);
-        }
-
-        .btn-dark:hover {
-            background: var(--primary-light);
-            border-color: var(--gold);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            color: var(--white);
-            font-size: 24px;
-        }
-
-        /* ========== HERO ========== */
-        .hero {
-            background: linear-gradient(135deg, #0a1628 0%, #132337 50%, #0d1f33 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 80px 5% 60px;
-            min-height: 580px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%23c9a227" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="%23c9a227" opacity="0.08"/><circle cx="40" cy="70" r="1" fill="%23c9a227" opacity="0.1"/></svg>');
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text h2 {
-            font-size: 42px;
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1.3;
-            margin-bottom: 16px;
-        }
-
-        .hero-text h2 span {
-            color: var(--gold);
-        }
-
-        .hero-text p {
-            color: #94a3b8;
-            font-size: 16px;
-            margin-bottom: 12px;
-            max-width: 520px;
-        }
-
-        .hero-text .sub {
-            color: #64748b;
-            font-size: 14px;
-            margin-bottom: 32px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-image-box {
-            width: 340px;
-            height: 340px;
-            background: linear-gradient(145deg, #1a2d4a, #0f1c2e);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-        }
-
-        .hero-image-box i {
-            font-size: 140px;
-            color: var(--gold);
-            opacity: 0.9;
-        }
-
-        .hero-image-box::after {
-            content: '';
-            position: absolute;
-            inset: -8px;
-            border-radius: 24px;
-            border: 2px solid rgba(201, 162, 39, 0.15);
-            pointer-events: none;
-        }
-
-        /* Features bar */
-        .features-bar {
-            background: var(--primary-light);
-            padding: 20px 5%;
-            border-top: 1px solid rgba(201, 162, 39, 0.15);
-        }
-
-        .features-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            color: var(--white);
-        }
-
-        .feature-item i {
-            width: 42px;
-            height: 42px;
-            background: rgba(201, 162, 39, 0.15);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 18px;
-        }
-
-        .feature-item div strong {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .feature-item div span {
-            font-size: 12px;
-            color: #94a3b8;
-        }
-
-        /* ========== SECTIONS ========== */
-        .section {
-            padding: 70px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: var(--gray-600);
-            font-size: 15px;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 28px 20px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-            border-color: var(--gold);
-        }
-
-        .service-card .icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #fef9e7, #fef3c7);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 24px;
-            color: var(--gold-dark);
-        }
-
-        .service-card h3 {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .service-card p {
-            font-size: 12px;
-            color: var(--gray-600);
-            margin-bottom: 14px;
-            min-height: 40px;
-        }
-
-        .service-card .ask-btn {
-            color: var(--gold-dark);
-            font-size: 13px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .service-card .ask-btn:hover {
-            color: var(--gold);
-        }
-
-        /* How we work */
-        .how-section {
-            background: var(--primary);
-            padding: 70px 5%;
-            color: var(--white);
-        }
-
-        .how-section .section-title h2 {
-            color: var(--white);
-        }
-
-        .how-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            position: relative;
-            gap: 10px;
-        }
-
-        .how-grid::before {
-            content: '';
-            position: absolute;
-            top: 35px;
-            right: 10%;
-            left: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            z-index: 0;
-        }
-
-        .how-step {
-            text-align: center;
-            flex: 1;
-            position: relative;
-            z-index: 1;
-            max-width: 200px;
-        }
-
-        .how-step .num {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 800;
-            margin: 0 auto 18px;
-            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.4);
-        }
-
-        .how-step h3 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--gold);
-        }
-
-        .how-step p {
-            font-size: 13px;
-            color: #94a3b8;
-        }
-
-        /* Pricing */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-            align-items: stretch;
-        }
-
-        .price-card {
-            background: var(--white);
-            border-radius: 18px;
-            padding: 32px 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid var(--gray-200);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transition: all 0.3s;
-        }
-
-        .price-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .price-card.popular {
-            border: 2px solid var(--gold);
-            transform: scale(1.03);
-            box-shadow: 0 10px 35px rgba(201, 162, 39, 0.2);
-        }
-
-        .price-card.popular:hover {
-            transform: scale(1.05) translateY(-5px);
-        }
-
-        .price-card.premium {
-            background: linear-gradient(180deg, #1e3a5f, #0f2744);
-            color: var(--white);
-            border: none;
-        }
-
-        .price-card.premium h3,
-        .price-card.premium .price,
-        .price-card.premium li {
-            color: var(--white);
-        }
-
-        .price-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold);
-            color: var(--primary);
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 16px;
-            border-radius: 20px;
-            white-space: nowrap;
-        }
-
-        .price-card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .price-card .price {
-            font-size: 42px;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 12px 0 4px;
-        }
-
-        .price-card .price span {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--gray-600);
-        }
-
-        .price-card.premium .price span {
-            color: #94a3b8;
-        }
-
-        .price-card .period {
-            font-size: 13px;
-            color: var(--gray-600);
-            margin-bottom: 20px;
-        }
-
-        .price-card ul {
-            flex: 1;
-            margin-bottom: 24px;
-        }
-
-        .price-card li {
-            font-size: 13px;
-            padding: 7px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--gray-700);
-        }
-
-        .price-card li i {
-            color: var(--success);
-            font-size: 14px;
-        }
-
-        .price-card.premium li i {
-            color: var(--gold);
-        }
-
-        .price-card .btn-plan {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .btn-plan-gold {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: var(--primary);
-        }
-
-        .btn-plan-dark {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-plan-outline {
-            background: transparent;
-            border: 1.5px solid var(--gold);
-            color: var(--gold);
-        }
-
-        /* Trust */
-        .trust-bar {
-            background: var(--gray-100);
-            padding: 30px 5%;
-        }
-
-        .trust-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: var(--white);
-            padding: 18px 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-        }
-
-        .trust-item i {
-            width: 44px;
-            height: 44px;
-            background: #fef3c7;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold-dark);
-            font-size: 18px;
-        }
-
-        .trust-item strong {
-            display: block;
-            font-size: 14px;
-            color: var(--primary);
-        }
-
-        .trust-item span {
-            font-size: 12px;
-            color: var(--gray-600);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary);
-            color: #94a3b8;
-            padding: 50px 5% 25px;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            font-size: 13px;
-            line-height: 1.8;
-            max-width: 280px;
-        }
-
-        .footer h4 {
-            color: var(--white);
-            font-size: 16px;
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-
-        .footer ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer ul a {
-            font-size: 13px;
-            transition: color 0.3s;
-        }
-
-        .footer ul a:hover {
-            color: var(--gold);
-        }
-
-        .footer-contact p {
-            font-size: 13px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-contact i {
-            color: var(--gold);
-            width: 18px;
-        }
-
-        .socials {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .socials a {
-            width: 38px;
-            height: 38px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            transition: all 0.3s;
-        }
-
-        .socials a:hover {
-            background: var(--gold);
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 20px;
-            text-align: center;
-            font-size: 13px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* ========== MODALS ========== */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.65);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            backdrop-filter: blur(4px);
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: var(--white);
-            border-radius: 20px;
-            width: 100%;
-            max-width: 480px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            animation: modalIn 0.3s ease;
-        }
-
-        @keyframes modalIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .modal-header {
-            background: var(--primary);
-            color: var(--white);
-            padding: 22px 28px;
-            border-radius: 20px 20px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-header h3 {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .modal-close {
-            background: none;
-            color: #94a3b8;
-            font-size: 22px;
-            line-height: 1;
-        }
-
-        .modal-close:hover { color: var(--white); }
-
-        .modal-body {
-            padding: 28px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--gray-700);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1.5px solid var(--gray-200);
-            border-radius: 10px;
-            font-family: 'Cairo', sans-serif;
-            font-size: 14px;
-            transition: border 0.3s;
-            background: var(--gray-50);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            background: var(--white);
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        .payment-options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin: 16px 0;
-        }
-
-        .payment-option {
-            border: 1.5px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 14px 16px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .payment-option:hover,
-        .payment-option.selected {
-            border-color: var(--gold);
-            background: #fefce8;
-        }
-
-        .payment-option input {
-            accent-color: var(--gold);
-        }
-
-        .payment-option .pay-info strong {
-            display: block;
-            font-size: 14px;
-        }
-
-        .payment-option .pay-info span {
-            font-size: 12px;
-            color: var(--gray-600);
-        }
-
-        .payment-number {
-            background: var(--primary);
-            color: var(--gold);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 700;
-            direction: ltr;
-        }
-
-        /* AI Chat Widget */
-        .ai-widget {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 1500;
-        }
-
-        .ai-toggle {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: var(--primary);
-            box-shadow: 0 8px 30px rgba(201, 162, 39, 0.45);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-        }
-
-        .ai-toggle:hover {
-            transform: scale(1.08);
-        }
-
-        .ai-chat {
-            position: absolute;
-            bottom: 80px;
-            left: 0;
-            width: 360px;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid var(--gray-200);
-        }
-
-        .ai-chat.active {
-            display: flex;
-        }
-
-        .ai-header {
-            background: var(--primary);
-            color: var(--white);
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .ai-header .avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            color: var(--primary);
-        }
-
-        .ai-header strong {
-            display: block;
-            font-size: 14px;
-        }
-
-        .ai-header span {
-            font-size: 11px;
-            color: #94a3b8;
-        }
-
-        .ai-messages {
-            height: 320px;
-            overflow-y: auto;
-            padding: 16px;
-            background: var(--gray-50);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .ai-msg {
-            max-width: 85%;
-            padding: 10px 14px;
-            border-radius: 14px;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .ai-msg.bot {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            align-self: flex-start;
-            border-bottom-right-radius: 4px;
-        }
-
-        .ai-msg.user {
-            background: var(--primary);
-            color: var(--white);
-            align-self: flex-end;
-            border-bottom-left-radius: 4px;
-        }
-
-        .ai-input-area {
-            padding: 12px;
-            border-top: 1px solid var(--gray-200);
-            display: flex;
-            gap: 8px;
-        }
-
-        .ai-input-area input {
-            flex: 1;
-            padding: 10px 14px;
-            border: 1.5px solid var(--gray-200);
-            border-radius: 25px;
-            font-family: 'Cairo', sans-serif;
-            font-size: 13px;
-        }
-
-        .ai-input-area input:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
-        .ai-send {
-            width: 42px;
-            height: 42px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            border: none;
-            font-size: 16px;
-        }
-
-        /* WhatsApp floating */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1500;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: white;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
-            transition: all 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* User status */
-        .user-badge {
-            display: none;
-            align-items: center;
-            gap: 8px;
-            background: rgba(201, 162, 39, 0.15);
-            padding: 6px 14px;
-            border-radius: 20px;
-            color: var(--gold);
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .user-badge.active {
-            display: flex;
-        }
-
-        /* Toast */
-        .toast {
-            position: fixed;
-            top: 90px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-20px);
-            background: var(--primary);
-            color: var(--white);
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            z-index: 3000;
-            opacity: 0;
-            transition: all 0.3s;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-            border: 1px solid var(--gold);
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 1100px) {
-            .services-grid { grid-template-columns: repeat(3, 1fr); }
-            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-content { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            .nav { display: none; }
-            .menu-toggle { display: block; }
-            .hero-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-text h2 { font-size: 28px; }
-            .hero-btns { justify-content: center; }
-            .hero-image { display: none; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .price-card.popular { transform: none; }
-            .how-grid { flex-direction: column; align-items: center; gap: 30px; }
-            .how-grid::before { display: none; }
-            .trust-grid { grid-template-columns: 1fr 1fr; }
-            .footer-content { grid-template-columns: 1fr; }
-            .ai-chat { width: 300px; left: -20px; }
-            .form-row { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            .services-grid { grid-template-columns: 1fr; }
-            .trust-grid { grid-template-columns: 1fr; }
-            .header-actions .btn-outline { display: none; }
-        }
-
-        /* Mobile nav */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 280px;
-            height: 100%;
-            background: var(--primary);
-            z-index: 2001;
-            padding: 80px 30px 30px;
-            transform: translateX(100%);
-            transition: transform 0.3s;
-        }
-
-        .mobile-nav.active {
-            transform: translateX(0);
-        }
-
-        .mobile-nav a {
-            display: block;
-            color: #cbd5e1;
-            padding: 14px 0;
-            font-size: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .mobile-nav a:hover { color: var(--gold); }
-
-        .mobile-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 2000;
-        }
-
-        .mobile-overlay.active { display: block; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ SEO المتقدم ============ -->
+<title>مكتب أ/ مازن عدوي | محامي واستشارات قانونية أونلاين في مصر</title>
+<meta name="description" content="مكتب المحامي مازن إمام عدوي — خدمات قانونية احترافية أونلاين: صياغة عقود، مرافعة، تأسيس شركات، استشارات قانونية، وتحكيم دولي. احجز استشارتك الآن.">
+<meta name="keywords" content="محامي أونلاين, استشارات قانونية, صياغة عقود, مرافعة, تأسيس شركة, محامي مصر, قانون دولي, تحكيم تجاري, مازن عدوي">
+<meta name="author" content="مازن إمام عبد المنعم عدوي">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://mazenemam916.github.io/sturdy-guide/">
+<meta name="theme-color" content="#0b1e3a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:site_name" content="مكتب أ/ مازن عدوي">
+<meta property="og:title" content="مكتب أ/ مازن عدوي | خدمات قانونية احترافية">
+<meta property="og:description" content="خبرة أكاديمية وعملية في القانون الدولي. استشارات قانونية أونلاين بأسعار شفافة.">
+<meta property="og:url" content="https://mazenemam916.github.io/sturdy-guide/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="مكتب أ/ مازن عدوي | خدمات قانونية احترافية">
+<meta name="twitter:description" content="استشارات قانونية أونلاين بأسعار شفافة.">
+
+<!-- JSON-LD LegalService -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LegalService",
+  "name":"مكتب أ/ مازن إمام عدوي",
+  "url":"https://mazenemam916.github.io/sturdy-guide/",
+  "telephone":"+201000000000",
+  "email":"info@mazenlaw.com",
+  "priceRange":"$$",
+  "address":{"@type":"PostalAddress","addressLocality":"القاهرة","addressCountry":"EG"},
+  "areaServed":["EG","SA","AE","KW","QA"],
+  "founder":{"@type":"Person","name":"مازن إمام عبد المنعم عدوي","jobTitle":"محامٍ وباحث قانوني"},
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"127"}
+}
+</script>
+
+<!-- JSON-LD FAQ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"كيف أطلب استشارة؟","acceptedAnswer":{"@type":"Answer","text":"عبر نموذج التواصل أو واتساب، مع رد خلال 24 ساعة."}},
+    {"@type":"Question","name":"هل الاستشارات أونلاين معتمدة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، من محامٍ مرخّص معتمد."}}
+  ]
+}
+</script>
+
+<!-- PWA Manifest (يعمل كتطبيق) -->
+<link rel="manifest" href='data:application/manifest+json,{"name":"مكتب مازن عدوي","short_name":"مازن عدوي","start_url":"./","display":"standalone","background_color":"%230b1e3a","theme_color":"%230b1e3a","lang":"ar","dir":"rtl"}'>
+
+<!-- الخطوط -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<!-- Google Analytics (استبدل G-XXXXXXXXXX بمعرفك) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+:root{
+  --navy:#0b1e3a; --navy-2:#122b52; --gold:#c8a349; --gold-2:#e0bb5b;
+  --bg:#f7f8fb; --white:#fff; --gray:#5b6478; --line:#e6e9f0;
+  --radius:14px; --shadow:0 10px 30px rgba(11,30,58,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--navy);line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.15rem}
+.brand .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:grid;place-items:center;color:var(--gold);font-weight:900;box-shadow:0 6px 16px rgba(11,30,58,.25)}
+.brand small{display:block;color:var(--gray);font-weight:400;font-size:.72rem;line-height:1}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-weight:600;font-size:.92rem;transition:.25s;position:relative}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a::after{content:'';position:absolute;right:0;bottom:-6px;height:2px;width:0;background:var(--gold);transition:.3s}
+.nav-links a:hover::after{width:100%}
+.cta-btn{background:var(--navy);color:#fff !important;padding:11px 22px;border-radius:100px;font-weight:700;transition:.3s;box-shadow:0 6px 16px rgba(11,30,58,.2)}
+.cta-btn:hover{background:var(--gold);transform:translateY(-2px)}
+.cta-btn::after{display:none !important}
+.menu-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--navy);cursor:pointer}
+
+/* HERO */
+.hero{background:radial-gradient(circle at 85% 20%,rgba(200,163,73,.14),transparent 45%),radial-gradient(circle at 10% 90%,rgba(200,163,73,.10),transparent 45%),linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:52px 52px}
+.hero-inner{position:relative;max-width:1200px;margin:auto;padding:96px 24px 112px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,163,73,.14);color:var(--gold-2);padding:8px 18px;border-radius:100px;font-size:.85rem;font-weight:600;margin-bottom:24px;border:1px solid rgba(200,163,73,.3)}
+.hero h1{font-size:3rem;font-weight:900;line-height:1.25;margin-bottom:22px;letter-spacing:-.5px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:1.1rem;color:#c8d2e6;margin-bottom:36px;max-width:560px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:100px;font-weight:700;font-size:1rem;transition:.3s;cursor:pointer;border:none;font-family:inherit}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold-2);transform:translateY(-3px);box-shadow:0 14px 28px rgba(200,163,73,.35)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.25)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:32px;backdrop-filter:blur(10px)}
+.hero-card h3{color:var(--gold);font-size:1.2rem;margin-bottom:18px;font-weight:800}
+.hero-card ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.hero-card li{display:flex;align-items:flex-start;gap:12px;color:#d8dfee;font-size:.95rem}
+.hero-card li::before{content:'✓';flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:.8rem;margin-top:3px}
+
+/* STATS */
+.stats{max-width:1200px;margin:-56px auto 0;padding:0 24px;position:relative;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{background:#fff;border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--line);transition:.3s}
+.stat:hover{transform:translateY(-6px);border-color:var(--gold)}
+.stat .num{font-size:2.1rem;font-weight:900;color:var(--navy);line-height:1}
+.stat .num span{color:var(--gold)}
+.stat .lbl{color:var(--gray);font-size:.9rem;margin-top:8px;font-weight:600}
+
+/* SECTIONS */
+section{padding:88px 24px}
+.container{max-width:1200px;margin:auto}
+.section-head{text-align:center;margin-bottom:56px}
+.section-head .eyebrow{color:var(--gold);font-weight:800;font-size:.9rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:block}
+.section-head h2{font-size:2.2rem;font-weight:900;color:var(--navy);margin-bottom:16px;letter-spacing:-.5px}
+.section-head p{color:var(--gray);font-size:1.05rem;max-width:620px;margin:auto}
+.divider{width:60px;height:4px;background:var(--gold);margin:0 auto 20px;border-radius:100px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-text h3{font-size:1.7rem;font-weight:900;margin-bottom:20px;line-height:1.4}
+.about-text p{color:var(--gray);margin-bottom:16px;font-size:1.02rem}
+.about-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.about-list .item{background:#fff;border-radius:12px;padding:18px;border:1px solid var(--line);display:flex;gap:12px;align-items:flex-start;transition:.3s}
+.about-list .item:hover{border-color:var(--gold);transform:translateY(-3px)}
+.about-list .item .ic{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:grid;place-items:center;color:var(--gold);font-size:1.1rem}
+.about-list .item strong{display:block;font-size:.95rem;margin-bottom:2px}
+.about-list .item span{color:var(--gray);font-size:.83rem}
+
+/* SERVICES */
+#services{background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service{background:var(--bg);border-radius:var(--radius);padding:32px 26px;border:1px solid var(--line);transition:.35s;position:relative;overflow:hidden}
+.service::before{content:'';position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-2));transform:scaleX(0);transform-origin:right;transition:.4s}
+.service:hover{transform:translateY(-6px);box-shadow:var(--shadow);background:#fff}
+.service:hover::before{transform:scaleX(1)}
+.service .icon{width:60px;height:60px;border-radius:16px;margin-bottom:20px;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:grid;place-items:center;color:var(--gold);font-size:1.5rem;box-shadow:0 8px 20px rgba(11,30,58,.2)}
+.service h3{font-size:1.15rem;font-weight:800;margin-bottom:12px}
+.service p{color:var(--gray);font-size:.93rem;margin-bottom:18px}
+.service ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.service ul li{font-size:.85rem;color:var(--gray);padding-right:20px;position:relative}
+.service ul li::before{content:'◆';position:absolute;right:0;color:var(--gold);font-size:.7rem}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.plan{background:#fff;border-radius:var(--radius);padding:36px 28px;border:2px solid var(--line);transition:.35s;position:relative;display:flex;flex-direction:column}
+.plan:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}
+.plan.featured{border-color:var(--navy);background:linear-gradient(180deg,#0b1e3a 0%,#122b52 100%);color:#fff;transform:scale(1.04)}
+.plan.featured .plan-name,.plan.featured .plan-price,.plan.featured .plan-desc{color:#fff}
+.plan.featured .plan-price span,.plan.featured .plan-currency{color:var(--gold)}
+.plan.featured ul li{color:#c8d2e6}
+.plan.featured ul li::before{color:var(--gold)}
+.featured-badge{position:absolute;top:-14px;right:50%;transform:translateX(50%);background:var(--gold);color:var(--navy);padding:6px 20px;border-radius:100px;font-weight:800;font-size:.78rem;box-shadow:0 6px 14px rgba(200,163,73,.4)}
+.plan-name{font-size:1.1rem;font-weight:800;margin-bottom:8px;color:var(--navy)}
+.plan-desc{color:var(--gray);font-size:.85rem;margin-bottom:24px;min-height:38px}
+.plan-price{font-size:2.6rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:8px;display:flex;align-items:baseline;gap:6px}
+.plan-currency{font-size:1rem;color:var(--gray);font-weight:600}
+.plan-period{color:var(--gray);font-size:.83rem;margin-bottom:24px}
+.plan ul{list-style:none;display:flex;flex-direction:column;gap:12px;flex:1;margin-bottom:28px}
+.plan ul li{font-size:.9rem;color:var(--gray);padding-right:26px;position:relative;line-height:1.6}
+.plan ul li::before{content:'✓';position:absolute;right:0;top:2px;width:18px;height:18px;border-radius:50%;background:rgba(200,163,73,.15);color:var(--gold);display:grid;place-items:center;font-size:.75rem;font-weight:900}
+.plan .btn{width:100%;justify-content:center}
+
+/* TESTIMONIALS */
+#testimonials{background:#fff}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi{background:var(--bg);border-radius:var(--radius);padding:30px 26px;border:1px solid var(--line);position:relative;transition:.3s}
+.testi:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.testi .stars{color:var(--gold);margin-bottom:14px;font-size:1rem;letter-spacing:2px}
+.testi p{color:var(--gray);font-size:.95rem;margin-bottom:20px;font-style:italic;line-height:1.75}
+.testi .author{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.testi .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-2));color:var(--gold);display:grid;place-items:center;font-weight:800}
+.testi .author strong{display:block;font-size:.92rem}
+.testi .author span{color:var(--gray);font-size:.78rem}
+
+/* BLOG */
+#blog{background:#fff}
+.blog-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.35s;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold)}
+.blog-meta{font-size:.78rem;color:var(--gray);margin-bottom:14px;font-weight:600}
+.blog-card h3{font-size:1.1rem;margin-bottom:12px;line-height:1.5;font-weight:800}
+.blog-card p{color:var(--gray);font-size:.9rem;flex:1;margin-bottom:16px}
+.read-more{color:var(--gold);font-weight:700;font-size:.88rem;transition:.3s;cursor:pointer}
+.read-more:hover{color:var(--navy)}
+
+/* FAQ */
+.faq-list{max-width:820px;margin:auto;display:flex;flex-direction:column;gap:14px}
+.faq{background:#fff;border-radius:12px;border:1px solid var(--line);overflow:hidden;transition:.3s}
+.faq:hover{border-color:var(--gold)}
+.faq summary{padding:22px 26px;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:1rem;color:var(--navy)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:1.6rem;color:var(--gold);font-weight:300;transition:.3s;line-height:1}
+.faq[open] summary::after{transform:rotate(45deg)}
+.faq .answer{padding:0 26px 24px;color:var(--gray);font-size:.95rem;line-height:1.8}
+
+/* CONTACT */
+#contact{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,rgba(200,163,73,.15),transparent 40%)}
+#contact .container{position:relative}
+#contact .section-head h2{color:#fff}
+#contact .section-head p{color:#c8d2e6}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.info-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px;display:flex;gap:16px;align-items:flex-start;transition:.3s}
+.info-card:hover{background:rgba(255,255,255,.08);border-color:var(--gold)}
+.info-card .ic{width:44px;height:44px;border-radius:12px;flex-shrink:0;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:1.15rem}
+.info-card h4{font-size:.95rem;margin-bottom:4px;color:var(--gold)}
+.info-card p{color:#c8d2e6;font-size:.9rem;line-height:1.6}
+.info-card a{color:#fff;transition:.3s}
+.info-card a:hover{color:var(--gold)}
+.contact-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:36px;backdrop-filter:blur(10px)}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:.88rem;margin-bottom:8px;color:#c8d2e6;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff;font-family:inherit;font-size:.95rem;transition:.3s;outline:none}
+.form-group textarea{min-height:130px;resize:vertical}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.09)}
+.form-group select option{background:var(--navy);color:#fff}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* FOOTER */
+footer{background:#071527;color:#8b94a8;padding:48px 24px 28px;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:1200px;margin:auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px}
+.footer-brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;margin-bottom:14px}
+.footer-brand .logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:var(--navy);display:grid;place-items:center;font-weight:900}
+footer p{font-size:.88rem;line-height:1.8}
+footer h5{color:#fff;font-size:.95rem;margin-bottom:16px;font-weight:700}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer ul a{font-size:.88rem;transition:.3s}
+footer ul a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.83rem}
+.footer-bottom .social{display:flex;gap:10px}
+.footer-bottom .social a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.05);display:grid;place-items:center;transition:.3s}
+.footer-bottom .social a:hover{background:var(--gold);color:var(--navy)}
+
+/* WHATSAPP FAB */
+.whatsapp-fab{position:fixed;bottom:28px;left:28px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px rgba(37,211,102,.4);transition:.3s;font-size:1.7rem;cursor:pointer}
+.whatsapp-fab:hover{transform:scale(1.1) rotate(8deg)}
+
+/* AI CHAT */
+.ai-chat-fab{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-2));color:var(--gold);font-size:1.6rem;display:grid;place-items:center;cursor:pointer;box-shadow:0 12px 28px rgba(11,30,58,.35);border:none;transition:.3s}
+.ai-chat-fab:hover{transform:scale(1.1)}
+.ai-chat-widget{position:fixed;bottom:100px;right:28px;z-index:998;width:380px;max-width:calc(100vw - 40px);height:560px;max-height:calc(100vh - 140px);background:#fff;border-radius:20px;box-shadow:0 24px 60px rgba(11,30,58,.25);display:flex;flex-direction:column;overflow:hidden;transform:translateY(20px);opacity:0;pointer-events:none;transition:.35s;border:1px solid var(--line)}
+.ai-chat-widget.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.ai-chat-header{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
+.ai-chat-title{display:flex;align-items:center;gap:12px}
+.ai-chat-avatar{width:42px;height:42px;border-radius:12px;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-size:1.2rem}
+.ai-chat-title strong{display:block;font-size:.95rem}
+.ai-chat-title span{font-size:.75rem;color:#a8b3c7}
+.ai-chat-close{background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer}
+.ai-chat-body{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;background:var(--bg)}
+.ai-message{max-width:85%;padding:12px 16px;border-radius:16px;font-size:.9rem;line-height:1.6;animation:fadeIn .3s ease;white-space:pre-wrap}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.ai-message-bot{background:#fff;color:var(--navy);border-bottom-right-radius:4px;align-self:flex-start;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.ai-message-user{background:var(--navy);color:#fff;border-bottom-left-radius:4px;align-self:flex-end}
+.ai-typing{display:flex;gap:4px;padding:14px 18px}
+.ai-typing span{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:bounce 1.4s infinite}
+.ai-typing span:nth-child(2){animation-delay:.2s}
+.ai-typing span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.ai-chat-input{display:flex;gap:8px;padding:14px;background:#fff;border-top:1px solid var(--line)}
+.ai-chat-input input{flex:1;padding:12px 16px;border:1px solid var(--line);border-radius:100px;font-family:inherit;font-size:.9rem;outline:none;transition:.3s}
+.ai-chat-input input:focus{border-color:var(--gold)}
+.ai-chat-input button{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);border:none;cursor:pointer;font-size:1rem;transition:.3s}
+.ai-chat-input button:hover{background:var(--gold);color:var(--navy)}
+.ai-payment-btn{background:#fff;border:2px solid var(--gold);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;align-self:flex-start;max-width:85%;animation:fadeIn .3s}
+.payment-info{display:flex;flex-direction:column;gap:4px}
+.payment-info strong{font-size:.95rem;color:var(--navy)}
+.payment-info span{font-size:1.1rem;font-weight:900;color:var(--gold)}
+.ai-payment-btn button{background:var(--gold);color:var(--navy);border:none;padding:10px 20px;border-radius:100px;font-weight:700;cursor:pointer;font-family:inherit;transition:.3s}
+.ai-payment-btn button:hover{background:var(--navy);color:var(--gold)}
+
+/* MODAL للدفع */
+.payment-modal{position:fixed;inset:0;background:rgba(11,30,58,.7);backdrop-filter:blur(6px);z-index:2000;display:none;place-items:center;padding:20px}
+.payment-modal.open{display:grid}
+.payment-modal-content{background:#fff;border-radius:20px;padding:36px;max-width:480px;width:100%;text-align:center;animation:slideUp .35s ease}
+@keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.payment-modal-content h3{font-size:1.4rem;margin-bottom:12px}
+.payment-modal-content .amount{font-size:2.5rem;font-weight:900;color:var(--gold);margin:20px 0}
+.payment-methods{display:grid;gap:12px;margin-top:24px}
+.pay-method{display:flex;align-items:center;gap:14px;padding:18px;border:2px solid var(--line);border-radius:12px;cursor:pointer;transition:.3s;text-align:right;background:#fff;font-family:inherit;font-size:.95rem;width:100%}
+.pay-method:hover{border-color:var(--gold);background:var(--bg)}
+.pay-method .ic{width:44px;height:44px;border-radius:10px;background:var(--bg);display:grid;place-items:center;font-size:1.3rem}
+.pay-method strong{display:block;font-size:.95rem;color:var(--navy)}
+.pay-method span{font-size:.78rem;color:var(--gray)}
+
+@media (max-width:960px){
+  .nav-links{position:fixed;top:70px;right:0;left:0;background:#fff;flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 12px 28px rgba(0,0,0,.08);transform:translateY(-20px);opacity:0;pointer-events:none;transition:.3s}
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .menu-toggle{display:block}
+  .hero-inner{grid-template-columns:1fr;padding:64px 24px 96px}
+  .hero h1{font-size:2.2rem}
+  .stats{grid-template-columns:repeat(2,1fr);margin-top:-40px}
+  .about-grid,.services-grid,.pricing-grid,.testi-grid,.contact-grid,.form-row{grid-template-columns:1fr}
+  .plan.featured{transform:none}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  section{padding:64px 20px}
+  .section-head h2{font-size:1.7rem}
+  .ai-chat-widget{right:12px;left:12px;bottom:90px;width:auto;height:calc(100vh - 180px)}
+  .ai-chat-fab{right:16px;bottom:16px;width:52px;height:52px}
+  .whatsapp-fab{left:16px;bottom:16px;width:52px;height:52px;font-size:1.5rem}
+}
+</style>
 </head>
 <body>
 
-<!-- ========== HEADER ========== -->
-<header class="header">
-    <div class="header-top">
-        <div class="logo">
-            <div class="logo-icon"><i class="fas fa-balance-scale"></i></div>
-            <div class="logo-text">
-                <h1>مكتب أ/ مازن عدوى</h1>
-                <span>المحامي أون لاين</span>
-            </div>
-        </div>
-
-        <nav class="nav">
-            <a href="#home" class="active">الرئيسية</a>
-            <a href="#services">الخدمات</a>
-            <a href="#pricing">الأسعار</a>
-            <a href="#how">كيف نعمل</a>
-            <a href="#about">عن المكتب</a>
-            <a href="#faq">الأسئلة الشائعة</a>
-            <a href="#contact">تواصل معنا</a>
-        </nav>
-
-        <div class="header-actions">
-            <div class="user-badge" id="userBadge">
-                <i class="fas fa-user-circle"></i>
-                <span id="userName">مرحباً</span>
-            </div>
-            <button class="btn-outline" id="loginBtn" onclick="openModal('loginModal')">
-                <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
-            </button>
-            <button class="btn-gold" id="registerBtn" onclick="openModal('registerModal')">
-                <i class="fas fa-user-plus"></i> إنشاء حساب
-            </button>
-            <button class="menu-toggle" onclick="toggleMobileNav()">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+<!-- ============ HEADER ============ -->
+<header>
+  <nav class="nav">
+    <a href="#" class="brand">
+      <div class="logo">م.ع</div>
+      <div>مكتب أ/ مازن عدوي<small>خدمات قانونية احترافية</small></div>
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="#about">عن المكتب</a>
+      <a href="#services">الخدمات</a>
+      <a href="#pricing">الأسعار</a>
+      <a href="#blog">المدونة</a>
+      <a href="#faq">الأسئلة</a>
+      <a href="#contact" class="cta-btn">احجز استشارتك</a>
     </div>
+  </nav>
 </header>
 
-<!-- Mobile Nav -->
-<div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileNav()"></div>
-<div class="mobile-nav" id="mobileNav">
-    <a href="#home" onclick="toggleMobileNav()">الرئيسية</a>
-    <a href="#services" onclick="toggleMobileNav()">الخدمات</a>
-    <a href="#pricing" onclick="toggleMobileNav()">الأسعار</a>
-    <a href="#how" onclick="toggleMobileNav()">كيف نعمل</a>
-    <a href="#about" onclick="toggleMobileNav()">عن المكتب</a>
-    <a href="#faq" onclick="toggleMobileNav()">الأسئلة الشائعة</a>
-    <a href="#contact" onclick="toggleMobileNav()">تواصل معنا</a>
-</div>
-
-<!-- ========== HERO ========== -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <div class="hero-text">
-            <h2>مكتب أ/ <span>مازن عدوى</span><br>المحامي أون لاين</h2>
-            <p>جميع الأعمال والخدمات القانونية أون لاين</p>
-            <p class="sub">صياغة العقود - التوكيلات - الاستشارات - متابعة الإجراءات - المحاكم الأون لاين</p>
-            <div class="hero-btns">
-                <button class="btn-gold" onclick="openModal('serviceRequestModal')">
-                    <i class="fas fa-rocket"></i> ابدأ الآن
-                </button>
-                <button class="btn-dark" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-                    استعرض الخدمات
-                </button>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="hero-image-box">
-                <i class="fas fa-balance-scale"></i>
-            </div>
-        </div>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-badge">⚖ مدعوم بالذكاء الاصطناعي 24/7</span>
+      <h1>خدمات قانونية <span>احترافية</span> بمعايير أكاديمية عالمية</h1>
+      <p>نقدم لك خدمات قانونية متكاملة: صياغة العقود، المرافعة، الاستشارات القانونية، وتأسيس الشركات. اسأل مساعدنا الذكي الآن، واحصل على رد فوري.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-gold">احجز استشارتك ←</a>
+        <button class="btn btn-outline" onclick="toggleChat()">تحدث مع المساعد الذكي 🤖</button>
+      </div>
     </div>
+    <div class="hero-card">
+      <h3>لماذا تختارنا؟</h3>
+      <ul>
+        <li>مساعد ذكي يرد على أسئلتك فورًا 24/7</li>
+        <li>خبرة أكاديمية في القانون الدولي</li>
+        <li>شفافية كاملة في الأسعار والمواعيد</li>
+        <li>استشارات أونلاين بدون تنقل</li>
+        <li>دفع إلكتروني آمن ومتعدد الخيارات</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<!-- Features Bar -->
-<div class="features-bar">
-    <div class="features-grid">
-        <div class="feature-item">
-            <i class="fas fa-shield-alt"></i>
-            <div>
-                <strong>سرية تامة وآمنة</strong>
-                <span>حماية بياناتك بالكامل</span>
-            </div>
-        </div>
-        <div class="feature-item">
-            <i class="fas fa-award"></i>
-            <div>
-                <strong>دقة قانونية عالية</strong>
-                <span>بإشراف خبراء قانونيين</span>
-            </div>
-        </div>
-        <div class="feature-item">
-            <i class="fas fa-clock"></i>
-            <div>
-                <strong>متاح 24/7</strong>
-                <span>في أي وقت ومن أي مكان</span>
-            </div>
-        </div>
-        <div class="feature-item">
-            <i class="fas fa-globe"></i>
-            <div>
-                <strong>أون لاين بالكامل</strong>
-                <span>وفر وقتك وجهدك</span>
-            </div>
-        </div>
-    </div>
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="stat"><div class="num"><span>+</span>10</div><div class="lbl">سنوات خبرة</div></div>
+  <div class="stat"><div class="num"><span>+</span>500</div><div class="lbl">عميل راضٍ</div></div>
+  <div class="stat"><div class="num">98<span>%</span></div><div class="lbl">نسبة الرضا</div></div>
+  <div class="stat"><div class="num">24<span>/</span>7</div><div class="lbl">دعم ذكي</div></div>
 </div>
 
-<!-- ========== SERVICES ========== -->
-<section class="section" id="services">
-    <div class="section-title">
-        <h2>خدماتنا القانونية</h2>
-        <p>نقدم لك جميع الخدمات القانونية باحترافية عالية وسرعة في الإنجاز</p>
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">عن المكتب</span>
+      <h2>من هو المحامي مازن عدوي؟</h2>
+      <div class="divider"></div>
+      <p>محامٍ وباحث قانوني، نجمع بين الخبرة الأكاديمية والعملية في القانون الدولي والعلاقات الدولية.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>خبرة قانونية بمنهجية أكاديمية</h3>
+        <p>نؤمن بأن الخدمة القانونية الاحترافية لا تقتصر على حفظ النصوص، بل تتطلب فهمًا عميقًا للسياق، وقدرة على التحليل، واستراتيجية واضحة لكل قضية.</p>
+        <p>قدمنا خدمات قانونية لعملاء من مصر والخليج، في مجالات العقود، والشركات، والمرافعة، والقانون الدولي. نحرص على الشفافية الكاملة، والالتزام بالمواعيد، والسرية التامة.</p>
+        <div class="about-list">
+          <div class="item"><div class="ic">🎓</div><div><strong>خبرة أكاديمية</strong><span>باحث في القانون الدولي</span></div></div>
+          <div class="item"><div class="ic">⚖</div><div><strong>خبرة عملية</strong><span>مرافعة واستشارات</span></div></div>
+          <div class="item"><div class="ic">🌍</div><div><strong>عملاء دوليون</strong><span>مصر والخليج</span></div></div>
+          <div class="item"><div class="ic">🤖</div><div><strong>ذكاء اصطناعي</strong><span>رد فوري 24/7</span></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="service" style="background:#fff;padding:36px">
+          <h3 style="font-size:1.3rem;margin-bottom:20px">التزاماتنا تجاهك</h3>
+          <ul style="gap:16px">
+            <li>الاستجابة خلال 24 ساعة كحد أقصى</li>
+            <li>تقديم عرض سعر واضح قبل البدء</li>
+            <li>توقيع اتفاقية سرية عند الحاجة</li>
+            <li>متابعة مستمرة وتقارير دورية</li>
+            <li>ضمان الجودة أو استرداد الرسوم</li>
+            <li>دعم ما بعد التسليم مجانًا لمدة 30 يومًا</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">خدماتنا</span>
+      <h2>خدمات قانونية متكاملة</h2>
+      <div class="divider"></div>
+      <p>نغطي احتياجاتك القانونية من الألف إلى الياء، بمعايير احترافية وأسعار عادلة.</p>
     </div>
     <div class="services-grid">
-        <div class="service-card" onclick="requestService('صياغة العقود القانونية')">
-            <div class="icon"><i class="fas fa-file-contract"></i></div>
-            <h3>صياغة العقود القانونية</h3>
-            <p>صياغة جميع أنواع العقود باحترافية ومراجعة دقيقة</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('التوكيلات والمحررات')">
-            <div class="icon"><i class="fas fa-stamp"></i></div>
-            <h3>التوكيلات والمحررات</h3>
-            <p>إعداد كافة أنواع التوكيلات والإقرارات والمحررات القانونية</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('الاستشارات القانونية')">
-            <div class="icon"><i class="fas fa-balance-scale"></i></div>
-            <h3>الاستشارات القانونية</h3>
-            <p>استشارات قانونية فورية في جميع المجالات القانونية</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('الأعمال القانونية أون لاين')">
-            <div class="icon"><i class="fas fa-laptop"></i></div>
-            <h3>الأعمال القانونية أون لاين</h3>
-            <p>إنجاز جميع الأعمال القانونية من أي مكان كنت</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('خدمات مكاتب المحاماة')">
-            <div class="icon"><i class="fas fa-briefcase"></i></div>
-            <h3>خدمات مكاتب المحاماة</h3>
-            <p>إدارة القضايا - العملاء - الجلسات والمستندات بكفاءة</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('تحليل المستندات')">
-            <div class="icon"><i class="fas fa-search"></i></div>
-            <h3>تحليل المستندات</h3>
-            <p>تحليل وفهم المستندات القانونية في ثوانٍ</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('المساعد القانوني الذكي')">
-            <div class="icon"><i class="fas fa-robot"></i></div>
-            <h3>المساعد القانوني الذكي</h3>
-            <p>مساعد ذكي للإجابة عن استفساراتك القانونية</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('البحث القانوني')">
-            <div class="icon"><i class="fas fa-book-open"></i></div>
-            <h3>البحث القانوني</h3>
-            <p>البحث في القوانين واللوائح والأحكام والسوابق</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('متابعة الإجراءات')">
-            <div class="icon"><i class="fas fa-university"></i></div>
-            <h3>متابعة الإجراءات</h3>
-            <p>متابعة إجراءات القضايا والطلبات والمعاملات المختلفة</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
-        <div class="service-card" onclick="requestService('الشكاوى والتظلمات')">
-            <div class="icon"><i class="fas fa-file-signature"></i></div>
-            <h3>الشكاوى والتظلمات</h3>
-            <p>إعداد الشكاوى والتظلمات والمذكرات القانونية</p>
-            <span class="ask-btn">اطلب الآن <i class="fas fa-arrow-left"></i></span>
-        </div>
+      <div class="service"><div class="icon">📝</div><h3>صياغة ومراجعة العقود</h3><p>صياغة ومراجعة جميع أنواع العقود التجارية والمدنية بأعلى المعايير.</p><ul><li>عقود البيع والشراء</li><li>عقود الإيجار</li><li>عقود العمل</li><li>عقود الشراكة</li></ul></div>
+      <div class="service"><div class="icon">⚖</div><h3>المرافعة والترافع</h3><p>تمثيل قانوني أمام جميع المحاكم المصرية باستراتيجية دفاعية دقيقة.</p><ul><li>القضايا المدنية</li><li>الأحوال الشخصية</li><li>القضايا الجنائية</li><li>الطعون والاستئنافات</li></ul></div>
+      <div class="service"><div class="icon">💼</div><h3>تأسيس الشركات</h3><p>تأسيس الشركات بجميع أنواعها، من الاختيار حتى السجل التجاري.</p><ul><li>شركات الشخص الواحد</li><li>شركات المساهمة</li><li>شركات التضامن</li><li>الفروع الأجنبية</li></ul></div>
+      <div class="service"><div class="icon">📊</div><h3>الاستشارات القانونية</h3><p>استشارات قانونية مكتوبة ومؤصلة، تساعدك على اتخاذ قرارات سليمة.</p><ul><li>استشارات تجارية</li><li>استشارات عمالية</li><li>استشارات عقارية</li><li>استشارات ضريبية</li></ul></div>
+      <div class="service"><div class="icon">🌐</div><h3>القانون الدولي</h3><p>استشارات في القانون الدولي العام والخاص، والتحكيم التجاري الدولي.</p><ul><li>العقود الدولية</li><li>التحكيم التجاري</li><li>قانون الاستثمار</li><li>المنازعات العابرة للحدود</li></ul></div>
+      <div class="service"><div class="icon">🛡</div><h3>حماية الملكية الفكرية</h3><p>تسجيل وحماية العلامات التجارية، وحقوق المؤلف، والبراءات.</p><ul><li>تسجيل العلامات التجارية</li><li>حقوق المؤلف</li><li>البراءات</li><li>مكافحة التقليد</li></ul></div>
     </div>
+  </div>
 </section>
 
-<!-- ========== HOW WE WORK ========== -->
-<section class="how-section" id="how">
-    <div class="section-title">
-        <h2>كيف نعمل ؟</h2>
-    </div>
-    <div class="how-grid">
-        <div class="how-step">
-            <div class="num">1</div>
-            <h3>اختر الخدمة</h3>
-            <p>اختر الخدمة التي تحتاجها من بين خدماتنا المتنوعة</p>
-        </div>
-        <div class="how-step">
-            <div class="num">2</div>
-            <h3>أدخل بياناتك</h3>
-            <p>أدخل البيانات والمعلومات المطلوبة بدقة</p>
-        </div>
-        <div class="how-step">
-            <div class="num">3</div>
-            <h3>ننجز العمل</h3>
-            <p>يقوم فريقنا القانوني بإنجاز طلبك بدقة وسرعة</p>
-        </div>
-        <div class="how-step">
-            <div class="num">4</div>
-            <h3>استلم النتيجة</h3>
-            <p>استلم عملك جاهزاً أون لاين في الوقت المحدد</p>
-        </div>
-    </div>
-</section>
-
-<!-- ========== PRICING ========== -->
-<section class="section" id="pricing">
-    <div class="section-title">
-        <h2>خطط الأسعار</h2>
-        <p>اختر الخطة المناسبة لاحتياجاتك</p>
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">الأسعار</span>
+      <h2>خطط واضحة بدون مفاجآت</h2>
+      <div class="divider"></div>
+      <p>اختر الخطة التي تناسبك. جميع الأسعار شاملة الضرائب.</p>
     </div>
     <div class="pricing-grid">
-        <!-- Free -->
-        <div class="price-card">
-            <h3><i class="fas fa-user"></i> الخطة المجانية</h3>
-            <div class="price">0 <span>جنيه</span></div>
-            <div class="period">للأبد</div>
-            <ul>
-                <li><i class="fas fa-check"></i> عدد محدود من الاستشارات</li>
-                <li><i class="fas fa-check"></i> نماذج ومستندات جاهزة</li>
-                <li><i class="fas fa-check"></i> مساعد قانوني ذكي محدود</li>
-                <li><i class="fas fa-check"></i> متابعة محدودة</li>
-            </ul>
-            <button class="btn-plan btn-plan-outline" onclick="selectPlan('المجانية', 0)">ابدأ مجاناً</button>
-        </div>
-
-        <!-- Professional -->
-        <div class="price-card popular">
-            <div class="price-badge">الأكثر طلباً</div>
-            <h3><i class="fas fa-star"></i> الخطة الاحترافية</h3>
-            <div class="price">299 <span>جنيه / شهرياً</span></div>
-            <div class="period">اشتراك شهري</div>
-            <ul>
-                <li><i class="fas fa-check"></i> صياغة العقود والمستندات</li>
-                <li><i class="fas fa-check"></i> الاستشارات القانونية</li>
-                <li><i class="fas fa-check"></i> إدارة القضايا والعملاء</li>
-                <li><i class="fas fa-check"></i> المساعد القانوني الذكي</li>
-                <li><i class="fas fa-check"></i> متابعة الإجراءات والمواعيد</li>
-                <li><i class="fas fa-check"></i> دعم فني متميز</li>
-            </ul>
-            <button class="btn-plan btn-plan-gold" onclick="selectPlan('الاحترافية', 299)">اشترك الآن</button>
-        </div>
-
-        <!-- Office -->
-        <div class="price-card premium">
-            <h3><i class="fas fa-gem"></i> خطة المكاتب</h3>
-            <div class="price">599 <span>جنيه / شهرياً</span></div>
-            <div class="period">اشتراك شهري</div>
-            <ul>
-                <li><i class="fas fa-check"></i> جميع خدمات الخطة الاحترافية</li>
-                <li><i class="fas fa-check"></i> عدة مستخدمين للمكتب</li>
-                <li><i class="fas fa-check"></i> إدارة القضايا والعملاء بلا حدود</li>
-                <li><i class="fas fa-check"></i> مساحة تخزين كبيرة</li>
-                <li><i class="fas fa-check"></i> تقارير وإحصائيات متقدمة</li>
-                <li><i class="fas fa-check"></i> أولوية في الدعم الفني</li>
-            </ul>
-            <button class="btn-plan btn-plan-gold" onclick="selectPlan('المكاتب', 599)">اشترك الآن</button>
-        </div>
-
-        <!-- All Services -->
-        <div class="price-card">
-            <h3><i class="fas fa-balance-scale"></i> جميع الأعمال القانونية أون لاين</h3>
-            <div class="price" style="font-size:18px; margin-top:20px;">حسب الطلب</div>
-            <div class="period">نوفر لك الوقت والجهد</div>
-            <ul>
-                <li><i class="fas fa-check"></i> ننجز أعمالك القانونية بكفاءة</li>
-                <li><i class="fas fa-check"></i> وسرعة وفي أي وقت</li>
-                <li><i class="fas fa-check"></i> تواصل مباشر مع المحامي</li>
-                <li><i class="fas fa-check"></i> حلول مخصصة لحالتك</li>
-            </ul>
-            <button class="btn-plan btn-plan-dark" onclick="requestService('جميع الأعمال القانونية أون لاين')">اطلب الآن</button>
-        </div>
+      <div class="plan">
+        <div class="plan-name">الخطة الأساسية</div>
+        <div class="plan-desc">للأسئلة السريعة والاستفسارات المحددة.</div>
+        <div class="plan-price">0<span class="plan-currency">جنيه</span></div>
+        <div class="plan-period">استشارة أولية مجانية</div>
+        <ul><li>استشارة مبدئية عبر الشات الذكي</li><li>رد فوري</li><li>توجيه عام</li><li>بدون صياغة مستندات</li></ul>
+        <button class="btn btn-outline" style="border-color:var(--navy);color:var(--navy)" onclick="toggleChat()">ابدأ مجانًا</button>
+      </div>
+      <div class="plan featured">
+        <span class="featured-badge">الأكثر طلبًا</span>
+        <div class="plan-name">الخطة الاحترافية</div>
+        <div class="plan-desc">للأفراد وأصحاب الأعمال الصغيرة.</div>
+        <div class="plan-price"><span>1,500</span><span class="plan-currency">جنيه</span></div>
+        <div class="plan-period">لكل استشارة مكتوبة</div>
+        <ul><li>استشارة مكتوبة مؤصلة</li><li>مراجعة مستند واحد</li><li>رد خلال 24 ساعة</li><li>مكالمة فيديو (30 دقيقة)</li><li>دعم 7 أيام بعد الاستشارة</li></ul>
+        <button class="btn btn-gold" onclick="openPayment('استشارة مكتوبة', 1500)">اشترِ الآن</button>
+      </div>
+      <div class="plan">
+        <div class="plan-name">الخطة المتقدمة</div>
+        <div class="plan-desc">للشركات والعملاء الدائمين.</div>
+        <div class="plan-price"><span>5,000</span><span class="plan-currency">جنيه</span></div>
+        <div class="plan-period">شهريًا (اشتراك)</div>
+        <ul><li>استشارات غير محدودة</li><li>صياغة ومراجعة العقود</li><li>مرافعة أمام المحاكم</li><li>رد فوري خلال 6 ساعات</li><li>مدير حساب مخصص</li><li>تقارير دورية</li></ul>
+        <button class="btn btn-outline" style="border-color:var(--navy);color:var(--navy)" onclick="openPayment('اشتراك شهري', 5000)">اشترك الآن</button>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Trust -->
-<div class="trust-bar">
-    <div class="trust-grid">
-        <div class="trust-item">
-            <i class="fas fa-award"></i>
-            <div>
-                <strong>خبرة قانونية</strong>
-                <span>فريق من ذوي الخبرة في جميع المجالات القانونية</span>
-            </div>
-        </div>
-        <div class="trust-item">
-            <i class="fas fa-tachometer-alt"></i>
-            <div>
-                <strong>دقة وسرعة</strong>
-                <span>نلتزم بالوقت والدقة في جميع الأعمال</span>
-            </div>
-        </div>
-        <div class="trust-item">
-            <i class="fas fa-lock"></i>
-            <div>
-                <strong>سرية تامة</strong>
-                <span>حماية كاملة لبياناتك ومعلوماتك الشخصية</span>
-            </div>
-        </div>
-        <div class="trust-item">
-            <i class="fas fa-shield-alt"></i>
-            <div>
-                <strong>موثوق ومعتمد</strong>
-                <span>خدماتنا ملتزمة بالقوانين والمعايير المهنية</span>
-            </div>
-        </div>
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">آراء العملاء</span>
+      <h2>ماذا يقول عملاؤنا؟</h2>
+      <div class="divider"></div>
+      <p>ثقة عملائنا هي أغلى ما نملك.</p>
     </div>
-</div>
-
-<!-- ========== ABOUT ========== -->
-<section class="section" id="about">
-    <div class="section-title">
-        <h2>عن المكتب</h2>
-        <p>مكتب المحامي مازن عدوى - خدمات قانونية متكاملة أون لاين</p>
+    <div class="testi-grid">
+      <div class="testi"><div class="stars">★★★★★</div><p>تعاملت مع الأستاذ مازن في قضية تجارية معقدة، وكانت النتيجة أفضل مما توقعت. دقة واحترافية.</p><div class="author"><div class="avatar">أ.م</div><div><strong>أحمد محمود</strong><span>صاحب شركة تجارية</span></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>أفضل ما يميز المكتب هو الوضوح. عرض السعر دقيق، والتسليم في الموعد المتفق عليه بالضبط.</p><div class="author"><div class="avatar">س.ع</div><div><strong>سارة عبد الرحمن</strong><span>مديرة تسويق</span></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>ساعدني في تأسيس شركتي من الألف إلى الياء، وشرح لي كل خطوة بوضوح. تجربة ممتازة.</p><div class="author"><div class="avatar">م.خ</div><div><strong>محمد خالد</strong><span>رائد أعمال</span></div></div></div>
     </div>
-    <div style="max-width:800px; margin:0 auto; text-align:center; color:var(--gray-700); font-size:15px; line-height:1.9;">
-        <p>نقدم لك خدمات قانونية احترافية بالكامل عبر الإنترنت، من صياغة العقود والتوكيلات إلى الاستشارات القانونية ومتابعة الإجراءات والمحاكم الأون لاين. هدفنا هو توفير الوقت والجهد عليك مع ضمان أعلى مستويات الدقة والسرية.</p>
-        <p style="margin-top:16px;">فريقنا من المحامين المتخصصين جاهز لخدمتك على مدار الساعة، سواء كنت فرداً أو مكتباً محاماة أو شركة.</p>
-    </div>
+  </div>
 </section>
 
-<!-- ========== FAQ ========== -->
-<section class="section" id="faq" style="background:var(--gray-100);">
-    <div class="section-title">
-        <h2>الأسئلة الشائعة</h2>
+<!-- ============ BLOG ============ -->
+<section id="blog">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">المدونة القانونية</span>
+      <h2>مقالات ونصائح قانونية</h2>
+      <div class="divider"></div>
+      <p>مقالات مبسطة تساعدك على فهم حقوقك واتخاذ قرارات سليمة.</p>
     </div>
-    <div style="max-width:800px; margin:0 auto;">
-        <div style="background:white; border-radius:12px; padding:20px 24px; margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-            <strong style="color:var(--primary);">كيف أطلب خدمة قانونية؟</strong>
-            <p style="margin-top:8px; font-size:14px; color:var(--gray-600);">اضغط على الخدمة المطلوبة أو زر "ابدأ الآن"، املأ البيانات، واختر طريقة الدفع. سيتم التواصل معك فوراً عبر واتساب.</p>
-        </div>
-        <div style="background:white; border-radius:12px; padding:20px 24px; margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-            <strong style="color:var(--primary);">ما هي طرق الدفع المتاحة؟</strong>
-            <p style="margin-top:8px; font-size:14px; color:var(--gray-600);">نقبل الدفع عبر فودافون كاش (01094273376) وإنستاباي (01013582431).</p>
-        </div>
-        <div style="background:white; border-radius:12px; padding:20px 24px; margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-            <strong style="color:var(--primary);">هل الخدمات سرية؟</strong>
-            <p style="margin-top:8px; font-size:14px; color:var(--gray-600);">نعم، جميع بياناتك ومستنداتك محمية بسرية تامة ولا يتم مشاركتها مع أي طرف ثالث.</p>
-        </div>
-        <div style="background:white; border-radius:12px; padding:20px 24px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
-            <strong style="color:var(--primary);">كم يستغرق إنجاز الطلب؟</strong>
-            <p style="margin-top:8px; font-size:14px; color:var(--gray-600);">يعتمد على نوع الخدمة، معظم الطلبات تُنجز خلال ساعات قليلة إلى يوم عمل واحد.</p>
-        </div>
+    <div class="services-grid">
+      <article class="blog-card">
+        <div class="icon" style="width:50px;height:50px;font-size:1.3rem;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:grid;place-items:center;color:var(--gold);margin-bottom:16px">📝</div>
+        <div class="blog-meta">15 يناير 2026 · 5 دقائق</div>
+        <h3>كيف تصيغ عقد إيجار تجاري صحيح؟</h3>
+        <p>دليل عملي لأصحاب المحلات: البنود الأساسية، الأخطاء الشائعة، وكيف تحمي نفسك قانونيًا.</p>
+        <a class="read-more" onclick="toggleChat();sendQuickMessage('أريد استشارة حول عقد إيجار تجاري')">اسأل المساعد ←</a>
+      </article>
+      <article class="blog-card">
+        <div class="icon" style="width:50px;height:50px;font-size:1.3rem;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:grid;place-items:center;color:var(--gold);margin-bottom:16px">⚖</div>
+        <div class="blog-meta">10 يناير 2026 · 7 دقائق</div>
+        <h3>حقوقك في حالة الفصل التعسفي</h3>
+        <p>تعرف على حقوقك القانونية عند الفصل التعسفي، وكيف ترفع دعوى، وما هي التعويضات.</p>
+        <a class="read-more" onclick="toggleChat();sendQuickMessage('أريد استشارة حول فصل تعسفي')">اسأل المساعد ←</a>
+      </article>
+      <article class="blog-card">
+        <div class="icon" style="width:50px;height:50px;font-size:1.3rem;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:grid;place-items:center;color:var(--gold);margin-bottom:16px">💼</div>
+        <div class="blog-meta">5 يناير 2026 · 6 دقائق</div>
+        <h3>دليل تأسيس شركة في مصر 2026</h3>
+        <p>خطوة بخطوة: اختيار الشكل القانوني، الأوراق المطلوبة، التكاليف، والمدة الزمنية.</p>
+        <a class="read-more" onclick="toggleChat();sendQuickMessage('أريد تأسيس شركة، ما الخطوات؟')">اسأل المساعد ←</a>
+      </article>
     </div>
+  </div>
 </section>
 
-<!-- ========== CONTACT ========== -->
-<section class="section" id="contact">
-    <div class="section-title">
-        <h2>تواصل معنا</h2>
-        <p>نحن هنا لخدمتك على مدار الساعة</p>
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">الأسئلة الشائعة</span>
+      <h2>أسئلة قد تدور في ذهنك</h2>
+      <div class="divider"></div>
     </div>
-    <div style="max-width:600px; margin:0 auto; text-align:center;">
-        <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-bottom:30px;">
-            <a href="https://wa.me/201094273376" target="_blank" class="btn-gold" style="display:inline-flex; align-items:center; gap:10px;">
-                <i class="fab fa-whatsapp" style="font-size:20px;"></i> واتساب: 01094273376
-            </a>
-            <a href="tel:01094273376" class="btn-dark" style="display:inline-flex; align-items:center; gap:10px;">
-                <i class="fas fa-phone"></i> اتصل بنا
-            </a>
-        </div>
-        <p style="color:var(--gray-600); font-size:14px;">أو أرسل طلبك مباشرة من خلال الموقع وسنتواصل معك فوراً</p>
+    <div class="faq-list">
+      <details class="faq" open><summary>كيف أطلب استشارة؟</summary><div class="answer">عبر الشات الذكي، أو نموذج التواصل، أو واتساب. سنرد عليك خلال 24 ساعة مع عرض سعر واضح.</div></details>
+      <details class="faq"><summary>هل الاستشارات أونلاين معتمدة قانونيًا؟</summary><div class="answer">نعم. الاستشارات المكتوبة من محامٍ مرخّص معتمدة قانونيًا، ويمكن استخدامها في الإجراءات الرسمية.</div></details>
+      <details class="faq"><summary>ما هي طرق الدفع المتاحة؟</summary><div class="answer">نقبل بطاقات الائتمان (فيزا/ماستركارد)، فودافون كاش، انستاباي، والتحويل البنكي.</div></details>
+      <details class="faq"><summary>هل تقدمون خدمات خارج مصر؟</summary><div class="answer">نعم، نقدم خدماتنا للعملاء في الخليج والدول العربية. الاستشارات أونلاين، وإذا تطلب الأمر حضورًا أمام المحاكم المصرية، نتحرك ممثلًا عنك.</div></details>
+      <details class="faq"><summary>كم تستغرق الاستشارة؟</summary><div class="answer">الاستشارة المكتوبة خلال 24-48 ساعة. المكالمات المباشرة يتم تحديد موعدها مسبقًا.</div></details>
     </div>
+  </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-brand">
-            <div class="logo">
-                <div class="logo-icon"><i class="fas fa-balance-scale"></i></div>
-                <div class="logo-text">
-                    <h1 style="font-size:16px;">مكتب أ/ مازن عدوى</h1>
-                    <span>المحامي أون لاين</span>
-                </div>
-            </div>
-            <p>جميع الأعمال والخدمات القانونية أون لاين باحترافية عالية وسرعة في الإنجاز.</p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">تواصل معنا</span>
+      <h2>احجز استشارتك الآن</h2>
+      <div class="divider"></div>
+      <p>املأ النموذج وسنرد عليك في أقرب وقت.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-card"><div class="ic">📞</div><div><h4>الهاتف / واتساب</h4><p><a href="tel:+201000000000" dir="ltr">+20 100 000 0000</a></p></div></div>
+        <div class="info-card"><div class="ic">✉</div><div><h4>البريد الإلكتروني</h4><p><a href="mailto:info@mazenlaw.com" dir="ltr">info@mazenlaw.com</a></p></div></div>
+        <div class="info-card"><div class="ic">📍</div><div><h4>العنوان</h4><p>القاهرة، مصر — يُرسل العنوان التفصيلي بعد تحديد الموعد.</p></div></div>
+        <div class="info-card"><div class="ic">🕒</div><div><h4>ساعات العمل</h4><p>السبت - الخميس: 10 ص - 6 م<br>الجمعة: مغلق (ما عدا الطوارئ)</p></div></div>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group"><label>الاسم الكامل *</label><input type="text" required placeholder="اسمك"></div>
+          <div class="form-group"><label>رقم الجوال *</label><input type="tel" required placeholder="01xxxxxxxxx"></div>
         </div>
-        <div>
-            <h4>روابط سريعة</h4>
-            <ul>
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#pricing">الأسعار</a></li>
-                <li><a href="#how">كيف نعمل</a></li>
-            </ul>
+        <div class="form-group"><label>البريد الإلكتروني</label><input type="email" placeholder="example@email.com"></div>
+        <div class="form-group"><label>نوع الخدمة *</label>
+          <select required>
+            <option value="">اختر نوع الخدمة</option>
+            <option>صياغة أو مراجعة عقد</option>
+            <option>استشارة قانونية</option>
+            <option>تأسيس شركة</option>
+            <option>مرافعة أمام المحكمة</option>
+            <option>قانون دولي / تحكيم</option>
+            <option>حماية ملكية فكرية</option>
+            <option>أخرى</option>
+          </select>
         </div>
-        <div>
-            <h4>الخدمات</h4>
-            <ul>
-                <li><a href="#services">صياغة العقود</a></li>
-                <li><a href="#services">التوكيلات</a></li>
-                <li><a href="#services">الاستشارات</a></li>
-                <li><a href="#services">المحاكم الأون لاين</a></li>
-            </ul>
-        </div>
-        <div class="footer-contact">
-            <h4>تواصل معنا</h4>
-            <p><i class="fab fa-whatsapp"></i> واتساب: 01094273376</p>
-            <p><i class="fas fa-mobile-alt"></i> فودافون كاش: 01094273376</p>
-            <p><i class="fas fa-university"></i> إنستاباي: 01013582431</p>
-        </div>
+        <div class="form-group"><label>تفاصيل الطلب *</label><textarea required placeholder="اشرح لنا موضوعك بإيجاز..."></textarea></div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">إرسال الطلب ←</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><div class="logo">م.ع</div>مكتب أ/ مازن عدوي</div>
+        <p>مكتب محاماة واستشارات قانونية، يقدم خدمات متكاملة بمعايير أكاديمية عالمية.</p>
+      </div>
+      <div><h5>روابط سريعة</h5><ul><li><a href="#about">عن المكتب</a></li><li><a href="#services">الخدمات</a></li><li><a href="#pricing">الأسعار</a></li><li><a href="#blog">المدونة</a></li></ul></div>
+      <div><h5>تواصل</h5><ul><li><a href="tel:+201000000000">📞 اتصل بنا</a></li><li><a href="mailto:info@mazenlaw.com">✉ راسلنا</a></li><li><a href="#contact">📍 العنوان</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-        جميع الحقوق محفوظة © 2024 - 2026 مكتب أ/ مازن عدوى المحامي أون لاين
+      <div>© 2026 مكتب أ/ مازن عدوي — جميع الحقوق محفوظة.</div>
+      <div class="social"><a href="#" title="واتساب">💬</a><a href="#" title="لينكدإن">in</a><a href="#" title="فيسبوك">f</a></div>
     </div>
+    <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;line-height:1.8;color:#5b6478">
+      <strong style="color:#8b94a8">إخلاء مسؤولية:</strong> المعلومات على هذا الموقع للتعريف بالخدمات فقط، ولا تُشكّل استشارة قانونية، ولا تُنشئ علاقة محامٍ-عميل. العلاقة القانونية تنشأ بموجب اتفاق مكتوب.
+    </div>
+  </div>
 </footer>
 
-<!-- ========== MODALS ========== -->
+<!-- ============ WHATSAPP FAB ============ -->
+<a href="#" class="whatsapp-fab" id="whatsappFab" onclick="openWhatsApp(event)" title="تواصل واتساب">💬</a>
 
-<!-- Login Modal -->
-<div class="modal-overlay" id="loginModal">
-    <div class="modal">
-        <div class="modal-header">
-            <h3><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</h3>
-            <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
-        </div>
-        <div class="modal-body">
-            <form onsubmit="handleLogin(event)">
-                <div class="form-group">
-                    <label>البريد الإلكتروني أو رقم الهاتف</label>
-                    <input type="text" id="loginEmail" required placeholder="أدخل بريدك أو رقمك">
-                </div>
-                <div class="form-group">
-                    <label>كلمة المرور</label>
-                    <input type="password" id="loginPassword" required placeholder="••••••••">
-                </div>
-                <button type="submit" class="btn-gold" style="width:100%; padding:14px; margin-top:10px;">دخول</button>
-            </form>
-            <p style="text-align:center; margin-top:18px; font-size:13px; color:var(--gray-600);">
-                ليس لديك حساب؟ <a href="#" onclick="closeModal('loginModal'); openModal('registerModal')" style="color:var(--gold); font-weight:600;">إنشاء حساب</a>
-            </p>
-        </div>
+<!-- ============ AI CHAT WIDGET ============ -->
+<div id="aiChatWidget" class="ai-chat-widget">
+  <div class="ai-chat-header">
+    <div class="ai-chat-title">
+      <div class="ai-chat-avatar">⚖</div>
+      <div><strong>المساعد القانوني الذكي</strong><span>متاح 24/7 · رد فوري</span></div>
     </div>
+    <button class="ai-chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="ai-chat-body" id="aiChatBody">
+    <div class="ai-message ai-message-bot">مرحبًا! أنا المساعد الذكي لمكتب المحامي مازن عدوي. كيف يمكنني مساعدتك اليوم؟ يمكنك السؤال عن أي خدمة قانونية، أو حجز استشارة، أو الاستفسار عن الأسعار.</div>
+  </div>
+  <div class="ai-chat-input">
+    <input type="text" id="aiChatInput" placeholder="اكتب سؤالك..." onkeypress="if(event.key==='Enter')sendMessage()">
+    <button onclick="sendMessage()">➤</button>
+  </div>
 </div>
+<button class="ai-chat-fab" onclick="toggleChat()" title="المساعد الذكي">🤖</button>
 
-<!-- Register Modal -->
-<div class="modal-overlay" id="registerModal">
-    <div class="modal">
-        <div class="modal-header">
-            <h3><i class="fas fa-user-plus"></i> إنشاء حساب جديد</h3>
-            <button class="modal-close" onclick="closeModal('registerModal')">&times;</button>
-        </div>
-        <div class="modal-body">
-            <form onsubmit="handleRegister(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>الاسم الكامل</label>
-                        <input type="text" id="regName" required placeholder="الاسم الثلاثي">
-                    </div>
-                    <div class="form-group">
-                        <label>رقم الهاتف</label>
-                        <input type="tel" id="regPhone" required placeholder="01xxxxxxxxx">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>البريد الإلكتروني</label>
-                    <input type="email" id="regEmail" required placeholder="example@email.com">
-                </div>
-                <div class="form-group">
-                    <label>كلمة المرور</label>
-                    <input type="password" id="regPassword" required placeholder="••••••••" minlength="6">
-                </div>
-                <div class="form-group">
-                    <label style="display:flex; align-items:center; gap:8px; font-weight:500;">
-                        <input type="checkbox" required style="width:auto;">
-                        أوافق على الشروط والأحكام وسياسة الخصوصية
-                    </label>
-                </div>
-                <button type="submit" class="btn-gold" style="width:100%; padding:14px;">إنشاء الحساب</button>
-            </form>
-        </div>
+<!-- ============ PAYMENT MODAL ============ -->
+<div class="payment-modal" id="paymentModal">
+  <div class="payment-modal-content">
+    <div style="font-size:3rem;margin-bottom:12px">💳</div>
+    <h3>إتمام الدفع</h3>
+    <p style="color:var(--gray);font-size:.9rem" id="paymentService">استشارة قانونية</p>
+    <div class="amount" id="paymentAmount">1,500 جنيه</div>
+    <div class="payment-methods">
+      <button class="pay-method" onclick="processPayment('card')">
+        <div class="ic">💳</div><div><strong>بطاقة ائتمان</strong><span>فيزا / ماستركارد</span></div>
+      </button>
+      <button class="pay-method" onclick="processPayment('vodafone')">
+        <div class="ic">📱</div><div><strong>فودافون كاش</strong><span>دفع عبر المحفظة</span></div>
+      </button>
+      <button class="pay-method" onclick="processPayment('instapay')">
+        <div class="ic">🏦</div><div><strong>انستاباي</strong><span>تحويل فوري</span></div>
+      </button>
+      <button class="pay-method" onclick="processPayment('bank')">
+        <div class="ic">🏛</div><div><strong>تحويل بنكي</strong><span>سيصلك رقم الحساب</span></div>
+      </button>
     </div>
+    <button class="btn" style="width:100%;justify-content:center;margin-top:20px;background:var(--bg);color:var(--navy)" onclick="closePayment()">إلغاء</button>
+  </div>
 </div>
-
-<!-- Service Request Modal -->
-<div class="modal-overlay" id="serviceRequestModal">
-    <div class="modal" style="max-width:520px;">
-        <div class="modal-header">
-            <h3><i class="fas fa-file-alt"></i> طلب خدمة قانونية</h3>
-            <button class="modal-close" onclick="closeModal('serviceRequestModal')">&times;</button>
-        </div>
-        <div class="modal-body">
-            <form onsubmit="handleServiceRequest(event)">
-                <div class="form-group">
-                    <label>الخدمة المطلوبة</label>
-                    <select id="serviceType" required>
-                        <option value="">اختر الخدمة...</option>
-                        <option value="صياغة العقود القانونية">صياغة العقود القانونية</option>
-                        <option value="التوكيلات والمحررات">التوكيلات والمحررات</option>
-                        <option value="الاستشارات القانونية">الاستشارات القانونية</option>
-                        <option value="الأعمال القانونية أون لاين">الأعمال القانونية أون لاين</option>
-                        <option value="خدمات مكاتب المحاماة">خدمات مكاتب المحاماة</option>
-                        <option value="تحليل المستندات">تحليل المستندات</option>
-                        <option value="المساعد القانوني الذكي">المساعد القانوني الذكي</option>
-                        <option value="البحث القانوني">البحث القانوني</option>
-                        <option value="متابعة الإجراءات">متابعة الإجراءات</option>
-                        <option value="الشكاوى والتظلمات">الشكاوى والتظلمات</option>
-                        <option value="المحاكم الأون لاين">المحاكم الأون لاين</option>
-                        <option value="جميع الأعمال القانونية أون لاين">جميع الأعمال القانونية أون لاين</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>الاسم الكامل</label>
-                        <input type="text" id="reqName" required>
-                    </div>
-                    <div class="form-group">
-                        <label>رقم الواتساب</label>
-                        <input type="tel" id="reqPhone" required placeholder="01xxxxxxxxx">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>تفاصيل الطلب</label>
-                    <textarea id="reqDetails" required placeholder="اشرح طلبك بالتفصيل..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>طريقة الدفع</label>
-                    <div class="payment-options">
-                        <label class="payment-option selected" onclick="selectPayment(this)">
-                            <input type="radio" name="payment" value="vodafone" checked>
-                            <div class="pay-info">
-                                <strong><i class="fas fa-mobile-alt"></i> فودافون كاش</strong>
-                                <span>حوّل على الرقم</span>
-                            </div>
-                            <span class="payment-number">01094273376</span>
-                        </label>
-                        <label class="payment-option" onclick="selectPayment(this)">
-                            <input type="radio" name="payment" value="instapay">
-                            <div class="pay-info">
-                                <strong><i class="fas fa-university"></i> إنستاباي</strong>
-                                <span>حوّل على الرقم</span>
-                            </div>
-                            <span class="payment-number">01013582431</span>
-                        </label>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-gold" style="width:100%; padding:14px;">
-                    <i class="fab fa-whatsapp"></i> إرسال الطلب عبر واتساب
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Plan Subscribe Modal -->
-<div class="modal-overlay" id="planModal">
-    <div class="modal">
-        <div class="modal-header">
-            <h3><i class="fas fa-credit-card"></i> الاشتراك في الخطة</h3>
-            <button class="modal-close" onclick="closeModal('planModal')">&times;</button>
-        </div>
-        <div class="modal-body">
-            <div style="text-align:center; margin-bottom:20px;">
-                <h4 id="planName" style="color:var(--primary); font-size:20px;"></h4>
-                <p id="planPrice" style="font-size:28px; font-weight:800; color:var(--gold);"></p>
-            </div>
-            <form onsubmit="handlePlanSubscribe(event)">
-                <div class="form-group">
-                    <label>الاسم الكامل</label>
-                    <input type="text" id="planUserName" required>
-                </div>
-                <div class="form-group">
-                    <label>رقم الواتساب</label>
-                    <input type="tel" id="planUserPhone" required>
-                </div>
-                <div class="form-group">
-                    <label>طريقة الدفع</label>
-                    <div class="payment-options">
-                        <label class="payment-option selected" onclick="selectPayment(this)">
-                            <input type="radio" name="planPayment" value="vodafone" checked>
-                            <div class="pay-info">
-                                <strong>فودافون كاش</strong>
-                                <span>01094273376</span>
-                            </div>
-                        </label>
-                        <label class="payment-option" onclick="selectPayment(this)">
-                            <input type="radio" name="planPayment" value="instapay">
-                            <div class="pay-info">
-                                <strong>إنستاباي</strong>
-                                <span>01013582431</span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <button type="submit" class="btn-gold" style="width:100%; padding:14px;">
-                    تأكيد الاشتراك وإرسال عبر واتساب
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- AI Chat Widget -->
-<div class="ai-widget">
-    <div class="ai-chat" id="aiChat">
-        <div class="ai-header">
-            <div class="avatar"><i class="fas fa-robot"></i></div>
-            <div>
-                <strong>المساعد القانوني الذكي</strong>
-                <span>متصل الآن • يرد فوراً</span>
-            </div>
-        </div>
-        <div class="ai-messages" id="aiMessages">
-            <div class="ai-msg bot">
-                مرحباً بك في مكتب المحامي مازن عدوى 👋<br>
-                أنا المساعد القانوني الذكي. كيف يمكنني مساعدتك اليوم؟
-            </div>
-        </div>
-        <div class="ai-input-area">
-            <input type="text" id="aiInput" placeholder="اكتب سؤالك القانوني..." onkeypress="if(event.key==='Enter') sendAIMessage()">
-            <button class="ai-send" onclick="sendAIMessage()"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-    <button class="ai-toggle" onclick="toggleAIChat()" title="المساعد القانوني الذكي">
-        <i class="fas fa-robot"></i>
-    </button>
-</div>
-
-<!-- WhatsApp Float -->
-<a href="https://wa.me/201094273376?text=السلام%20عليكم%20أريد%20الاستفسار%20عن%20الخدمات%20القانونية" target="_blank" class="whatsapp-float" title="تواصل عبر واتساب">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- Toast -->
-<div class="toast" id="toast"></div>
 
 <script>
-    // ========== STATE ==========
-    let currentUser = JSON.parse(localStorage.getItem('mazenUser')) || null;
-    let selectedPlanName = '';
-    let selectedPlanPrice = 0;
+/* ============================================================
+   ⚙️ الإعدادات الرئيسية — عدّل هذه القيم فقط
+   ============================================================ */
+const CONFIG = {
+  // رقم واتساب بصيغة دولية بدون + (مثال: 201001234567)
+  WHATSAPP_NUMBER: "201000000000",
+  
+  // رقم الهاتف للاتصال المباشر
+  PHONE_NUMBER: "+201000000000",
+  
+  // بريدك الإلكتروني
+  EMAIL: "info@mazenlaw.com",
+  
+  // رابط Cloudflare Worker (الذكاء الاصطناعي)
+  // ⚠️ مهم: استبدل هذا برابط Worker الخاص بك
+  AI_WORKER_URL: "https://mazen-law-ai.YOUR-SUBDOMAIN.workers.dev",
+  
+  // روابط الدفع — استبدلها بروابطك الفعلية
+  PAYMENT_LINKS: {
+    card: "https://accept.paymob.com/...",     // رابط Paymob
+    vodafone: "https://your-vodafone-link",    // رابط فودافون كاش
+    instapay: "https://your-instapay-link",    // رابط انستاباي
+    bank: "mailto:info@mazenlaw.com?subject=تحويل%20بنكي" // بريد للتحويل
+  },
+  
+  // بريد لاستقبال طلبات النموذج (عبر formsubmit.co - مجاني)
+  FORM_EMAIL: "info@mazenlaw.com"
+};
+/* ============================================================ */
 
-    // ========== INIT ==========
-    document.addEventListener('DOMContentLoaded', () => {
-        if (currentUser) {
-            showLoggedIn();
-        }
+// ============ CHAT WIDGET ============
+let chatHistory = [];
+let chatOpen = false;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('aiChatWidget').classList.toggle('open', chatOpen);
+  document.querySelector('.ai-chat-fab').style.display = chatOpen ? 'none' : 'grid';
+  if (chatOpen) setTimeout(() => document.getElementById('aiChatInput').focus(), 300);
+}
+
+function sendQuickMessage(text) {
+  document.getElementById('aiChatInput').value = text;
+  setTimeout(sendMessage, 300);
+}
+
+async function sendMessage() {
+  const input = document.getElementById('aiChatInput');
+  const message = input.value.trim();
+  if (!message) return;
+
+  addMessage(message, 'user');
+  input.value = '';
+  addTypingIndicator();
+
+  try {
+    // إذا لم يتم إعداد Worker، استخدم ردود محلية
+    if (CONFIG.AI_WORKER_URL.includes('YOUR-SUBDOMAIN')) {
+      // ردود احتياطية بسيطة (demo)
+      const reply = getLocalReply(message);
+      setTimeout(() => {
+        removeTypingIndicator();
+        addMessage(reply, 'bot');
+        chatHistory.push({ role: 'user', content: message });
+        chatHistory.push({ role: 'assistant', content: reply });
+        const intent = detectPaymentIntent(reply);
+        if (intent) addPaymentButton(intent);
+      }, 800);
+      return;
+    }
+
+    const response = await fetch(CONFIG.AI_WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: message,
+        history: chatHistory.slice(-10),
+        userContext: 'العميل يتحدث من الموقع'
+      })
     });
 
-    // ========== MODALS ==========
-    function openModal(id) {
-        document.getElementById(id).classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+    const data = await response.json();
+    removeTypingIndicator();
+    addMessage(data.reply, 'bot');
+    chatHistory.push({ role: 'user', content: message });
+    chatHistory.push({ role: 'assistant', content: data.reply });
 
-    function closeModal(id) {
-        document.getElementById(id).classList.remove('active');
-        document.body.style.overflow = '';
-    }
+    if (data.paymentIntent) addPaymentButton(data.paymentIntent);
+  } catch (error) {
+    removeTypingIndicator();
+    addMessage('عذرًا، حدث خطأ تقني. يمكنك التواصل معنا مباشرة عبر واتساب.', 'bot');
+  }
+}
 
-    document.querySelectorAll('.modal-overlay').forEach(overlay => {
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) {
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
+// ردود احتياطية (في حال عدم إعداد الـ Worker بعد)
+function getLocalReply(msg) {
+  const m = msg.toLowerCase();
+  if (m.includes('سعر') || m.includes('تكلف') || m.includes('كام')) {
+    return 'أسعارنا:\n• استشارة مكتوبة: 1,500 جنيه\n• صياغة عقد: 2,000 جنيه\n• تأسيس شركة: 5,000 جنيه\n• اشتراك شهري للشركات: 5,000 جنيه\n\nأي خدمة تهمك؟';
+  }
+  if (m.includes('عقد') || m.includes('إيجار')) {
+    return 'لصياغة أو مراجعة العقود، خدمتنا تبدأ من 2,000 جنيه وتشمل:\n• صياغة كاملة\n• مراجعة قانونية\n• توضيح البنود الحرجة\n• دعم 7 أيام\n\nهل تريد المتابعة؟';
+  }
+  if (m.includes('شرك') || m.includes('تأسيس')) {
+    return 'لتأسيس شركة، نتولى:\n• اختيار الشكل القانوني\n• تجهيز الأوراق\n• السجل التجاري\n• البطاقة الضريبية\n• متابعة حتى التسليم\n\nالتكلفة تبدأ من 5,000 جنيه. هل نبدأ؟';
+  }
+  if (m.includes('مرافع') || m.includes('قضية') || m.includes('محكم')) {
+    return 'للمرافعة أمام المحاكم، نحتاج معرفة تفاصيل القضية. هل يمكنك إخباري بنوع القضية (مدنية/جنائية/تجارية)؟';
+  }
+  if (m.includes('فصل') || m.includes('عمل')) {
+    return 'في حالات الفصل التعسفي، يحق لك:\n• تعويض عن مدة الخدمة\n• تعويض عن الفصل\n• أجر الإشعار\n• رصيد الإجازات\n\nهل تريد استشارة قانونية مفصلة؟ (1,500 جنيه)';
+  }
+  return 'شكرًا لسؤالك! للحصول على رد دقيق، يمكنك:\n\n1. تحديد نوع الخدمة (عقود / شركات / مرافعة / استشارات)\n2. إخباري بتفاصيل موضوعك\n3. أو التواصل معنا مباشرة عبر واتساب\n\nكيف يمكنني مساعدتك؟';
+}
+
+function addMessage(text, type) {
+  const body = document.getElementById('aiChatBody');
+  const div = document.createElement('div');
+  div.className = `ai-message ai-message-${type}`;
+  div.textContent = text;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function addTypingIndicator() {
+  const body = document.getElementById('aiChatBody');
+  const div = document.createElement('div');
+  div.className = 'ai-message ai-message-bot ai-typing';
+  div.id = 'aiTyping';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function removeTypingIndicator() {
+  const el = document.getElementById('aiTyping');
+  if (el) el.remove();
+}
+
+function detectPaymentIntent(reply) {
+  const patterns = [
+    { regex: /استشارة مكتوبة|1,500|1500/, service: 'استشارة مكتوبة', amount: 1500 },
+    { regex: /تأسيس شركة|5,000|5000/, service: 'تأسيس شركة', amount: 5000 },
+    { regex: /صياغة عقد|2,000|2000/, service: 'صياغة عقد', amount: 2000 }
+  ];
+  for (const p of patterns) {
+    if (p.regex.test(reply)) return { service: p.service, amount: p.amount };
+  }
+  return null;
+}
+
+function addPaymentButton(intent) {
+  const body = document.getElementById('aiChatBody');
+  const div = document.createElement('div');
+  div.className = 'ai-payment-btn';
+  div.innerHTML = `
+    <div class="payment-info">
+      <strong>${intent.service}</strong>
+      <span>${intent.amount.toLocaleString()} جنيه</span>
+    </div>
+    <button onclick="openPayment('${intent.service}', ${intent.amount})">
+      ادفع الآن ←
+    </button>
+  `;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+// ============ PAYMENT ============
+let currentPayment = { service: '', amount: 0 };
+
+function openPayment(service, amount) {
+  currentPayment = { service, amount };
+  document.getElementById('paymentService').textContent = service;
+  document.getElementById('paymentAmount').textContent = amount.toLocaleString() + ' جنيه';
+  document.getElementById('paymentModal').classList.add('open');
+}
+
+function closePayment() {
+  document.getElementById('paymentModal').classList.remove('open');
+}
+
+function processPayment(method) {
+  const link = CONFIG.PAYMENT_LINKS[method];
+  
+  // سجل نية الدفع (اختياري)
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'begin_checkout', {
+      currency: 'EGP',
+      value: currentPayment.amount,
+      items: [{ item_name: currentPayment.service }]
     });
+  }
 
-    // ========== AUTH ==========
-    function handleRegister(e) {
-        e.preventDefault();
-        const name = document.getElementById('regName').value.trim();
-        const phone = document.getElementById('regPhone').value.trim();
-        const email = document.getElementById('regEmail').value.trim();
-        const password = document.getElementById('regPassword').value;
+  // إرسال إشعار للمكتب
+  const notifyMsg = `طلب دفع جديد:\nالخدمة: ${currentPayment.service}\nالمبلغ: ${currentPayment.amount} جنيه\nطريقة الدفع: ${method}`;
+  console.log(notifyMsg);
 
-        const user = { name, phone, email, password, createdAt: new Date().toISOString() };
-        localStorage.setItem('mazenUser', JSON.stringify(user));
-        currentUser = user;
-        showLoggedIn();
-        closeModal('registerModal');
-        showToast('تم إنشاء الحساب بنجاح! مرحباً ' + name);
+  // افتح رابط الدفع
+  if (link && !link.includes('your-')) {
+    window.open(link, '_blank');
+  } else {
+    // في حال عدم إعداد الروابط بعد، افتح واتساب
+    const waLink = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(notifyMsg)}`;
+    window.open(waLink, '_blank');
+  }
+
+  closePayment();
+  addMessage(`تم فتح صفحة الدفع لخدمة "${currentPayment.service}". بعد إتمام الدفع، سنتواصل معك خلال دقائق لبدء الخدمة.`, 'bot');
+}
+
+// ============ WHATSAPP ============
+function openWhatsApp(e) {
+  e.preventDefault();
+  // افتح الشات الذكي أولًا بدلًا من واتساب مباشرة (حسب طلبك)
+  if (!chatOpen) toggleChat();
+  addMessage('مرحبًا! سأساعدك في توجيه استفسارك. اكتب سؤالك وسأجيبك فورًا، وإذا احتجت التحدث مع المحامي مباشرة، سأوفر لك رابط واتساب.', 'bot');
+}
+
+// ============ CONTACT FORM ============
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button');
+  const originalText = btn.innerHTML;
+  
+  btn.innerHTML = '⏳ جاري الإرسال...';
+  btn.disabled = true;
+
+  // استخدام formsubmit.co (مجاني، لا يحتاج backend)
+  const formData = new FormData(form);
+  
+  fetch(`https://formsubmit.co/ajax/${CONFIG.FORM_EMAIL}`, {
+    method: 'POST',
+    body: formData
+  })
+  .then(r => r.json())
+  .then(() => {
+    btn.innerHTML = '✓ تم الإرسال بنجاح';
+    btn.style.background = '#25d366';
+    btn.style.color = '#fff';
+    
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', { event_category: 'contact_form' });
     }
+    
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+      form.reset();
+      alert('شكرًا لك! تم استلام طلبك، وسنرد عليك خلال 24 ساعة.');
+    }, 2000);
+  })
+  .catch(() => {
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+    alert('حدث خطأ. تواصل معنا عبر واتساب.');
+  });
+}
 
-    function handleLogin(e) {
-        e.preventDefault();
-        const email = document.getElementById('loginEmail').value.trim();
-        const password = document.getElementById('loginPassword').value;
-        const stored = JSON.parse(localStorage.getItem('mazenUser'));
-
-        if (stored && (stored.email === email || stored.phone === email) && stored.password === password) {
-            currentUser = stored;
-            showLoggedIn();
-            closeModal('loginModal');
-            showToast('تم تسجيل الدخول بنجاح!');
-        } else {
-            showToast('بيانات الدخول غير صحيحة');
-        }
-    }
-
-    function showLoggedIn() {
-        document.getElementById('loginBtn').style.display = 'none';
-        document.getElementById('registerBtn').style.display = 'none';
-        const badge = document.getElementById('userBadge');
-        badge.classList.add('active');
-        document.getElementById('userName').textContent = currentUser.name.split(' ')[0];
-    }
-
-    // ========== SERVICES ==========
-    function requestService(serviceName) {
-        openModal('serviceRequestModal');
-        document.getElementById('serviceType').value = serviceName;
-        if (currentUser) {
-            document.getElementById('reqName').value = currentUser.name || '';
-            document.getElementById('reqPhone').value = currentUser.phone || '';
-        }
-    }
-
-    function handleServiceRequest(e) {
-        e.preventDefault();
-        const service = document.getElementById('serviceType').value;
-        const name = document.getElementById('reqName').value;
-        const phone = document.getElementById('reqPhone').value;
-        const details = document.getElementById('reqDetails').value;
-        const payment = document.querySelector('input[name="payment"]:checked').value;
-        const paymentText = payment === 'vodafone' ? 'فودافون كاش - 01094273376' : 'إنستاباي - 01013582431';
-
-        const message = `السلام عليكم أستاذ مازن 👋%0A%0A*طلب خدمة قانونية جديد*%0A%0A📌 *الخدمة:* ${service}%0A👤 *الاسم:* ${name}%0A📱 *الواتساب:* ${phone}%0A📝 *التفاصيل:*%0A${details}%0A%0A💳 *طريقة الدفع:* ${paymentText}%0A%0Aمن موقع مكتب المحامي أون لاين`;
-
-        window.open(`https://wa.me/201094273376?text=${message}`, '_blank');
-        closeModal('serviceRequestModal');
-        showToast('جاري فتح واتساب لإرسال الطلب...');
-    }
-
-    // ========== PLANS ==========
-    function selectPlan(name, price) {
-        selectedPlanName = name;
-        selectedPlanPrice = price;
-        document.getElementById('planName').textContent = 'خطة ' + name;
-        document.getElementById('planPrice').textContent = price === 0 ? 'مجاناً' : price + ' جنيه / شهرياً';
-        if (currentUser) {
-            document.getElementById('planUserName').value = currentUser.name || '';
-            document.getElementById('planUserPhone').value = currentUser.phone || '';
-        }
-        openModal('planModal');
-    }
-
-    function handlePlanSubscribe(e) {
-        e.preventDefault();
-        const name = document.getElementById('planUserName').value;
-        const phone = document.getElementById('planUserPhone').value;
-        const payment = document.querySelector('input[name="planPayment"]:checked').value;
-        const paymentText = payment === 'vodafone' ? 'فودافون كاش - 01094273376' : 'إنستاباي - 01013582431';
-
-        const message = `السلام عليكم أستاذ مازن 👋%0A%0A*طلب اشتراك في خطة*%0A%0A📋 *الخطة:* ${selectedPlanName}%0A💰 *السعر:* ${selectedPlanPrice === 0 ? 'مجاناً' : selectedPlanPrice + ' جنيه/شهر'}%0A👤 *الاسم:* ${name}%0A📱 *الواتساب:* ${phone}%0A💳 *طريقة الدفع:* ${paymentText}%0A%0Aمن موقع مكتب المحامي أون لاين`;
-
-        window.open(`https://wa.me/201094273376?text=${message}`, '_blank');
-        closeModal('planModal');
-        showToast('جاري فتح واتساب لتأكيد الاشتراك...');
-    }
-
-    // ========== PAYMENT SELECT ==========
-    function selectPayment(el) {
-        el.parentElement.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
-        el.classList.add('selected');
-        el.querySelector('input').checked = true;
-    }
-
-    // ========== AI CHAT ==========
-    function toggleAIChat() {
-        document.getElementById('aiChat').classList.toggle('active');
-    }
-
-    const aiResponses = {
-        'عقد': 'يمكنك طلب صياغة أي نوع من العقود (بيع، إيجار، شراكة، عمل...) من خلال خدمة "صياغة العقود القانونية". اضغط على الخدمة واملأ التفاصيل وسننجزها لك بسرعة.',
-        'توكيل': 'نقوم بإعداد جميع أنواع التوكيلات والمحررات القانونية باحترافية. اختر خدمة "التوكيلات والمحررات" وأرسل لنا التفاصيل.',
-        'استشارة': 'نقدم استشارات قانونية فورية في جميع المجالات. يمكنك طلب استشارة الآن أو التواصل مباشرة عبر واتساب على 01094273376.',
-        'سعر': 'لدينا خطط متعددة: مجانية، احترافية (299 جنيه/شهر)، وخطة المكاتب (599 جنيه/شهر). يمكنك الاطلاع على التفاصيل في قسم الأسعار.',
-        'دفع': 'نقبل الدفع عبر فودافون كاش على رقم 01094273376 أو إنستاباي على رقم 01013582431.',
-        'محكمة': 'نوفر خدمات المحاكم الأون لاين ومتابعة الإجراءات. اختر الخدمة المناسبة أو تواصل معنا عبر واتساب.',
-        'default': 'شكراً لسؤالك. يمكنني مساعدتك في: صياغة العقود، التوكيلات، الاستشارات، متابعة الإجراءات، والمحاكم الأون لاين. اكتب كلمة مفتاحية أو اضغط على "اطلب الآن" للخدمة التي تريدها. أو تواصل مباشرة عبر واتساب: 01094273376'
-    };
-
-    function sendAIMessage() {
-        const input = document.getElementById('aiInput');
-        const text = input.value.trim();
-        if (!text) return;
-
-        const messages = document.getElementById('aiMessages');
-        messages.innerHTML += `<div class="ai-msg user">${text}</div>`;
-        input.value = '';
-
-        setTimeout(() => {
-            let reply = aiResponses.default;
-            const lower = text.toLowerCase();
-            for (const key in aiResponses) {
-                if (key !== 'default' && lower.includes(key)) {
-                    reply = aiResponses[key];
-                    break;
-                }
-            }
-            messages.innerHTML += `<div class="ai-msg bot">${reply}</div>`;
-            messages.scrollTop = messages.scrollHeight;
-        }, 600);
-
-        messages.scrollTop = messages.scrollHeight;
-    }
-
-    // ========== MOBILE NAV ==========
-    function toggleMobileNav() {
-        document.getElementById('mobileNav').classList.toggle('active');
-        document.getElementById('mobileOverlay').classList.toggle('active');
-    }
-
-    // ========== TOAST ==========
-    function showToast(msg) {
-        const toast = document.getElementById('toast');
-        toast.textContent = msg;
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3500);
-    }
-
-    // Smooth scroll for nav
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const href = a.getAttribute('href');
-            if (href.length > 1) {
-                e.preventDefault();
-                document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
+// ============ CLOSE MENU ON LINK CLICK ============
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+});
 </script>
 </body>
 </html>

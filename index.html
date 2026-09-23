@@ -2,2356 +2,2395 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1e3a" id="themeColorMeta">
-<meta name="color-scheme" content="light dark">
-<meta name="description" content="خدمات بلدي - منصة رقمية شاملة للوصول إلى الخدمات المحلية في التعليم والصحة والمحاماة والتجارة والعقارات والوظائف والسيارات.">
-<meta name="keywords" content="خدمات بلدي, خدمات مصر, محامي, طبيب, مدرس, عقارات, وظائف, سيارات">
-<meta name="author" content="خدمات بلدي">
-<meta name="robots" content="index, follow">
-<title>خدمات بلدي | منصة الخدمات الشاملة</title>
-<link rel="canonical" href="https://balady-services.com/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="خدمات بلدي | منصة الخدمات الشاملة">
-<meta property="og:description" content="كل خدمات بلدك في مكان واحد.">
-<meta property="og:url" content="https://balady-services.com/">
-<meta property="og:locale" content="ar_EG">
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1e3a'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='55'%3E🏘️%3C/text%3E%3C/svg%3E">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b1e3a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="خدمات بلدي">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="خدمات بلدي - منصة الخدمات المحلية الذكية. اطلب أي خدمة بالذكاء الاصطناعي: ميكانيكي، سباك، كهربائي، طبيب، محامي وأكثر.">
+<meta name="keywords" content="خدمات بلدي, خدمات محلية, ميكانيكي, سباك, كهربائي, تكييف, مصر">
+<title>خدمات بلدي | منصة الخدمات الذكية بالذكاء الاصطناعي</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b1e3a'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='55'%3E%F0%9F%8F%98%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous" referrerpolicy="no-referrer">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "خدمات بلدي",
-  "url": "https://balady-services.com/",
-  "inLanguage": "ar-EG"
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 <style>
 /* ============================================================
-   DESIGN SYSTEM
+   ROOT & RESET
 ============================================================ */
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
   --primary: #0b1e3a;
   --primary-light: #153968;
+  --primary-hover: #1d4b85;
   --secondary: #c8a349;
   --secondary-light: #e5c86b;
-  --background: #f5f7fb;
+  --secondary-dark: #a8862f;
+  --bg: #f5f7fb;
   --surface: #ffffff;
-  --surface-soft: #f0f4f9;
+  --surface-soft: #eef2f8;
   --text: #172033;
+  --text-soft: #3d4a5e;
   --muted: #687386;
   --border: #e4e8ef;
   --success: #16a34a;
+  --warning: #f59e0b;
   --danger: #dc2626;
-  --warning: #b7791f;
+  --info: #2563eb;
   --whatsapp: #25d366;
-  --shadow: 0 10px 30px rgba(11, 30, 58, .08);
-  --shadow-lg: 0 20px 60px rgba(11, 30, 58, .16);
-  --radius: 18px;
-  --radius-sm: 12px;
-  --transition: .28s cubic-bezier(.4, 0, .2, 1);
+  --radius: 16px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 2px 8px rgba(11,30,58,.06);
+  --shadow: 0 8px 24px rgba(11,30,58,.08);
+  --shadow-lg: 0 20px 50px rgba(11,30,58,.14);
+  --shadow-xl: 0 30px 70px rgba(11,30,58,.20);
+  --transition: all .25s cubic-bezier(.4,0,.2,1);
 }
 
 body.dark {
-  --background: #0c1422;
-  --surface: #121d2e;
-  --surface-soft: #1a2940;
-  --text: #edf3fb;
-  --muted: #aab6c5;
-  --border: #263449;
-  --shadow: 0 10px 30px rgba(0, 0, 0, .40);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, .55);
+  --bg: #0a1424;
+  --surface: #101f38;
+  --surface-soft: #16294a;
+  --text: #e8eefb;
+  --text-soft: #c4cfe5;
+  --muted: #8fa0bd;
+  --border: #1e3a63;
+  --shadow: 0 8px 24px rgba(0,0,0,.35);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.45);
 }
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-  -webkit-text-size-adjust: 100%;
-}
-
+html { scroll-behavior: smooth; }
 body {
-  min-height: 100vh;
-  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: var(--background);
+  font-family: "Cairo", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
   color: var(--text);
-  line-height: 1.8;
+  line-height: 1.75;
+  min-height: 100vh;
   overflow-x: hidden;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
   transition: background .3s ease, color .3s ease;
 }
-
 body.no-scroll { overflow: hidden; }
-a { color: inherit; text-decoration: none; transition: color .2s ease; }
-button, input, textarea, select { font-family: inherit; font-size: inherit; color: inherit; }
-button { cursor: pointer; }
-img { max-width: 100%; height: auto; display: block; }
 
-::selection { background: var(--secondary); color: #fff; }
-:focus-visible { outline: 3px solid var(--secondary); outline-offset: 3px; border-radius: 6px; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+input, textarea, select { font-family: inherit; }
+img { max-width: 100%; display: block; }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-.container { width: min(1180px, 92%); margin-inline: auto; }
-
-/* HEADER */
+/* ============================================================
+   HEADER
+============================================================ */
 .site-header {
-  position: sticky; top: 0; z-index: 1000;
-  background: rgba(255, 255, 255, .96);
+  position: sticky; top: 0; z-index: 500;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
 }
-body.dark .site-header { background: rgba(18, 29, 46, .95); }
+body.dark .site-header { background: rgba(16,31,56,.92); }
 
 .navbar {
-  min-height: 76px;
   display: flex; align-items: center; justify-content: space-between;
-  gap: 20px; position: relative;
+  gap: 20px; padding: 14px 20px;
+  max-width: 1200px; margin: 0 auto;
 }
-
 .logo {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-weight: 800; font-size: 1.2rem; color: var(--primary);
-  flex-shrink: 0; user-select: none; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 1.15rem; color: var(--primary);
+  cursor: pointer; user-select: none;
 }
 body.dark .logo { color: #fff; }
-
 .logo-icon {
-  width: 46px; height: 46px; display: grid; place-items: center;
-  border-radius: 14px; color: #fff; font-size: 1.1rem;
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 12px;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  box-shadow: var(--shadow);
+  color: var(--secondary);
+  font-size: 1.15rem;
+  box-shadow: 0 4px 14px rgba(11,30,58,.25);
 }
 
-.nav-links { display: flex; align-items: center; gap: 8px; }
-.nav-links a { padding: 9px 13px; border-radius: 10px; font-size: .92rem; color: #374151; }
-body.dark .nav-links a { color: #d7e0eb; }
-.nav-links a:hover { background: #eef2f7; color: var(--primary); }
-body.dark .nav-links a:hover { background: var(--surface-soft); color: #fff; }
-
-.header-actions { display: flex; align-items: center; gap: 8px; }
-
-.icon-btn {
-  width: 42px; height: 42px; display: grid; place-items: center;
-  border: 1px solid var(--border); border-radius: 12px;
-  background: var(--surface); color: var(--primary);
+.nav-links {
+  display: flex; gap: 4px; align-items: center;
+}
+.nav-links a {
+  padding: 9px 14px;
+  border-radius: 10px;
+  font-weight: 600; font-size: .92rem;
+  color: var(--text-soft);
   transition: var(--transition);
 }
-body.dark .icon-btn { color: #fff; }
-.icon-btn:hover { transform: translateY(-2px); border-color: var(--secondary); }
-.mobile-menu { display: none; }
-
-/* HERO */
-.hero {
-  padding: 90px 0 70px;
-  background:
-    radial-gradient(circle at top left, rgba(200, 163, 73, .15), transparent 35%),
-    linear-gradient(135deg, #f8fafc, #eef3f9);
+.nav-links a:hover, .nav-links a.active {
+  background: var(--surface-soft);
+  color: var(--secondary);
 }
-body.dark .hero { background: var(--background); }
 
-.hero-content { max-width: 850px; margin-inline: auto; text-align: center; }
+.header-actions { display: flex; gap: 8px; align-items: center; }
+.icon-btn {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text);
+  font-size: 1.05rem;
+  transition: var(--transition);
+}
+.icon-btn:hover { background: var(--secondary); color: #fff; transform: translateY(-2px); }
+.icon-btn.mobile-menu { display: none; }
 
-.badge {
+.ai-cta-btn {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 7px 15px; margin-bottom: 18px;
-  border-radius: 30px;
-  background: rgba(200, 163, 73, .12);
-  color: #8a691c; font-size: .85rem; font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color: var(--primary);
+  font-weight: 800; font-size: .9rem;
+  box-shadow: 0 6px 18px rgba(200,163,73,.35);
+  transition: var(--transition);
 }
-body.dark .badge { color: var(--secondary-light); }
+.ai-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(200,163,73,.45); }
+.ai-cta-btn i { font-size: 1rem; }
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  position: relative;
+  padding: 70px 0 60px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(200,163,73,.18), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(21,57,104,.15), transparent 55%),
+    linear-gradient(160deg, var(--surface), var(--bg));
+  overflow: hidden;
+}
+body.dark .hero {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(200,163,73,.14), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(21,57,104,.35), transparent 55%),
+    linear-gradient(160deg, var(--surface), var(--bg));
+}
+.hero::before {
+  content: "";
+  position: absolute; top: -80px; left: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,163,73,.15), transparent 70%);
+  animation: float 8s ease-in-out infinite;
+}
+@keyframes float { 0%,100% { transform: translate(0,0); } 50% { transform: translate(20px,-30px); } }
+
+.hero-inner { position: relative; z-index: 1; text-align: center; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(200,163,73,.15);
+  color: var(--secondary-dark);
+  font-weight: 700; font-size: .85rem;
+  margin-bottom: 22px;
+  border: 1px solid rgba(200,163,73,.3);
+}
+body.dark .hero-badge { color: var(--secondary-light); }
+.hero-badge i { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 4rem); line-height: 1.25;
-  margin-bottom: 18px; color: var(--primary); font-weight: 800;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -.5px;
 }
-body.dark .hero h1 { color: #f5f7fb; }
-.hero h1 span { color: var(--secondary); }
+body.dark .hero h1 { color: #fff; }
+.hero h1 span {
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .hero p {
-  max-width: 720px; margin-inline: auto;
-  color: var(--muted); font-size: 1.05rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto 34px;
 }
 
-.search-box {
-  max-width: 720px; margin: 35px auto 0; padding: 7px;
-  display: flex; background: var(--surface);
-  border: 1px solid var(--border); border-radius: 16px;
-  box-shadow: var(--shadow);
+/* AI INPUT BOX */
+.ai-search {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
 }
-.search-box:focus-within { border-color: var(--secondary); }
-.search-box input {
-  flex: 1; min-width: 0; border: 0; outline: 0;
-  padding: 13px 15px; background: transparent; color: var(--text);
-}
-.search-box button {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 8px; padding: 0 24px; border: 0; border-radius: 12px;
-  background: var(--primary); color: #fff; font-weight: 700;
+.ai-search-box {
+  display: flex; align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  padding: 8px 8px 8px 18px;
+  box-shadow: var(--shadow-lg);
   transition: var(--transition);
 }
-.search-box button:hover { background: var(--primary-light); transform: translateY(-1px); }
-
-/* AD BANNER */
-.ad-banner {
-  padding: 25px 0;
+.ai-search-box:focus-within {
+  border-color: var(--secondary);
+  box-shadow: 0 20px 50px rgba(200,163,73,.25);
+}
+.ai-search-box .search-icon {
+  color: var(--secondary);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+.ai-search-box input {
+  flex: 1;
+  border: 0; outline: 0;
+  background: transparent;
+  padding: 14px 0;
+  font-size: 1rem;
+  color: var(--text);
+}
+.ai-search-box input::placeholder { color: var(--muted); }
+.ai-search-box button {
+  padding: 12px 24px;
+  border-radius: 14px;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: #fff; overflow: hidden;
+  color: #fff;
+  font-weight: 800;
+  font-size: .92rem;
+  display: flex; align-items: center; gap: 8px;
+  transition: var(--transition);
+  flex-shrink: 0;
 }
-.ad-banner-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 20px; flex-wrap: wrap;
-}
-.ad-banner-text { display: flex; align-items: center; gap: 14px; }
-.ad-banner-icon {
-  width: 50px; height: 50px; display: grid; place-items: center;
-  border-radius: 14px; background: rgba(200, 163, 73, .2);
-  color: var(--secondary-light); font-size: 1.3rem; flex-shrink: 0;
-}
-.ad-banner-text strong { display: block; font-size: 1.05rem; margin-bottom: 2px; }
-.ad-banner-text span { font-size: .85rem; opacity: .85; }
-.ad-banner .btn-gold { padding: 10px 22px; font-size: .9rem; white-space: nowrap; }
+.ai-search-box button:hover { transform: translateX(-2px); box-shadow: 0 8px 22px rgba(11,30,58,.4); }
 
-/* SECTIONS */
-section { padding: 70px 0; }
-.section-title { text-align: center; margin-bottom: 38px; }
-.section-title h2 { margin-bottom: 8px; color: var(--primary); font-size: 2rem; }
-body.dark .section-title h2 { color: #f5f7fb; }
-.section-title p { color: var(--muted); }
+.quick-chips {
+  display: flex; flex-wrap: wrap;
+  gap: 8px; justify-content: center;
+  margin-top: 22px;
+}
+.chip {
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  font-size: .82rem; font-weight: 600;
+  transition: var(--transition);
+}
+.chip:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: #fff;
+  transform: translateY(-2px);
+}
 
-/* SERVICES */
-.services-grid {
+.hero-stats {
+  display: flex; justify-content: center;
+  gap: 40px; flex-wrap: wrap;
+  margin-top: 46px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+.hero-stat { text-align: center; }
+.hero-stat .num {
+  font-size: 1.8rem; font-weight: 900;
+  color: var(--secondary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-stat .lbl { color: var(--muted); font-size: .82rem; font-weight: 600; }
+
+/* ============================================================
+   SECTION GENERIC
+============================================================ */
+section.block { padding: 70px 0; }
+section.block.alt { background: var(--surface); }
+
+.section-head {
+  text-align: center;
+  margin-bottom: 46px;
+}
+.section-head h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+body.dark .section-head h2 { color: #fff; }
+.section-head h2 i { color: var(--secondary); margin-left: 8px; }
+.section-head p { color: var(--muted); font-size: .98rem; max-width: 620px; margin: 0 auto; }
+
+/* ============================================================
+   CATEGORIES GRID
+============================================================ */
+.cat-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
 }
-.service-card {
+.cat-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 26px 20px;
+  padding: 26px 18px;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, .03);
   transition: var(--transition);
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
-.service-card::before {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(200, 163, 73, .08), transparent);
-  opacity: 0; transition: opacity .3s ease; pointer-events: none;
+.cat-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(200,163,73,.08), transparent 60%);
+  opacity: 0;
+  transition: var(--transition);
 }
-.service-card:hover::before { opacity: 1; }
-.service-card:hover {
-  transform: translateY(-7px);
-  box-shadow: var(--shadow);
-  border-color: rgba(200, 163, 73, .5);
+.cat-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-lg);
 }
-.service-card:focus-visible { outline: 3px solid var(--secondary); outline-offset: 4px; }
-
-.service-badge-featured {
-  position: absolute; top: 10px; right: 10px;
-  padding: 3px 10px; border-radius: 20px;
-  background: var(--secondary); color: #fff;
-  font-size: .68rem; font-weight: 700; z-index: 1;
+.cat-card:hover::before { opacity: 1; }
+.cat-icon {
+  width: 60px; height: 60px;
+  margin: 0 auto 14px;
+  display: grid; place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--secondary);
+  font-size: 1.5rem;
+  position: relative; z-index: 1;
+  transition: var(--transition);
 }
-.service-icon {
-  width: 62px; height: 62px; margin: 0 auto 15px;
-  display: grid; place-items: center; border-radius: 17px;
-  background: var(--surface-soft); color: var(--primary);
-  font-size: 1.5rem; transition: var(--transition);
+.cat-card:hover .cat-icon { transform: scale(1.08) rotate(-4deg); }
+.cat-card h3 {
+  font-size: 1rem; font-weight: 700;
+  color: var(--primary); margin-bottom: 6px;
   position: relative; z-index: 1;
 }
-body.dark .service-icon { color: #fff; }
-.service-card:hover .service-icon { transform: scale(1.08); }
-.service-card h3 {
-  margin-bottom: 7px; color: var(--primary);
-  font-size: 1.05rem; position: relative; z-index: 1;
-}
-body.dark .service-card h3 { color: #fff; }
-.service-card p {
-  color: var(--muted); font-size: .88rem; position: relative; z-index: 1;
+body.dark .cat-card h3 { color: #fff; }
+.cat-card p {
+  font-size: .78rem; color: var(--muted);
+  position: relative; z-index: 1;
+  line-height: 1.6;
 }
 
-.no-results {
-  grid-column: 1 / -1; padding: 45px 20px;
-  text-align: center; color: var(--muted);
+/* ============================================================
+   AI FEATURE
+============================================================ */
+.ai-feature-wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
 }
-.no-results i { display: block; margin-bottom: 10px; color: var(--secondary); font-size: 2.5rem; }
+.ai-feature-text h2 {
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 800; color: var(--primary);
+  margin-bottom: 16px;
+}
+body.dark .ai-feature-text h2 { color: #fff; }
+.ai-feature-text > p { color: var(--muted); margin-bottom: 26px; }
 
-/* STEPS */
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.step {
-  padding: 28px; background: var(--surface);
-  border: 1px solid var(--border); border-radius: var(--radius);
-  text-align: center; transition: var(--transition);
+.step-list { list-style: none; }
+.step-list li {
+  display: flex; gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--border);
+  align-items: flex-start;
 }
-.step:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-.step-number {
-  width: 45px; height: 45px; margin: 0 auto 15px;
-  display: grid; place-items: center; border-radius: 50%;
-  background: var(--primary); color: #fff; font-weight: 800;
+.step-list li:last-child { border-bottom: 0; }
+.step-num {
+  width: 32px; height: 32px; flex-shrink: 0;
+  display: grid; place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color: var(--primary);
+  font-weight: 800;
+  font-size: .85rem;
 }
-.step h3 { margin-bottom: 8px; color: var(--primary); }
-body.dark .step h3 { color: #fff; }
-.step p { color: var(--muted); font-size: .9rem; }
+.step-list strong {
+  color: var(--primary);
+  font-size: .95rem;
+  display: block;
+  margin-bottom: 2px;
+}
+body.dark .step-list strong { color: #fff; }
+.step-list small { color: var(--muted); font-size: .82rem; }
 
-/* PRICING */
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.price-card {
-  position: relative; padding: 30px;
+.ai-demo-card {
+  background: linear-gradient(145deg, var(--primary), var(--primary-light));
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  color: #fff;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+.ai-demo-card::before {
+  content: "";
+  position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,163,73,.35), transparent 70%);
+}
+.ai-demo-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 22px;
+  position: relative; z-index: 1;
+}
+.ai-demo-avatar {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+.ai-demo-header strong { display: block; font-size: 1rem; }
+.ai-demo-header small { color: rgba(255,255,255,.7); font-size: .8rem; }
+
+.demo-bubble {
+  background: rgba(255,255,255,.12);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  font-size: .9rem;
+  line-height: 1.7;
+  position: relative; z-index: 1;
+  backdrop-filter: blur(6px);
+  animation: fadeUp .5s ease both;
+}
+.demo-bubble.user { background: rgba(200,163,73,.22); border: 1px solid rgba(200,163,73,.35); }
+.demo-bubble.bot { background: rgba(255,255,255,.1); }
+.demo-bubble strong { color: var(--secondary-light); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.demo-provider {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 12px;
+  margin-top: 8px;
+  position: relative; z-index: 1;
+}
+.demo-provider .dp-avatar {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: rgba(200,163,73,.25);
+  display: grid; place-items: center;
+  font-size: 1.2rem;
+}
+.demo-provider .dp-info { flex: 1; }
+.demo-provider .dp-info strong { display: block; font-size: .88rem; }
+.demo-provider .dp-info small { color: rgba(255,255,255,.65); font-size: .75rem; }
+.demo-provider .dp-price {
+  color: var(--secondary-light);
+  font-weight: 800;
+  font-size: .95rem;
+}
+
+.ai-feature-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 26px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 10px 30px rgba(200,163,73,.4);
+  transition: var(--transition);
+}
+.ai-feature-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(200,163,73,.55); }
+
+/* ============================================================
+   PROVIDERS GRID
+============================================================ */
+.providers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.provider-card {
   background: var(--surface);
-  border: 1px solid var(--border); border-radius: var(--radius);
-  text-align: center; transition: var(--transition);
-}
-.price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-.price-card.featured {
-  border: 2px solid var(--secondary); transform: translateY(-8px);
-}
-.price-card.featured:hover { transform: translateY(-12px); }
-.popular {
-  position: absolute; top: -14px; right: 50%;
-  transform: translateX(50%); padding: 4px 15px;
-  border-radius: 20px; background: var(--secondary); color: #fff;
-  font-size: .75rem; font-weight: 700; white-space: nowrap;
-}
-.price {
-  margin: 15px 0; color: var(--primary);
-  font-size: 2.2rem; font-weight: 800;
-}
-body.dark .price { color: #fff; }
-.price small { color: var(--muted); font-size: .8rem; }
-.features { margin: 20px 0; list-style: none; text-align: right; }
-.features li { padding: 7px 0; color: var(--muted); }
-.features i { margin-left: 7px; color: var(--success); }
-
-/* BUTTONS */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 8px; padding: 12px 22px; border: 0; border-radius: 12px;
-  font-weight: 700; transition: var(--transition); cursor: pointer;
-}
-.btn-primary { background: var(--primary); color: #fff; }
-.btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
-.btn-gold { background: var(--secondary); color: #fff; }
-.btn-gold:hover { background: #b48e32; transform: translateY(-2px); }
-.btn-whatsapp { background: var(--whatsapp); color: #fff; }
-.btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
-.btn-danger { background: var(--danger); color: #fff; }
-.btn-danger:hover { background: #b91c1c; transform: translateY(-2px); }
-.btn-outline {
-  background: transparent; color: var(--primary);
-  border: 2px solid var(--primary);
-}
-body.dark .btn-outline { color: #fff; border-color: #fff; }
-.btn-outline:hover { background: var(--primary); color: #fff; }
-
-/* PAYMENT */
-.payment-box {
-  padding: 42px; position: relative; overflow: hidden;
-  border-radius: 24px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: #fff; text-align: center;
-}
-.payment-box h2 { margin-bottom: 10px; }
-.payment-number {
-  display: inline-flex; align-items: center; gap: 12px;
-  margin: 20px 0; padding: 16px 24px;
-  border-radius: 14px; background: rgba(255, 255, 255, .12);
-  font-size: 1.4rem; font-weight: 800; direction: ltr;
-  position: relative; border: 2px dashed rgba(200, 163, 73, .5);
-}
-.payment-number i.fa-mobile-screen { color: var(--secondary-light); }
-.copy-btn {
-  width: 38px; height: 38px; display: grid; place-items: center;
-  border: 0; border-radius: 10px; background: var(--secondary);
-  color: #fff; font-size: .9rem; transition: var(--transition);
-  cursor: pointer;
-}
-.copy-btn:hover { background: var(--secondary-light); transform: scale(1.05); }
-.payment-methods {
-  display: flex; align-items: center; justify-content: center;
-  flex-wrap: wrap; gap: 10px; margin-top: 20px;
-}
-.payment-methods span {
-  padding: 8px 14px; border-radius: 10px;
-  background: rgba(255, 255, 255, .08); font-size: .85rem;
-}
-.payment-actions {
-  display: flex; gap: 10px; justify-content: center;
-  flex-wrap: wrap; margin-top: 22px;
-}
-
-/* ADVERTISE */
-.advertise-section { background: var(--surface); padding: 70px 0; }
-.ad-packages {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 22px; margin-bottom: 40px;
-}
-.ad-package {
-  padding: 30px 24px; border: 1px solid var(--border);
-  border-radius: var(--radius); text-align: center;
-  transition: var(--transition); background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: var(--transition);
   position: relative;
 }
-.ad-package:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-.ad-package.hot {
-  border: 2px solid var(--secondary);
-  background: linear-gradient(180deg, rgba(200, 163, 73, .05), transparent);
+.provider-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary);
 }
-.ad-package-icon {
-  width: 60px; height: 60px; margin: 0 auto 14px;
-  display: grid; place-items: center; border-radius: 16px;
-  background: var(--surface-soft); color: var(--primary);
+.provider-head {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 14px;
+}
+.provider-avatar {
+  width: 54px; height: 54px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--secondary);
   font-size: 1.5rem;
+  flex-shrink: 0;
 }
-body.dark .ad-package-icon { color: #fff; }
-.ad-package.hot .ad-package-icon {
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-  color: #fff;
+.provider-info h3 {
+  font-size: 1rem; font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
 }
-.ad-package h3 { margin-bottom: 8px; color: var(--primary); font-size: 1.15rem; }
-body.dark .ad-package h3 { color: #fff; }
-.ad-package .price-tag {
-  font-size: 1.8rem; font-weight: 800;
-  color: var(--secondary); margin: 12px 0;
+body.dark .provider-info h3 { color: #fff; }
+.provider-info .prov-spec {
+  font-size: .8rem; color: var(--muted);
 }
-.ad-package ul { list-style: none; text-align: right; margin: 18px 0; }
-.ad-package ul li { padding: 6px 0; color: var(--muted); font-size: .9rem; }
-.ad-package ul li i { color: var(--success); margin-left: 6px; }
+.provider-rating {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .85rem; color: var(--muted);
+  margin-bottom: 14px;
+}
+.provider-rating .stars { color: var(--secondary); }
+.provider-rating strong { color: var(--primary); font-weight: 800; }
+body.dark .provider-rating strong { color: #fff; }
 
-/* CONTACT */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.provider-meta {
+  display: flex; gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+  font-size: .82rem;
+}
+.provider-meta div { flex: 1; text-align: center; }
+.provider-meta span {
+  display: block; color: var(--muted);
+  font-size: .72rem; margin-bottom: 2px;
+}
+.provider-meta strong { color: var(--primary); font-weight: 800; }
+body.dark .provider-meta strong { color: #fff; }
+
+.provider-actions { display: flex; gap: 8px; }
+.provider-actions .btn { flex: 1; }
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: .9rem;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+.btn-gold {
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color: var(--primary);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(200,163,73,.4); }
+.btn-whatsapp { background: var(--whatsapp); color: #fff; }
+.btn-whatsapp:hover { background: #1eb256; transform: translateY(-2px); }
+.btn-outline { background: transparent; border-color: var(--border); color: var(--text); }
+.btn-outline:hover { border-color: var(--secondary); color: var(--secondary); }
+.btn-sm { padding: 8px 14px; font-size: .82rem; border-radius: 10px; }
+
+/* ============================================================
+   PRICING
+============================================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+.plan {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+}
+.plan:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.plan.featured {
+  border-color: var(--secondary);
+  box-shadow: 0 20px 50px rgba(200,163,73,.2);
+}
+.plan.featured::before {
+  content: "الأكثر طلباً";
+  position: absolute; top: -12px; left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 16px;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color: var(--primary);
+  border-radius: 20px;
+  font-size: .75rem; font-weight: 800;
+  white-space: nowrap;
+}
+.plan h3 {
+  font-size: 1.2rem; color: var(--primary);
+  margin-bottom: 8px;
+}
+body.dark .plan h3 { color: #fff; }
+.plan .plan-price {
+  font-size: 2.4rem; font-weight: 900;
+  color: var(--secondary);
+  line-height: 1; margin-bottom: 4px;
+}
+.plan .plan-price small { font-size: .9rem; color: var(--muted); font-weight: 600; }
+.plan .plan-desc { color: var(--muted); font-size: .85rem; margin-bottom: 22px; }
+.plan ul { list-style: none; text-align: right; margin-bottom: 22px; }
+.plan ul li {
+  padding: 8px 0;
+  color: var(--text-soft);
+  font-size: .88rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.plan ul li i { color: var(--success); }
+.plan .btn { width: 100%; }
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
 .contact-card {
-  padding: 28px; background: var(--surface);
-  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
 }
 .contact-item {
-  display: flex; align-items: center; gap: 15px;
-  padding: 15px 0; border-bottom: 1px solid var(--border);
-}
-.contact-item:last-child { border-bottom: 0; }
-.contact-icon {
-  width: 45px; height: 45px; display: grid; place-items: center;
-  flex-shrink: 0; border-radius: 12px;
-  background: var(--surface-soft); color: var(--primary);
-}
-body.dark .contact-icon { color: #fff; }
-.contact-item strong { display: block; color: var(--primary); }
-body.dark .contact-item strong { color: #fff; }
-.contact-item span { color: var(--muted); font-size: .9rem; }
-
-/* FOOTER */
-footer {
-  padding: 45px 0 25px;
-  background: var(--primary); color: #dce5f2;
-}
-.footer-grid {
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 30px;
-}
-.footer-title { margin-bottom: 12px; color: #fff; }
-footer p, footer li { color: #aebdd1; font-size: .9rem; }
-footer ul { list-style: none; }
-footer li { margin: 7px 0; }
-footer a:hover { color: var(--secondary-light); }
-.copyright {
-  margin-top: 35px; padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, .1);
-  color: #9eacc0; font-size: .82rem; text-align: center;
-}
-
-/* AI ASSISTANT */
-.ai-button {
-  position: fixed; left: 22px; bottom: 22px; z-index: 1500;
-  width: 62px; height: 62px; display: grid; place-items: center;
-  border: 0; border-radius: 50%;
-  background: var(--secondary); color: #fff; font-size: 1.45rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
-  transition: var(--transition);
-}
-.ai-button:hover { transform: scale(1.08); }
-.ai-button.active { background: var(--primary); }
-
-.chat-box {
-  position: fixed; left: 22px; bottom: 95px; z-index: 1500;
-  width: min(390px, calc(100% - 44px));
-  max-height: min(560px, 75vh);
-  display: none; flex-direction: column; overflow: hidden;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 20px; box-shadow: var(--shadow-lg);
-}
-.chat-box.open { display: flex; }
-
-.chat-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px; flex-shrink: 0;
-  background: var(--primary); color: #fff;
-}
-.chat-header strong { display: flex; align-items: center; gap: 8px; }
-.chat-header button {
-  width: 32px; height: 32px; display: grid; place-items: center;
-  border: 0; border-radius: 8px;
-  background: rgba(255, 255, 255, .15); color: #fff;
-  transition: var(--transition);
-}
-.chat-header button:hover { background: var(--danger); }
-
-.chat-messages {
-  flex: 1; overflow-y: auto; overscroll-behavior: contain;
-  padding: 18px; display: flex; flex-direction: column;
-  gap: 10px; background: var(--background);
-}
-.chat-msg {
-  max-width: 85%; padding: 10px 14px;
-  border-radius: 14px; font-size: .88rem;
-  line-height: 1.7; word-wrap: break-word;
-  animation: fadeIn .25s ease;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.chat-msg.bot {
-  align-self: flex-start;
-  background: var(--surface); color: var(--text);
-  border: 1px solid var(--border);
-  border-bottom-right-radius: 4px;
-}
-.chat-msg.user {
-  align-self: flex-end;
-  background: var(--primary); color: #fff;
-  border-bottom-left-radius: 4px;
-}
-.chat-suggestions {
-  display: flex; flex-wrap: wrap; gap: 6px;
-  padding: 0 12px 12px; background: var(--surface);
-}
-.chat-suggestions button {
-  padding: 6px 12px; border: 1px solid var(--border);
-  border-radius: 20px; background: var(--background);
-  color: var(--primary); font-size: .78rem;
-  transition: var(--transition);
-}
-body.dark .chat-suggestions button { color: #fff; }
-.chat-suggestions button:hover {
-  background: var(--secondary); border-color: var(--secondary); color: #fff;
-}
-.chat-input-wrap {
-  display: flex; gap: 7px; padding: 12px;
-  flex-shrink: 0; border-top: 1px solid var(--border);
-  background: var(--surface);
-}
-.chat-input-wrap input {
-  flex: 1; min-width: 0; padding: 10px 12px;
-  border: 1px solid var(--border); border-radius: 10px;
-  outline: 0; background: var(--background); color: var(--text);
-}
-.chat-input-wrap input:focus { border-color: var(--secondary); }
-.chat-input-wrap button {
-  width: 45px; display: grid; place-items: center;
-  border: 0; border-radius: 10px;
-  background: var(--primary); color: #fff;
-}
-
-/* MODALS */
-.modal-overlay {
-  position: fixed; inset: 0; z-index: 2500;
-  display: none; align-items: center; justify-content: center;
-  padding: 20px; background: rgba(11, 30, 58, .65);
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-}
-.modal-overlay.open { display: flex; }
-.modal {
-  width: min(560px, 100%); max-height: 90vh;
-  overflow-y: auto; overscroll-behavior: contain;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 22px; box-shadow: var(--shadow-lg);
-  padding: 32px 28px; position: relative;
-  animation: modalIn .3s cubic-bezier(.4, 0, .2, 1);
-}
-.modal.wide { width: min(900px, 100%); }
-@keyframes modalIn {
-  from { opacity: 0; transform: translateY(20px) scale(.96); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-.modal-close {
-  position: absolute; top: 14px; left: 14px;
-  width: 38px; height: 38px; display: grid; place-items: center;
-  border: 0; border-radius: 10px;
-  background: var(--surface-soft); color: var(--text);
-  font-size: 1rem; transition: var(--transition); cursor: pointer;
-}
-.modal-close:hover { background: var(--danger); color: #fff; }
-.modal-icon {
-  width: 80px; height: 80px; margin: 0 auto 18px;
-  display: grid; place-items: center; border-radius: 24px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: #fff; font-size: 2rem; box-shadow: var(--shadow);
-}
-.modal h3 {
-  font-size: 1.6rem; color: var(--primary);
-  margin-bottom: 10px; text-align: center;
-}
-body.dark .modal h3 { color: #fff; }
-.modal > p {
-  color: var(--muted); line-height: 1.9;
-  margin-bottom: 22px; text-align: center;
-}
-.modal-features {
-  text-align: right; margin: 0 auto 24px;
-  max-width: 420px; list-style: none;
-}
-.modal-features li {
-  padding: 8px 0; color: var(--muted); font-size: .92rem;
-  border-bottom: 1px dashed var(--border);
-}
-.modal-features li:last-child { border-bottom: 0; }
-.modal-features i { color: var(--success); margin-left: 8px; }
-.modal-actions {
-  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-}
-.modal-actions .btn { min-width: 150px; }
-
-/* ADMIN PANEL */
-.admin-header {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; margin-bottom: 20px; padding-bottom: 16px;
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 0;
   border-bottom: 1px solid var(--border);
 }
-.admin-header h3 { font-size: 1.2rem; margin: 0; text-align: right; }
-.admin-tabs {
-  display: flex; gap: 6px; margin-bottom: 20px;
-  flex-wrap: wrap; border-bottom: 1px solid var(--border);
-  padding-bottom: 12px;
+.contact-item:last-child { border-bottom: 0; }
+.contact-ico {
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--primary);
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
-.admin-tab {
-  padding: 8px 16px; border: 0; border-radius: 10px;
-  background: transparent; color: var(--muted);
-  font-weight: 600; font-size: .88rem;
-  transition: var(--transition); cursor: pointer;
-}
-.admin-tab:hover { background: var(--surface-soft); color: var(--text); }
-.admin-tab.active { background: var(--primary); color: #fff; }
-.admin-content { display: none; }
-.admin-content.active { display: block; }
-.admin-form-group { margin-bottom: 16px; text-align: right; }
-.admin-form-group label {
+body.dark .contact-ico { color: #fff; }
+.contact-item strong { display: block; color: var(--primary); font-size: .92rem; }
+body.dark .contact-item strong { color: #fff; }
+.contact-item span, .contact-item a { color: var(--muted); font-size: .85rem; }
+.contact-item a:hover { color: var(--secondary); }
+
+.form-group { margin-bottom: 14px; }
+.form-group label {
   display: block; margin-bottom: 6px;
-  font-weight: 700; font-size: .9rem; color: var(--primary);
+  font-weight: 700; font-size: .85rem;
+  color: var(--primary);
 }
-body.dark .admin-form-group label { color: #fff; }
-.admin-form-group input,
-.admin-form-group textarea,
-.admin-form-group select {
-  width: 100%; padding: 10px 14px;
-  border: 1px solid var(--border); border-radius: 10px;
-  outline: 0; background: var(--background); color: var(--text);
-  font-family: inherit; transition: var(--transition);
+body.dark .form-group label { color: #fff; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  outline: 0;
+  font-size: .9rem;
+  transition: var(--transition);
 }
-.admin-form-group input:focus,
-.admin-form-group textarea:focus,
-.admin-form-group select:focus { border-color: var(--secondary); }
-.admin-form-group textarea { resize: vertical; min-height: 80px; }
-.admin-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.admin-checkbox {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px; background: var(--surface-soft);
-  border-radius: 10px; cursor: pointer; user-select: none;
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(200,163,73,.15);
 }
-.admin-checkbox input { width: auto; }
-.admin-list { display: flex; flex-direction: column; gap: 10px; }
-.admin-item {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; padding: 14px 16px;
-  border: 1px solid var(--border); border-radius: 12px;
-  background: var(--surface); transition: var(--transition);
+.form-group textarea { min-height: 110px; resize: vertical; }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+  background: var(--primary);
+  color: #fff;
+  padding: 50px 0 26px;
+  margin-top: 40px;
 }
-.admin-item:hover { border-color: var(--secondary); }
-.admin-item-info { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
-.admin-item-icon {
-  width: 42px; height: 42px; display: grid; place-items: center;
-  border-radius: 10px; background: var(--surface-soft);
-  color: var(--primary); flex-shrink: 0;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 30px;
+  margin-bottom: 34px;
 }
-body.dark .admin-item-icon { color: #fff; }
-.admin-item-info strong { display: block; color: var(--primary); font-size: .95rem; }
-body.dark .admin-item-info strong { color: #fff; }
-.admin-item-info span {
-  color: var(--muted); font-size: .78rem; display: block;
-  white-space: nowrap; overflow: hidden;
-  text-overflow: ellipsis; max-width: 260px;
+footer h4 {
+  color: var(--secondary);
+  font-size: 1rem;
+  margin-bottom: 16px;
+  font-weight: 800;
 }
-.admin-item-actions { display: flex; gap: 6px; flex-shrink: 0; }
-.admin-item-actions button {
-  width: 36px; height: 36px; display: grid; place-items: center;
-  border: 1px solid var(--border); border-radius: 8px;
-  background: var(--surface); color: var(--primary);
-  transition: var(--transition); cursor: pointer;
-}
-body.dark .admin-item-actions button { color: #fff; }
-.admin-item-actions button:hover {
-  background: var(--primary); color: #fff; border-color: var(--primary);
-}
-.admin-item-actions button[data-action="delete"]:hover {
-  background: var(--danger); border-color: var(--danger);
-}
-.admin-empty { text-align: center; padding: 40px 20px; color: var(--muted); }
-.admin-empty i {
-  font-size: 2.5rem; color: var(--secondary);
-  display: block; margin-bottom: 12px;
-}
-.admin-login-form { max-width: 380px; margin: 0 auto; text-align: center; }
-.admin-login-form .modal-icon {
-  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-}
-.admin-notice {
-  padding: 12px 16px; border-radius: 12px;
-  background: rgba(200, 163, 73, .12);
-  border: 1px solid rgba(200, 163, 73, .3);
-  color: var(--muted); font-size: .85rem;
-  margin-bottom: 18px; text-align: right; line-height: 1.7;
-}
-.admin-notice i { color: var(--secondary); margin-left: 6px; }
-.admin-actions-row {
-  display: flex; gap: 10px; flex-wrap: wrap;
-  justify-content: flex-end; margin-top: 20px;
-  padding-top: 18px; border-top: 1px solid var(--border);
+footer p, footer a, footer li { color: rgba(255,255,255,.72); font-size: .88rem; }
+footer ul { list-style: none; }
+footer ul li { padding: 5px 0; }
+footer a:hover { color: var(--secondary); }
+.footer-bottom {
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  text-align: center;
+  font-size: .85rem;
+  color: rgba(255,255,255,.6);
 }
 
-/* TOAST */
+/* ============================================================
+   AI PANEL (CHAT)
+============================================================ */
+.ai-panel {
+  position: fixed;
+  top: 0; left: 0;
+  width: min(460px, 100vw);
+  height: 100vh;
+  background: var(--surface);
+  box-shadow: var(--shadow-xl);
+  z-index: 2000;
+  display: flex; flex-direction: column;
+  transform: translateX(-105%);
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+}
+.ai-panel.open { transform: translateX(0); }
+
+.ai-panel-header {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.ai-panel-header .ai-title {
+  display: flex; align-items: center; gap: 12px;
+}
+.ai-panel-header .ai-avatar {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+.ai-panel-header strong { display: block; font-size: .98rem; }
+.ai-panel-header small {
+  color: rgba(255,255,255,.7);
+  font-size: .74rem;
+  display: flex; align-items: center; gap: 5px;
+}
+.ai-panel-header small::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,.25);
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+@keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+
+.ai-panel-header .close-btn {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+.ai-panel-header .close-btn:hover { background: rgba(255,255,255,.25); }
+
+.ai-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex; flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
+.ai-messages::-webkit-scrollbar { width: 6px; }
+.ai-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+.msg {
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: .9rem;
+  line-height: 1.65;
+  word-wrap: break-word;
+  animation: msgIn .3s ease both;
+}
+@keyframes msgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.msg.bot {
+  align-self: flex-start;
+  background: var(--surface-soft);
+  color: var(--text);
+  border-bottom-right-radius: 6px;
+}
+.msg.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  border-bottom-left-radius: 6px;
+}
+.msg.bot strong { color: var(--secondary-dark); }
+body.dark .msg.bot strong { color: var(--secondary-light); }
+
+.typing { display: flex; gap: 5px; padding: 14px 18px; }
+.typing span {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: typing 1.4s ease-in-out infinite;
+}
+.typing span:nth-child(2) { animation-delay: .2s; }
+.typing span:nth-child(3) { animation-delay: .4s; }
+@keyframes typing { 0%,60%,100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-6px); opacity: 1; } }
+
+/* Option cards inside chat */
+.option-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+}
+.option-card:hover {
+  border-color: var(--secondary);
+  transform: translateX(-4px);
+  box-shadow: var(--shadow);
+}
+.option-card.selected {
+  border-color: var(--secondary);
+  background: rgba(200,163,73,.08);
+}
+.option-head {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 10px;
+}
+.option-avatar {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--secondary);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.option-info { flex: 1; min-width: 0; }
+.option-info strong {
+  display: block;
+  color: var(--primary);
+  font-size: .92rem;
+  margin-bottom: 3px;
+}
+body.dark .option-info strong { color: #fff; }
+.option-info small {
+  color: var(--muted);
+  font-size: .76rem;
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap;
+}
+.option-info small i { color: var(--secondary); }
+
+.option-meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
+.option-meta span {
+  font-size: .74rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text-soft);
+  font-weight: 600;
+}
+.option-meta span.price { background: rgba(200,163,73,.15); color: var(--secondary-dark); font-weight: 800; }
+body.dark .option-meta span.price { color: var(--secondary-light); }
+.option-meta span.eta { background: rgba(37,99,235,.12); color: var(--info); }
+.option-meta span.rating { background: rgba(22,163,74,.12); color: var(--success); }
+.option-meta span.best { background: linear-gradient(135deg, var(--secondary), var(--secondary-light)); color: var(--primary); }
+
+/* Tracking inside chat */
+.track-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 10px;
+}
+.track-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.track-head strong { color: var(--primary); font-size: .92rem; }
+body.dark .track-head strong { color: #fff; }
+.track-id {
+  font-size: .72rem;
+  padding: 3px 10px;
+  background: var(--surface-soft);
+  border-radius: 10px;
+  color: var(--muted);
+  font-family: monospace;
+  direction: ltr;
+}
+.track-steps { list-style: none; position: relative; padding-right: 26px; }
+.track-steps::before {
+  content: "";
+  position: absolute;
+  right: 8px; top: 6px; bottom: 6px;
+  width: 2px;
+  background: var(--border);
+  border-radius: 2px;
+}
+.track-steps li {
+  position: relative;
+  padding: 8px 0;
+  font-size: .85rem;
+  color: var(--muted);
+  transition: var(--transition);
+}
+.track-steps li::before {
+  content: "";
+  position: absolute;
+  right: -26px; top: 14px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2.5px solid var(--border);
+  transition: var(--transition);
+}
+.track-steps li.done { color: var(--text-soft); }
+.track-steps li.done::before {
+  background: var(--success);
+  border-color: var(--success);
+}
+.track-steps li.active {
+  color: var(--secondary-dark);
+  font-weight: 800;
+}
+body.dark .track-steps li.active { color: var(--secondary-light); }
+.track-steps li.active::before {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(200,163,73,.25);
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+
+/* Invoice */
+.invoice-card {
+  background: linear-gradient(145deg, var(--surface), var(--surface-soft));
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 10px;
+}
+.invoice-card h4 {
+  color: var(--primary);
+  font-size: 1rem;
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+body.dark .invoice-card h4 { color: #fff; }
+.invoice-card h4 i { color: var(--secondary); }
+.invoice-row {
+  display: flex; justify-content: space-between;
+  padding: 7px 0;
+  font-size: .88rem;
+  border-bottom: 1px dashed var(--border);
+}
+.invoice-row:last-of-type { border-bottom: 0; }
+.invoice-row span { color: var(--muted); }
+.invoice-row strong { color: var(--text); font-weight: 700; }
+.invoice-total {
+  display: flex; justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 2px solid var(--secondary);
+  font-size: 1.05rem;
+}
+.invoice-total span { color: var(--primary); font-weight: 800; }
+body.dark .invoice-total span { color: #fff; }
+.invoice-total strong { color: var(--secondary); font-weight: 900; font-size: 1.2rem; }
+
+/* Star rating */
+.rate-stars {
+  display: flex; gap: 6px;
+  justify-content: center;
+  margin: 14px 0;
+}
+.rate-stars i {
+  font-size: 1.8rem;
+  color: var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.rate-stars i:hover, .rate-stars i.active { color: var(--secondary); transform: scale(1.15); }
+
+.chat-actions {
+  display: flex; gap: 8px;
+  margin-top: 12px;
+}
+.chat-actions .btn { flex: 1; font-size: .82rem; padding: 10px 14px; }
+
+/* ============================================================
+   AI PANEL INPUT
+============================================================ */
+.ai-input-wrap {
+  padding: 14px 16px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+.ai-input-row {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface-soft);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 4px 4px 4px 14px;
+  transition: var(--transition);
+}
+.ai-input-row:focus-within { border-color: var(--secondary); }
+.ai-input-row input {
+  flex: 1;
+  border: 0; outline: 0;
+  background: transparent;
+  padding: 11px 0;
+  color: var(--text);
+  font-size: .92rem;
+}
+.ai-input-row button {
+  width: 42px; height: 42px;
+  border-radius: 11px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  font-size: .95rem;
+  transition: var(--transition);
+}
+.ai-input-row button:hover { transform: scale(1.05); }
+.ai-input-row button:disabled { opacity: .4; cursor: not-allowed; }
+
+.quick-suggest {
+  display: flex; gap: 6px;
+  overflow-x: auto;
+  margin-top: 10px;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.quick-suggest::-webkit-scrollbar { display: none; }
+.quick-suggest button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--surface-soft);
+  color: var(--text-soft);
+  font-size: .74rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.quick-suggest button:hover { background: var(--secondary); color: #fff; border-color: var(--secondary); }
+
+/* ============================================================
+   FLOATING AI BUTTON
+============================================================ */
+.ai-float {
+  position: fixed;
+  bottom: 24px; left: 24px;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+  color: var(--primary);
+  font-size: 1.4rem;
+  box-shadow: 0 12px 30px rgba(200,163,73,.5);
+  z-index: 900;
+  transition: var(--transition);
+  animation: bounce 3s ease-in-out infinite;
+}
+.ai-float:hover { transform: scale(1.1) rotate(-8deg); }
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.ai-float::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary);
+  opacity: .5;
+  animation: ring 2.4s ease-out infinite;
+}
+@keyframes ring { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(1.4); opacity: 0; } }
+
+/* ============================================================
+   TOAST
+============================================================ */
 #toastContainer {
-  position: fixed; top: 22px; left: 50%; z-index: 3000;
-  width: min(92vw, 420px); display: flex; flex-direction: column;
-  align-items: center; gap: 8px; transform: translateX(-50%);
+  position: fixed;
+  top: 80px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  width: min(92vw, 420px);
+  display: flex; flex-direction: column;
+  gap: 8px;
   pointer-events: none;
 }
 .toast {
-  width: max-content; max-width: 100%;
-  display: flex; align-items: center; gap: 10px;
-  padding: 12px 20px; border-radius: 12px;
-  background: var(--primary); color: #fff;
-  font-size: .9rem; font-weight: 600;
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 20px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 600;
   box-shadow: var(--shadow-lg);
   animation: toastIn .35s ease;
-  transition: opacity .3s ease, transform .3s ease;
 }
 .toast.success { background: var(--success); }
-.toast.error   { background: var(--danger); }
-.toast.warning { background: var(--secondary); }
-@keyframes toastIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+.toast.error { background: var(--danger); }
+.toast.warning { background: var(--warning); }
+@keyframes toastIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 
-/* RESPONSIVE */
+/* ============================================================
+   RESPONSIVE
+============================================================ */
 @media (max-width: 900px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-grid, .steps, .ad-packages { grid-template-columns: 1fr; }
-  .price-card.featured { transform: none; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .mobile-menu { display: grid; }
   .nav-links {
-    position: absolute; top: calc(100% + 8px);
-    right: 4%; left: 4%;
-    display: none; flex-direction: column;
-    align-items: stretch; padding: 14px;
-    border: 1px solid var(--border); border-radius: 15px;
-    background: var(--surface); box-shadow: var(--shadow-lg);
+    display: none;
+    position: fixed;
+    top: 72px; right: 12px; left: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--surface);
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    z-index: 400;
   }
   .nav-links.open { display: flex; }
-  .nav-links a {
-    padding: 12px 15px; border-bottom: 1px solid var(--border);
-    text-align: right;
-  }
-  .nav-links a:last-child { border-bottom: 0; }
-}
+  .nav-links a { padding: 12px 16px; }
+  .icon-btn.mobile-menu { display: grid; }
+  .ai-cta-btn span { display: none; }
+  .ai-cta-btn { padding: 10px 14px; }
 
-@media (max-width: 650px) {
-  .navbar { min-height: 68px; }
-  .logo { font-size: 1rem; }
-  .logo-icon { width: 40px; height: 40px; }
-  .hero { padding: 60px 0 45px; }
-  .hero p { font-size: .92rem; }
-  .search-box { flex-direction: column; gap: 8px; padding: 0; border: 0; background: transparent; box-shadow: none; }
-  .search-box input, .search-box button {
-    min-height: 50px; padding: 12px 16px; border-radius: 12px;
-  }
-  .search-box input { background: var(--surface); border: 1px solid var(--border); }
-  .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .service-card { padding: 20px 12px; }
+  .ai-feature-wrap { grid-template-columns: 1fr; gap: 30px; }
   .contact-grid { grid-template-columns: 1fr; }
-  .payment-box { padding: 30px 18px; }
-  .payment-number { font-size: 1rem; padding: 12px 16px; }
-  .footer-grid { grid-template-columns: 1fr; }
-  section { padding: 55px 0; }
-  .section-title h2 { font-size: 1.6rem; }
-  .ai-button { left: 16px; bottom: 16px; width: 56px; height: 56px; }
-  .chat-box { right: 12px; left: 12px; bottom: 82px; width: auto; }
-  .modal { padding: 24px 18px; }
-  .admin-form-row { grid-template-columns: 1fr; }
-  .ad-banner-inner { flex-direction: column; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
 }
+@media (max-width: 600px) {
+  .hero { padding: 50px 0 40px; }
+  .ai-search-box { padding: 6px 6px 6px 14px; border-radius: 16px; }
+  .ai-search-box button { padding: 11px 16px; }
+  .ai-search-box button span { display: none; }
+  .hero-stats { gap: 22px; }
+  .hero-stat .num { font-size: 1.4rem; }
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  section.block { padding: 50px 0; }
+  .ai-panel { width: 100vw; }
+}
+@media print { .site-header, footer, .ai-float, .ai-panel { display: none; } }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
+<!-- ============================================================
+     HEADER
+============================================================ -->
 <header class="site-header">
-  <div class="container navbar">
-    <a href="#top" class="logo" id="logoTrigger" aria-label="خدمات بلدي - الرئيسية">
-      <span class="logo-icon"><i class="fa-solid fa-city" aria-hidden="true"></i></span>
+  <div class="navbar">
+    <div class="logo" id="logo">
+      <span class="logo-icon"><i class="fa-solid fa-city"></i></span>
       <span>خدمات بلدي</span>
-    </a>
+    </div>
 
-    <nav class="nav-links" id="navLinks" aria-label="القائمة الرئيسية">
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">الرئيسية</a>
       <a href="#services">الخدمات</a>
+      <a href="#ai">الخدمة الذكية</a>
+      <a href="#providers">مقدمو الخدمة</a>
       <a href="#pricing">الاشتراكات</a>
-      <a href="#payment">طرق الدفع</a>
-      <a href="#advertise">أعلن معنا</a>
-      <a href="#contact">تواصل معنا</a>
+      <a href="#contact">تواصل</a>
     </nav>
 
     <div class="header-actions">
-      <button class="icon-btn" id="themeToggle" type="button" aria-label="تفعيل الوضع الليلي">
-        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      <button class="icon-btn" id="themeToggle" title="الوضع الليلي">
+        <i class="fa-solid fa-moon"></i>
       </button>
-      <button class="icon-btn mobile-menu" id="mobileMenu" type="button" aria-label="فتح القائمة"
-              aria-expanded="false" aria-controls="navLinks">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      <button class="ai-cta-btn" id="openAIHeader">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span>اطلب خدمة</span>
+      </button>
+      <button class="icon-btn mobile-menu" id="mobileMenu" aria-label="القائمة">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-content">
-      <div class="badge">
-        <i class="fa-solid fa-star" aria-hidden="true"></i>
-        منصتك للخدمات المحلية
-      </div>
-      <h1>كل خدمات بلدك <span>في مكان واحد</span></h1>
-      <p>
-        منصة خدمات رقمية تساعدك على الوصول إلى الخدمات المحلية
-        في التعليم والصحة والمحاماة والتجارة والعقارات والوظائف
-        وغيرها بسهولة وسرعة.
-      </p>
-      <form class="search-box" id="searchForm" role="search">
-        <input type="search" id="serviceSearch"
-               placeholder="ابحث عن خدمة، دكتور، مدرس، محامي..."
-               aria-label="البحث عن خدمة" autocomplete="off">
-        <button type="submit">
-          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-          بحث
-        </button>
-      </form>
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-badge">
+      <i class="fa-solid fa-bolt"></i>
+      مدعوم بالذكاء الاصطناعي
     </div>
-  </section>
+    <h1>اطلب أي خدمة محلية <span>بكلمة واحدة</span></h1>
+    <p>اكتب مشكلتك بالعربي، والذكاء الاصطناعي هيلاقيلك أفضل مقدم خدمة قريب منك، بأفضل سعر وأسرع وقت وصول.</p>
 
-  <!-- AD BANNER -->
-  <div class="ad-banner">
-    <div class="container ad-banner-inner">
-      <div class="ad-banner-text">
-        <div class="ad-banner-icon">
-          <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
-        </div>
-        <div>
-          <strong>هل لديك نشاط تجاري أو خدمة؟</strong>
-          <span>اعرض خدمتك أمام آلاف المستخدمين يومياً من منطقتك</span>
-        </div>
+    <div class="ai-search">
+      <div class="ai-search-box">
+        <i class="fa-solid fa-comment-dots search-icon"></i>
+        <input type="text" id="heroInput" placeholder="مثال: عربيتي عطلت في مدينة نصر وعايز ميكانيكي دلوقتي">
+        <button type="button" id="heroAsk">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>اطلب الآن</span>
+        </button>
       </div>
-      <a href="#advertise" class="btn btn-gold">
-        <i class="fa-solid fa-rocket" aria-hidden="true"></i>
-        اشترك الآن
-      </a>
+
+      <div class="quick-chips">
+        <button class="chip" data-q="عربيتي عطلت وعايز ميكانيكي">🔧 ميكانيكي طوارئ</button>
+        <button class="chip" data-q="عندي تسريب مياه في المطبخ">💧 سباك طوارئ</button>
+        <button class="chip" data-q="اللمبة في الصالة مش شغالة">💡 كهربائي منازل</button>
+        <button class="chip" data-q="التكييف محتاج صيانة">❄️ صيانة تكييف</button>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">+1500</div><div class="lbl">مقدم خدمة</div></div>
+      <div class="hero-stat"><div class="num">+50</div><div class="lbl">خدمة متاحة</div></div>
+      <div class="hero-stat"><div class="num">24/7</div><div class="lbl">دعم متواصل</div></div>
+      <div class="hero-stat"><div class="num">100%</div><div class="lbl">مجاني للعملاء</div></div>
     </div>
   </div>
+</section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>الخدمات</h2>
-        <p>اضغط على أي خدمة لعرض التفاصيل والتواصل</p>
-      </div>
-      <div class="services-grid" id="servicesGrid"></div>
+<!-- ============================================================
+     CATEGORIES
+============================================================ -->
+<section class="block" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2><i class="fa-solid fa-grip"></i> الخدمات المتاحة</h2>
+      <p>كل الخدمات المحلية في مكان واحد — اختر الخدمة أو اكتب مشكلتك للذكاء الاصطناعي</p>
     </div>
-  </section>
 
-  <!-- STEPS -->
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <h2>كيف تعمل المنصة؟</h2>
-        <p>الوصول إلى الخدمة في خطوات بسيطة</p>
+    <div class="cat-grid">
+      <div class="cat-card" data-q="عربيتي عطلت وعايز ميكانيكي">
+        <div class="cat-icon"><i class="fa-solid fa-car"></i></div>
+        <h3>السيارات</h3>
+        <p>ميكانيكا • كهرباء • بنشر • قطع غيار</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>ابحث</h3>
-          <p>اكتب اسم الخدمة التي تبحث عنها.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>اختر</h3>
-          <p>اضغط على الخدمة لعرض التفاصيل.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>تواصل</h3>
-          <p>واتساب أو اتصال مباشر مع مقدم الخدمة.</p>
-        </div>
+      <div class="cat-card" data-q="عندي تسريب مياه وعايز سباك">
+        <div class="cat-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+        <h3>السباكة</h3>
+        <p>تسريبات • مواسير • طوارئ 24 ساعة</p>
       </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing">
-    <div class="container">
-      <div class="section-title">
-        <h2>خطط الاشتراك</h2>
-        <p>خطط مناسبة للأفراد وأصحاب الأنشطة</p>
+      <div class="cat-card" data-q="عندي عطل كهرباء في البيت">
+        <div class="cat-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>الكهرباء</h3>
+        <p>أعطال • قواطع • تركيب إضاءة</p>
       </div>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <h3>مجاني</h3>
-          <div class="price">0 <small>جنيه</small></div>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> تصفح جميع الخدمات</li>
-            <li><i class="fa-solid fa-check"></i> البحث داخل المنصة</li>
-            <li><i class="fa-solid fa-check"></i> استخدام المساعد الذكي</li>
-          </ul>
-          <button class="btn btn-primary plan-button" data-plan="المجانية" data-price="0">ابدأ الآن</button>
-        </div>
-
-        <div class="price-card featured">
-          <div class="popular">الأكثر استخدامًا</div>
-          <h3>احترافي</h3>
-          <div class="price">99 <small>جنيه / شهر</small></div>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> ظهور مميز للخدمة</li>
-            <li><i class="fa-solid fa-check"></i> شارة "مميز"</li>
-            <li><i class="fa-solid fa-check"></i> أولوية في البحث</li>
-            <li><i class="fa-solid fa-check"></i> دعم فني</li>
-          </ul>
-          <button class="btn btn-gold plan-button" data-plan="الاحترافية" data-price="99">اشترك الآن</button>
-        </div>
-
-        <div class="price-card">
-          <h3>أعمال</h3>
-          <div class="price">299 <small>جنيه / شهر</small></div>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> بانر إعلاني في الرئيسية</li>
-            <li><i class="fa-solid fa-check"></i> صفحة نشاط تجاري كاملة</li>
-            <li><i class="fa-solid fa-check"></i> خدمات غير محدودة</li>
-            <li><i class="fa-solid fa-check"></i> دعم مخصص 24/7</li>
-          </ul>
-          <button class="btn btn-primary plan-button" data-plan="الأعمال" data-price="299">اشترك الآن</button>
-        </div>
+      <div class="cat-card" data-q="التكييف محتاج صيانة">
+        <div class="cat-icon"><i class="fa-solid fa-snowflake"></i></div>
+        <h3>التكييف</h3>
+        <p>تركيب • صيانة • تنظيف • فريون</p>
+      </div>
+      <div class="cat-card" data-q="الغسالة مش شغالة">
+        <div class="cat-icon"><i class="fa-solid fa-tv"></i></div>
+        <h3>أجهزة منزلية</h3>
+        <p>غسالات • ثلاجات • بوتاجاز</p>
+      </div>
+      <div class="cat-card" data-q="الباب اتقفل ومحتاج فتح قفل">
+        <div class="cat-icon"><i class="fa-solid fa-key"></i></div>
+        <h3>فتح أقفال</h3>
+        <p>طوارئ • سرعة وصول • جميع الأنواع</p>
+      </div>
+      <div class="cat-card" data-q="محتاج دكتور">
+        <div class="cat-icon"><i class="fa-solid fa-stethoscope"></i></div>
+        <h3>الأطباء</h3>
+        <p>جميع التخصصات • حجز سريع</p>
+      </div>
+      <div class="cat-card" data-q="محتاج محامي">
+        <div class="cat-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h3>المحاماة</h3>
+        <p>استشارات • قضايا • عقود</p>
+      </div>
+      <div class="cat-card" data-q="محتاج مدرس خصوصي">
+        <div class="cat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h3>التعليم</h3>
+        <p>دروس خصوصية • تأسيس • كورسات</p>
+      </div>
+      <div class="cat-card" data-q="محتاج نقل أثاث">
+        <div class="cat-icon"><i class="fa-solid fa-truck-moving"></i></div>
+        <h3>نقل الأثاث</h3>
+        <p>تغليف • رفع • تركيب</p>
+      </div>
+      <div class="cat-card" data-q="محتاج تنظيف شقة">
+        <div class="cat-icon"><i class="fa-solid fa-broom"></i></div>
+        <h3>التنظيف</h3>
+        <p>منازل • سجاد • شركات</p>
+      </div>
+      <div class="cat-card" data-q="محتاج دهان شقة">
+        <div class="cat-icon"><i class="fa-solid fa-paint-roller"></i></div>
+        <h3>الدهانات</h3>
+        <p>ديكور • تشطيبات • ورق حائط</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PAYMENT -->
-  <section id="payment">
-    <div class="container">
-      <div class="payment-box">
-        <h2>طرق الدفع</h2>
-        <p>للاشتراك أو الخدمات المدفوعة، حوّل المبلغ على محفظة فودافون كاش التالية:</p>
-        <div class="payment-number">
-          <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
-          <span id="vodaNumber">01094273376</span>
-          <button class="copy-btn" id="copyVodaBtn" type="button" aria-label="نسخ الرقم">
-            <i class="fa-solid fa-copy" aria-hidden="true"></i>
+<!-- ============================================================
+     AI FEATURE
+============================================================ -->
+<section class="block alt" id="ai">
+  <div class="container">
+    <div class="section-head">
+      <h2><i class="fa-solid fa-brain"></i> الخدمة الذاتية الذكية</h2>
+      <p>مش مجرد دليل أسماء وأرقام — منصة ذكية تفهم طلبك وتنفذه من أول رسالة لحد الفاتورة</p>
+    </div>
+
+    <div class="ai-feature-wrap">
+      <div class="ai-feature-text">
+        <h2>اكتب مشكلتك بالعربي... واحنا نتولى الباقي</h2>
+        <p>الذكاء الاصطناعي بتاعنا بيفهم كلامك الطبيعي ويقوم بالمهمة كاملة:</p>
+
+        <ul class="step-list">
+          <li><span class="step-num">1</span><div><strong>تحديد نوع المشكلة</strong><small>ميكانيكا، سباكة، كهرباء، تكييف...</small></div></li>
+          <li><span class="step-num">2</span><div><strong>تحديد موقعك تلقائياً</strong><small>من نص الرسالة أو بمشاركة الموقع</small></div></li>
+          <li><span class="step-num">3</span><div><strong>البحث عن المتاحين قريبين منك</strong><small>فلترة حسب المسافة والتخصص</small></div></li>
+          <li><span class="step-num">4</span><div><strong>مقارنة السعر والتقييم ووقت الوصول</strong><small>خوارزمية ذكية ترتب الأفضل</small></div></li>
+          <li><span class="step-num">5</span><div><strong>عرض أفضل الخيارات</strong><small>3 اقتراحات مع كل التفاصيل</small></div></li>
+          <li><span class="step-num">6</span><div><strong>بموافقتك... تأكيد الحجز</strong><small>إرسال بياناتك للفني</small></div></li>
+          <li><span class="step-num">7</span><div><strong>تتبع وصول الفني لحظة بلحظة</strong><small>مع كل مرحلة من الطلب</small></div></li>
+          <li><span class="step-num">8</span><div><strong>تسجيل الفاتورة إلكترونياً</strong><small>بكل تفاصيل الخدمة</small></div></li>
+          <li><span class="step-num">9</span><div><strong>تقييم مقدم الخدمة</strong><small>لتطوير جودة المنصة</small></div></li>
+        </ul>
+
+        <button class="ai-feature-btn" id="openAIFeature">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          جرب الذكاء الاصطناعي الآن
+        </button>
+      </div>
+
+      <div class="ai-demo-card">
+        <div class="ai-demo-header">
+          <div class="ai-demo-avatar"><i class="fa-solid fa-robot"></i></div>
+          <div>
+            <strong>مساعد بلدي الذكي</strong>
+            <small>متصل الآن • يرد فوراً</small>
+          </div>
+        </div>
+
+        <div class="demo-bubble user">
+          عربيتي عطلت في مدينة نصر وعايز ميكانيكي يجيلي دلوقتي
+        </div>
+
+        <div class="demo-bubble bot">
+          <strong>حللت مشكلتك ✓</strong><br>
+          📍 الموقع: مدينة نصر<br>
+          🔧 نوع المشكلة: عطل ميكانيكي<br>
+          🚗 لقيت 3 ميكانيكيين متاحين قريبين منك
+        </div>
+
+        <div class="demo-provider">
+          <div class="dp-avatar">🔧</div>
+          <div class="dp-info">
+            <strong>ورشة الأمانة</strong>
+            <small>⭐ 4.9 • 25 دقيقة</small>
+          </div>
+          <div class="dp-price">250 ج</div>
+        </div>
+        <div class="demo-provider">
+          <div class="dp-avatar">🚗</div>
+          <div class="dp-info">
+            <strong>عم صابر ميكانيكي</strong>
+            <small>⭐ 4.7 • 35 دقيقة</small>
+          </div>
+          <div class="dp-price">200 ج</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED PROVIDERS
+============================================================ -->
+<section class="block" id="providers">
+  <div class="container">
+    <div class="section-head">
+      <h2><i class="fa-solid fa-user-tie"></i> مقدمو الخدمة المميزون</h2>
+      <p>نخبة من أفضل مقدمي الخدمة في مختلف التخصصات</p>
+    </div>
+    <div class="providers-grid" id="providersGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRICING
+============================================================ -->
+<section class="block alt" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <h2><i class="fa-solid fa-crown"></i> خطط الاشتراك</h2>
+      <p>انضم كمقدم خدمة وساهم في تنمية مجتمعك</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="plan">
+        <h3>مجاني</h3>
+        <div class="plan-price">0<small> ج.م / شهر</small></div>
+        <p class="plan-desc">للتجربة وبداية النشاط</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> عرض الخدمة في الدليل</li>
+          <li><i class="fa-solid fa-check"></i> 5 طلبات شهرياً</li>
+          <li><i class="fa-solid fa-check"></i> تواصل أساسي</li>
+        </ul>
+        <button class="btn btn-outline plan-btn" data-plan="مجاني" data-price="0">ابدأ الآن</button>
+      </div>
+
+      <div class="plan featured">
+        <h3>احترافي</h3>
+        <div class="plan-price">99<small> ج.م / شهر</small></div>
+        <p class="plan-desc">الأفضل لأصحاب المهن</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> طلبات غير محدودة</li>
+          <li><i class="fa-solid fa-check"></i> ظهور مميز في الدليل</li>
+          <li><i class="fa-solid fa-check"></i> إحصائيات متقدمة</li>
+          <li><i class="fa-solid fa-check"></i> دعم فني أولوية</li>
+        </ul>
+        <button class="btn btn-gold plan-btn" data-plan="احترافي" data-price="99">اشترك الآن</button>
+      </div>
+
+      <div class="plan">
+        <h3>أعمال</h3>
+        <div class="plan-price">299<small> ج.م / شهر</small></div>
+        <p class="plan-desc">للشركات والمؤسسات</p>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> كل مميزات الاحترافي</li>
+          <li><i class="fa-solid fa-check"></i> 5 حسابات فرعية</li>
+          <li><i class="fa-solid fa-check"></i> تقارير شهرية مفصلة</li>
+          <li><i class="fa-solid fa-check"></i> مدير حساب مخصص</li>
+        </ul>
+        <button class="btn btn-primary plan-btn" data-plan="أعمال" data-price="299">اشترك الآن</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section class="block" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <h2><i class="fa-solid fa-headset"></i> تواصل معنا</h2>
+      <p>فريقنا متاح 24/7 لمساعدتك في أي وقت</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-item">
+          <div class="contact-ico" style="color:var(--whatsapp); background:rgba(37,211,102,.12);"><i class="fa-brands fa-whatsapp"></i></div>
+          <div><strong>واتساب</strong><a href="https://wa.me/201094273376" target="_blank" dir="ltr">+20 109 427 3376</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico" style="color:var(--secondary); background:rgba(200,163,73,.12);"><i class="fa-solid fa-phone"></i></div>
+          <div><strong>اتصال مباشر</strong><a href="tel:+201094273376" dir="ltr">01094273376</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico" style="color:var(--info); background:rgba(37,99,235,.12);"><i class="fa-solid fa-envelope"></i></div>
+          <div><strong>البريد الإلكتروني</strong><a href="mailto:info@balady-services.com">info@balady-services.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico" style="color:var(--success); background:rgba(22,163,74,.12);"><i class="fa-solid fa-clock"></i></div>
+          <div><strong>مواعيد الدعم</strong><span>متاح 24/7 طوال الأسبوع</span></div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <form id="contactForm">
+          <div class="form-group"><label>الاسم</label><input type="text" id="cName" required placeholder="أدخل اسمك"></div>
+          <div class="form-group"><label>رقم الموبايل</label><input type="tel" id="cPhone" required placeholder="01xxxxxxxxx" dir="ltr"></div>
+          <div class="form-group"><label>الموضوع</label>
+            <select id="cSubject">
+              <option>استفسار عام</option>
+              <option>انضمام كمقدم خدمة</option>
+              <option>إعلان مدفوع</option>
+              <option>شكوى</option>
+            </select>
+          </div>
+          <div class="form-group"><label>رسالتك</label><textarea id="cMessage" required placeholder="اكتب رسالتك..."></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">
+            <i class="fa-solid fa-paper-plane"></i> إرسال عبر واتساب
           </button>
-        </div>
-        <div class="payment-methods">
-          <span>فودافون كاش</span>
-          <span>إنستاباي</span>
-          <span>اتصالات كاش</span>
-          <span>أورنج كاش</span>
-        </div>
-        <div class="payment-actions">
-          <a href="https://wa.me/201094273376?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D8%A3%D9%83%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AF%D9%81%D8%B9"
-             class="btn btn-whatsapp" target="_blank" rel="noopener">
-            <i class="fa-brands fa-whatsapp"></i>
-            تأكيد الدفع عبر واتساب
-          </a>
-          <a href="tel:+201094273376" class="btn btn-gold">
-            <i class="fa-solid fa-phone"></i>
-            اتصل للدعم
-          </a>
-        </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ADVERTISE -->
-  <section id="advertise" class="advertise-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>أعلن معنا</h2>
-        <p>اختر الباقة المناسبة لعملك وابدأ في الوصول لعملائك</p>
-      </div>
-      <div class="ad-packages">
-        <div class="ad-package">
-          <div class="ad-package-icon"><i class="fa-solid fa-star"></i></div>
-          <h3>باقة أساسية</h3>
-          <div class="price-tag">149 ج.م</div>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> نشر خدمة لمدة أسبوعين</li>
-            <li><i class="fa-solid fa-check"></i> ظهور في الصفحة الرئيسية</li>
-            <li><i class="fa-solid fa-check"></i> رابط واتساب مباشر</li>
-          </ul>
-          <button class="btn btn-outline plan-button" data-plan="الباقة الأساسية" data-price="149">اطلب الآن</button>
-        </div>
-        <div class="ad-package hot">
-          <div class="ad-package-icon"><i class="fa-solid fa-crown"></i></div>
-          <h3>باقة مميزة</h3>
-          <div class="price-tag">299 ج.م</div>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> كل مزايا الأساسية</li>
-            <li><i class="fa-solid fa-check"></i> شارة "مميز" على الخدمة</li>
-            <li><i class="fa-solid fa-check"></i> ظهور في أعلى نتائج البحث</li>
-            <li><i class="fa-solid fa-check"></i> فترة نشر 30 يوم</li>
-          </ul>
-          <button class="btn btn-gold plan-button" data-plan="الباقة المميزة" data-price="299">اطلب الآن</button>
-        </div>
-        <div class="ad-package">
-          <div class="ad-package-icon"><i class="fa-solid fa-fire"></i></div>
-          <h3>باقة احترافية</h3>
-          <div class="price-tag">599 ج.م</div>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> كل مزايا المميزة</li>
-            <li><i class="fa-solid fa-check"></i> بانر إعلاني كبير</li>
-            <li><i class="fa-solid fa-check"></i> حملة على السوشيال ميديا</li>
-            <li><i class="fa-solid fa-check"></i> فترة نشر 60 يوم</li>
-          </ul>
-          <button class="btn btn-outline plan-button" data-plan="الباقة الاحترافية" data-price="599">اطلب الآن</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>تواصل معنا</h2>
-        <p>نحن متاحون لمساعدتك على مدار الساعة</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
-            <div>
-              <strong>واتساب</strong>
-              <a href="https://wa.me/201094273376" dir="ltr" target="_blank" rel="noopener">
-                <span>+20 109 427 3376</span>
-              </a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-            <div>
-              <strong>اتصال مباشر</strong>
-              <a href="tel:+201094273376" dir="ltr"><span>01094273376</span></a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div>
-              <strong>البريد الإلكتروني</strong>
-              <a href="mailto:info@balady-services.com"><span>info@balady-services.com</span></a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
-            <div>
-              <strong>مواعيد الدعم</strong>
-              <span>متاح 24/7 طوال الأسبوع</span>
-            </div>
-          </div>
-        </div>
-        <div class="contact-card">
-          <h3>هل أنت صاحب نشاط تجاري؟</h3>
-          <p style="color:var(--muted); margin:12px 0 20px;">
-            انضم لأكثر من 1000 مقدم خدمة يعرضون خدماتهم على منصة "خدمات بلدي".
-            تواصل معنا اليوم وابدأ في الوصول لعملائك الجدد.
-          </p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btn-whatsapp"
-               href="https://wa.me/201094273376?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A5%D8%B9%D9%84%D8%A7%D9%86%20%D8%B9%D9%84%D9%89%20%D9%85%D9%86%D8%B5%D8%A9%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A8%D9%84%D8%AF%D9%8A"
-               target="_blank" rel="noopener">
-              <i class="fa-brands fa-whatsapp"></i>
-              تواصل واتساب
-            </a>
-            <a class="btn btn-primary"
-               href="mailto:info@balady-services.com?subject=طلب%20إعلان%20على%20منصة%20خدمات%20بلدي">
-              <i class="fa-solid fa-bullhorn"></i>
-              راسلنا
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
+<!-- ============================================================
+     FOOTER
+============================================================ -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h3 class="footer-title">خدمات بلدي</h3>
-        <p>منصة رقمية تهدف إلى جمع الخدمات المحلية في مكان واحد وتسهيل الوصول إليها.</p>
+        <h4>خدمات بلدي</h4>
+        <p>منصة رقمية ذكية تجمع الخدمات المحلية في مكان واحد، وتربط العملاء بأفضل مقدمي الخدمة بأسرع وقت.</p>
       </div>
       <div>
-        <h3 class="footer-title">روابط سريعة</h3>
+        <h4>روابط سريعة</h4>
         <ul>
           <li><a href="#services">الخدمات</a></li>
+          <li><a href="#ai">الخدمة الذكية</a></li>
           <li><a href="#pricing">الاشتراكات</a></li>
-          <li><a href="#payment">طرق الدفع</a></li>
-          <li><a href="#advertise">أعلن معنا</a></li>
           <li><a href="#contact">تواصل معنا</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="footer-title">خدمة العملاء</h3>
+        <h4>قانوني</h4>
         <ul>
-          <li><a href="tel:+201094273376" dir="ltr"><i class="fa-solid fa-phone"></i> 01094273376</a></li>
-          <li><a href="https://wa.me/201094273376" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a></li>
-          <li><a href="mailto:info@balady-services.com"><i class="fa-solid fa-envelope"></i> راسلنا</a></li>
+          <li><a href="#">سياسة الخصوصية</a></li>
+          <li><a href="#">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="tel:+201094273376"><i class="fa-solid fa-phone"></i> 01094273376</a></li>
+          <li><a href="https://wa.me/201094273376" target="_blank"><i class="fa-brands fa-whatsapp"></i> واتساب</a></li>
         </ul>
       </div>
     </div>
-    <div class="copyright">
+    <div class="footer-bottom">
       © <span id="year"></span> خدمات بلدي — جميع الحقوق محفوظة
     </div>
   </div>
 </footer>
 
-<!-- AI BUTTON + CHAT -->
-<button class="ai-button" id="aiButton" type="button" aria-label="فتح المساعد الذكي" aria-expanded="false">
-  <i class="fa-solid fa-robot" aria-hidden="true"></i>
+<!-- ============================================================
+     AI PANEL
+============================================================ -->
+<aside class="ai-panel" id="aiPanel" aria-hidden="true">
+  <div class="ai-panel-header">
+    <div class="ai-title">
+      <div class="ai-avatar"><i class="fa-solid fa-robot"></i></div>
+      <div>
+        <strong>مساعد بلدي الذكي</strong>
+        <small>متصل</small>
+      </div>
+    </div>
+    <button class="close-btn" id="closeAI" aria-label="إغلاق">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <div class="ai-messages" id="aiMessages"></div>
+
+  <div class="ai-input-wrap">
+    <div class="ai-input-row">
+      <input type="text" id="aiInput" placeholder="اكتب مشكلتك..." autocomplete="off">
+      <button type="button" id="aiSend" aria-label="إرسال">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+    <div class="quick-suggest" id="quickSuggest">
+      <button data-q="عربيتي عطلت">🔧 عربيتي عطلت</button>
+      <button data-q="تسريب مياه">💧 تسريب مياه</button>
+      <button data-q="عطل كهرباء">💡 عطل كهرباء</button>
+      <button data-q="تكييف">❄️ تكييف</button>
+      <button data-q="فتح قفل">🔑 فتح قفل</button>
+    </div>
+  </div>
+</aside>
+
+<!-- Floating button -->
+<button class="ai-float" id="openAI" aria-label="المساعد الذكي">
+  <i class="fa-solid fa-wand-magic-sparkles"></i>
 </button>
 
-<div class="chat-box" id="chatBox" role="dialog" aria-label="مساعد بلدي الذكي" aria-hidden="true">
-  <div class="chat-header">
-    <strong><i class="fa-solid fa-robot"></i> مساعد بلدي الذكي</strong>
-    <button id="closeChat" type="button" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
-  </div>
-  <div class="chat-messages" id="chatMessages" aria-live="polite">
-    <div class="chat-msg bot">
-      مرحبًا بك 👋<br>أنا مساعدك الذكي.<br>اسألني عن أي خدمة تبحث عنها.
-    </div>
-  </div>
-  <div class="chat-suggestions" id="chatSuggestions">
-    <button type="button" data-q="دكتور">دكتور</button>
-    <button type="button" data-q="مدرس">مدرس</button>
-    <button type="button" data-q="محامي">محامي</button>
-    <button type="button" data-q="صيدلية">صيدلية</button>
-    <button type="button" data-q="ورشة عربيات">ورشة عربيات</button>
-  </div>
-  <div class="chat-input-wrap">
-    <input type="text" id="chatInput" placeholder="اكتب سؤالك..." aria-label="رسالة" autocomplete="off">
-    <button type="button" id="sendChat" aria-label="إرسال"><i class="fa-solid fa-paper-plane"></i></button>
-  </div>
-</div>
+<div id="toastContainer"></div>
 
-<!-- SERVICE MODAL -->
-<div class="modal-overlay" id="serviceModal" role="dialog" aria-modal="true"
-     aria-labelledby="modalTitle" aria-hidden="true">
-  <div class="modal">
-    <button class="modal-close" id="modalClose" type="button" aria-label="إغلاق">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-    <div class="modal-icon" id="modalIcon"><i class="fa-solid fa-circle-info"></i></div>
-    <h3 id="modalTitle">اسم الخدمة</h3>
-    <p id="modalDesc">الوصف</p>
-    <ul class="modal-features" id="modalFeatures"></ul>
-    <div class="modal-actions">
-      <a class="btn btn-whatsapp" id="modalWhatsapp" href="#" target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i> تواصل واتساب
-      </a>
-      <a class="btn btn-primary" id="modalCall" href="tel:+201094273376">
-        <i class="fa-solid fa-phone"></i> اتصل بينا
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ADMIN MODAL -->
-<div class="modal-overlay" id="adminModal" role="dialog" aria-modal="true"
-     aria-labelledby="adminTitle" aria-hidden="true">
-  <div class="modal wide">
-    <button class="modal-close" id="adminClose" type="button" aria-label="إغلاق">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-
-    <!-- Login -->
-    <div id="adminLoginView">
-      <div class="admin-login-form">
-        <div class="modal-icon"><i class="fa-solid fa-lock"></i></div>
-        <h3 id="adminTitle">لوحة التحكم</h3>
-        <p style="color:var(--muted); margin-bottom:20px;">
-          أدخل كلمة السر للوصول إلى إدارة الخدمات
-        </p>
-        <div class="admin-form-group">
-          <input type="password" id="adminPassword" placeholder="كلمة السر" autocomplete="off">
-        </div>
-        <button class="btn btn-primary" id="adminLoginBtn" style="width:100%;">
-          <i class="fa-solid fa-right-to-bracket"></i> دخول
-        </button>
-        <p style="color:var(--muted); font-size:.78rem; margin-top:16px; text-align:center;">
-          كلمة السر الافتراضية: <b>Balady@2026</b> — غيّرها فوراً!
-        </p>
-      </div>
-    </div>
-
-    <!-- Panel -->
-    <div id="adminPanelView" hidden>
-      <div class="admin-header">
-        <h3>🔧 إدارة الخدمات</h3>
-        <button class="btn btn-danger" id="adminLogout" style="padding:8px 14px; font-size:.85rem;">
-          <i class="fa-solid fa-right-from-bracket"></i> خروج
-        </button>
-      </div>
-
-      <div class="admin-notice">
-        <i class="fa-solid fa-shield-halved"></i>
-        أنت المتحكم الوحيد في الموقع. أي إضافة/تعديل/حذف تُحفظ فوراً في متصفحك.
-        للنسخ الاحتياطي، استخدم "تصدير JSON".
-      </div>
-
-      <div class="admin-tabs">
-        <button class="admin-tab active" data-tab="list">القائمة</button>
-        <button class="admin-tab" data-tab="add">إضافة خدمة</button>
-        <button class="admin-tab" data-tab="settings">الإعدادات</button>
-      </div>
-
-      <div class="admin-content active" data-content="list">
-        <div class="admin-list" id="adminList"></div>
-      </div>
-
-      <div class="admin-content" data-content="add">
-        <form id="serviceForm">
-          <input type="hidden" id="editId">
-          <div class="admin-form-group">
-            <label>اسم الخدمة *</label>
-            <input type="text" id="svcName" required placeholder="مثال: الكهرباء">
-          </div>
-          <div class="admin-form-row">
-            <div class="admin-form-group">
-              <label>الأيقونة (Font Awesome) *</label>
-              <input type="text" id="svcIcon" required placeholder="fa-bolt" value="fa-circle-info">
-              <small style="color:var(--muted); font-size:.75rem;">
-                ابحث في fontawesome.com
-              </small>
-            </div>
-            <div class="admin-form-group">
-              <label>رقم واتساب (دولي بدون +)</label>
-              <input type="text" id="svcWhatsapp" placeholder="201094273376" dir="ltr">
-            </div>
-          </div>
-          <div class="admin-form-group">
-            <label>وصف مختصر *</label>
-            <input type="text" id="svcDesc" required placeholder="وصف قصير يظهر في البطاقة">
-          </div>
-          <div class="admin-form-group">
-            <label>الوصف الكامل (للنافذة)</label>
-            <textarea id="svcLongDesc" placeholder="وصف مفصل يظهر عند فتح الخدمة"></textarea>
-          </div>
-          <div class="admin-form-group">
-            <label>المميزات (كل ميزة في سطر)</label>
-            <textarea id="svcFeatures" placeholder="ميزة 1&#10;ميزة 2&#10;ميزة 3"></textarea>
-          </div>
-          <div class="admin-form-group">
-            <label>رقم الهاتف (اختياري)</label>
-            <input type="text" id="svcPhone" placeholder="01094273376" dir="ltr">
-          </div>
-          <label class="admin-checkbox">
-            <input type="checkbox" id="svcFeatured">
-            <span>⭐ <b>خدمة مميزة</b> (تظهر في الأعلى مع شارة)</span>
-          </label>
-          <div class="admin-actions-row">
-            <button type="button" class="btn btn-outline" id="cancelEdit" hidden>إلغاء</button>
-            <button type="submit" class="btn btn-primary" id="submitBtn">
-              <i class="fa-solid fa-plus"></i> إضافة الخدمة
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <div class="admin-content" data-content="settings">
-        <div class="admin-form-group">
-          <label>كلمة السر الجديدة</label>
-          <input type="password" id="newPassword" placeholder="اتركها فارغة لعدم التغيير">
-        </div>
-        <div class="admin-actions-row" style="justify-content: flex-start;">
-          <button class="btn btn-primary" id="changePasswordBtn">
-            <i class="fa-solid fa-key"></i> تغيير كلمة السر
-          </button>
-        </div>
-
-        <hr style="margin:24px 0; border:0; border-top:1px solid var(--border);">
-
-        <h4 style="margin-bottom:12px; color:var(--primary);">النسخ الاحتياطي</h4>
-        <p style="color:var(--muted); font-size:.88rem; margin-bottom:16px;">
-          صدّر خدماتك كملف JSON احتفظ به بأمان، أو استورد ملفاً سابقاً.
-        </p>
-        <div class="admin-actions-row" style="justify-content: flex-start;">
-          <button class="btn btn-outline" id="exportBtn">
-            <i class="fa-solid fa-download"></i> تصدير JSON
-          </button>
-          <label class="btn btn-outline" style="cursor:pointer;">
-            <i class="fa-solid fa-upload"></i> استيراد JSON
-            <input type="file" id="importInput" accept=".json" hidden>
-          </label>
-          <button class="btn btn-danger" id="resetBtn">
-            <i class="fa-solid fa-rotate-left"></i> استعادة الافتراضي
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="toastContainer" aria-live="polite"></div>
-
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
 <script>
 "use strict";
 
+/* ============================================================
+   PWA MANIFEST (dynamic)
+============================================================ */
 (function () {
-
-  /* ============================================================
-     CONSTANTS
-  ============================================================ */
-  const STORAGE_KEY = "balady_services_v1";
-  const PASS_KEY = "balady_admin_pass";
-  const THEME_KEY = "balady_theme";
-  const AUTH_KEY = "balady_admin_auth";
-  const DEFAULT_PASSWORD = "Balady@2026";
-  const VODAFONE_NUMBER = "01094273376";
-  const OWNER_WHATSAPP = "201094273376";
-
-  /* ============================================================
-     HELPERS
-  ============================================================ */
-  const $ = (s, ctx = document) => ctx.querySelector(s);
-  const $$ = (s, ctx = document) => Array.from(ctx.querySelectorAll(s));
-
-  const createEl = (tag, cls, html) => {
-    const el = document.createElement(tag);
-    if (cls) el.className = cls;
-    if (html) el.innerHTML = html;
-    return el;
+  const manifest = {
+    name: "خدمات بلدي",
+    short_name: "بلدي",
+    description: "منصة الخدمات المحلية الذكية",
+    lang: "ar",
+    dir: "rtl",
+    start_url: ".",
+    scope: ".",
+    display: "standalone",
+    orientation: "portrait",
+    background_color: "#0b1e3a",
+    theme_color: "#0b1e3a",
+    icons: [{
+      src: "data:image/svg+xml," + encodeURIComponent(
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="110" fill="#0b1e3a"/><text x="256" y="360" text-anchor="middle" font-size="280">🏘️</text></svg>'
+      ),
+      sizes: "512x512",
+      type: "image/svg+xml",
+      purpose: "any maskable"
+    }]
   };
+  const blob = new Blob([JSON.stringify(manifest)], { type: "application/manifest+json" });
+  const link = document.createElement("link");
+  link.rel = "manifest";
+  link.href = URL.createObjectURL(blob);
+  document.head.appendChild(link);
+})();
 
-  const escapeHtml = (str) =>
-    String(str ?? "").replace(/[&<>"']/g, (c) => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-    }[c]));
+/* ============================================================
+   HELPERS
+============================================================ */
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (m) => ({
+  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+}[m]));
+const uid = () => "BK" + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2, 5).toUpperCase();
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-  function normalizeArabic(text) {
-    return String(text || "")
-      .replace(/[إأآٱ]/g, "ا")
-      .replace(/ى/g, "ي")
-      .replace(/ة/g, "ه")
-      .replace(/ؤ/g, "و")
-      .replace(/ئ/g, "ي")
-      .replace(/ـ/g, "")
-      .replace(/[\u064B-\u065F\u0670]/g, "")
-      .replace(/\s+/g, " ")
-      .trim()
-      .toLowerCase();
+/* ============================================================
+   TOAST
+============================================================ */
+const toastContainer = $("#toastContainer");
+function toast(msg, type = "info") {
+  if (!toastContainer) return;
+  const icons = { success: "fa-circle-check", error: "fa-circle-xmark", warning: "fa-triangle-exclamation", info: "fa-circle-info" };
+  const t = document.createElement("div");
+  t.className = "toast " + type;
+  t.innerHTML = `<i class="fa-solid ${icons[type]}"></i><span>${esc(msg)}</span>`;
+  toastContainer.appendChild(t);
+  setTimeout(() => { t.style.opacity = "0"; t.style.transform = "translateY(-15px)"; }, 2800);
+  setTimeout(() => t.remove(), 3200);
+}
+
+/* ============================================================
+   THEME
+============================================================ */
+(function () {
+  const toggle = $("#themeToggle");
+  const saved = localStorage.getItem("balady_theme");
+  if (saved === "dark") document.body.classList.add("dark");
+  toggle?.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const dark = document.body.classList.contains("dark");
+    localStorage.setItem("balady_theme", dark ? "dark" : "light");
+    toggle.querySelector("i").className = dark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+  });
+  if (document.body.classList.contains("dark") && toggle) {
+    toggle.querySelector("i").className = "fa-solid fa-sun";
   }
+})();
 
-  /* ============================================================
-     DEFAULT DATA
-  ============================================================ */
-  const DEFAULT_SERVICES = [
-    {
-      id: "education",
-      name: "التعليم",
-      icon: "fa-graduation-cap",
-      desc: "خدمات ومعلومات تعليمية متنوعة.",
-      longDesc: "خدمات تعليمية شاملة: مدرسين خصوصيين، كورسات، تأسيس، وحل واجبات لجميع المراحل الدراسية.",
-      features: ["مدرسين لجميع المواد والمراحل", "كورسات أونلاين وحضورية", "تأسيس للابتدائي والإعدادي", "متابعة مستمرة للطالب"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "health",
-      name: "الصحة",
-      icon: "fa-heart-pulse",
-      desc: "دليل للخدمات والمنشآت الصحية.",
-      longDesc: "دليل شامل للأطباء والعيادات والصيدليات والمستشفيات في منطقتك بجميع التخصصات.",
-      features: ["أطباء في جميع التخصصات", "حجز مواعيد سريع", "صيدليات 24 ساعة", "معامل تحاليل وأشعة"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: true
-    },
-    {
-      id: "law",
-      name: "المحاماة",
-      icon: "fa-scale-balanced",
-      desc: "الوصول إلى الخدمات والاستشارات القانونية.",
-      longDesc: "خدمات قانونية احترافية: استشارات، قضايا، عقود، وتوثيق من محامين معتمدين.",
-      features: ["استشارات قانونية فورية", "محامين في كل التخصصات", "صياغة ومراجعة العقود", "متابعة القضايا لحظة بلحظة"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "trade",
-      name: "التجارة",
-      icon: "fa-shop",
-      desc: "دليل للأنشطة والمحلات والخدمات التجارية.",
-      longDesc: "دليل شامل للمحلات والمتاجر والأنشطة التجارية في جميع المجالات.",
-      features: ["محلات ملابس ومستلزمات", "سوبر ماركت ومحلات بقالة", "ورش ومصانع صغيرة", "خدمات توصيل"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "realestate",
-      name: "العقارات",
-      icon: "fa-house",
-      desc: "خدمات ومعلومات متعلقة بالعقارات.",
-      longDesc: "خدمات عقارية: بيع، شراء، إيجار، واستشارات عقارية موثوقة.",
-      features: ["شقق وفلل للإيجار والبيع", "محلات وأراضي", "استشارات عقارية", "معاينة قبل التعاقد"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "jobs",
-      name: "الوظائف",
-      icon: "fa-briefcase",
-      desc: "فرص العمل والخدمات المهنية.",
-      longDesc: "فرص عمل في جميع المجالات، مع وظائف بدوام كامل أو جزئي.",
-      features: ["وظائف حكومية وخاصة", "دوام كامل وجزئي", "فرص للخريجين الجدد", "تدريبات مهنية"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "cars",
-      name: "السيارات",
-      icon: "fa-car",
-      desc: "خدمات السيارات ومراكز الصيانة.",
-      longDesc: "خدمات السيارات: ورش، ميكانيكا، كهرباء، سمكرة، وقطع غيار.",
-      features: ["ميكانيكا وكهرباء سيارات", "سمكرة ودهان", "قطع غيار أصلية", "خدمة فحص متنقل"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "pharmacy",
-      name: "الصيدليات",
-      icon: "fa-pills",
-      desc: "صيدليات ومستلزمات طبية.",
-      longDesc: "صيدليات قريبة منك، مع خدمة توصيل للمنازل ومتابعة الأدوية المزمنة.",
-      features: ["صيدليات 24 ساعة", "توصيل للمنزل", "متابعة أدوية مزمنة", "مستحضرات تجميل"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "lawyers",
-      name: "محامون",
-      icon: "fa-gavel",
-      desc: "محامون ومستشارون قانونيون.",
-      longDesc: "قائمة بالمحامين المتخصصين في القضايا المدنية والجنائية والأحوال الشخصية.",
-      features: ["محامون بالنقض", "استشارات فورية", "قضايا مدنية وجنائية", "أحوال شخصية"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "doctors",
-      name: "أطباء",
-      icon: "fa-user-doctor",
-      desc: "أطباء في جميع التخصصات.",
-      longDesc: "دليل شامل للأطباء في جميع التخصصات مع إمكانية حجز موعد.",
-      features: ["جميع التخصصات", "حجز مواعيد", "استشارات أونلاين", "متابعة بعد العلاج"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "teachers",
-      name: "مدرسون",
-      icon: "fa-chalkboard-user",
-      desc: "مدرسون ودروس خصوصية.",
-      longDesc: "نخبة من المدرسين لجميع المراحل الدراسية والمواد، مجموعات وفردي.",
-      features: ["جميع المراحل", "مجموعات وفردي", "دروس أونلاين", "مراجعات نهائية"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "clothes",
-      name: "محلات ملابس",
-      icon: "fa-shirt",
-      desc: "محلات ملابس رجالية ونسائية وأطفال.",
-      longDesc: "أفضل محلات الملابس في منطقتك بأسعار مناسبة وجودة عالية.",
-      features: ["ملابس رجالية", "ملابس نسائية", "ملابس أطفال", "عروض وخصومات"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
-    },
-    {
-      id: "misc",
-      name: "خدمات متنوعة",
-      icon: "fa-handshake",
-      desc: "مجموعة أخرى من الخدمات المحلية.",
-      longDesc: "خدمات متنوعة تشمل كل ما تحتاجه في حياتك اليومية.",
-      features: ["نجار وسباك وكهربائي", "تنظيف وصيانة منازل", "نقل أثاث", "خدمات أخرى حسب الطلب"],
-      whatsapp: OWNER_WHATSAPP,
-      phone: VODAFONE_NUMBER,
-      featured: false
+/* ============================================================
+   MOBILE MENU
+============================================================ */
+$("#mobileMenu")?.addEventListener("click", () => {
+  $("#navLinks")?.classList.toggle("open");
+});
+$$(".nav-links a").forEach(a => a.addEventListener("click", () => {
+  $("#navLinks")?.classList.remove("open");
+}));
+
+/* ============================================================
+   YEAR
+============================================================ */
+$("#year").textContent = new Date().getFullYear();
+
+/* ============================================================
+   PROVIDERS DATABASE
+============================================================ */
+const PROVIDERS = [
+  // CAR
+  { id: "car1", cat: "car", name: "ورشة الأمانة للسيارات", emoji: "🔧", rating: 4.9, reviews: 342, price: 250, eta: 25, area: "مدينة نصر", spec: "ميكانيكا وكهرباء", avail: true, phone: "01094273376" },
+  { id: "car2", cat: "car", name: "عم صابر ميكانيكي", emoji: "🚗", rating: 4.7, reviews: 180, price: 200, eta: 35, area: "المعادي", spec: "ميكانيكا عامة", avail: true, phone: "01094273376" },
+  { id: "car3", cat: "car", name: "بنشر متنقل السريع", emoji: "🛞", rating: 4.8, reviews: 420, price: 100, eta: 15, area: "التجمع", spec: "بنشر وبطاريات", avail: true, phone: "01094273376" },
+  { id: "car4", cat: "car", name: "مركز النصر للكهرباء", emoji: "⚡", rating: 4.6, reviews: 95, price: 300, eta: 40, area: "مصر الجديدة", spec: "كهرباء سيارات", avail: true, phone: "01094273376" },
+
+  // PLUMBING
+  { id: "pl1", cat: "plumb", name: "سباك محترف - أحمد", emoji: "🔧", rating: 4.8, reviews: 230, price: 180, eta: 20, area: "مدينة نصر", spec: "تسريبات وحنفيات", avail: true, phone: "01094273376" },
+  { id: "pl2", cat: "plumb", name: "سباكة الحرمين", emoji: "🚿", rating: 4.6, reviews: 150, price: 220, eta: 30, area: "المعادي", spec: "مواسير وصرف", avail: true, phone: "01094273376" },
+  { id: "pl3", cat: "plumb", name: "صيانة مياه فورية", emoji: "💧", rating: 4.9, reviews: 310, price: 250, eta: 25, area: "وسط البلد", spec: "طوارئ 24 ساعة", avail: true, phone: "01094273376" },
+
+  // ELECTRIC
+  { id: "el1", cat: "electric", name: "كهربائي محمد", emoji: "💡", rating: 4.7, reviews: 190, price: 200, eta: 20, area: "مدينة نصر", spec: "كهرباء منازل", avail: true, phone: "01094273376" },
+  { id: "el2", cat: "electric", name: "صيانة كهرباء النور", emoji: "⚡", rating: 4.8, reviews: 260, price: 250, eta: 30, area: "التجمع", spec: "أعطال وقواطع", avail: true, phone: "01094273376" },
+  { id: "el3", cat: "electric", name: "فني أعطال سريع", emoji: "🔌", rating: 4.5, reviews: 120, price: 180, eta: 25, area: "المعادي", spec: "طوارئ", avail: true, phone: "01094273376" },
+
+  // AC
+  { id: "ac1", cat: "ac", name: "تكييف كول", emoji: "❄️", rating: 4.9, reviews: 410, price: 350, eta: 40, area: "القاهرة الجديدة", spec: "تركيب وصيانة", avail: true, phone: "01094273376" },
+  { id: "ac2", cat: "ac", name: "خدمة تكييفات مصر", emoji: "🌬️", rating: 4.7, reviews: 280, price: 300, eta: 35, area: "التجمع", spec: "صيانة دورية", avail: true, phone: "01094273376" },
+  { id: "ac3", cat: "ac", name: "فني تكييفات محترف", emoji: "🧊", rating: 4.6, reviews: 175, price: 280, eta: 30, area: "مدينة نصر", spec: "تنظيف وفريون", avail: true, phone: "01094273376" },
+
+  // APPLIANCE
+  { id: "ap1", cat: "appliance", name: "صيانة أجهزة منزلية", emoji: "🧺", rating: 4.8, reviews: 310, price: 250, eta: 30, area: "مدينة نصر", spec: "غسالات وثلاجات", avail: true, phone: "01094273376" },
+  { id: "ap2", cat: "appliance", name: "مركز الصيانة الشامل", emoji: "🔨", rating: 4.6, reviews: 145, price: 220, eta: 35, area: "المعادي", spec: "جميع الأجهزة", avail: true, phone: "01094273376" },
+
+  // LOCK
+  { id: "lk1", cat: "lock", name: "فتح أقفال الطوارئ", emoji: "🔑", rating: 4.9, reviews: 520, price: 150, eta: 15, area: "كل المناطق", spec: "طوارئ 24 ساعة", avail: true, phone: "01094273376" },
+  { id: "lk2", cat: "lock", name: "نجار ومفتاح", emoji: "🚪", rating: 4.7, reviews: 210, price: 180, eta: 25, area: "وسط البلد", spec: "أقفال وخزائن", avail: true, phone: "01094273376" },
+
+  // DOCTOR
+  { id: "dr1", cat: "doctor", name: "د. أحمد محمود", emoji: "🩺", rating: 4.9, reviews: 420, price: 300, eta: 0, area: "مدينة نصر", spec: "استشاري باطنة", avail: true, phone: "01094273376" },
+  { id: "dr2", cat: "doctor", name: "د. منى إبراهيم", emoji: "👩‍⚕️", rating: 4.8, reviews: 380, price: 250, eta: 0, area: "المعادي", spec: "أطفال وحديثي الولادة", avail: true, phone: "01094273376" },
+
+  // LAWYER
+  { id: "lw1", cat: "lawyer", name: "الأستاذ أحمد محمود", emoji: "⚖️", rating: 4.9, reviews: 210, price: 500, eta: 0, area: "وسط البلد", spec: "محامي بالنقض", avail: true, phone: "01094273376" },
+  { id: "lw2", cat: "lawyer", name: "الأستاذة منى حسن", emoji: "⚖️", rating: 4.8, reviews: 165, price: 400, eta: 0, area: "مدينة نصر", spec: "أحوال شخصية", avail: true, phone: "01094273376" },
+
+  // TEACHER
+  { id: "tc1", cat: "teacher", name: "مستر خالد للرياضيات", emoji: "📐", rating: 4.9, reviews: 320, price: 200, eta: 0, area: "مدينة نصر", spec: "ثانوي - رياضيات", avail: true, phone: "01094273376" },
+  { id: "tc2", cat: "teacher", name: "مس عبير للغة الإنجليزية", emoji: "📚", rating: 4.8, reviews: 280, price: 180, eta: 0, area: "المعادي", spec: "إعدادي وثانوي", avail: true, phone: "01094273376" },
+];
+
+/* ============================================================
+   AI KEYWORDS ENGINE
+============================================================ */
+const AI_RULES = [
+  { cat: "car", kw: ["عربية", "سيارة", "عربيتي", "سيارتي", "ميكانيكي", "بنشر", "بطارية", "كاوتش", "موتور", "محرك", "عطلانة", "عطلت", "ماتور", "إطار", "بنزين", "دبرياج", "فرامل"] },
+  { cat: "plumb", kw: ["سباك", "سباكة", "مياه", "تسريب", "حنفية", "مواسير", "صرف", "سيفون", "بانيو", "حمام", "مطبخ", "ماسورة", "بلاعة", "رشح"] },
+  { cat: "electric", kw: ["كهرباء", "كهربائي", "لمبة", "لمبات", "قاطع", "فيوز", "نور", "إضاءة", "سلك", "مقبس", "بريزة", "توصيلات", "شورت"] },
+  { cat: "ac", kw: ["تكييف", "مكيف", "تكييفات", "تبريد", "فريون", "مروحة"] },
+  { cat: "appliance", kw: ["غسالة", "ثلاجة", "ديب فريزر", "بوتاجاز", "ميكروويف", "فرن", "سخان", "أجهزة", "غساله", "تلاجه"] },
+  { cat: "lock", kw: ["قفل", "مفتاح", "باب", "كسر", "انغلق", "مقفول", "خزنة", "اتقفل"] },
+  { cat: "doctor", kw: ["دكتور", "دكتورة", "طبيب", "عيادة", "كشف", "موعد", "علاج"] },
+  { cat: "lawyer", kw: ["محامي", "محامية", "قضية", "استشارة قانونية", "عقد", "قانوني"] },
+  { cat: "teacher", kw: ["مدرس", "مدرسة", "دروس", "تأسيس", "كورس", "خصوصي", "شرح"] },
+];
+
+const AREAS = ["مدينة نصر", "المعادي", "المقطم", "الزمالك", "وسط البلد", "6 أكتوبر", "الشيخ زايد", "حدائق الأهرام", "الهرم", "فيصل", "الدقي", "المهندسين", "شبرا", "حلوان", "المرج", "عين شمس", "مصر الجديدة", "التجمع", "الرحاب", "مدينتي", "القاهرة الجديدة", "جاردن سيتي", "العباسية", "روض الفرج"];
+
+const CAT_NAMES = {
+  car: "خدمة سيارات",
+  plumb: "سباكة",
+  electric: "كهرباء",
+  ac: "تكييف",
+  appliance: "صيانة أجهزة",
+  lock: "فتح أقفال",
+  doctor: "أطباء",
+  lawyer: "محاماة",
+  teacher: "دروس خصوصية"
+};
+
+const CAT_SERVICE = {
+  car: "ميكانيكي متنقل",
+  plumb: "سباك متنقل",
+  electric: "كهربائي متنقل",
+  ac: "فني تكييف",
+  appliance: "فني صيانة أجهزة",
+  lock: "فتح أقفال",
+  doctor: "طبيب",
+  lawyer: "محامي",
+  teacher: "مدرس خصوصي"
+};
+
+function detectCategory(text) {
+  const t = text.toLowerCase();
+  for (const rule of AI_RULES) {
+    for (const k of rule.kw) {
+      if (t.includes(k)) return rule.cat;
     }
-  ];
-
-  /* ============================================================
-     STORE
-  ============================================================ */
-  function loadServices() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed) && parsed.length) return parsed;
-      }
-    } catch (e) { /* ignore */ }
-    return JSON.parse(JSON.stringify(DEFAULT_SERVICES));
   }
+  return null;
+}
 
-  function saveServices(list) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-      return true;
-    } catch (e) { return false; }
+function detectArea(text) {
+  for (const a of AREAS) {
+    if (text.includes(a)) return a;
   }
+  return null;
+}
 
-  let services = loadServices();
+function detectUrgency(text) {
+  if (/(دلوقتي|حالا|حالاً|بسرعة|طوارئ|فورا|فوراً|سريع)/.test(text)) return "urgent";
+  return "normal";
+}
 
-  /* ============================================================
-     TOAST
-  ============================================================ */
-  const toastContainer = $("#toastContainer");
-  const TOAST_ICONS = {
-    success: "fa-circle-check",
-    error: "fa-circle-xmark",
-    warning: "fa-triangle-exclamation",
-    info: "fa-circle-info"
-  };
+function rankProviders(providers) {
+  return providers
+    .filter(p => p.avail)
+    .map(p => {
+      const ratingScore = (p.rating / 5) * 40;
+      const etaScore = Math.max(0, (60 - p.eta) / 60) * 25;
+      const priceScore = Math.max(0, (500 - p.price) / 500) * 20;
+      const reviewsScore = Math.min(1, p.reviews / 400) * 15;
+      return { ...p, score: ratingScore + etaScore + priceScore + reviewsScore };
+    })
+    .sort((a, b) => b.score - a.score);
+}
 
-  function notify(msg, type = "info") {
-    if (!toastContainer) return;
-    const t = createEl("div", `toast ${type}`);
-    const ic = createEl("i", `fa-solid ${TOAST_ICONS[type] || TOAST_ICONS.info}`);
-    ic.setAttribute("aria-hidden", "true");
-    t.append(ic, Object.assign(document.createElement("span"), { textContent: msg }));
-    toastContainer.appendChild(t);
-    setTimeout(() => {
-      t.style.opacity = "0";
-      t.style.transform = "translateY(-15px)";
-      setTimeout(() => t.remove(), 320);
-    }, 3200);
+/* ============================================================
+   PROVIDERS RENDERING (Grid)
+============================================================ */
+function renderProviders() {
+  const grid = $("#providersGrid");
+  if (!grid) return;
+  const top = PROVIDERS.slice().sort((a, b) => b.rating - a.rating).slice(0, 6);
+  grid.innerHTML = top.map(p => `
+    <div class="provider-card">
+      <div class="provider-head">
+        <div class="provider-avatar">${p.emoji}</div>
+        <div class="provider-info">
+          <h3>${esc(p.name)}</h3>
+          <span class="prov-spec">${esc(p.spec)} • ${esc(p.area)}</span>
+        </div>
+      </div>
+      <div class="provider-rating">
+        <span class="stars">${"★".repeat(Math.floor(p.rating))}${"☆".repeat(5 - Math.floor(p.rating))}</span>
+        <strong>${p.rating}</strong>
+        <span>(${p.reviews} تقييم)</span>
+      </div>
+      <div class="provider-meta">
+        <div><span>السعر</span><strong>${p.price} ج.م</strong></div>
+        <div><span>الوصول</span><strong>${p.eta ? p.eta + " د" : "—"}</strong></div>
+        <div><span>الحالة</span><strong style="color:var(--success);">متاح</strong></div>
+      </div>
+      <div class="provider-actions">
+        <a href="https://wa.me/201094273376?text=${encodeURIComponent("مرحباً، أريد الاستفسار عن خدمة: " + p.spec)}" class="btn btn-whatsapp btn-sm" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> واتساب
+        </a>
+        <a href="tel:+${p.phone}" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-phone"></i> اتصال
+        </a>
+      </div>
+    </div>
+  `).join("");
+}
+renderProviders();
+
+/* ============================================================
+   AI CHAT STATE MACHINE
+============================================================ */
+const aiPanel = $("#aiPanel");
+const aiMessages = $("#aiMessages");
+const aiInput = $("#aiInput");
+const aiSend = $("#aiSend");
+
+const aiState = {
+  step: "idle",
+  category: null,
+  area: null,
+  urgency: "normal",
+  options: [],
+  selected: null,
+  booking: null,
+  rating: 0
+};
+
+function openAI(prefill) {
+  aiPanel.classList.add("open");
+  aiPanel.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+  if (aiMessages.children.length === 0) {
+    botSay("مرحباً بك 👋<br>أنا <strong>مساعد بلدي الذكي</strong>.<br>اكتب لي مشكلتك وأنا هساعدك تلاقي أفضل مقدم خدمة قريب منك في ثواني.");
   }
-
-  /* ============================================================
-     YEAR
-  ============================================================ */
-  const yearEl = $("#year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  /* ============================================================
-     THEME
-  ============================================================ */
-  const themeToggle = $("#themeToggle");
-  const themeColorMeta = $("#themeColorMeta");
-
-  function applyTheme(isDark) {
-    document.body.classList.toggle("dark", isDark);
-    if (themeToggle) {
-      const icon = themeToggle.querySelector("i");
-      if (icon) icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
-      themeToggle.setAttribute("aria-label", isDark ? "الوضع النهاري" : "الوضع الليلي");
-    }
-    if (themeColorMeta) themeColorMeta.setAttribute("content", isDark ? "#0c1422" : "#0b1e3a");
+  if (prefill) {
+    aiInput.value = prefill;
+    setTimeout(() => handleUserInput(), 400);
+  } else {
+    setTimeout(() => aiInput.focus(), 300);
   }
+}
+function closeAI() {
+  aiPanel.classList.remove("open");
+  aiPanel.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("no-scroll");
+}
 
-  const getSavedTheme = () => { try { return localStorage.getItem(THEME_KEY); } catch { return null; } };
+$("#openAI")?.addEventListener("click", () => openAI());
+$("#openAIHeader")?.addEventListener("click", () => openAI());
+$("#openAIFeature")?.addEventListener("click", () => openAI());
+$("#closeAI")?.addEventListener("click", closeAI);
 
-  function initTheme() {
-    const saved = getSavedTheme();
-    if (saved === "dark") return applyTheme(true);
-    if (saved === "light") return applyTheme(false);
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(!!prefersDark);
-  }
+/* ============================================================
+   MESSAGING
+============================================================ */
+function addMsg(html, who = "bot") {
+  const div = document.createElement("div");
+  div.className = "msg " + who;
+  div.innerHTML = html;
+  aiMessages.appendChild(div);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+  return div;
+}
+function botSay(html) { return addMsg(html, "bot"); }
+function userSay(html) { return addMsg(html, "user"); }
 
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const isDark = !document.body.classList.contains("dark");
-      applyTheme(isDark);
-      try { localStorage.setItem(THEME_KEY, isDark ? "dark" : "light"); } catch {}
-    });
-  }
-  if (window.matchMedia) {
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = (e) => { if (!getSavedTheme()) applyTheme(e.matches); };
-    mq.addEventListener ? mq.addEventListener("change", handler) : mq.addListener(handler);
-  }
-  initTheme();
+async function typing(ms = 900) {
+  const t = document.createElement("div");
+  t.className = "msg bot typing";
+  t.innerHTML = "<span></span><span></span><span></span>";
+  aiMessages.appendChild(t);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+  await sleep(ms);
+  t.remove();
+}
 
-  /* ============================================================
-     MOBILE MENU
-  ============================================================ */
-  const mobileMenu = $("#mobileMenu");
-  const navLinks = $("#navLinks");
+/* ============================================================
+   MAIN HANDLER
+============================================================ */
+async function handleUserInput() {
+  const text = aiInput.value.trim();
+  if (!text) return;
+  aiInput.value = "";
+  aiSend.disabled = true;
 
-  function setMenuIcon(open) {
-    if (!mobileMenu) return;
-    const i = mobileMenu.querySelector("i");
-    if (i) i.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
-    mobileMenu.setAttribute("aria-expanded", open ? "true" : "false");
-  }
-  function closeMobileMenu() { navLinks?.classList.remove("open"); setMenuIcon(false); }
-  function openMobileMenu() { navLinks?.classList.add("open"); setMenuIcon(true); }
+  userSay(esc(text));
+  await typing(700);
 
-  if (mobileMenu && navLinks) {
-    mobileMenu.addEventListener("click", (e) => {
-      e.stopPropagation();
-      navLinks.classList.contains("open") ? closeMobileMenu() : openMobileMenu();
-    });
-    $$("#navLinks a").forEach(a => a.addEventListener("click", closeMobileMenu));
-    document.addEventListener("click", (e) => {
-      if (!navLinks.classList.contains("open")) return;
-      if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) closeMobileMenu();
-    });
-  }
-
-  /* ============================================================
-     MODAL UTILS
-  ============================================================ */
-  function openModalEl(el) {
-    if (!el) return;
-    el.classList.add("open");
-    el.removeAttribute("inert");
-    el.setAttribute("aria-hidden", "false");
-    document.body.classList.add("no-scroll");
-  }
-  function closeModalEl(el) {
-    if (!el) return;
-    el.classList.remove("open");
-    el.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("no-scroll");
-  }
-
-  /* ============================================================
-     RENDER SERVICES
-  ============================================================ */
-  const servicesGrid = $("#servicesGrid");
-
-  function renderServices(list = services) {
-    if (!servicesGrid) return;
-    servicesGrid.innerHTML = "";
-
-    if (!list.length) {
-      servicesGrid.appendChild(
-        createEl("div", "no-results",
-          '<i class="fa-solid fa-circle-question"></i><p>لا توجد خدمات مطابقة لبحثك</p>')
-      );
+  // Step 1: category
+  if (!aiState.category) {
+    const cat = detectCategory(text);
+    if (!cat) {
+      botSay("معلش، مقدرتش أفهم نوع الخدمة بالظبط. ممكن توضحلي أكتر؟<br>مثلاً: <strong>عربيتي عطلت</strong>، <strong>تسريب مياه</strong>، <strong>عطل كهرباء</strong>...");
+      aiSend.disabled = false;
       return;
     }
+    aiState.category = cat;
 
-    const sorted = [...list].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-
-    sorted.forEach(svc => {
-      const card = createEl("article", "service-card");
-      card.tabIndex = 0;
-      card.setAttribute("role", "button");
-      card.setAttribute("aria-label", `عرض تفاصيل خدمة ${svc.name}`);
-      card.dataset.id = svc.id;
-
-      card.innerHTML = `
-        ${svc.featured ? '<span class="service-badge-featured">مميز</span>' : ''}
-        <div class="service-icon"><i class="fa-solid ${escapeHtml(svc.icon)}" aria-hidden="true"></i></div>
-        <h3>${escapeHtml(svc.name)}</h3>
-        <p>${escapeHtml(svc.desc)}</p>
-      `;
-
-      const open = () => openServiceModal(svc.id);
-      card.addEventListener("click", open);
-      card.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
-      });
-
-      servicesGrid.appendChild(card);
-    });
-  }
-
-  /* ============================================================
-     SEARCH
-  ============================================================ */
-  const searchForm = $("#searchForm");
-  const serviceSearch = $("#serviceSearch");
-
-  function filterServices(q) {
-    const nq = normalizeArabic(q);
-    if (!nq) return services;
-    return services.filter(s => {
-      const hay = normalizeArabic([s.name, s.desc, s.longDesc, ...(s.features || [])].join(" "));
-      return hay.includes(nq);
-    });
-  }
-
-  function handleSearch(e) {
-    if (e) e.preventDefault();
-    const q = serviceSearch?.value || "";
-    const filtered = filterServices(q);
-    renderServices(filtered);
-
-    document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    if (!filtered.length) notify("لا توجد نتائج مطابقة", "warning");
-  }
-
-  if (searchForm) searchForm.addEventListener("submit", handleSearch);
-
-  if (serviceSearch) {
-    let t;
-    serviceSearch.addEventListener("input", () => {
-      clearTimeout(t);
-      t = setTimeout(() => renderServices(filterServices(serviceSearch.value)), 180);
-    });
-  }
-
-  /* ============================================================
-     SERVICE MODAL
-  ============================================================ */
-  const serviceModal = $("#serviceModal");
-  const modalIcon = $("#modalIcon");
-  const modalTitle = $("#modalTitle");
-  const modalDesc = $("#modalDesc");
-  const modalFeatures = $("#modalFeatures");
-  const modalWhatsapp = $("#modalWhatsapp");
-  const modalCall = $("#modalCall");
-  const modalClose = $("#modalClose");
-
-  function openServiceModal(id) {
-    const svc = services.find(s => s.id === id);
-    if (!svc) return;
-
-    if (modalIcon) modalIcon.innerHTML = `<i class="fa-solid ${escapeHtml(svc.icon)}"></i>`;
-    if (modalTitle) modalTitle.textContent = svc.name;
-    if (modalDesc) modalDesc.textContent = svc.longDesc || svc.desc;
-
-    if (modalFeatures) {
-      modalFeatures.innerHTML = "";
-      (svc.features || []).forEach(f => {
-        modalFeatures.appendChild(
-          createEl("li", "", `<i class="fa-solid fa-check"></i> ${escapeHtml(f)}`)
-        );
-      });
-    }
-
-    const wa = svc.whatsapp || OWNER_WHATSAPP;
-    if (modalWhatsapp) {
-      const text = encodeURIComponent(`مرحباً، أريد الاستفسار عن خدمة: ${svc.name}`);
-      modalWhatsapp.href = `https://wa.me/${wa}?text=${text}`;
-    }
-    if (modalCall) {
-      modalCall.href = `tel:+${svc.phone || VODAFONE_NUMBER}`;
-    }
-
-    openModalEl(serviceModal);
-  }
-
-  if (modalClose) modalClose.addEventListener("click", () => closeModalEl(serviceModal));
-  if (serviceModal) {
-    serviceModal.addEventListener("click", (e) => {
-      if (e.target === serviceModal) closeModalEl(serviceModal);
-    });
-  }
-
-  /* ============================================================
-     COPY VODAFONE
-  ============================================================ */
-  const copyBtn = $("#copyVodaBtn");
-  if (copyBtn) {
-    copyBtn.addEventListener("click", async () => {
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(VODAFONE_NUMBER);
-        } else {
-          const ta = document.createElement("textarea");
-          ta.value = VODAFONE_NUMBER;
-          ta.style.position = "fixed";
-          ta.style.opacity = "0";
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand("copy");
-          ta.remove();
-        }
-        notify("تم نسخ رقم فودافون كاش ✅", "success");
-      } catch {
-        notify("تعذّر النسخ، انسخ الرقم يدوياً", "error");
-      }
-    });
-  }
-
-  /* ============================================================
-     PLAN BUTTONS
-  ============================================================ */
-  $$(".plan-button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const plan = btn.dataset.plan || "";
-      const price = btn.dataset.price || "0";
-      const text = encodeURIComponent(
-        `مرحباً، أريد الاشتراك في ${plan}${price !== "0" ? ` (${price} ج.م)` : ""} على منصة خدمات بلدي`
-      );
-      window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${text}`, "_blank", "noopener");
-    });
-  });
-
-  /* ============================================================
-     AI ASSISTANT
-  ============================================================ */
-  const aiButton = $("#aiButton");
-  const chatBox = $("#chatBox");
-  const closeChat = $("#closeChat");
-  const chatMessages = $("#chatMessages");
-  const chatInput = $("#chatInput");
-  const sendChat = $("#sendChat");
-  const chatSuggestions = $("#chatSuggestions");
-
-  function openChat() {
-    if (!chatBox) return;
-    chatBox.classList.add("open");
-    chatBox.setAttribute("aria-hidden", "false");
-    aiButton?.classList.add("active");
-    aiButton?.setAttribute("aria-expanded", "true");
-    setTimeout(() => chatInput?.focus(), 150);
-  }
-  function closeChatBox() {
-    if (!chatBox) return;
-    chatBox.classList.remove("open");
-    chatBox.setAttribute("aria-hidden", "true");
-    aiButton?.classList.remove("active");
-    aiButton?.setAttribute("aria-expanded", "false");
-  }
-  function toggleChat() {
-    chatBox?.classList.contains("open") ? closeChatBox() : openChat();
-  }
-
-  if (aiButton) aiButton.addEventListener("click", toggleChat);
-  if (closeChat) closeChat.addEventListener("click", closeChatBox);
-
-  function addChatMsg(text, who = "bot") {
-    if (!chatMessages) return;
-    const msg = createEl("div", `chat-msg ${who}`);
-    msg.innerHTML = text;
-    chatMessages.appendChild(msg);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-  function getAISuggestions() {
-    const list = services.slice(0, 6).map(s => `"${escapeHtml(s.name)}"`).join("، ");
-    return `ممكن تسألني مثلاً عن: ${list}، أو "الاشتراكات"، أو "طرق الدفع".`;
-  }
-
-  function generateAIResponse(question) {
-    const q = normalizeArabic(question);
-    if (!q) return "من فضلك اكتب سؤالك.";
-
-    if (/^(اهلا|مرحبا|سلام|هاي|السلام|صباح|مساء)/.test(q)) {
-      return "أهلاً وسهلاً بك 👋<br>أنا مساعد بلدي الذكي، كيف أقدر أساعدك؟<br><br>" + getAISuggestions();
-    }
-
-    if (/شكرا|شكرًا|تسلم|جزاك/.test(q)) return "العفو 🌹 دايمًا في خدمتك!";
-
-    if (/دفع|فودافون|انستاباي|انستا|محفظه|محفظة|كاش|تحويل|فلوس|سعر|اسعار|تكلفه/.test(q)) {
-      return `طرق الدفع المتاحة عندنا:<br>
-        • فودافون كاش<br>• إنستاباي<br>• اتصالات كاش<br>• أورنج كاش<br><br>
-        رقم المحفظة: <b>${VODAFONE_NUMBER}</b><br>
-        للتفاصيل الكاملة اضغط على قسم "طرق الدفع" في الصفحة.`;
-    }
-
-    if (/اشتراك|باقه|باقة|خطه|خطة|سعر|premium|احترافي|مميز/.test(q)) {
-      return `خطط الاشتراك المتاحة:<br>
-        ⭐ مجاني: 0 ج.م<br>
-        ⭐ احترافي: 99 ج.م/شهر<br>
-        ⭐ أعمال: 299 ج.م/شهر<br><br>
-        للمزيد اضغط على قسم "الاشتراكات".`;
-    }
-
-    if (/تواصل|اتصال|رقم|تليفون|هاتف|واتس|واتساب/.test(q)) {
-      return `تقدر تتواصل معانا على:<br>
-        📞 ${VODAFONE_NUMBER}<br>
-        💬 واتساب مباشر<br>
-        📧 info@balady-services.com`;
-    }
-
-    const matched = services.filter(s => {
-      const hay = normalizeArabic([s.name, s.desc, s.longDesc, ...(s.features || [])].join(" "));
-      return hay.includes(q) || q.includes(normalizeArabic(s.name));
-    });
-
-    if (matched.length) {
-      if (matched.length === 1) {
-        const s = matched[0];
-        return `لقيتلك خدمة "<b>${escapeHtml(s.name)}</b>"<br>
-          ${escapeHtml(s.desc)}<br><br>
-          <b>المميزات:</b><br>${(s.features || []).map(f => `• ${escapeHtml(f)}`).join("<br>")}<br><br>
-          اضغط عليها في قسم الخدمات للتواصل المباشر.`;
-      }
-      return `لقيتلك ${matched.length} خدمات مناسبة:<br>` +
-        matched.map(s => `• <b>${escapeHtml(s.name)}</b> - ${escapeHtml(s.desc)}`).join("<br>") +
-        `<br><br>اكتب اسم خدمة معينة للتفاصيل.`;
-    }
-
-    const keywordMap = {
-      "دكتور": ["health","doctors"], "طبيب": ["health","doctors"], "عياده": ["health"],
-      "صحه": ["health"], "مستشفي": ["health"],
-      "محامي": ["law","lawyers"], "قانون": ["law","lawyers"], "قضيه": ["law"],
-      "مدرس": ["education","teachers"], "دروس": ["education"], "تعليم": ["education"],
-      "صيدليه": ["pharmacy","health"], "دوا": ["pharmacy"],
-      "عربيه": ["cars"], "عربيات": ["cars"], "سياره": ["cars"], "سيارات": ["cars"], "ميكانيكا": ["cars"],
-      "ملابس": ["trade","clothes"], "محل": ["trade"], "تجاره": ["trade"],
-      "شقه": ["realestate"], "عقار": ["realestate"], "بيت": ["realestate"],
-      "وظيفه": ["jobs"], "شغل": ["jobs"], "عمل": ["jobs"],
-      "سباك": ["misc"], "نجار": ["misc"], "كهربايي": ["misc"]
-    };
-
-    const catMatches = new Set();
-    for (const [kw, cats] of Object.entries(keywordMap)) {
-      if (q.includes(kw)) cats.forEach(c => catMatches.add(c));
-    }
-
-    if (catMatches.size) {
-      const results = services.filter(s => catMatches.has(s.id));
-      if (results.length) {
-        return `الخدمات المتعلقة بسؤالك:<br>` +
-          results.map(s => `• <b>${escapeHtml(s.name)}</b> - ${escapeHtml(s.desc)}`).join("<br>") +
-          `<br><br>اكتب اسم الخدمة لمزيد من التفاصيل.`;
-      }
-    }
-
-    return `معلش مفهمتش سؤالك بالظبط 🤔<br><br>` + getAISuggestions();
-  }
-
-  function sendAIMessage() {
-    if (!chatInput) return;
-    const text = chatInput.value.trim();
-    if (!text) return;
-    addChatMsg(escapeHtml(text), "user");
-    chatInput.value = "";
-    setTimeout(() => {
-      const reply = generateAIResponse(text);
-      addChatMsg(reply, "bot");
-    }, 400);
-  }
-
-  if (sendChat) sendChat.addEventListener("click", sendAIMessage);
-  if (chatInput) {
-    chatInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") { e.preventDefault(); sendAIMessage(); }
-    });
-  }
-  if (chatSuggestions) {
-    chatSuggestions.addEventListener("click", (e) => {
-      const btn = e.target.closest("button[data-q]");
-      if (!btn) return;
-      if (chatInput) chatInput.value = btn.dataset.q;
-      sendAIMessage();
-    });
-  }
-
-  /* ============================================================
-     ADMIN PANEL
-  ============================================================ */
-  const adminModal = $("#adminModal");
-  const adminClose = $("#adminClose");
-  const adminLoginView = $("#adminLoginView");
-  const adminPanelView = $("#adminPanelView");
-  const adminPassword = $("#adminPassword");
-  const adminLoginBtn = $("#adminLoginBtn");
-  const adminLogout = $("#adminLogout");
-  const adminList = $("#adminList");
-  const serviceForm = $("#serviceForm");
-  const editIdInput = $("#editId");
-  const svcName = $("#svcName");
-  const svcIcon = $("#svcIcon");
-  const svcWhatsapp = $("#svcWhatsapp");
-  const svcDesc = $("#svcDesc");
-  const svcLongDesc = $("#svcLongDesc");
-  const svcFeatures = $("#svcFeatures");
-  const svcPhone = $("#svcPhone");
-  const svcFeatured = $("#svcFeatured");
-  const submitBtn = $("#submitBtn");
-  const cancelEdit = $("#cancelEdit");
-  const adminTabs = $$(".admin-tab");
-  const adminContents = $$(".admin-content");
-
-  const getAdminPass = () => { try { return localStorage.getItem(PASS_KEY) || DEFAULT_PASSWORD; } catch { return DEFAULT_PASSWORD; } };
-  const setAdminPass = (p) => { try { localStorage.setItem(PASS_KEY, p); } catch {} };
-
-  function openAdmin() {
-    openModalEl(adminModal);
-    if (sessionStorage.getItem(AUTH_KEY) === "1") showAdminPanel();
-    else showAdminLogin();
-  }
-
-  function showAdminLogin() {
-    if (adminLoginView) adminLoginView.hidden = false;
-    if (adminPanelView) adminPanelView.hidden = true;
-    if (adminPassword) {
-      adminPassword.value = "";
-      setTimeout(() => adminPassword.focus(), 150);
-    }
-  }
-
-  function showAdminPanel() {
-    if (adminLoginView) adminLoginView.hidden = true;
-    if (adminPanelView) adminPanelView.hidden = false;
-    switchAdminTab("list");
-    renderAdminList();
-  }
-
-  function switchAdminTab(name) {
-    adminTabs.forEach(t => t.classList.toggle("active", t.dataset.tab === name));
-    adminContents.forEach(c => c.classList.toggle("active", c.dataset.content === name));
-  }
-
-  adminTabs.forEach(tab => tab.addEventListener("click", () => switchAdminTab(tab.dataset.tab)));
-
-  function loginAdmin() {
-    const input = adminPassword?.value || "";
-    if (input === getAdminPass()) {
-      sessionStorage.setItem(AUTH_KEY, "1");
-      showAdminPanel();
-      notify("مرحباً بك في لوحة التحكم", "success");
-    } else {
-      notify("كلمة السر غير صحيحة", "error");
-      if (adminPassword) { adminPassword.value = ""; adminPassword.focus(); }
-    }
-  }
-
-  if (adminLoginBtn) adminLoginBtn.addEventListener("click", loginAdmin);
-  if (adminPassword) {
-    adminPassword.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") { e.preventDefault(); loginAdmin(); }
-    });
-  }
-  if (adminLogout) {
-    adminLogout.addEventListener("click", () => {
-      sessionStorage.removeItem(AUTH_KEY);
-      showAdminLogin();
-      notify("تم تسجيل الخروج", "info");
-    });
-  }
-  if (adminClose) adminClose.addEventListener("click", () => closeModalEl(adminModal));
-  if (adminModal) {
-    adminModal.addEventListener("click", (e) => {
-      if (e.target === adminModal) closeModalEl(adminModal);
-    });
-  }
-
-  // Hidden admin: Ctrl+Shift+A
-  document.addEventListener("keydown", (e) => {
-    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
-      e.preventDefault();
-      openAdmin();
-    }
-  });
-
-  // Hidden admin: 5 clicks on logo
-  let logoClicks = 0, logoTimer;
-  const logoTrigger = $("#logoTrigger");
-  if (logoTrigger) {
-    logoTrigger.addEventListener("click", (e) => {
-      logoClicks++;
-      clearTimeout(logoTimer);
-      logoTimer = setTimeout(() => { logoClicks = 0; }, 800);
-      if (logoClicks >= 5) {
-        e.preventDefault();
-        logoClicks = 0;
-        openAdmin();
-      }
-    });
-  }
-
-  /* ============================================================
-     ADMIN LIST
-  ============================================================ */
-  function renderAdminList() {
-    if (!adminList) return;
-    adminList.innerHTML = "";
-
-    if (!services.length) {
-      adminList.appendChild(
-        createEl("div", "admin-empty",
-          '<i class="fa-solid fa-inbox"></i><p>لا توجد خدمات بعد. اضغط "إضافة خدمة" للبدء.</p>')
-      );
+    // Step 2: area
+    const area = detectArea(text);
+    if (!area) {
+      botSay(`تمام، فهمت إنك محتاج <strong>${CAT_NAMES[cat]}</strong>.<br><br>📍 من فضلك حدد منطقتك (مثلاً: مدينة نصر، المعادي...).`);
+      aiSend.disabled = false;
       return;
     }
+    aiState.area = area;
+    aiState.urgency = detectUrgency(text);
+    await showOptions();
+    aiSend.disabled = false;
+    return;
+  }
 
-    services.forEach(svc => {
-      const item = createEl("div", "admin-item");
-      item.innerHTML = `
-        <div class="admin-item-info">
-          <div class="admin-item-icon"><i class="fa-solid ${escapeHtml(svc.icon)}"></i></div>
-          <div style="min-width:0; flex:1;">
-            <strong>${escapeHtml(svc.name)} ${svc.featured ? '⭐' : ''}</strong>
-            <span>${escapeHtml(svc.desc)}</span>
+  // Step area needed
+  if (!aiState.area) {
+    const area = detectArea(text) || text.trim();
+    aiState.area = area;
+    aiState.urgency = detectUrgency(text);
+    await showOptions();
+    aiSend.disabled = false;
+    return;
+  }
+
+  // Fallback
+  botSay("من فضلك اختر من الخيارات المعروضة فوق، أو اضغط على زر <strong>إلغاء</strong> للبدء من جديد.");
+  aiSend.disabled = false;
+}
+
+aiSend?.addEventListener("click", handleUserInput);
+aiInput?.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    handleUserInput();
+  }
+});
+$$("#quickSuggest button").forEach(b => {
+  b.addEventListener("click", () => {
+    aiInput.value = b.dataset.q;
+    handleUserInput();
+  });
+});
+
+/* ============================================================
+   SHOW OPTIONS
+============================================================ */
+async function showOptions() {
+  await typing(800);
+
+  const candidates = PROVIDERS.filter(p => p.cat === aiState.category);
+
+  // Sort by score
+  const ranked = rankProviders(candidates).slice(0, 3);
+  aiState.options = ranked;
+
+  if (!ranked.length) {
+    botSay("معلش، مفيش مقدم خدمة متاح في التخصص ده دلوقتي. جرب تخصص تاني أو تواصل معنا مباشرة.");
+    return;
+  }
+
+  // Summary message
+  botSay(`
+    ✅ <strong>حللت مشكلتك</strong><br><br>
+    📍 الموقع: <strong>${esc(aiState.area)}</strong><br>
+    🔧 الخدمة: <strong>${CAT_SERVICE[aiState.category]}</strong><br>
+    ⏱️ الحالة: <strong>${aiState.urgency === "urgent" ? "عاجل - طوارئ" : "عادي"}</strong><br>
+    🔍 لقيتلك <strong>${ranked.length}</strong> خيارات متاحة قريبة منك
+  `);
+
+  await typing(500);
+
+  // Show provider cards
+  const wrap = document.createElement("div");
+  wrap.className = "msg bot";
+  wrap.style.padding = "14px";
+  wrap.style.maxWidth = "95%";
+
+  wrap.innerHTML = ranked.map((p, i) => {
+    const badge = i === 0 ? '<span class="best">⭐ الأفضل</span>' : '';
+    return `
+      <div class="option-card" data-id="${p.id}">
+        <div class="option-head">
+          <div class="option-avatar">${p.emoji}</div>
+          <div class="option-info">
+            <strong>${esc(p.name)}</strong>
+            <small><i class="fa-solid fa-star"></i> ${p.rating} (${p.reviews}) • ${esc(p.area)}</small>
           </div>
         </div>
-        <div class="admin-item-actions">
-          <button type="button" data-action="view" title="عرض"><i class="fa-solid fa-eye"></i></button>
-          <button type="button" data-action="edit" title="تعديل"><i class="fa-solid fa-pen"></i></button>
-          <button type="button" data-action="delete" title="حذف"><i class="fa-solid fa-trash"></i></button>
+        <div class="option-meta">
+          ${badge}
+          <span class="price">💰 ${p.price} ج.م</span>
+          <span class="eta">⏱️ وصول ${p.eta} دقيقة</span>
+          <span class="rating">⭐ ${p.rating}</span>
         </div>
-      `;
+      </div>
+    `;
+  }).join("");
 
-      item.querySelector('[data-action="view"]').addEventListener("click", () => {
-        closeModalEl(adminModal);
-        setTimeout(() => openServiceModal(svc.id), 250);
-      });
-      item.querySelector('[data-action="edit"]').addEventListener("click", () => startEdit(svc.id));
-      item.querySelector('[data-action="delete"]').addEventListener("click", () => {
-        if (confirm(`هل تريد حذف خدمة "${svc.name}"؟`)) {
-          services = services.filter(s => s.id !== svc.id);
-          persist();
-          renderAdminList();
-          renderServices();
-          notify("تم حذف الخدمة", "success");
-        }
-      });
+  aiMessages.appendChild(wrap);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
 
-      adminList.appendChild(item);
-    });
-  }
-
-  function startEdit(id) {
-    const svc = services.find(s => s.id === id);
-    if (!svc) return;
-
-    if (editIdInput) editIdInput.value = svc.id;
-    if (svcName) svcName.value = svc.name;
-    if (svcIcon) svcIcon.value = svc.icon;
-    if (svcWhatsapp) svcWhatsapp.value = svc.whatsapp || "";
-    if (svcDesc) svcDesc.value = svc.desc;
-    if (svcLongDesc) svcLongDesc.value = svc.longDesc || "";
-    if (svcFeatures) svcFeatures.value = (svc.features || []).join("\n");
-    if (svcPhone) svcPhone.value = svc.phone || "";
-    if (svcFeatured) svcFeatured.checked = !!svc.featured;
-
-    if (submitBtn) submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> حفظ التعديلات';
-    if (cancelEdit) cancelEdit.hidden = false;
-
-    switchAdminTab("add");
-    if (svcName) svcName.focus();
-  }
-
-  function resetServiceForm() {
-    if (editIdInput) editIdInput.value = "";
-    if (serviceForm) serviceForm.reset();
-    if (svcIcon) svcIcon.value = "fa-circle-info";
-    if (submitBtn) submitBtn.innerHTML = '<i class="fa-solid fa-plus"></i> إضافة الخدمة';
-    if (cancelEdit) cancelEdit.hidden = true;
-  }
-
-  if (cancelEdit) {
-    cancelEdit.addEventListener("click", () => {
-      resetServiceForm();
-      switchAdminTab("list");
-    });
-  }
-
-  if (serviceForm) {
-    serviceForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const name = svcName?.value.trim();
-      const icon = svcIcon?.value.trim() || "fa-circle-info";
-      const desc = svcDesc?.value.trim();
-
-      if (!name || !desc) {
-        notify("الرجاء إدخال اسم الخدمة والوصف", "error");
-        return;
-      }
-
-      const features = (svcFeatures?.value || "")
-        .split("\n").map(f => f.trim()).filter(Boolean);
-
-      const data = {
-        name, icon, desc,
-        longDesc: svcLongDesc?.value.trim() || desc,
-        whatsapp: svcWhatsapp?.value.trim() || OWNER_WHATSAPP,
-        phone: svcPhone?.value.trim() || VODAFONE_NUMBER,
-        features,
-        featured: !!svcFeatured?.checked
-      };
-
-      const editId = editIdInput?.value;
-
-      if (editId) {
-        const idx = services.findIndex(s => s.id === editId);
-        if (idx !== -1) services[idx] = { ...services[idx], ...data };
-        notify("تم حفظ التعديلات ✅", "success");
-      } else {
-        const id = "svc_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7);
-        services.push({ id, ...data });
-        notify("تمت إضافة الخدمة ✅", "success");
-      }
-
-      persist();
-      renderServices();
-      renderAdminList();
-      resetServiceForm();
-      switchAdminTab("list");
-    });
-  }
-
-  /* ============================================================
-     ADMIN SETTINGS
-  ============================================================ */
-  const newPassword = $("#newPassword");
-  const changePasswordBtn = $("#changePasswordBtn");
-  if (changePasswordBtn) {
-    changePasswordBtn.addEventListener("click", () => {
-      const p = newPassword?.value.trim();
-      if (!p || p.length < 6) {
-        notify("كلمة السر يجب أن تكون 6 أحرف على الأقل", "error");
-        return;
-      }
-      setAdminPass(p);
-      if (newPassword) newPassword.value = "";
-      notify("تم تغيير كلمة السر ✅", "success");
-    });
-  }
-
-  const exportBtn = $("#exportBtn");
-  if (exportBtn) {
-    exportBtn.addEventListener("click", () => {
-      try {
-        const blob = new Blob([JSON.stringify(services, null, 2)], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `balady-services-${new Date().toISOString().slice(0, 10)}.json`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-        notify("تم تصدير البيانات ✅", "success");
-      } catch { notify("تعذّر التصدير", "error"); }
-    });
-  }
-
-  const importInput = $("#importInput");
-  if (importInput) {
-    importInput.addEventListener("change", (e) => {
-      const file = e.target.files?.[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        try {
-          const parsed = JSON.parse(ev.target.result);
-          if (!Array.isArray(parsed)) throw new Error("تنسيق غير صحيح");
-          const valid = parsed.filter(s => s && typeof s.name === "string" && typeof s.desc === "string");
-          if (!valid.length) throw new Error("لا توجد خدمات صحيحة");
-          services = valid.map(s => ({
-            id: s.id || "svc_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7),
-            name: s.name,
-            icon: s.icon || "fa-circle-info",
-            desc: s.desc,
-            longDesc: s.longDesc || s.desc,
-            features: Array.isArray(s.features) ? s.features : [],
-            whatsapp: s.whatsapp || OWNER_WHATSAPP,
-            phone: s.phone || VODAFONE_NUMBER,
-            featured: !!s.featured
-          }));
-          persist();
-          renderServices();
-          renderAdminList();
-          notify("تم الاستيراد بنجاح ✅", "success");
-        } catch (err) {
-          notify("ملف غير صالح: " + err.message, "error");
-        }
-        if (importInput) importInput.value = "";
-      };
-      reader.readAsText(file);
-    });
-  }
-
-  const resetBtn = $("#resetBtn");
-  if (resetBtn) {
-    resetBtn.addEventListener("click", () => {
-      if (!confirm("سيتم استعادة الخدمات الافتراضية وحذف كل التعديلات. هل أنت متأكد؟")) return;
-      services = JSON.parse(JSON.stringify(DEFAULT_SERVICES));
-      persist();
-      renderServices();
-      renderAdminList();
-      notify("تمت الاستعادة للوضع الافتراضي", "success");
-    });
-  }
-
-  function persist() {
-    if (!saveServices(services)) notify("تحذير: تعذّر حفظ البيانات", "warning");
-  }
-
-  /* ============================================================
-     GLOBAL KEYBOARD
-  ============================================================ */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      if (chatBox?.classList.contains("open")) closeChatBox();
-      if (serviceModal?.classList.contains("open")) closeModalEl(serviceModal);
-      if (adminModal?.classList.contains("open")) closeModalEl(adminModal);
-    }
+  // Click handler
+  wrap.querySelectorAll(".option-card").forEach(card => {
+    card.addEventListener("click", () => selectOption(card.dataset.id, wrap));
   });
 
-  /* ============================================================
-     INIT
-  ============================================================ */
-  renderServices();
+  botSay("👇 <strong>اختر مقدم الخدمة المناسب لك</strong> وسأقوم بالباقي");
+}
 
-  console.log("%c🏘️ خدمات بلدي — تم التحميل بنجاح",
-    "color:#0b1e3a;font-weight:bold;font-size:14px;background:#c8a349;padding:4px 12px;border-radius:6px;");
-  console.log(`💰 فودافون كاش: ${VODAFONE_NUMBER}`);
-  console.log("🔐 لفتح لوحة التحكم: Ctrl+Shift+A أو اضغط على الشعار 5 مرات");
+/* ============================================================
+   SELECT OPTION
+============================================================ */
+async function selectOption(id, wrap) {
+  const p = aiState.options.find(x => x.id === id);
+  if (!p) return;
 
+  aiState.selected = p;
+  wrap.querySelectorAll(".option-card").forEach(c => c.classList.toggle("selected", c.dataset.id === id));
+
+  userSay(`اخترت: <strong>${esc(p.name)}</strong>`);
+  await typing(600);
+
+  botSay(`
+    ✅ <strong>ملخص الحجز</strong><br><br>
+    👤 مقدم الخدمة: <strong>${esc(p.name)}</strong><br>
+    📍 الموقع: <strong>${esc(aiState.area)}</strong><br>
+    💰 السعر التقديري: <strong>${p.price} ج.م</strong><br>
+    ⏱️ وقت الوصول المتوقع: <strong>${p.eta} دقيقة</strong><br><br>
+    هل توافق على تأكيد الحجز؟
+  `);
+
+  const actions = document.createElement("div");
+  actions.className = "chat-actions";
+  actions.innerHTML = `
+    <button class="btn btn-gold" id="confirmBooking"><i class="fa-solid fa-check"></i> تأكيد الحجز</button>
+    <button class="btn btn-outline" id="cancelBooking"><i class="fa-solid fa-xmark"></i> إلغاء</button>
+  `;
+  aiMessages.appendChild(actions);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+
+  $("#confirmBooking").onclick = () => startTracking(p, actions);
+  $("#cancelBooking").onclick = () => {
+    actions.remove();
+    botSay("تم إلغاء الحجز. لو احتجت أي خدمة تانية أنا في خدمتك 👍");
+    resetAI();
+  };
+}
+
+/* ============================================================
+   TRACKING
+============================================================ */
+async function startTracking(provider, actionsEl) {
+  actionsEl.remove();
+
+  aiState.booking = {
+    id: uid(),
+    provider,
+    area: aiState.area,
+    category: aiState.category,
+    price: provider.price,
+    createdAt: new Date()
+  };
+
+  userSay("✅ تأكيد الحجز");
+  await typing(700);
+
+  botSay(`
+    🎉 <strong>تم تأكيد حجزك بنجاح!</strong><br>
+    📱 تم إرسال بياناتك إلى <strong>${esc(provider.name)}</strong> وسيتم التواصل معك خلال دقائق.
+  `);
+
+  await typing(700);
+
+  // Tracking card
+  const trackSteps = [
+    { icon: "✅", label: "تم تأكيد الطلب" },
+    { icon: "📋", label: "جاري تجهيز الفني" },
+    { icon: "🚗", label: "الفني في الطريق إليك" },
+    { icon: "📍", label: "الفني وصل المكان" },
+    { icon: "🔧", label: "جاري تنفيذ الخدمة" },
+    { icon: "✨", label: "تم الانتهاء من الخدمة" }
+  ];
+
+  const track = document.createElement("div");
+  track.className = "msg bot";
+  track.style.padding = "14px";
+  track.style.maxWidth = "95%";
+  track.innerHTML = `
+    <div class="track-card">
+      <div class="track-head">
+        <strong>🚗 تتبع الخدمة</strong>
+        <span class="track-id">#${aiState.booking.id}</span>
+      </div>
+      <ul class="track-steps" id="trackSteps">
+        ${trackSteps.map((s, i) => `<li data-i="${i}">${s.icon} ${s.label}</li>`).join("")}
+      </ul>
+      <div style="margin-top:14px; padding-top:12px; border-top:1px dashed var(--border); font-size:.82rem; color:var(--muted); text-align:center;">
+        👤 <strong style="color:var(--text);">${esc(provider.name)}</strong> • 📞 ${provider.phone}
+      </div>
+    </div>
+  `;
+  aiMessages.appendChild(track);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+
+  // Animate steps
+  const steps = track.querySelectorAll("#trackSteps li");
+  for (let i = 0; i < steps.length; i++) {
+    await sleep(i === 0 ? 400 : 2400);
+    if (i > 0) steps[i - 1].classList.remove("active");
+    steps[i].classList.add(i === steps.length - 1 ? "done" : "active");
+    if (i > 0) steps[i - 1].classList.add("done");
+    aiMessages.scrollTop = aiMessages.scrollHeight;
+  }
+  steps[steps.length - 1].classList.remove("active");
+  steps[steps.length - 1].classList.add("done");
+
+  await sleep(800);
+  showInvoice();
+}
+
+/* ============================================================
+   INVOICE + RATING
+============================================================ */
+async function showInvoice() {
+  const b = aiState.booking;
+  const p = b.provider;
+  const visitFee = 50;
+  const vat = Math.round((b.price + visitFee) * 0.14);
+  const total = b.price + visitFee + vat;
+
+  await typing(600);
+  botSay("🎊 <strong>تم إتمام الخدمة بنجاح!</strong>");
+
+  await typing(500);
+
+  const inv = document.createElement("div");
+  inv.className = "msg bot";
+  inv.style.padding = "14px";
+  inv.style.maxWidth = "95%";
+  inv.innerHTML = `
+    <div class="invoice-card">
+      <h4><i class="fa-solid fa-file-invoice"></i> الفاتورة الإلكترونية</h4>
+      <div class="invoice-row"><span>رقم الفاتورة</span><strong>#${b.id}</strong></div>
+      <div class="invoice-row"><span>مقدم الخدمة</span><strong>${esc(p.name)}</strong></div>
+      <div class="invoice-row"><span>التخصص</span><strong>${esc(p.spec)}</strong></div>
+      <div class="invoice-row"><span>الموقع</span><strong>${esc(b.area)}</strong></div>
+      <div class="invoice-row"><span>قيمة الخدمة</span><strong>${b.price} ج.م</strong></div>
+      <div class="invoice-row"><span>رسوم الانتقال</span><strong>${visitFee} ج.م</strong></div>
+      <div class="invoice-row"><span>ضريبة القيمة المضافة (14%)</span><strong>${vat} ج.م</strong></div>
+      <div class="invoice-total"><span>الإجمالي</span><strong>${total} ج.م</strong></div>
+    </div>
+    <div style="margin-top:14px; text-align:center;">
+      <div style="color:var(--primary); font-weight:800; margin-bottom:6px;">قيّم الخدمة</div>
+      <div class="rate-stars" id="rateStars">
+        <i class="fa-solid fa-star" data-r="1"></i>
+        <i class="fa-solid fa-star" data-r="2"></i>
+        <i class="fa-solid fa-star" data-r="3"></i>
+        <i class="fa-solid fa-star" data-r="4"></i>
+        <i class="fa-solid fa-star" data-r="5"></i>
+      </div>
+      <div style="font-size:.82rem; color:var(--muted); margin-bottom:12px;">تقييمك يساعدنا في تحسين جودة الخدمة</div>
+      <button class="btn btn-gold" id="submitRating" style="width:100%;">
+        <i class="fa-solid fa-paper-plane"></i> إرسال التقييم
+      </button>
+    </div>
+  `;
+  aiMessages.appendChild(inv);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+
+  // Star rating
+  inv.querySelectorAll("#rateStars i").forEach(star => {
+    star.addEventListener("click", () => {
+      const r = +star.dataset.r;
+      aiState.rating = r;
+      inv.querySelectorAll("#rateStars i").forEach(s => {
+        s.classList.toggle("active", +s.dataset.r <= r);
+      });
+    });
+  });
+
+  inv.querySelector("#submitRating").addEventListener("click", () => {
+    if (!aiState.rating) { toast("من فضلك اختر تقييم أولاً", "warning"); return; }
+    inv.querySelector("#submitRating").innerHTML = '<i class="fa-solid fa-check"></i> تم الإرسال';
+    inv.querySelector("#submitRating").disabled = true;
+    toast("شكراً لتقييمك ⭐", "success");
+    setTimeout(() => {
+      botSay(`شكراً جزيلاً على تقييمك ⭐ <strong>${aiState.rating}/5</strong><br>تم تسجيل الفاتورة والتقييم بنجاح.<br><br>هل تحتاج خدمة أخرى؟`);
+      resetAI();
+    }, 900);
+  });
+}
+
+/* ============================================================
+   RESET
+============================================================ */
+function resetAI() {
+  aiState.category = null;
+  aiState.area = null;
+  aiState.urgency = "normal";
+  aiState.options = [];
+  aiState.selected = null;
+  aiState.booking = null;
+  aiState.rating = 0;
+}
+
+/* ============================================================
+   QUICK CHIPS IN HERO
+============================================================ */
+$$(".chip").forEach(chip => {
+  chip.addEventListener("click", () => {
+    const q = chip.dataset.q;
+    if (q) openAI(q);
+  });
+});
+
+/* Category cards → open AI with prefilled query */
+$$(".cat-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const q = card.dataset.q;
+    if (q) openAI(q);
+  });
+});
+
+/* Hero input */
+$("#heroAsk")?.addEventListener("click", () => {
+  const v = $("#heroInput").value.trim();
+  if (v) openAI(v);
+});
+$("#heroInput")?.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    const v = $("#heroInput").value.trim();
+    if (v) openAI(v);
+  }
+});
+
+/* ============================================================
+   CONTACT FORM
+============================================================ */
+$("#contactForm")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = $("#cName").value.trim();
+  const phone = $("#cPhone").value.trim();
+  const subject = $("#cSubject").value;
+  const msg = $("#cMessage").value.trim();
+  if (!name || !phone || !msg) { toast("من فضلك أكمل البيانات", "warning"); return; }
+  const text = encodeURIComponent(
+    `📩 رسالة من موقع خدمات بلدي\n\n👤 الاسم: ${name}\n📱 الموبايل: ${phone}\n📌 الموضوع: ${subject}\n\n📝 الرسالة:\n${msg}`
+  );
+  window.open(`https://wa.me/201094273376?text=${text}`, "_blank");
+  toast("تم فتح واتساب لإرسال رسالتك ✅", "success");
+  e.target.reset();
+});
+
+/* ============================================================
+   PLAN BUTTONS
+============================================================ */
+$$(".plan-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const plan = btn.dataset.plan;
+    const price = btn.dataset.price;
+    const text = encodeURIComponent(`مرحباً، أريد الاشتراك في خطة ${plan}${price !== "0" ? ` (${price} ج.م/شهر)` : ""} على منصة خدمات بلدي`);
+    window.open(`https://wa.me/201094273376?text=${text}`, "_blank");
+  });
+});
+
+/* ============================================================
+   LOGO 5-CLICKS (admin easter egg)
+============================================================ */
+(function () {
+  let clicks = 0, timer;
+  $("#logo")?.addEventListener("click", (e) => {
+    clicks++;
+    clearTimeout(timer);
+    timer = setTimeout(() => clicks = 0, 900);
+    if (clicks >= 5) {
+      e.preventDefault();
+      clicks = 0;
+      toast("🔐 للوصول للوحة التحكم كلمنا على واتساب", "info");
+    }
+  });
 })();
+
+/* ============================================================
+   INSTALL PWA HINT
+============================================================ */
+let deferredPrompt = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  setTimeout(() => toast("📱 ثبّت التطبيق من قائمة المتصفح", "info"), 5000);
+});
+
+console.log("%c🏘️ خدمات بلدي جاهز!", "color:#c8a349; font-size:18px; font-weight:bold;");
+console.log("اكتب مشكلتك بالعربي في المساعد الذكي وهيجيلك أفضل مقدم خدمة.");
 </script>
+
 </body>
-    </html>
+      </html>

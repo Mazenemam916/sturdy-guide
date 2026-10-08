@@ -1,15 +1,20 @@
 {
   "name": "خدمات بلدي | Mazen AI",
   "short_name": "خدمات بلدي",
-  "description": "منصة ذكية لاكتشاف الخدمات المحلية والتواصل معها بسهولة.",
+  "description": "منصة خدمات ذكية لاكتشاف الخدمات المحلية وطلبها ومتابعتها.",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "./",
+  "start_url": "./index.html#home",
   "scope": "./",
   "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "portrait-primary",
-  "theme_color": "#071a33",
-  "background_color": "#071a33",
+  "theme_color": "#0F7B5F",
+  "background_color": "#F7FAF8",
   "categories": [
     "business",
     "shopping",

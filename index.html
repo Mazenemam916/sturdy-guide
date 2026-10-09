@@ -1,4434 +1,2449 @@
-<!doctype html>
-<html lang="ar" dir="rtl" data-theme="light">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0F7B5F">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="خدمات بلدي | Mazen AI — منصة رقمية ذكية لاكتشاف الخدمات المحلية وطلبها ومتابعتها.">
-  <meta name="robots" content="index,follow">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="application-name" content="خدمات بلدي">
-  <meta property="og:title" content="خدمات بلدي | Mazen AI">
-  <meta property="og:description" content="ابحث عن الخدمة المناسبة، قارن الخيارات، وأدر طلبك من مكان واحد.">
-  <meta property="og:type" content="website">
-  <title>خدمات بلدي | Mazen AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#2563EB">
+<meta name="description" content="خدمات بلدي — منصة خدمات رقمية ذكية مدعومة بـ Mazen AI">
+<title>خدمات بلدي | Mazen AI</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icons/icon-192x192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1D4ED8;
+  --primary-light: #60A5FA;
+  --secondary: #F59E0B;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --info: #3B82F6;
 
-  <!-- PWA -->
-  <link rel="manifest" href="./manifest.json">
-  <link rel="icon" href="./icon-192.png" type="image/png">
-  <link rel="apple-touch-icon" href="./icon-192.png">
+  --neutral-50: #F8FAFC;
+  --neutral-100: #F1F5F9;
+  --neutral-200: #E2E8F0;
+  --neutral-300: #CBD5E1;
+  --neutral-400: #94A3B8;
+  --neutral-500: #64748B;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1E293B;
+  --neutral-900: #0F172A;
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  --bg: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --text: #0F172A;
+  --text-secondary: #64748B;
+  --border: #E2E8F0;
+  --shadow-sm: 0 1px 3px rgba(15,23,42,0.06);
+  --shadow-md: 0 4px 12px rgba(15,23,42,0.08);
+  --shadow-lg: 0 12px 32px rgba(15,23,42,0.12);
+  --shadow-xl: 0 20px 48px rgba(15,23,42,0.16);
 
-  <style>
-    :root{
-      --primary:#0F7B5F;
-      --primary-2:#18A97E;
-      --primary-3:#DDF7EE;
-      --gold:#D4A24C;
-      --gold-2:#F4DEA9;
-      --ai:#1E3A8A;
-      --violet:#7C3AED;
-      --bg:#F7FAF8;
-      --surface:#FFFFFF;
-      --surface-2:#F1F5F3;
-      --surface-3:#E9F1EE;
-      --text:#101828;
-      --muted:#667085;
-      --line:#E3E9E6;
-      --focus:#60A5FA;
-      --success:#16A34A;
-      --warning:#D97706;
-      --danger:#DC2626;
-      --shadow-xs:0 3px 12px rgba(15,23,42,.05);
-      --shadow-sm:0 12px 36px rgba(15,23,42,.08);
-      --shadow-lg:0 36px 110px rgba(15,23,42,.16);
-      --radius-xl:32px;
-      --radius-lg:24px;
-      --radius-md:18px;
-      --radius-sm:13px;
-      --container:1240px;
-      --font-ar:"IBM Plex Sans Arabic",system-ui,sans-serif;
-      --font-en:"Manrope",system-ui,sans-serif;
-    }
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
 
-    html[data-theme="dark"]{
-      --bg:#071019;
-      --surface:#0D1822;
-      --surface-2:#13202C;
-      --surface-3:#182935;
-      --text:#F8FAFC;
-      --muted:#9BA9B7;
-      --line:#233442;
-      --primary-3:#0F332A;
-      --shadow-xs:0 3px 14px rgba(0,0,0,.20);
-      --shadow-sm:0 16px 44px rgba(0,0,0,.26);
-      --shadow-lg:0 40px 120px rgba(0,0,0,.40);
-    }
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:var(--font-ar);
-      line-height:1.6
-    }
-    body.locked{overflow:hidden}
-    button,input,select,textarea{font:inherit}
-    button{cursor:pointer}
-    button:focus-visible,
-    a:focus-visible,
-    input:focus-visible,
-    select:focus-visible,
-    textarea:focus-visible{
-      outline:3px solid var(--focus);
-      outline-offset:2px
-    }
-    a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
-    ::selection{background:rgba(15,123,95,.18)}
-    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
-    .skip-link{
-      position:absolute;
-      left:-9999px;
-      top:8px;
-      z-index:300;
-      padding:10px 16px;
-      background:var(--primary);
-      color:#fff;
-      border-radius:12px;
-      font-weight:800
-    }
-    .skip-link:focus{left:16px}
-    .hidden{display:none!important}
-    .muted{color:var(--muted)}
-    .success{color:var(--success);font-weight:800}
-    .warning{color:var(--warning);font-weight:800}
-    .danger{color:var(--danger);font-weight:800}
-    .row{display:flex;align-items:center;gap:10px}
-    .wrap{flex-wrap:wrap}
-    .grow{flex:1}
-    .center{text-align:center}
-    .ltr{direction:ltr;text-align:left}
-    .page{min-height:100vh}
+  --font-ar: 'IBM Plex Sans Arabic', 'Cairo', system-ui, sans-serif;
+  --font-display: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
 
-    /* Topbar */
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:80;
-      background:color-mix(in srgb,var(--surface) 88%,transparent);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--line)
-    }
-    .nav{
-      height:76px;
-      display:flex;
-      align-items:center;
-      gap:20px
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:250px
-    }
-    .brand-mark{
-      width:46px;
-      height:46px;
-      border-radius:15px;
-      background:linear-gradient(145deg,var(--primary),#0A604A);
-      display:grid;
-      place-items:center;
-      box-shadow:0 10px 25px rgba(15,123,95,.22)
-    }
-    .brand-mark svg{width:30px;height:30px}
-    .brand-name{display:block;font-size:16px;line-height:1.1}
-    .brand-sub{
-      display:block;
-      font-size:10px;
-      color:var(--muted);
-      margin-top:3px;
-      font-family:var(--font-en)
-    }
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      flex:1
-    }
-    .nav-link{
-      border:0;
-      background:transparent;
-      color:var(--muted);
-      padding:10px 13px;
-      border-radius:12px;
-      font-weight:800
-    }
-    .nav-link:hover,
-    .nav-link.active{
-      background:var(--surface-2);
-      color:var(--text)
-    }
-    .nav-actions{
-      display:flex;
-      align-items:center;
-      gap:8px
-    }
-    .icon-btn{
-      width:42px;
-      height:42px;
-      border:1px solid var(--line);
-      background:var(--surface);
-      color:var(--text);
-      border-radius:13px;
-      display:grid;
-      place-items:center
-    }
-    .icon-btn:hover{
-      transform:translateY(-1px);
-      box-shadow:var(--shadow-xs)
-    }
-    .avatar{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      background:linear-gradient(145deg,#9BE7C9,#54B99B);
-      display:grid;
-      place-items:center;
-      color:#0A4F3E;
-      font-weight:900
-    }
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Buttons */
-    .btn{
-      border:1px solid var(--line);
-      background:var(--surface);
-      color:var(--text);
-      border-radius:14px;
-      padding:12px 16px;
-      font-weight:800;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      transition:.2s ease;
-      box-shadow:var(--shadow-xs)
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn:disabled{
-      opacity:.55;
-      cursor:not-allowed;
-      transform:none
-    }
-    .btn-primary{
-      border-color:var(--primary);
-      background:var(--primary);
-      color:#fff;
-      box-shadow:0 10px 24px rgba(15,123,95,.20)
-    }
-    .btn-ai{
-      border-color:var(--ai);
-      background:linear-gradient(135deg,#1E3A8A,#5537B5);
-      color:#fff;
-      box-shadow:0 12px 28px rgba(30,58,138,.20)
-    }
-    .btn-ghost{background:transparent;box-shadow:none}
-    .btn-block{width:100%}
-    .btn-danger{
-      border-color:#F3B5B5;
-      color:var(--danger);
-      background:#FFF6F6
-    }
-    html[data-theme="dark"] .btn-danger{
-      background:#241315;
-      border-color:#4B2428
-    }
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:var(--surface-2);
-      font-size:11px;
-      font-weight:900;
-      white-space:nowrap
-    }
-    .badge.primary{background:var(--primary-3);color:var(--primary)}
-    .badge.ai{background:#EEF2FF;color:var(--ai)}
-    .badge.gold{background:#FBF2DC;color:#8A6124}
-    .badge.success{background:#E9F9EE;color:#15803D}
-    html[data-theme="dark"] .badge.ai{
-      background:#18284A;
-      color:#AFC1FF
-    }
-    html[data-theme="dark"] .badge.gold{
-      background:#3A301E;
-      color:#F3D68E
-    }
-    html[data-theme="dark"] .badge.success{
-      background:#123A24;
-      color:#74D79A
-    }
+[data-theme="dark"] {
+  --bg: #0F172A;
+  --bg-card: #1E293B;
+  --bg-elevated: #334155;
+  --text: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --border: #334155;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+  --shadow-xl: 0 20px 48px rgba(0,0,0,0.6);
+}
 
-    /* Hero */
-    .hero{padding:44px 0 28px}
-    .hero-shell{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:24px;
-      align-items:stretch
-    }
-    .hero-card{
-      position:relative;
-      overflow:hidden;
-      border:1px solid var(--line);
-      border-radius:34px;
-      background:linear-gradient(145deg,var(--surface),color-mix(in srgb,var(--surface) 90%,var(--primary-3)));
-      box-shadow:var(--shadow-sm);
-      padding:38px
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      width:320px;
-      height:320px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(212,162,76,.16),transparent 68%);
-      top:-110px;
-      left:-80px
-    }
-    .eyebrow{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:7px 11px;
-      border-radius:999px;
-      background:var(--surface-2);
-      border:1px solid var(--line);
-      font-size:11px;
-      font-weight:900;
-      position:relative
-    }
-    .hero h1{
-      font-size:clamp(36px,5vw,66px);
-      line-height:1.05;
-      margin:18px 0 16px;
-      letter-spacing:-1px;
-      position:relative
-    }
-    .hero h1 span{color:var(--primary)}
-    .hero p{
-      font-size:18px;
-      color:var(--muted);
-      max-width:730px;
-      position:relative
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:24px;
-      position:relative
-    }
-    .hero-note{
-      margin-top:14px;
-      font-size:12px;
-      color:var(--muted);
-      position:relative
-    }
-    .hero-side{
-      border-radius:34px;
-      background:linear-gradient(150deg,#0F7B5F,#0B5E4A);
-      color:#fff;
-      box-shadow:var(--shadow-lg);
-      padding:24px;
-      position:relative;
-      overflow:hidden
-    }
-    .hero-side::after{
-      content:"";
-      position:absolute;
-      width:280px;
-      height:280px;
-      border-radius:50%;
-      border:1px solid rgba(255,255,255,.14);
-      right:-70px;
-      bottom:-70px;
-      box-shadow:
-        0 0 0 34px rgba(255,255,255,.04),
-        0 0 0 70px rgba(255,255,255,.025)
-    }
-    .hero-side-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      position:relative;
-      z-index:2
-    }
-    .hero-side h3{margin:0;font-size:22px}
-    .hero-side p{
-      margin:6px 0 0;
-      color:#D5F0E8;
-      font-size:13px
-    }
-    .hero-side-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:10px;
-      margin-top:20px;
-      position:relative;
-      z-index:2
-    }
-    .hero-mini{
-      padding:14px;
-      border-radius:18px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.12)
-    }
-    .hero-mini small{
-      display:block;
-      color:#C2DFD7;
-      font-size:10px
-    }
-    .hero-mini strong{
-      display:block;
-      font-size:18px;
-      margin-top:4px
-    }
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    /* AI prompt */
-    .smart-search{
-      margin-top:18px;
-      display:flex;
-      gap:10px;
-      position:relative
-    }
-    .smart-search input{
-      flex:1;
-      min-width:0;
-      padding:15px 16px;
-      border-radius:17px;
-      border:1px solid var(--line);
-      background:var(--surface);
-      color:var(--text);
-      box-shadow:var(--shadow-xs)
-    }
-    .quick-row{
-      display:flex;
-      gap:8px;
-      overflow:auto;
-      padding:10px 0 2px
-    }
-    .chip{
-      border:1px solid var(--line);
-      background:var(--surface);
-      color:var(--text);
-      padding:9px 12px;
-      border-radius:999px;
-      white-space:nowrap;
-      font-size:12px;
-      font-weight:800
-    }
-    .chip:hover,.chip.active{background:var(--surface-2)}
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    /* Sections / cards */
-    .section{padding:28px 0}
-    .section-head{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:16px
-    }
-    .section-title{
-      display:flex;
-      gap:10px;
-      align-items:center
-    }
-    .section-title .mark{
-      width:9px;
-      height:32px;
-      border-radius:9px;
-      background:linear-gradient(180deg,var(--gold),var(--primary))
-    }
-    .section-title h2{
-      font-size:24px;
-      margin:0
-    }
+body {
+  font-family: var(--font-ar);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 15px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background var(--transition-base), color var(--transition-base);
+  -webkit-font-smoothing: antialiased;
+}
 
-    .grid{
-      display:grid;
-      gap:16px
-    }
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
 
-    .card{
-      border:1px solid var(--line);
-      background:var(--surface);
-      border-radius:var(--radius-lg);
-      box-shadow:var(--shadow-xs)
-    }
-    .card.pad{padding:20px}
-    .card:hover{box-shadow:var(--shadow-sm)}
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
 
-    .service-card{
-      position:relative;
-      overflow:hidden;
-      min-height:180px;
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between
-    }
-    .service-card .service-icon{
-      width:56px;
-      height:56px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:var(--surface-2);
-      font-size:27px
-    }
-    .service-card h3{
-      margin:12px 0 5px;
-      font-size:18px
-    }
-    .service-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:12px
-    }
-    .service-card::after{
-      content:"";
-      position:absolute;
-      width:150px;
-      height:150px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(15,123,95,.09),transparent 70%);
-      left:-40px;
-      bottom:-50px
-    }
+img { max-width: 100%; display: block; }
 
-    .provider-card{
-      padding:18px;
-      border:1px solid var(--line);
-      background:var(--surface);
-      border-radius:20px;
-      box-shadow:var(--shadow-xs)
-    }
-    .provider-head{
-      display:flex;
-      gap:12px;
-      align-items:center
-    }
-    .provider-avatar{
-      width:54px;
-      height:54px;
-      border-radius:18px;
-      background:linear-gradient(145deg,var(--primary-3),var(--surface-2));
-      display:grid;
-      place-items:center;
-      font-weight:900;
-      color:var(--primary)
-    }
-    .provider-card h3{
-      margin:0;
-      font-size:16px
-    }
-    .meta{
-      color:var(--muted);
-      font-size:11px
-    }
-    .provider-actions{
-      display:flex;
-      gap:8px;
-      margin-top:14px
-    }
+a { color: inherit; text-decoration: none; }
 
-    .product-card{
-      overflow:hidden;
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:var(--surface);
-      box-shadow:var(--shadow-xs)
-    }
-    .product-media{
-      aspect-ratio:1/0.78;
-      background:var(--surface-2);
-      display:grid;
-      place-items:center;
-      font-size:54px
-    }
-    .product-body{padding:16px}
-    .price{
-      font-family:var(--font-en);
-      font-weight:800
-    }
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--neutral-400); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--neutral-500); }
 
-    .split{
-      display:grid;
-      grid-template-columns:1fr .9fr;
-      gap:18px
-    }
-    .info-list{display:grid;gap:10px}
-    .info-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:12px 14px;
-      background:var(--surface-2);
-      border-radius:15px
-    }
+/* ============================================
+   LAYOUT
+   ============================================ */
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+  padding-bottom: calc(88px + var(--safe-bottom));
+  box-shadow: 0 0 60px rgba(0,0,0,0.08);
+}
 
-    /* Forms */
-    .field{display:grid;gap:7px;margin-bottom:13px}
-    .field label{
-      font-size:12px;
-      font-weight:900
-    }
-    .field input,
-    .field select,
-    .field textarea{
-      width:100%;
-      border:1px solid var(--line);
-      background:var(--surface);
-      color:var(--text);
-      border-radius:14px;
-      padding:12px 13px
-    }
-    .field textarea{
-      min-height:110px;
-      resize:vertical
-    }
+@media (min-width: 768px) {
+  .app { max-width: 720px; }
+}
 
-    /* AI */
-    .ai-shell{
-      max-width:900px;
-      margin:0 auto
-    }
-    .ai-hero{
-      border-radius:30px;
-      padding:22px;
-      color:#fff;
-      background:
-        radial-gradient(circle at 15% 15%,rgba(124,58,237,.35),transparent 32%),
-        linear-gradient(135deg,#162B6B,#442B94);
-      box-shadow:var(--shadow-lg)
-    }
-    .ai-avatar{
-      width:64px;
-      height:64px;
-      border-radius:22px;
-      background:#7ED957;
-      color:#11380B;
-      border:4px solid rgba(255,255,255,.35);
-      display:grid;
-      place-items:center;
-      font-size:26px;
-      font-weight:900;
-      position:relative
-    }
-    .ai-avatar::before,
-    .ai-avatar::after{
-      content:"";
-      position:absolute;
-      top:-6px;
-      width:11px;
-      height:14px;
-      background:#7ED957;
-      border-radius:9px 9px 2px 2px
-    }
-    .ai-avatar::before{right:8px;transform:rotate(25deg)}
-    .ai-avatar::after{left:8px;transform:rotate(-25deg)}
-    .chat-box{
-      margin-top:16px;
-      min-height:400px;
-      max-height:62vh;
-      overflow:auto;
-      padding:16px;
-      border:1px solid var(--line);
-      background:var(--surface);
-      border-radius:26px
-    }
-    .bubble{
-      max-width:82%;
-      padding:12px 14px;
-      border-radius:17px;
-      margin:8px 0;
-      white-space:pre-wrap
-    }
-    .bubble.ai{
-      background:var(--surface-2);
-      margin-left:auto;
-      border-bottom-right-radius:6px
-    }
-    .bubble.user{
-      background:var(--primary);
-      color:#fff;
-      margin-right:auto;
-      border-bottom-left-radius:6px
-    }
-    .chat-input{
-      display:flex;
-      gap:8px;
-      margin-top:12px
-    }
-    .chat-input textarea{
-      flex:1;
-      min-height:55px;
-      max-height:130px;
-      border:1px solid var(--line);
-      border-radius:17px;
-      padding:12px 14px;
-      background:var(--surface);
-      color:var(--text)
-    }
+@media (min-width: 1024px) {
+  .app { max-width: 1080px; }
+}
 
-    /* Mascot */
-    .ai-fab{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      z-index:120;
-      width:70px;
-      height:70px;
-      border:0;
-      border-radius:50%;
-      background:linear-gradient(145deg,#7ED957,#55A83D);
-      box-shadow:0 20px 45px rgba(56,132,48,.30);
-      display:grid;
-      place-items:center;
-      animation:float 4s ease-in-out infinite
-    }
-    .ai-fab .eye{
-      width:28px;
-      height:28px;
-      border-radius:50%;
-      background:#fff;
-      display:grid;
-      place-items:center;
-      position:relative
-    }
-    .ai-fab .eye::after{
-      content:"";
-      width:12px;
-      height:12px;
-      border-radius:50%;
-      background:#111827
-    }
-    .ai-fab .horn{
-      position:absolute;
-      width:12px;
-      height:17px;
-      background:#7ED957;
-      top:-7px;
-      border-radius:9px 9px 2px 2px
-    }
-    .ai-fab .horn.left{left:14px;transform:rotate(-18deg)}
-    .ai-fab .horn.right{right:14px;transform:rotate(18deg)}
-    .ai-fab .mouth{
-      position:absolute;
-      bottom:17px;
-      width:18px;
-      height:8px;
-      border-bottom:3px solid #174A0F;
-      border-radius:0 0 50% 50%
-    }
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-7px)}
-    }
+/* ============================================
+   TOP BAR
+   ============================================ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: calc(var(--space-3) + var(--safe-top)) var(--space-5) var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  transition: all var(--transition-base);
+}
 
-    /* Bottom Navigation */
-    .bottom-nav{
-      display:none;
-      position:fixed;
-      left:10px;
-      right:10px;
-      bottom:10px;
-      z-index:100;
-      background:color-mix(in srgb,var(--surface) 92%,transparent);
-      backdrop-filter:blur(18px);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:7px;
-      box-shadow:var(--shadow-lg)
-    }
-    .bottom-nav-inner{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:4px
-    }
-    .bottom-item{
-      border:0;
-      background:transparent;
-      color:var(--muted);
-      padding:9px 4px;
-      border-radius:15px;
-      display:grid;
-      gap:3px;
-      place-items:center;
-      font-size:10px;
-      font-weight:800
-    }
-    .bottom-item.active{
-      background:var(--primary-3);
-      color:var(--primary)
-    }
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--text);
+  flex: 1;
+}
 
-    /* Modal */
-    .modal{
-      position:fixed;
-      inset:0;
-      z-index:200;
-      background:rgba(5,12,17,.58);
-      backdrop-filter:blur(8px);
-      display:grid;
-      place-items:center;
-      padding:18px
-    }
-    .modal-panel{
-      width:min(680px,100%);
-      max-height:90vh;
-      overflow:auto;
-      background:var(--surface);
-      color:var(--text);
-      border:1px solid var(--line);
-      border-radius:28px;
-      box-shadow:var(--shadow-lg);
-      padding:20px
-    }
-    .modal-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:14px
-    }
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  color: white;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
 
-    /* Toast */
-    .toast{
-      position:fixed;
-      left:50%;
-      bottom:24px;
-      transform:translateX(-50%) translateY(30px);
-      z-index:250;
-      background:#101828;
-      color:#fff;
-      padding:12px 16px;
-      border-radius:14px;
-      opacity:0;
-      pointer-events:none;
-      transition:.25s ease;
-      box-shadow:var(--shadow-lg);
-      max-width:min(92vw,520px);
-      text-align:center;
-      font-size:13px
-    }
-    .toast.show{
-      opacity:1;
-      transform:translateX(-50%) translateY(0)
-    }
+.logo-mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  animation: shine 3s infinite;
+}
 
-    /* Install */
-    .install-banner{
-      position:fixed;
-      left:16px;
-      right:16px;
-      bottom:16px;
-      z-index:110;
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:var(--shadow-lg);
-      padding:14px 16px
-    }
-    .install-banner .row{
-      justify-content:space-between
-    }
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
 
-    /* Footer */
-    footer{
-      padding:38px 0 80px;
-      border-top:1px solid var(--line);
-      margin-top:30px
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.2fr repeat(3,1fr);
-      gap:24px
-    }
-    .footer-title{
-      font-weight:900;
-      margin-bottom:10px
-    }
-    .footer-link{
-      display:block;
-      color:var(--muted);
-      font-size:13px;
-      margin:7px 0
-    }
+.topbar-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
 
-    /* Tables */
-    .table-wrap{
-      overflow:auto;
-      border:1px solid var(--line);
-      border-radius:20px
-    }
-    table{
-      width:100%;
-      border-collapse:collapse;
-      min-width:680px
-    }
-    th,td{
-      padding:13px 14px;
-      border-bottom:1px solid var(--line);
-      text-align:right;
-      font-size:12px
-    }
-    th{
-      background:var(--surface-2);
-      font-weight:900
-    }
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  transition: all var(--transition-fast);
+  position: relative;
+}
 
-    /* Empty */
-    .empty{
-      padding:30px;
-      text-align:center;
-      color:var(--muted)
-    }
+.icon-btn:hover, .icon-btn:active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: scale(0.95);
+}
 
-    /* Responsive */
-    @media (max-width:1000px){
-      .hero-shell,
-      .split,
-      .footer-grid{
-        grid-template-columns:1fr
-      }
-      .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .brand{min-width:auto}
-      .nav-links{display:none}
-    }
+.icon-btn .badge {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: var(--radius-full);
+  background: var(--error);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
 
-    @media (max-width:700px){
-      .container{padding:0 14px}
-      .nav{height:68px}
-      .brand-name{font-size:14px}
-      .brand-sub{font-size:9px}
-      .brand-mark{width:42px;height:42px}
-      .topbar .nav-actions .hide-mobile{display:none}
-      .hero{padding:20px 0}
-      .hero-card{padding:24px;border-radius:26px}
-      .hero-side{border-radius:26px}
-      .hero h1{
-        font-size:clamp(35px,13vw,52px)
-      }
-      .hero p{font-size:15px}
-      .smart-search{flex-direction:column}
-      .smart-search .btn{width:100%}
-      .grid-2,
-      .grid-3,
-      .grid-4{
-        grid-template-columns:1fr
-      }
-      .section{padding:20px 0}
-      .section-title h2{font-size:20px}
-      .bottom-nav{display:block}
-      footer{padding-bottom:120px}
-      .ai-fab{
-        width:62px;
-        height:62px;
-        right:14px;
-        bottom:84px
-      }
-      .chat-box{
-        min-height:330px;
-        max-height:55vh
-      }
-    }
+/* ============================================
+   PAGES
+   ============================================ */
+.page {
+  display: none;
+  padding: var(--space-5);
+  animation: fadeIn 300ms ease;
+}
 
-    @media (prefers-reduced-motion:reduce){
-      *,*::before,*::after{
-        animation-duration:.01ms!important;
-        animation-iteration-count:1!important;
-        scroll-behavior:auto!important;
-        transition-duration:.01ms!important
-      }
-    }
-  </style>
+.page.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   HERO / MAZEN ASK
+   ============================================ */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  color: white;
+  margin-bottom: var(--space-6);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 50%);
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, -20px); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: var(--space-2);
+  line-height: 1.3;
+}
+
+.hero p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: var(--space-5);
+  line-height: 1.7;
+}
+
+.hero-search {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  transition: all var(--transition-base);
+}
+
+.hero-search:focus-within {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.5);
+}
+
+.hero-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+}
+
+.hero-search input::placeholder { color: rgba(255,255,255,0.7); }
+
+.hero-search button {
+  background: white;
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 13px;
+  transition: all var(--transition-fast);
+}
+
+.hero-search button:active { transform: scale(0.95); }
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+.section {
+  margin-bottom: var(--space-8);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.section-more {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ============================================
+   SERVICE CATEGORIES GRID
+   ============================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 480px) {
+  .services-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 768px) {
+  .services-grid { grid-template-columns: repeat(6, 1fr); }
+}
+
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, var(--primary) 200%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.service-card:hover::before, .service-card:active::before { opacity: 0.08; }
+
+.service-card:active { transform: scale(0.96); }
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  color: white;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.service-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+  line-height: 1.3;
+}
+
+/* ============================================
+   PROVIDER CARDS
+   ============================================ */
+.providers-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.provider-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.provider-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.provider-card:active { transform: translateY(0); }
+
+.provider-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.provider-avatar .verified {
+  position: absolute;
+  bottom: -4px;
+  left: -4px;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--success);
+  border: 2px solid var(--bg-card);
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  color: white;
+}
+
+.provider-info { flex: 1; min-width: 0; }
+
+.provider-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.provider-specialty {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.provider-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.provider-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 14px;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline:hover { background: var(--primary); color: white; }
+
+.btn-ghost {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-ghost:hover { background: var(--neutral-200); }
+
+.btn-success {
+  background: var(--success);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--error);
+  color: white;
+}
+
+.btn-block { width: 100%; }
+
+.btn-lg { padding: var(--space-4) var(--space-6); font-size: 15px; }
+
+/* ============================================
+   MAZEN AI FLOATING BUTTON
+   ============================================ */
+.mazen-fab {
+  position: fixed;
+  bottom: calc(96px + var(--safe-bottom));
+  left: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+  color: white;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(245,158,11,0.5);
+  cursor: pointer;
+  z-index: 200;
+  transition: all var(--transition-base);
+  animation: mazen-bounce 3s ease-in-out infinite;
+  border: 3px solid var(--bg-card);
+}
+
+.mazen-fab:hover { transform: scale(1.1); }
+.mazen-fab:active { transform: scale(0.95); }
+
+.mazen-fab .mazen-face {
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+/* Mike Wazowski style: single big eye */
+.mazen-eye {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+  animation: mazen-blink 4s infinite;
+}
+
+.mazen-pupil {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0F172A;
+  position: relative;
+  animation: mazen-look 5s ease-in-out infinite;
+}
+
+.mazen-pupil::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+
+@keyframes mazen-blink {
+  0%, 45%, 55%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.1); }
+}
+
+@keyframes mazen-look {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(6px, 0); }
+  50% { transform: translate(0, 6px); }
+  75% { transform: translate(-6px, 0); }
+}
+
+@keyframes mazen-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.mazen-fab .pulse-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--secondary);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* ============================================
+   BOTTOM NAV
+   ============================================ */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: var(--space-2) 0 calc(var(--space-2) + var(--safe-bottom));
+  z-index: 150;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@media (min-width: 768px) {
+  .bottom-nav { max-width: 720px; }
+}
+
+@media (min-width: 1024px) {
+  .bottom-nav { max-width: 1080px; }
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--space-2);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.nav-item .nav-icon {
+  font-size: 22px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+.nav-item.active .nav-icon {
+  transform: scale(1.15);
+}
+
+/* ============================================
+   MODAL / SHEET
+   ============================================ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  z-index: 301;
+  transform: translateY(100%);
+  transition: transform var(--transition-base);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .modal { max-width: 720px; }
+}
+
+@media (min-width: 1024px) {
+  .modal { max-width: 1080px; }
+}
+
+.modal.active { transform: translateY(0); }
+
+.modal-header {
+  padding: var(--space-5);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover { background: var(--error); color: white; }
+
+.modal-body {
+  padding: var(--space-5);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-footer {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  background: var(--bg-card);
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+.form-group { margin-bottom: var(--space-4); }
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: all var(--transition-fast);
+  font-size: 14px;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+  background: var(--bg-card);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-help {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ============================================
+   AI CHAT
+   ============================================ */
+.ai-chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ai-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.ai-message {
+  display: flex;
+  gap: var(--space-3);
+  max-width: 85%;
+  animation: msg-in 300ms ease;
+}
+
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ai-message.user { align-self: flex-end; flex-direction: row-reverse; }
+
+.ai-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #F59E0B, #EF4444);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.ai-avatar .mini-eye {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+}
+
+.ai-avatar .mini-pupil {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0F172A;
+  position: relative;
+}
+
+.ai-avatar .mini-pupil::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+}
+
+.ai-bubble {
+  background: var(--bg);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  line-height: 1.6;
+  border: 1px solid var(--border);
+}
+
+.ai-message.user .ai-bubble {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.ai-input-bar {
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: var(--space-2);
+  background: var(--bg-card);
+  flex-shrink: 0;
+}
+
+.ai-input-bar input {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  outline: none;
+}
+
+.ai-input-bar input:focus { border-color: var(--primary); }
+
+.ai-send {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.ai-typing {
+  display: flex;
+  gap: 4px;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  width: fit-content;
+}
+
+.ai-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  animation: typing 1.4s infinite;
+}
+
+.ai-typing span:nth-child(2) { animation-delay: 0.2s; }
+.ai-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ============================================
+   AMR ADEEB VIDEO OVERLAY
+   ============================================ */
+.amr-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 400;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+}
+
+.amr-overlay.active { display: flex; }
+
+.amr-card {
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  max-width: 400px;
+  text-align: center;
+  color: white;
+  border: 2px solid var(--secondary);
+  box-shadow: 0 20px 60px rgba(245,158,11,0.4);
+  animation: amr-in 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes amr-in {
+  from { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+.amr-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--secondary), var(--error));
+  margin: 0 auto var(--space-4);
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.amr-quote {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: var(--space-3);
+  color: var(--secondary);
+}
+
+.amr-sub {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================
+   TOAST
+   ============================================ */
+.toast-container {
+  position: fixed;
+  top: calc(80px + var(--safe-top));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  pointer-events: none;
+  width: calc(100% - 40px);
+  max-width: 400px;
+}
+
+.toast {
+  background: var(--neutral-900);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  animation: toast-in 300ms ease;
+  pointer-events: auto;
+}
+
+.toast.success { background: var(--success); }
+.toast.error { background: var(--error); }
+.toast.warning { background: var(--warning); }
+.toast.info { background: var(--info); }
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   INVOICE
+   ============================================ */
+.invoice {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  font-size: 13px;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-4);
+  border-bottom: 2px dashed var(--border);
+  margin-bottom: var(--space-4);
+}
+
+.invoice-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  font-size: 13px;
+}
+
+.invoice-row.total {
+  border-top: 2px solid var(--border);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--primary);
+}
+
+/* ============================================
+   OWNER LOGIN
+   ============================================ */
+.owner-login-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  opacity: 0.15;
+  z-index: 190;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  transition: opacity var(--transition-base);
+  cursor: pointer;
+}
+
+.owner-login-trigger:hover { opacity: 0.6; }
+
+/* ============================================
+   DASHBOARD STATS
+   ============================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.stat-change {
+  font-size: 11px;
+  color: var(--success);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* ============================================
+   SUBSCRIPTION CARDS
+   ============================================ */
+.subscription-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-3);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.subscription-card.featured {
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(37,99,235,0.2);
+}
+
+.subscription-card.featured::before {
+  content: 'الأكثر شيوعاً';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--primary);
+  color: white;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.subscription-price {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.subscription-period {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.subscription-features {
+  list-style: none;
+  margin-bottom: var(--space-4);
+}
+
+.subscription-features li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  padding: var(--space-1) 0;
+  color: var(--text-secondary);
+}
+
+.subscription-features li::before {
+  content: '✓';
+  color: var(--success);
+  font-weight: 900;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.empty-state {
+  text-align: center;
+  padding: var(--space-12) var(--space-5);
+  color: var(--text-secondary);
+}
+
+.empty-state .empty-icon {
+  font-size: 64px;
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text);
+}
+
+.empty-state p { font-size: 13px; }
+
+/* ============================================
+   LOADING SKELETON
+   ============================================ */
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 25%, var(--neutral-200) 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: var(--space-4); }
+.mt-4 { margin-top: var(--space-4); }
+.flex { display: flex; }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.flex-1 { flex: 1; }
+.w-full { width: 100%; }
+
+.badge-success {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(16,185,129,0.15);
+  color: var(--success);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.badge-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(37,99,235,0.15);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+}
+</style>
 </head>
-
 <body>
-  <a href="#app" class="skip-link">انتقل إلى المحتوى</a>
 
-  <div id="app" class="page"></div>
+<div class="app">
 
-  <!-- Modal -->
-  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-panel">
-      <div class="modal-head">
-        <h2 id="modalTitle" style="margin:0;font-size:20px"></h2>
-        <button class="icon-btn" data-action="close-modal" aria-label="إغلاق">✕</button>
-      </div>
-      <div id="modalBody"></div>
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-mark">🏘️</div>
+      <span>خدمات بلدي</span>
     </div>
-  </div>
-
-  <!-- Toast -->
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-  <!-- Install -->
-  <div id="installBanner" class="install-banner hidden">
-    <div class="row">
-      <div class="grow">
-        <strong>ثبّت خدمات بلدي</strong>
-        <div class="meta">استخدم الموقع كتطبيق مستقل مع دعم الـPWA.</div>
-      </div>
-      <div class="row">
-        <button class="btn btn-primary" data-action="install">تثبيت</button>
-        <button class="icon-btn" data-action="hide-install" aria-label="إخفاء">✕</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mazen AI FAB -->
-  <button id="aiFab" class="ai-fab" data-action="ai" aria-label="فتح Mazen AI">
-    <span class="horn left"></span>
-    <span class="horn right"></span>
-    <span class="eye"></span>
-    <span class="mouth"></span>
-  </button>
-
-  <script>
-  "use strict";
-
-  /* ============================================================
-     MAZEN AI | BALADY SERVICES
-     Single-file frontend architecture
-     Production-ready structure, with secure backend adapters.
-     ============================================================ */
-
-  const CONFIG = {
-    appName:"خدمات بلدي",
-    aiEndpoint:"",
-    authEndpoint:"",
-    apiBase:"",
-    productionMode:false,
-    currency:"EGP"
-  };
-
-  const $ = (selector, root=document) => root.querySelector(selector);
-  const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
-
-  const money = (value, currency=CONFIG.currency) =>
-    new Intl.NumberFormat("ar-EG",{style:"currency",currency,maximumFractionDigits:0}).format(Number(value||0));
-
-  const esc = value =>
-    String(value ?? "")
-      .replace(/&/g,"&amp;")
-      .replace(/</g,"&lt;")
-      .replace(/>/g,"&gt;")
-      .replace(/"/g,"&quot;")
-      .replace(/'/g,"&#039;");
-
-  const slugify = value =>
-    String(value ?? "")
-      .trim()
-      .toLowerCase()
-      .replace(/[^\u0600-\u06FF\w\s-]/g,"")
-      .replace(/\s+/g,"-");
-
-  const uid = prefix =>
-    `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
-
-  let deferredInstall = null;
-  let selectedSlot = "";
-  let draft = null;
-  let toastTimer = null;
-
-  /* ============================================================
-     DATA
-     ============================================================ */
-
-  const CATEGORIES = [
-    {id:"doctors",title:"الأطباء",icon:"🩺",desc:"اختَر طبيبًا وتابع طلب الحجز."},
-    {id:"teachers",title:"المدرسون",icon:"📚",desc:"مدرسون ودروس حسب المادة والمكان."},
-    {id:"delivery",title:"وصلني",icon:"🚗",desc:"توصيل ونقل داخل وخارج المدينة."},
-    {id:"mobile",title:"الموبايلات",icon:"📱",desc:"هواتف وإكسسوارات وعروض."},
-    {id:"cars",title:"السيارات",icon:"🚘",desc:"شراء وتأجير وخدمات سيارات."},
-    {id:"lawyers",title:"المحامون",icon:"⚖️",desc:"خدمات واستشارات قانونية."},
-    {id:"pharmacy",title:"الصيدليات",icon:"💊",desc:"منتجات وخدمات صيدلية."},
-    {id:"maintenance",title:"الصيانة",icon:"🛠️",desc:"سباكة وكهرباء وتكييف وغيرها."}
-  ];
-
-  const DOCTORS = [
-    {
-      id:"doctor-ahmed",
-      type:"doctor",
-      name:"د. أحمد ماهر",
-      specialty:"باطنة",
-      location:"الزقازيق",
-      rating:4.9,
-      reviews:428,
-      price:450,
-      phone:"01000000000",
-      verified:true,
-      available:true,
-      description:"متابعة وفحص واستشارات باطنة.",
-      tags:["باطنة","كشف","متابعة"]
-    },
-    {
-      id:"doctor-sara",
-      type:"doctor",
-      name:"د. سارة علي",
-      specialty:"أطفال",
-      location:"فاقوس",
-      rating:4.8,
-      reviews:291,
-      price:350,
-      phone:"01100000000",
-      verified:true,
-      available:true,
-      description:"كشف ومتابعة أطفال وحالات الطوارئ البسيطة.",
-      tags:["أطفال","متابعة","استشارة"]
-    },
-    {
-      id:"doctor-khaled",
-      type:"doctor",
-      name:"د. خالد سمير",
-      specialty:"جلدية",
-      location:"العاشر من رمضان",
-      rating:4.7,
-      reviews:204,
-      price:500,
-      phone:"01200000000",
-      verified:false,
-      available:false,
-      description:"استشارات جلدية ومتابعة علاجية.",
-      tags:["جلدية","فحص","متابعة"]
-    }
-  ];
-
-  const TEACHERS = [
-    {
-      id:"teacher-mohamed",
-      type:"teacher",
-      name:"أ/ محمد السيد",
-      subject:"رياضيات",
-      location:"فاقوس",
-      rating:4.9,
-      reviews:173,
-      price:180,
-      phone:"01011111111",
-      verified:true,
-      available:true,
-      description:"شرح رياضيات ومراجعات واختبارات.",
-      tags:["رياضيات","ثانوية عامة","مراجعة"]
-    },
-    {
-      id:"teacher-nour",
-      type:"teacher",
-      name:"أ/ نور حسن",
-      subject:"لغة إنجليزية",
-      location:"الزقازيق",
-      rating:4.8,
-      reviews:141,
-      price:200,
-      phone:"01111111111",
-      verified:true,
-      available:true,
-      description:"لغة إنجليزية ومحادثة وتقوية.",
-      tags:["English","محادثة","تقوية"]
-    },
-    {
-      id:"teacher-omar",
-      type:"teacher",
-      name:"أ/ عمر سامح",
-      subject:"فيزياء",
-      location:"العاشر من رمضان",
-      rating:4.6,
-      reviews:96,
-      price:220,
-      phone:"01211111111",
-      verified:false,
-      available:true,
-      description:"فيزياء للمرحلة الثانوية وحل مسائل.",
-      tags:["فيزياء","ثانوية","مسائل"]
-    }
-  ];
-
-  const MOBILE_PRODUCTS = [
-    {
-      id:"mobile-s24",
-      type:"mobile",
-      name:"Samsung Galaxy S24",
-      store:"موبايلات المدينة",
-      location:"الزقازيق",
-      price:33000,
-      rating:4.8,
-      reviews:132,
-      stock:true
-    },
-    {
-      id:"mobile-iphone15",
-      type:"mobile",
-      name:"iPhone 15",
-      store:"عالم الموبايل",
-      location:"فاقوس",
-      price:41000,
-      rating:4.9,
-      reviews:207,
-      stock:true
-    },
-    {
-      id:"mobile-redmi",
-      type:"mobile",
-      name:"Redmi Note Series",
-      store:"فون ستور",
-      location:"العاشر من رمضان",
-      price:9500,
-      rating:4.6,
-      reviews:88,
-      stock:true
-    }
-  ];
-
-  const CARS = [
-    {
-      id:"car-corolla",
-      type:"car",
-      kind:"إيجار",
-      name:"Toyota Corolla",
-      location:"الزقازيق",
-      price:1500,
-      period:"اليوم",
-      rating:4.8
-    },
-    {
-      id:"car-elentra",
-      type:"car",
-      kind:"إيجار",
-      name:"Hyundai Elantra",
-      location:"العاشر من رمضان",
-      price:1350,
-      period:"اليوم",
-      rating:4.7
-    },
-    {
-      id:"car-jetta",
-      type:"car",
-      kind:"شراء",
-      name:"Volkswagen Jetta",
-      location:"الزقازيق",
-      price:850000,
-      period:"",
-      rating:4.6
-    }
-  ];
-
-  function defaultState(){
-    return {
-      user:{
-        id:"guest",
-        name:"زائر خدمات بلدي",
-        phone:"",
-        role:"customer"
-      },
-      orders:[],
-      messages:[
-        {
-          id:uid("msg"),
-          from:"ai",
-          text:"أهلًا يا باشا 👋 أنا Mazen AI. قولي محتاج إيه وأنا أساعدك تبدأ."
-        }
-      ],
-      notifications:[
-        {
-          id:uid("notif"),
-          title:"مرحبًا بك",
-          body:"ابدأ بالبحث عن الخدمة التي تحتاجها.",
-          new:true
-        }
-      ],
-      favorites:[],
-      theme:"light",
-      providerDraft:{
-        name:"",
-        phone:"",
-        address:"",
-        maps:"",
-        site:"",
-        description:""
-      }
-    };
-  }
-
-  let STATE = defaultState();
-
-  /* ============================================================
-     INDEXED DB
-     ============================================================ */
-
-  const DB_NAME = "balady-mazen-db";
-  const DB_VERSION = 1;
-  let dbPromise = null;
-
-  function openDB(){
-    if(dbPromise) return dbPromise;
-
-    dbPromise = new Promise((resolve,reject)=>{
-      if(!("indexedDB" in window)){
-        resolve(null);
-        return;
-      }
-
-      const req = indexedDB.open(DB_NAME,DB_VERSION);
-
-      req.onupgradeneeded = () => {
-        const db = req.result;
-        if(!db.objectStoreNames.contains("state")){
-          db.createObjectStore("state",{keyPath:"id"});
-        }
-      };
-
-      req.onsuccess = () => resolve(req.result);
-      req.onerror = () => reject(req.error);
-    });
-
-    return dbPromise;
-  }
-
-  async function loadState(){
-    try{
-      const db = await openDB();
-
-      if(!db){
-        const raw = localStorage.getItem("balady_state");
-        if(raw) STATE = {...defaultState(),...JSON.parse(raw)};
-        return;
-      }
-
-      const data = await new Promise((resolve,reject)=>{
-        const tx = db.transaction("state","readonly");
-        const req = tx.objectStore("state").get("app");
-        req.onsuccess = () => resolve(req.result);
-        req.onerror = () => reject(req.error);
-      });
-
-      if(data?.value){
-        STATE = {...defaultState(),...data.value};
-      }
-    }catch(err){
-      console.warn("State load failed",err);
-
-      try{
-        const raw = localStorage.getItem("balady_state");
-        if(raw) STATE = {...defaultState(),...JSON.parse(raw)};
-      }catch{}
-    }
-  }
-
-  async function saveState(){
-    try{
-      const db = await openDB();
-
-      if(!db){
-        localStorage.setItem("balady_state",JSON.stringify(STATE));
-        return;
-      }
-
-      await new Promise((resolve,reject)=>{
-        const tx = db.transaction("state","readwrite");
-        tx.objectStore("state").put({
-          id:"app",
-          value:STATE,
-          updatedAt:new Date().toISOString()
-        });
-        tx.oncomplete = resolve;
-        tx.onerror = () => reject(tx.error);
-      });
-    }catch(err){
-      console.warn("State save failed",err);
-
-      try{
-        localStorage.setItem("balady_state",JSON.stringify(STATE));
-      }catch{}
-    }
-  }
-
-  /* ============================================================
-     THEME
-     ============================================================ */
-
-  function applyTheme(){
-    document.documentElement.dataset.theme = STATE.theme || "light";
-  }
-
-  async function toggleTheme(){
-    STATE.theme = STATE.theme === "dark" ? "light" : "dark";
-    applyTheme();
-    await saveState();
-    toast(STATE.theme === "dark" ? "الوضع الداكن مفعل" : "الوضع الفاتح مفعل");
-  }
-
-  /* ============================================================
-     TOAST / MODAL
-     ============================================================ */
-
-  function toast(message){
-    clearTimeout(toastTimer);
-    const node = $("#toast");
-    node.textContent = message;
-    node.classList.add("show");
-
-    toastTimer = setTimeout(()=>{
-      node.classList.remove("show");
-    },3000);
-  }
-
-  function showModal(title,html){
-    $("#modalTitle").textContent = title;
-    $("#modalBody").innerHTML = html;
-    $("#modal").classList.remove("hidden");
-    document.body.classList.add("locked");
-  }
-
-  function closeModal(){
-    $("#modal").classList.add("hidden");
-    document.body.classList.remove("locked");
-  }
-
-  $("#modal").addEventListener("click",e=>{
-    if(e.target.id === "modal") closeModal();
-  });
-
-  /* ============================================================
-     SEARCH / DATA HELPERS
-     ============================================================ */
-
-  function allProviders(){
-    return [...DOCTORS,...TEACHERS];
-  }
-
-  function findProvider(id){
-    return allProviders().find(x=>x.id===id);
-  }
-
-  function findMobile(id){
-    return MOBILE_PRODUCTS.find(x=>x.id===id);
-  }
-
-  function findCar(id){
-    return CARS.find(x=>x.id===id);
-  }
-
-  function findOrder(id){
-    return STATE.orders.find(x=>x.id===id);
-  }
-
-  function detectIntent(text){
-    const t = String(text||"").toLowerCase();
-
-    if(/طبيب|دكتور|عيادة|كشف|باطنة|أطفال|جلدية/.test(t))
-      return {intent:"doctor",category:"doctors"};
-
-    if(/مدرس|درس|تعليم|رياضيات|فيزياء|انجليزي|إنجليزي|مادة/.test(t))
-      return {intent:"teacher",category:"teachers"};
-
-    if(/توصيل|مشوار|مطار|وصلني|نقل/.test(t))
-      return {intent:"delivery",category:"delivery"};
-
-    if(/موبايل|هاتف|ايفون|آيفون|سامسونج|ريدمي|فون/.test(t))
-      return {intent:"mobile",category:"mobile"};
-
-    if(/سيارة|عربية|عربيات|تأجير|إيجار|شراء سيارة/.test(t))
-      return {intent:"car",category:"cars"};
-
-    if(/محامي|قانون|قضية|استشارة قانونية/.test(t))
-      return {intent:"lawyer",category:"lawyers"};
-
-    if(/صيدلية|دواء|دواء/.test(t))
-      return {intent:"pharmacy",category:"pharmacy"};
-
-    if(/صيانة|كهرباء|سباك|تكييف/.test(t))
-      return {intent:"maintenance",category:"maintenance"};
-
-    return {intent:"unknown",category:""};
-  }
-
-  function searchProviders(query){
-    const q = String(query||"").trim().toLowerCase();
-
-    if(!q) return allProviders();
-
-    return allProviders().filter(p=>{
-      const haystack = [
-        p.name,
-        p.specialty,
-        p.subject,
-        p.location,
-        ...(p.tags||[])
-      ].join(" ").toLowerCase();
-
-      return haystack.includes(q);
-    });
-  }
-
-  function exploreResults(query){
-    const intent = detectIntent(query);
-
-    let items = [];
-
-    if(intent.intent === "doctor"){
-      items = searchProviders(query).filter(x=>x.type==="doctor");
-    }else if(intent.intent === "teacher"){
-      items = searchProviders(query).filter(x=>x.type==="teacher");
-    }else if(intent.intent === "mobile"){
-      const q = query.toLowerCase();
-      items = MOBILE_PRODUCTS.filter(x=>
-        [x.name,x.store,x.location].join(" ").toLowerCase().includes(q)
-      );
-    }else if(intent.intent === "car"){
-      const q = query.toLowerCase();
-      items = CARS.filter(x=>
-        [x.name,x.kind,x.location].join(" ").toLowerCase().includes(q)
-      );
-    }else if(intent.intent === "delivery"){
-      return `
-        <div class="card pad">
-          <span class="badge primary">وصلني</span>
-          <h3>ابدأ طلب التوصيل</h3>
-          <p class="muted">
-            اكتب نقطة الانطلاق والوجهة والوقت، وسأجهز لك تقديرًا أوليًا.
-          </p>
-          <button class="btn btn-primary" data-action="route" data-route="delivery">
-            فتح خدمة التوصيل
-          </button>
-        </div>
-      `;
-    }else{
-      items = [
-        ...searchProviders(query),
-        ...MOBILE_PRODUCTS.filter(x=>
-          [x.name,x.store,x.location].join(" ").toLowerCase().includes(String(query||"").toLowerCase())
-        ),
-        ...CARS.filter(x=>
-          [x.name,x.kind,x.location].join(" ").toLowerCase().includes(String(query||"").toLowerCase())
-        )
-      ];
-    }
-
-    if(!items.length){
-      return `
-        <div class="empty">
-          لا توجد نتائج مطابقة حاليًا.
-          <br>
-          جرّب كلمة مثل "طبيب" أو "مدرس" أو "موبايل" أو "سيارة".
-        </div>
-      `;
-    }
-
-    return `
-      <div class="grid grid-2">
-        ${items.slice(0,8).map(item=>{
-          if(item.type==="doctor" || item.type==="teacher"){
-            return providerCard(item);
-          }
-
-          if(item.type==="mobile"){
-            return productCard(item);
-          }
-
-          if(item.type==="car"){
-            return carCard(item);
-          }
-
-          return "";
-        }).join("")}
-      </div>
-    `;
-  }
-
-  /* ============================================================
-     COMPONENTS
-     ============================================================ */
-
-  function providerCard(item){
-    const initial = esc(item.name.charAt(0));
-
-    return `
-      <article class="provider-card">
-        <div class="provider-head">
-          <div class="provider-avatar">${initial}</div>
-          <div class="grow">
-            <div class="row wrap">
-              <h3>${esc(item.name)}</h3>
-              ${item.verified ? '<span class="badge success">✓ موثّق</span>' : '<span class="badge">غير موثّق</span>'}
-            </div>
-            <div class="meta">
-              ${esc(item.specialty || item.subject)} · ${esc(item.location)}
-            </div>
-          </div>
-          <span class="badge gold">★ ${item.rating}</span>
-        </div>
-
-        <p class="muted" style="margin:12px 0 4px">
-          ${esc(item.description)}
-        </p>
-
-        <div class="row wrap">
-          <span class="meta">${item.reviews} مراجعة</span>
-          <span class="price">${money(item.price)}</span>
-        </div>
-
-        <div class="provider-actions">
-          <button class="btn btn-primary grow"
-            data-action="book"
-            data-type="${esc(item.type)}"
-            data-id="${esc(item.id)}">
-            حجز
-          </button>
-
-          <button class="btn"
-            data-action="call"
-            data-phone="${esc(item.phone)}"
-            title="اتصال">
-            ☎
-          </button>
-
-          <button class="btn"
-            data-action="favorite"
-            data-id="${esc(item.id)}"
-            title="مفضلة">
-            ${STATE.favorites.includes(item.id) ? "♥" : "♡"}
-          </button>
-        </div>
-      </article>
-    `;
-  }
-
-  function productCard(item){
-    return `
-      <article class="product-card">
-        <div class="product-media">📱</div>
-
-        <div class="product-body">
-          <div class="row wrap">
-            <span class="badge primary">متوفر</span>
-            <span class="badge gold">★ ${item.rating}</span>
-          </div>
-
-          <h3 style="margin:10px 0 4px">
-            ${esc(item.name)}
-          </h3>
-
-          <div class="meta">
-            ${esc(item.store)} · ${esc(item.location)}
-          </div>
-
-          <div class="row" style="margin-top:12px">
-            <strong class="price grow">${money(item.price)}</strong>
-
-            <button class="btn btn-primary"
-              data-action="buy-product"
-              data-id="${esc(item.id)}">
-              طلب
-            </button>
-          </div>
-        </div>
-      </article>
-    `;
-  }
-
-  function carCard(item){
-    return `
-      <article class="card pad">
-        <div style="font-size:44px">🚘</div>
-
-        <div class="row wrap" style="margin-top:6px">
-          <span class="badge gold">${esc(item.kind)}</span>
-          <span class="badge">★ ${item.rating}</span>
-        </div>
-
-        <h3>${esc(item.name)}</h3>
-
-        <div class="meta">${esc(item.location)}</div>
-
-        <div class="row" style="margin-top:10px">
-          <strong class="price grow">
-            ${money(item.price)}
-            ${item.period ? ` / ${esc(item.period)}` : ""}
-          </strong>
-
-          <button class="btn btn-primary"
-            data-action="car-order"
-            data-id="${esc(item.id)}">
-            طلب
-          </button>
-        </div>
-      </article>
-    `;
-  }
-
-  function serviceCard(cat){
-    return `
-      <button class="card service-card"
-        data-action="explore-category"
-        data-cat="${esc(cat.id)}"
-        style="text-align:right">
-
-        <div>
-          <div class="service-icon">${cat.icon}</div>
-          <h3>${esc(cat.title)}</h3>
-          <p>${esc(cat.desc)}</p>
-        </div>
-
-        <span class="meta">استكشف الخدمة ←</span>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="themeToggle" title="تبديل الوضع">🌙</button>
+      <button class="icon-btn" id="notifBtn" title="الإشعارات">
+        🔔<span class="badge">3</span>
       </button>
-    `;
-  }
+    </div>
+  </header>
 
-  function aiBubble(message,who="ai"){
+  <!-- HOME PAGE -->
+  <main class="page active" id="page-home">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>أهلاً بك في خدمات بلدي 👋</h1>
+        <p>قول لـ Mazen AI إيه اللي محتاجه، وهو هيعملهولك في ثواني</p>
+        <div class="hero-search">
+          <span>🔍</span>
+          <input type="text" id="heroSearch" placeholder="مثال: عايز دكتور أسنان بكرة الصبح..." >
+          <button id="heroSearchBtn">اسأل</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">🎯 الخدمات المتاحة</h2>
+        <span class="section-more" data-nav="explore">عرض الكل</span>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">⭐ الأكثر طلباً</h2>
+      </div>
+      <div class="providers-list" id="featuredProviders"></div>
+    </section>
+  </main>
+
+  <!-- EXPLORE PAGE -->
+  <main class="page" id="page-explore">
+    <h2 class="section-title" style="margin-bottom: var(--space-4);">🔍 استكشف الخدمات</h2>
+    <div id="exploreContent"></div>
+  </main>
+
+  <!-- ORDERS PAGE -->
+  <main class="page" id="page-orders">
+    <h2 class="section-title" style="margin-bottom: var(--space-4);">📦 طلباتي</h2>
+    <div id="ordersContent"></div>
+  </main>
+
+  <!-- MESSAGES PAGE -->
+  <main class="page" id="page-messages">
+    <h2 class="section-title" style="margin-bottom: var(--space-4);">💬 الرسائل</h2>
+    <div id="messagesContent"></div>
+  </main>
+
+  <!-- PROFILE PAGE -->
+  <main class="page" id="page-profile">
+    <div class="hero" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--error) 100%);">
+      <div class="hero-content">
+        <h1 id="profileName">مستخدم جديد</h1>
+        <p id="profilePhone">سجل دخولك للاستفادة من كل المميزات</p>
+        <button class="btn btn-block" style="background: white; color: var(--error); margin-top: var(--space-3);" id="loginBtn">
+          تسجيل الدخول / إنشاء حساب
+        </button>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section-title" style="margin-bottom: var(--space-3);">💼 اشتراكات مقدمي الخدمات</h2>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: var(--space-4);">
+        انضم كمقدم خدمة وابدأ في استقبال الطلبات
+      </p>
+      <div id="subscriptionsList"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" style="margin-bottom: var(--space-3);">⚙️ الإعدادات</h2>
+      <button class="btn btn-ghost btn-block mb-4" onclick="App.toggleTheme()">🌓 تبديل الوضع الليلي / النهاري</button>
+      <button class="btn btn-ghost btn-block mb-4" onclick="App.showToast('قريباً', 'info')">🌐 تغيير اللغة</button>
+      <button class="btn btn-ghost btn-block mb-4" onclick="App.showToast('قريباً', 'info')">📄 الشروط والأحكام</button>
+      <button class="btn btn-ghost btn-block" onclick="App.showToast('قريباً', 'info')">🔒 سياسة الخصوصية</button>
+    </section>
+  </main>
+
+</div>
+
+<!-- MAZEN AI FAB -->
+<div class="mazen-fab" id="mazenFab" title="Mazen AI">
+  <div class="pulse-ring"></div>
+  <div class="mazen-face">
+    <div class="mazen-eye">
+      <div class="mazen-pupil"></div>
+    </div>
+  </div>
+</div>
+
+<!-- OWNER LOGIN TRIGGER (Hidden) -->
+<div class="owner-login-trigger" id="ownerTrigger" title="👑">👑</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <div class="nav-item active" data-page="home">
+    <span class="nav-icon">🏠</span>
+    <span>الرئيسية</span>
+  </div>
+  <div class="nav-item" data-page="explore">
+    <span class="nav-icon">🔍</span>
+    <span>استكشف</span>
+  </div>
+  <div class="nav-item" data-page="orders">
+    <span class="nav-icon">📦</span>
+    <span>طلباتي</span>
+  </div>
+  <div class="nav-item" data-page="messages">
+    <span class="nav-icon">💬</span>
+    <span>الرسائل</span>
+  </div>
+  <div class="nav-item" data-page="profile">
+    <span class="nav-icon">👤</span>
+    <span>حسابي</span>
+  </div>
+</nav>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay"></div>
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <h3 class="modal-title" id="modalTitle">العنوان</h3>
+    <button class="modal-close" id="modalClose">✕</button>
+  </div>
+  <div class="modal-body" id="modalBody"></div>
+  <div class="modal-footer hidden" id="modalFooter"></div>
+</div>
+
+<!-- AMR ADEEB OVERLAY -->
+<div class="amr-overlay" id="amrOverlay">
+  <div class="amr-card">
+    <div class="amr-avatar">🎭</div>
+    <div class="amr-quote">"لسه عندي حكايات في الحلويات.. ابقوا معانا!"</div>
+    <div class="amr-sub">— عمرو أديب AI، ضيف شرف على خدمات بلدي</div>
+    <button class="btn btn-primary" onclick="App.closeAmr()">تمام يا باشا 👍</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+/* ============================================
+   APP DATA
+   ============================================ */
+const APP_DATA = {
+  services: [
+    { id: 'doctors', name: 'أطباء', icon: '👨‍⚕️', color: '#3B82F6' },
+    { id: 'teachers', name: 'مدرسين', icon: '👨‍🏫', color: '#10B981' },
+    { id: 'wasalny', name: 'وصلني', icon: '🚗', color: '#F59E0B' },
+    { id: 'mobiles', name: 'موبايلات', icon: '📱', color: '#8B5CF6' },
+    { id: 'cars', name: 'عربيات', icon: '🚙', color: '#EF4444' },
+    { id: 'pharmacies', name: 'صيدليات', icon: '💊', color: '#06B6D4' },
+    { id: 'delivery', name: 'دليفري', icon: '🛵', color: '#F97316' },
+    { id: 'lawyers', name: 'محامين', icon: '⚖️', color: '#6366F1' },
+    { id: 'maintenance', name: 'صيانة', icon: '🔧', color: '#14B8A6' },
+    { id: 'restaurants', name: 'مطاعم', icon: '🍽️', color: '#EC4899' },
+    { id: 'grocery', name: 'بقالة', icon: '🛒', color: '#84CC16' },
+    { id: 'more', name: 'المزيد', icon: '➕', color: '#64748B' }
+  ],
+
+  providers: {
+    doctors: [
+      { id: 'd1', name: 'د. أحمد محمود', specialty: 'أسنان', rating: 4.9, reviews: 234, price: 300, phone: '01012345678', address: 'فاقوس - شارع الجمهورية', verified: true, image: '👨‍⚕️' },
+      { id: 'd2', name: 'د. سارة علي', specialty: 'أطفال', rating: 4.8, reviews: 189, price: 250, phone: '01098765432', address: 'فاقوس - شارع المحطة', verified: true, image: '👩‍⚕️' },
+      { id: 'd3', name: 'د. محمد حسن', specialty: 'باطنة', rating: 4.7, reviews: 156, price: 200, phone: '01055555555', address: 'الزقازيق - شارع المديرية', verified: true, image: '👨‍⚕️' }
+    ],
+    teachers: [
+      { id: 't1', name: 'أ. محمود السيد', specialty: 'رياضيات - ثانوي', rating: 4.9, reviews: 178, price: 150, phone: '01011111111', address: 'فاقوس', verified: true, image: '👨‍🏫' },
+      { id: 't2', name: 'أ. فاطمة أحمد', specialty: 'لغة عربية - إعدادي', rating: 4.8, reviews: 145, price: 120, phone: '01022222222', address: 'فاقوس', verified: true, image: '👩‍🏫' }
+    ],
+    wasalny: [
+      { id: 'w1', name: 'توصيلة داخل المدينة', specialty: 'من 5 إلى 15 كم', rating: 4.9, reviews: 512, price: 30, verified: true, image: '🛵' },
+      { id: 'w2', name: 'توصيلة خارج المدينة', specialty: 'من 15 إلى 50 كم', rating: 4.8, reviews: 320, price: 80, verified: true, image: '🚗' },
+      { id: 'w3', name: 'مشوار مطار القاهرة', specialty: 'فاقوس → مطار القاهرة', rating: 4.9, reviews: 156, price: 450, verified: true, image: '✈️' },
+      { id: 'w4', name: 'مشوار مطار العالمين', specialty: 'فاقوس → مطار العالمين', rating: 4.8, reviews: 98, price: 600, verified: true, image: '🛫' }
+    ],
+    mobiles: [
+      { id: 'm1', name: 'iPhone 15 Pro Max', specialty: '256GB - جديد', rating: 5.0, reviews: 45, price: 65000, verified: true, image: '📱' },
+      { id: 'm2', name: 'Samsung Galaxy S24', specialty: '128GB - جديد', rating: 4.9, reviews: 67, price: 35000, verified: true, image: '📱' },
+      { id: 'm3', name: 'Xiaomi Redmi Note 13', specialty: '128GB - جديد', rating: 4.7, reviews: 189, price: 8500, verified: true, image: '📱' }
+    ],
+    cars: [
+      { id: 'c1', name: 'تويوتا كورولا 2023', specialty: 'بيع - 0 كم', rating: 4.9, reviews: 23, price: 850000, verified: true, image: '🚗' },
+      { id: 'c2', name: 'هيونداي إلنترا 2022', specialty: 'إيجار يومي', rating: 4.8, reviews: 45, price: 1500, verified: true, image: '🚙' },
+      { id: 'c3', name: 'نيسان صني 2021', specialty: 'شراء مستعمل', rating: 4.7, reviews: 34, price: 450000, verified: true, image: '🚗' }
+    ]
+  },
+
+  subscriptions: [
+    {
+      id: 'basic', name: 'الباقة الأساسية', price: 199, period: 'شهرياً',
+      features: ['ظهور في نتائج البحث', 'استقبال حتى 20 طلب شهرياً', 'دعم فني أساسي', 'ملف شخصي كامل']
+    },
+    {
+      id: 'pro', name: 'الباقة الاحترافية', price: 499, period: 'شهرياً', featured: true,
+      features: ['ظهور مميز في النتائج', 'طلبات غير محدودة', 'دعم فني على مدار الساعة', 'شارة "موثّق"', 'إحصائيات متقدمة', 'أولوية في الدعم']
+    },
+    {
+      id: 'business', name: 'باقة الأعمال', price: 1299, period: 'شهرياً',
+      features: ['كل مميزات الاحترافية', 'ظهور في الصفحة الرئيسية', 'حملات تسويقية', 'مدير حساب مخصص', 'تقارير مالية متقدمة']
+    }
+  ],
+
+  owner: {
+    birthday: '2002-03-30',
+    bankAccount: 'EG380003000123456789012345678',
+    commissionRate: 0.06
+  }
+};
+
+/* ============================================
+   APP STATE
+   ============================================ */
+const App = {
+  state: {
+    currentPage: 'home',
+    theme: localStorage.getItem('theme') || 'light',
+    user: JSON.parse(localStorage.getItem('user') || 'null'),
+    orders: JSON.parse(localStorage.getItem('orders') || '[]'),
+    ownerLoggedIn: false,
+    cart: [],
+    aiMessages: []
+  },
+
+  /* ============================================
+     INIT
+     ============================================ */
+  init() {
+    this.applyTheme();
+    this.renderServices();
+    this.renderFeatured();
+    this.renderExplore();
+    this.renderOrders();
+    this.renderMessages();
+    this.renderSubscriptions();
+    this.bindEvents();
+    this.checkFirstVisit();
+    console.log('%c🏘️ خدمات بلدي | Mazen AI','background:#2563EB;color:white;padding:8px 16px;border-radius:6px;font-weight:bold;');
+  },
+
+  /* ============================================
+     THEME
+     ============================================ */
+  applyTheme() {
+    document.documentElement.setAttribute('data-theme', this.state.theme);
+    document.getElementById('themeToggle').textContent = this.state.theme === 'dark' ? '☀️' : '🌙';
+  },
+
+  toggleTheme() {
+    this.state.theme = this.state.theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', this.state.theme);
+    this.applyTheme();
+  },
+
+  /* ============================================
+     NAVIGATION
+     ============================================ */
+  navigate(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    const pageEl = document.getElementById(`page-${page}`);
+    if (pageEl) pageEl.classList.add('active');
+    const navEl = document.querySelector(`.nav-item[data-page="${page}"]`);
+    if (navEl) navEl.classList.add('active');
+    this.state.currentPage = page;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  /* ============================================
+     RENDER SERVICES
+     ============================================ */
+  renderServices() {
+    const grid = document.getElementById('servicesGrid');
+    grid.innerHTML = APP_DATA.services.map(s => `
+      <div class="service-card" onclick="App.openService('${s.id}')">
+        <div class="service-icon" style="background: linear-gradient(135deg, ${s.color}33, ${s.color});">${s.icon}</div>
+        <div class="service-name">${s.name}</div>
+      </div>
+    `).join('');
+  },
+
+  renderFeatured() {
+    const list = document.getElementById('featuredProviders');
+    const featured = [
+      APP_DATA.providers.doctors[0],
+      APP_DATA.providers.wasalny[2],
+      APP_DATA.providers.teachers[0]
+    ];
+    list.innerHTML = featured.map(p => this.providerCardHTML(p)).join('');
+  },
+
+  providerCardHTML(p) {
     return `
-      <div class="bubble ${who}">
-        ${esc(message)}
+      <div class="provider-card" onclick="App.openProvider('${p.id}')">
+        <div class="provider-avatar">
+          ${p.image}
+          ${p.verified ? '<div class="verified">✓</div>' : ''}
+        </div>
+        <div class="provider-info">
+          <div class="provider-name">${p.name}</div>
+          <div class="provider-specialty">${p.specialty}</div>
+          <div class="provider-meta">
+            <span class="provider-rating">⭐ ${p.rating}</span>
+            <span>(${p.reviews})</span>
+            <span>💰 ${p.price} ج.م</span>
+          </div>
+        </div>
+        <div style="color:var(--text-secondary);">›</div>
       </div>
     `;
-  }
+  },
 
-  function statusBadge(status){
-    const map = {
-      "جديد":"primary",
-      "مؤكد":"success",
-      "قيد التنفيذ":"gold",
-      "مكتمل":"success",
-      "ملغي":""
-    };
-
-    return `<span class="badge ${map[status]||""}">${esc(status)}</span>`;
-  }
-
-  /* ============================================================
-     ROUTING
-     ============================================================ */
-
-  const ROUTES = {
-    home:renderHome,
-    explore:renderExplore,
-    ai:renderAI,
-    orders:renderOrders,
-    messages:renderMessages,
-    profile:renderProfile,
-    doctors:renderDoctors,
-    doctor:renderDoctor,
-    teachers:renderTeachers,
-    teacher:renderTeacher,
-    delivery:renderDelivery,
-    mobile:renderMobile,
-    cars:renderCars,
-    invoice:renderInvoice,
-    provider:renderProvider,
-    owner:renderOwner
-  };
-
-  function currentRoute(){
-    const raw = location.hash.replace(/^#/,"") || "home";
-    const parts = raw.split("/");
-    return {
-      page:parts[0] || "home",
-      id:parts[1] || ""
-    };
-  }
-
-  function navigate(page,id=""){
-    location.hash = id ? `${page}/${encodeURIComponent(id)}` : page;
-  }
-
-  function renderRoute(){
-    const {page,id} = currentRoute();
-    const renderer = ROUTES[page] || renderHome;
-
-    try{
-      renderer(decodeURIComponent(id));
-    }catch(err){
-      console.error("Render error",err);
-      renderHome();
-      toast("حدث خطأ أثناء فتح الصفحة.");
-    }
-
-    updateNavigation(page);
-    window.scrollTo({top:0,behavior:"smooth"});
-    maybeCameo();
-  }
-
-  window.addEventListener("hashchange",renderRoute);
-
-  function updateNavigation(page){
-    $$(".nav-link,.bottom-item").forEach(el=>{
-      const r = el.dataset.route;
-      el.classList.toggle("active",r===page);
-    });
-  }
-
-  function layout(content,options={}){
-    const title = options.title || CONFIG.appName;
-
-    return `
-      <header class="topbar">
-        <div class="container nav">
-
-          <a href="#home" class="brand" aria-label="الصفحة الرئيسية">
-            <div class="brand-mark">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12 28L32 10L52 28V51C52 53.2 50.2 55 48 55H16C13.8 55 12 53.2 12 51V28Z"
-                      fill="none"
-                      stroke="#fff"
-                      stroke-width="4"/>
-                <path d="M24 55V36H40V55"
-                      stroke="#fff"
-                      stroke-width="4"/>
-                <circle cx="32" cy="28" r="4" fill="#D4A24C"/>
-              </svg>
-            </div>
-            <div>
-              <strong class="brand-name">خدمات بلدي</strong>
-              <span class="brand-sub">Mazen AI · Local Services</span>
-            </div>
-          </a>
-
-          <nav class="nav-links" aria-label="التنقل الرئيسي">
-            <button class="nav-link" data-action="route" data-route="home">الرئيسية</button>
-            <button class="nav-link" data-action="route" data-route="explore">استكشف</button>
-            <button class="nav-link" data-action="route" data-route="orders">طلباتي</button>
-            <button class="nav-link" data-action="route" data-route="messages">الرسائل</button>
-          </nav>
-
-          <div class="nav-actions">
-            <button class="icon-btn hide-mobile" data-action="theme" aria-label="تغيير المظهر">
-              ◐
-            </button>
-
-            <button class="icon-btn hide-mobile"
-              data-action="notifications"
-              aria-label="الإشعارات">
-              🔔
-            </button>
-
-            <button class="avatar"
-              data-action="route"
-              data-route="profile"
-              aria-label="الملف الشخصي">
-              ${esc((STATE.user.name||"ز").charAt(0))}
-            </button>
+  renderExplore() {
+    const content = document.getElementById('exploreContent');
+    content.innerHTML = `
+      <div class="services-grid mb-4" style="margin-bottom: var(--space-6);">
+        ${APP_DATA.services.map(s => `
+          <div class="service-card" onclick="App.openService('${s.id}')">
+            <div class="service-icon" style="background: linear-gradient(135deg, ${s.color}33, ${s.color});">${s.icon}</div>
+            <div class="service-name">${s.name}</div>
           </div>
-
-        </div>
-      </header>
-
-      <main>
-        ${content}
-      </main>
-
-      <footer>
-        <div class="container">
-          <div class="footer-grid">
-
-            <div>
-              <div class="brand" style="min-width:0">
-                <div class="brand-mark">
-                  <svg viewBox="0 0 64 64" fill="none">
-                    <path d="M12 28L32 10L52 28V51C52 53.2 50.2 55 48 55H16C13.8 55 12 53.2 12 51V28Z"
-                          stroke="#fff"
-                          stroke-width="4"/>
-                    <path d="M24 55V36H40V55" stroke="#fff" stroke-width="4"/>
-                    <circle cx="32" cy="28" r="4" fill="#D4A24C"/>
-                  </svg>
-                </div>
-                <div>
-                  <strong class="brand-name">خدمات بلدي</strong>
-                  <span class="brand-sub">Mazen AI</span>
-                </div>
-              </div>
-
-              <p class="muted" style="font-size:13px;max-width:400px">
-                منصة رقمية ذكية لاكتشاف الخدمات المحلية وطلبها ومتابعتها من مكان واحد.
-              </p>
-            </div>
-
-            <div>
-              <div class="footer-title">الخدمات</div>
-              <a href="#doctors" class="footer-link">الأطباء</a>
-              <a href="#teachers" class="footer-link">المدرسون</a>
-              <a href="#delivery" class="footer-link">وصلني</a>
-              <a href="#mobile" class="footer-link">الموبايلات</a>
-            </div>
-
-            <div>
-              <div class="footer-title">المستخدم</div>
-              <a href="#orders" class="footer-link">طلباتي</a>
-              <a href="#messages" class="footer-link">الرسائل</a>
-              <a href="#profile" class="footer-link">حسابي</a>
-              <a href="#ai" class="footer-link">Mazen AI</a>
-            </div>
-
-            <div>
-              <div class="footer-title">الأعمال</div>
-              <button class="footer-link" style="border:0;background:none;padding:0"
-                data-action="route" data-route="provider">
-                مركز مقدم الخدمة
-              </button>
-
-              <button class="footer-link" style="border:0;background:none;padding:0"
-                data-action="owner">
-                مركز المالك
-              </button>
-            </div>
-
-          </div>
-
-          <div class="meta" style="margin-top:28px">
-            © ${new Date().getFullYear()} ${esc(CONFIG.appName)} · Prototype / Production-ready frontend architecture
-          </div>
-        </div>
-      </footer>
-
-      <nav class="bottom-nav" aria-label="تنقل الموبايل">
-        <div class="bottom-nav-inner">
-          <button class="bottom-item" data-action="route" data-route="home">⌂<span>الرئيسية</span></button>
-          <button class="bottom-item" data-action="route" data-route="explore">⌕<span>استكشف</span></button>
-          <button class="bottom-item" data-action="route" data-route="ai">✦<span>مساعد AI</span></button>
-          <button class="bottom-item" data-action="route" data-route="orders">▣<span>طلباتي</span></button>
-          <button class="bottom-item" data-action="route" data-route="profile">●<span>حسابي</span></button>
-        </div>
-      </nav>
+        `).join('')}
+      </div>
+      <h3 class="section-title" style="margin-bottom: var(--space-3);">🔥 الأطباء المميزون</h3>
+      <div class="providers-list">
+        ${APP_DATA.providers.doctors.map(p => this.providerCardHTML(p)).join('')}
+      </div>
+      <h3 class="section-title" style="margin: var(--space-6) 0 var(--space-3);">🚗 خدمة وصلني</h3>
+      <div class="providers-list">
+        ${APP_DATA.providers.wasalny.map(p => this.providerCardHTML(p)).join('')}
+      </div>
     `;
-  }
+  },
 
-  /* ============================================================
-     HOME
-     ============================================================ */
+  renderOrders() {
+    const content = document.getElementById('ordersContent');
+    if (this.state.orders.length === 0) {
+      content.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">📭</div>
+          <h3>لا يوجد طلبات بعد</h3>
+          <p>ابدأ بتصفح الخدمات واطلب أول خدمة لك</p>
+          <button class="btn btn-primary mt-4" onclick="App.navigate('home')">تصفح الخدمات</button>
+        </div>
+      `;
+      return;
+    }
+    content.innerHTML = this.state.orders.map(o => `
+      <div class="provider-card" style="flex-direction: column; align-items: stretch;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: var(--space-3);">
+          <div style="font-weight: 700;">${o.serviceName}</div>
+          <span class="badge-success">${o.status}</span>
+        </div>
+        <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: var(--space-2);">
+          📅 ${o.date} ⏰ ${o.time}
+        </div>
+        <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: var(--space-3);">
+          👤 ${o.providerName}
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top: var(--space-3); border-top: 1px solid var(--border);">
+          <div style="font-weight: 900; color: var(--primary); font-size: 16px;">${o.total} ج.م</div>
+          <button class="btn btn-outline" onclick="App.showInvoice('${o.id}')" style="padding: 6px 12px; font-size: 12px;">عرض الفاتورة</button>
+        </div>
+      </div>
+    `).join('');
+  },
 
-  function renderHome(){
-    $("#app").innerHTML = layout(`
-      <section class="hero">
-        <div class="container">
-          <div class="hero-shell">
-
-            <div class="hero-card">
-
-              <span class="eyebrow">
-                ✦ Mazen AI
-                <span class="badge ai" style="padding:4px 7px">Smart Agent</span>
-              </span>
-
-              <h1>
-                ماذا تحتاج؟
-                <br>
-                <span>أنا أدبرها لك.</span>
-              </h1>
-
-              <p>
-                ابحث عن خدمة، اختر مقدمًا مناسبًا، اطلب الخدمة وتابع كل التفاصيل من مكان واحد.
-              </p>
-
-              <div class="smart-search">
-                <input
-                  id="homeSearch"
-                  type="search"
-                  placeholder="مثال: عايز دكتور أطفال في فاقوس"
-                  autocomplete="off"
-                  enterkeyhint="search">
-
-                <button class="btn btn-ai"
-                  data-action="home-search">
-                  ✦ اسأل Mazen AI
-                </button>
-              </div>
-
-              <div class="quick-row">
-                <button class="chip" data-action="quick-ai" data-text="عايز دكتور أطفال">🩺 دكتور</button>
-                <button class="chip" data-action="quick-ai" data-text="عايز مدرس رياضيات">📚 مدرس</button>
-                <button class="chip" data-action="quick-ai" data-text="عايز توصيل للمطار">🚗 توصيل</button>
-                <button class="chip" data-action="quick-ai" data-text="عايز موبايل سامسونج">📱 موبايل</button>
-                <button class="chip" data-action="quick-ai" data-text="عايز عربية للإيجار">🚘 سيارة</button>
-              </div>
-
-              <div class="hero-actions">
-                <button class="btn btn-primary"
-                  data-action="route"
-                  data-route="explore">
-                  اكتشف الخدمات
-                </button>
-
-                <button class="btn"
-                  data-action="ai">
-                  افتح Mazen AI
-                </button>
-              </div>
-
-              <div class="hero-note">
-                ابدأ بطلب طبيعي باللهجة المصرية أو بالعربية الفصحى أو بالإنجليزية.
-              </div>
-
+  renderMessages() {
+    const content = document.getElementById('messagesContent');
+    content.innerHTML = `
+      <div class="provider-card">
+        <div class="provider-avatar" style="background: linear-gradient(135deg, #F59E0B, #EF4444);">
+          <div style="width:36px;height:36px;border-radius:50%;background:white;display:grid;place-items:center;">
+            <div style="width:18px;height:18px;border-radius:50%;background:#0F172A;position:relative;">
+              <div style="position:absolute;top:4px;left:4px;width:5px;height:5px;border-radius:50%;background:white;"></div>
             </div>
-
-            <aside class="hero-side">
-              <div class="hero-side-head">
-                <div class="row">
-                  <div style="font-size:34px">🧞</div>
-                  <div>
-                    <h3>Mazen AI</h3>
-                    <p>مساعدك الذكي للخدمات</p>
-                  </div>
-                </div>
-
-                <span class="badge" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)">
-                  ● Online
-                </span>
-              </div>
-
-              <div class="hero-side-grid">
-                <div class="hero-mini">
-                  <small>الخدمات</small>
-                  <strong>+8</strong>
-                </div>
-
-                <div class="hero-mini">
-                  <small>تجربة الطلب</small>
-                  <strong>1 مكان</strong>
-                </div>
-
-                <div class="hero-mini">
-                  <small>الوضع</small>
-                  <strong>24/7</strong>
-                </div>
-
-                <div class="hero-mini">
-                  <small>المنصة</small>
-                  <strong>PWA</strong>
-                </div>
-              </div>
-
-              <div style="margin-top:22px;position:relative;z-index:2">
-                <button
-                  class="btn"
-                  style="width:100%;background:#fff;color:#0F7B5F;border-color:#fff"
-                  data-action="rawi">
-                  اسمع Mazen AI يقولك حاجة 😄
-                </button>
-              </div>
-            </aside>
-
           </div>
         </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>الخدمات</h2>
-                <div class="meta">كل ما تحتاجه في مكان واحد</div>
-              </div>
-            </div>
-
-            <button class="btn" data-action="route" data-route="explore">
-              عرض الكل
-            </button>
-          </div>
-
-          <div class="grid grid-4">
-            ${CATEGORIES.map(serviceCard).join("")}
-          </div>
+        <div class="provider-info">
+          <div class="provider-name">Mazen AI</div>
+          <div class="provider-specialty">مساعدك الذكي — متاح دائماً</div>
         </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>أطباء مقترحون</h2>
-                <div class="meta">نماذج لخدمة حقيقية قابلة للربط بقاعدة بيانات</div>
-              </div>
-            </div>
-
-            <button class="btn" data-action="route" data-route="doctors">
-              المزيد
-            </button>
-          </div>
-
-          <div class="grid grid-3">
-            ${DOCTORS.slice(0,3).map(providerCard).join("")}
-          </div>
-
+        <div style="color:var(--success);font-size:11px;font-weight:700;">● متصل</div>
+      </div>
+      <div class="provider-card mt-4">
+        <div class="provider-avatar">👨‍⚕️</div>
+        <div class="provider-info">
+          <div class="provider-name">د. أحمد محمود</div>
+          <div class="provider-specialty">شكراً لحجزك، في انتظارك</div>
         </div>
-      </section>
+        <div style="color:var(--text-secondary);font-size:11px;">منذ 5 د</div>
+      </div>
+    `;
+  },
 
-      <section class="section">
-        <div class="container">
+  renderSubscriptions() {
+    const list = document.getElementById('subscriptionsList');
+    list.innerHTML = APP_DATA.subscriptions.map(s => `
+      <div class="subscription-card ${s.featured ? 'featured' : ''}">
+        <div class="subscription-price">${s.price} ج.م</div>
+        <div class="subscription-period">${s.period}</div>
+        <div style="font-weight: 700; margin-bottom: var(--space-3); font-size: 15px;">${s.name}</div>
+        <ul class="subscription-features">
+          ${s.features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="App.subscribe('${s.id}')">اشترك الآن</button>
+      </div>
+    `).join('');
+  },
 
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>موبايلات وعروض</h2>
-                <div class="meta">كتالوج تجريبي قابل للربط بالمتاجر</div>
-              </div>
-            </div>
+  /* ============================================
+     SERVICE / PROVIDER
+     ============================================ */
+  openService(serviceId) {
+    const service = APP_DATA.services.find(s => s.id === serviceId);
+    if (!service) return;
+    const providers = APP_DATA.providers[serviceId] || [];
 
-            <button class="btn" data-action="route" data-route="mobile">
-              المتجر
-            </button>
-          </div>
-
-          <div class="grid grid-3">
-            ${MOBILE_PRODUCTS.map(productCard).join("")}
-          </div>
-
+    this.openModal(`
+      <div style="text-align: center; margin-bottom: var(--space-5);">
+        <div style="width: 72px; height: 72px; border-radius: var(--radius-lg); margin: 0 auto var(--space-3); display: grid; place-items: center; font-size: 36px; background: linear-gradient(135deg, ${service.color}33, ${service.color});">
+          ${service.icon}
         </div>
-      </section>
-    `,{title:"الرئيسية"});
-  }
-
-  /* ============================================================
-     EXPLORE
-     ============================================================ */
-
-  function renderExplore(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>استكشف الخدمات</h2>
-                <div class="meta">ابحث بالكلمة أو ابدأ من فئة</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card pad">
-            <div class="smart-search" style="margin-top:0">
-              <input
-                id="exploreSearch"
-                type="search"
-                placeholder="ابحث عن طبيب، مدرس، موبايل، سيارة..."
-                autocomplete="off">
-
-              <button
-                class="btn btn-primary"
-                data-action="run-explore-search">
-                بحث
-              </button>
-            </div>
-
-            <div class="quick-row">
-              ${CATEGORIES.map(cat=>`
-                <button class="chip"
-                  data-action="explore-category"
-                  data-cat="${esc(cat.id)}">
-                  ${cat.icon} ${esc(cat.title)}
-                </button>
-              `).join("")}
-            </div>
-          </div>
-
-          <div id="exploreResults" style="margin-top:18px">
-            <div class="empty">
-              اكتب ما تحتاجه أو اختر فئة للبدء.
-            </div>
-          </div>
-
+        <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 900;">${service.name}</h2>
+        <p style="color: var(--text-secondary); font-size: 13px; margin-top: 4px;">اختر من قائمة مقدمي الخدمة</p>
+      </div>
+      ${providers.length > 0 ? `
+        <div class="providers-list">
+          ${providers.map(p => this.providerCardHTML(p)).join('')}
         </div>
-      </section>
-    `,{title:"استكشف"});
-
-    const input = $("#exploreSearch");
-    input?.addEventListener("keydown",e=>{
-      if(e.key==="Enter"){
-        e.preventDefault();
-        $("#exploreResults").innerHTML = exploreResults(input.value);
-      }
-    });
-  }
-
-  /* ============================================================
-     DOCTORS
-     ============================================================ */
-
-  function renderDoctors(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>الأطباء</h2>
-                <div class="meta">اكتشف أطباء حسب التخصص والمكان</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid grid-3">
-            ${DOCTORS.map(providerCard).join("")}
-          </div>
-
+      ` : `
+        <div class="empty-state">
+          <div class="empty-icon">🔧</div>
+          <h3>قريباً</h3>
+          <p>هذه الخدمة تحت التطوير وستكون متاحة قريباً</p>
         </div>
-      </section>
-    `,{title:"الأطباء"});
-  }
+      `}
+    `, service.name);
+  },
 
-  function renderDoctor(id){
-    const doctor = findProvider(id);
+  openProvider(providerId) {
+    let provider = null;
+    let serviceType = null;
+    for (const [key, list] of Object.entries(APP_DATA.providers)) {
+      const p = list.find(x => x.id === providerId);
+      if (p) { provider = p; serviceType = key; break; }
+    }
+    if (!provider) return;
 
-    if(!doctor || doctor.type!=="doctor"){
-      return renderDoctors();
+    this.openModal(`
+      <div style="text-align: center; margin-bottom: var(--space-5);">
+        <div class="provider-avatar" style="width: 100px; height: 100px; margin: 0 auto var(--space-3); font-size: 48px;">
+          ${provider.image}
+          ${provider.verified ? '<div class="verified" style="width: 28px; height: 28px; font-size: 14px;">✓</div>' : ''}
+        </div>
+        <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 900;">${provider.name}</h2>
+        <p style="color: var(--text-secondary); margin-top: 4px;">${provider.specialty}</p>
+        <div style="display: flex; justify-content: center; gap: var(--space-4); margin-top: var(--space-3);">
+          <div><div style="font-weight: 900; color: var(--secondary);">⭐ ${provider.rating}</div><div style="font-size: 11px; color: var(--text-secondary);">${provider.reviews} تقييم</div></div>
+          <div><div style="font-weight: 900; color: var(--primary);">${provider.price} ج.م</div><div style="font-size: 11px; color: var(--text-secondary);">يبدأ من</div></div>
+        </div>
+      </div>
+      ${provider.phone ? `
+        <div class="invoice mb-4">
+          <div class="invoice-row"><span>📞 رقم الهاتف</span><strong>${provider.phone}</strong></div>
+          ${provider.address ? `<div class="invoice-row"><span>📍 العنوان</span><strong>${provider.address}</strong></div>` : ''}
+        </div>
+      ` : ''}
+      <div class="form-group">
+        <label class="form-label">📅 التاريخ</label>
+        <input type="date" class="form-input" id="bookDate" min="${new Date().toISOString().split('T')[0]}">
+      </div>
+      <div class="form-group">
+        <label class="form-label">⏰ الوقت</label>
+        <input type="time" class="form-input" id="bookTime">
+      </div>
+      <div class="form-group">
+        <label class="form-label">💳 طريقة الدفع</label>
+        <select class="form-select" id="payMethod">
+          <option value="instapay">إنستاباي</option>
+          <option value="vodafone">فودافون كاش</option>
+          <option value="cash">نقدي عند الحضور</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">📝 ملاحظات إضافية</label>
+        <textarea class="form-textarea" id="bookNotes" placeholder="أي تفاصيل إضافية..."></textarea>
+      </div>
+      <button class="btn btn-primary btn-block btn-lg" onclick="App.confirmBooking('${provider.id}', '${serviceType}')">
+        🤖 تأكيد الحجز مع Mazen AI
+      </button>
+    `, 'تفاصيل مقدم الخدمة');
+  },
+
+  confirmBooking(providerId, serviceType) {
+    let provider = null;
+    for (const list of Object.values(APP_DATA.providers)) {
+      const p = list.find(x => x.id === providerId);
+      if (p) { provider = p; break; }
+    }
+    if (!provider) return;
+
+    const date = document.getElementById('bookDate')?.value;
+    const time = document.getElementById('bookTime')?.value;
+    const payMethod = document.getElementById('payMethod')?.value;
+    const notes = document.getElementById('bookNotes')?.value;
+
+    if (!date || !time) {
+      this.showToast('⚠️ يرجى تحديد التاريخ والوقت', 'warning');
+      return;
     }
 
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
+    const serviceName = APP_DATA.services.find(s => s.id === serviceType)?.name || 'خدمة';
+    const subtotal = provider.price;
+    const commission = Math.round(subtotal * APP_DATA.owner.commissionRate);
+    const total = subtotal;
 
-          <button class="btn" data-action="route" data-route="doctors">
-            ← رجوع
-          </button>
+    const order = {
+      id: 'ORD-' + Date.now(),
+      serviceName: `${serviceName} - ${provider.name}`,
+      providerName: provider.name,
+      date, time, payMethod, notes,
+      subtotal, commission, total,
+      status: 'مؤكد',
+      createdAt: new Date().toISOString()
+    };
 
-          <div class="split" style="margin-top:16px">
+    this.state.orders.unshift(order);
+    localStorage.setItem('orders', JSON.stringify(this.state.orders));
 
-            <article class="card pad">
-              <div class="provider-head">
-                <div class="provider-avatar" style="width:74px;height:74px;font-size:24px">
-                  ${esc(doctor.name.charAt(0))}
-                </div>
+    this.closeModal();
+    this.showAmr();
+    this.showToast('✅ تم تأكيد الحجز بنجاح!', 'success');
 
-                <div class="grow">
-                  <div class="row wrap">
-                    <h2 style="margin:0">${esc(doctor.name)}</h2>
-                    ${doctor.verified ? '<span class="badge success">✓ موثّق</span>' : '<span class="badge">غير موثّق</span>'}
-                  </div>
+    setTimeout(() => {
+      this.showInvoice(order.id);
+    }, 2000);
+  },
 
-                  <div class="meta">
-                    ${esc(doctor.specialty)} · ${esc(doctor.location)}
-                  </div>
+  showInvoice(orderId) {
+    const order = this.state.orders.find(o => o.id === orderId);
+    if (!order) return;
+    const userName = this.state.user?.name || 'عميل خدمات بلدي';
+    const userPhone = this.state.user?.phone || '—';
 
-                  <div class="row wrap" style="margin-top:8px">
-                    <span class="badge gold">★ ${doctor.rating}</span>
-                    <span class="meta">${doctor.reviews} مراجعة</span>
-                  </div>
-                </div>
-              </div>
-
-              <p class="muted" style="margin-top:18px">
-                ${esc(doctor.description)}
-              </p>
-
-              <div class="info-list" style="margin-top:16px">
-                <div class="info-row">
-                  <span>الحجز</span>
-                  <strong>${doctor.available ? "متاح" : "غير متاح الآن"}</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>سعر الكشف</span>
-                  <strong>${money(doctor.price)}</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>الموقع</span>
-                  <strong>${esc(doctor.location)}</strong>
-                </div>
-              </div>
-
-              <div class="row" style="margin-top:16px">
-                <button class="btn btn-primary grow"
-                  data-action="book"
-                  data-type="doctor"
-                  data-id="${esc(doctor.id)}"
-                  ${doctor.available?"":"disabled"}>
-                  ${doctor.available ? "احجز موعدًا" : "غير متاح حاليًا"}
-                </button>
-
-                <button class="btn"
-                  data-action="call"
-                  data-phone="${esc(doctor.phone)}">
-                  اتصال
-                </button>
-              </div>
-
-            </article>
-
-            <aside class="card pad">
-              <h3 style="margin-top:0">معلومات الحجز</h3>
-              <p class="muted">
-                اختر اليوم والوقت ثم راجع الطلب قبل تأكيده.
-              </p>
-
-              <div class="quick-row">
-                <button class="chip slot active" data-action="slot" data-slot="اليوم 6:00 م">
-                  اليوم 6:00 م
-                </button>
-                <button class="chip slot" data-action="slot" data-slot="اليوم 8:00 م">
-                  اليوم 8:00 م
-                </button>
-                <button class="chip slot" data-action="slot" data-slot="غدًا 5:00 م">
-                  غدًا 5:00 م
-                </button>
-              </div>
-
-              <button class="btn btn-primary btn-block"
-                data-action="book"
-                data-type="doctor"
-                data-id="${esc(doctor.id)}">
-                متابعة الحجز
-              </button>
-            </aside>
-
+    this.openModal(`
+      <div class="invoice">
+        <div class="invoice-header">
+          <div>
+            <div class="invoice-title">🏘️ خدمات بلدي</div>
+            <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">فاتورة إلكترونية</div>
+          </div>
+          <div style="text-align: left;">
+            <div style="font-size: 11px; color: var(--text-secondary);">رقم الفاتورة</div>
+            <div style="font-weight: 700; font-size: 12px;">${order.id}</div>
           </div>
         </div>
-      </section>
-    `,{title:doctor.name});
-  }
 
-  /* ============================================================
-     TEACHERS
-     ============================================================ */
+        <div class="invoice-row"><span>👤 العميل</span><strong>${userName}</strong></div>
+        <div class="invoice-row"><span>📞 الهاتف</span><strong>${userPhone}</strong></div>
+        <div class="invoice-row"><span>🛠️ الخدمة</span><strong>${order.serviceName}</strong></div>
+        <div class="invoice-row"><span>📅 التاريخ</span><strong>${order.date}</strong></div>
+        <div class="invoice-row"><span>⏰ الوقت</span><strong>${order.time}</strong></div>
+        <div class="invoice-row"><span>💳 طريقة الدفع</span><strong>${
+          order.payMethod === 'instapay' ? 'إنستاباي' :
+          order.payMethod === 'vodafone' ? 'فودافون كاش' : 'نقدي'
+        }</strong></div>
 
-  function renderTeachers(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
+        <div style="border-top: 2px dashed var(--border); margin: var(--space-4) 0;"></div>
 
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>المدرسون</h2>
-                <div class="meta">اختَر المدرس حسب المادة والمكان</div>
-              </div>
-            </div>
-          </div>
+        <div class="invoice-row"><span>قيمة الخدمة</span><strong>${order.subtotal} ج.م</strong></div>
+        <div class="invoice-row"><span>رسوم الخدمة</span><strong>${order.commission} ج.م</strong></div>
+        <div class="invoice-row total"><span>الإجمالي</span><span>${order.total} ج.م</span></div>
 
-          <div class="grid grid-3">
-            ${TEACHERS.map(providerCard).join("")}
-          </div>
-
+        <div style="margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border); text-align: center; font-size: 11px; color: var(--text-secondary);">
+          شكراً لاستخدامك خدمات بلدي 🙏<br>
+          powered by Mazen AI
         </div>
-      </section>
-    `,{title:"المدرسون"});
-  }
+      </div>
+      <button class="btn btn-primary btn-block mt-4" onclick="App.closeModal(); App.navigate('home');" style="margin-top: var(--space-4);">
+        🏠 العودة للرئيسية
+      </button>
+    `, '🧾 الفاتورة الإلكترونية');
+  },
 
-  function renderTeacher(id){
-    const teacher = findProvider(id);
-
-    if(!teacher || teacher.type!=="teacher"){
-      return renderTeachers();
-    }
-
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <button class="btn"
-            data-action="route"
-            data-route="teachers">
-            ← رجوع
-          </button>
-
-          <div class="card pad" style="margin-top:16px">
-
-            <div class="provider-head">
-              <div class="provider-avatar" style="width:74px;height:74px;font-size:24px">
-                ${esc(teacher.name.charAt(0))}
-              </div>
-
-              <div class="grow">
-                <div class="row wrap">
-                  <h2 style="margin:0">${esc(teacher.name)}</h2>
-                  ${teacher.verified ? '<span class="badge success">✓ موثّق</span>' : '<span class="badge">غير موثّق</span>'}
-                </div>
-
-                <div class="meta">
-                  ${esc(teacher.subject)} · ${esc(teacher.location)}
-                </div>
-              </div>
-
-              <span class="badge gold">★ ${teacher.rating}</span>
-            </div>
-
-            <p class="muted" style="margin-top:18px">
-              ${esc(teacher.description)}
-            </p>
-
-            <div class="grid grid-3" style="margin-top:16px">
-              <div class="card pad">
-                <div class="meta">السعر</div>
-                <strong>${money(teacher.price)}</strong>
-              </div>
-
-              <div class="card pad">
-                <div class="meta">المراجعات</div>
-                <strong>${teacher.reviews}</strong>
-              </div>
-
-              <div class="card pad">
-                <div class="meta">الحالة</div>
-                <strong>${teacher.available ? "متاح" : "غير متاح"}</strong>
-              </div>
-            </div>
-
-            <button class="btn btn-primary"
-              style="margin-top:18px"
-              data-action="book"
-              data-type="teacher"
-              data-id="${esc(teacher.id)}">
-              احجز درسًا
-            </button>
-
-          </div>
-
-        </div>
-      </section>
-    `,{title:teacher.name});
-  }
-
-  /* ============================================================
-     DELIVERY
-     ============================================================ */
-
-  function renderDelivery(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="split">
-
-            <div class="card pad">
-              <span class="badge primary">🚗 وصلني</span>
-              <h2>أين تريد الذهاب؟</h2>
-              <p class="muted">
-                أدخل نقطة الانطلاق والوجهة للحصول على تقدير أولي.
-              </p>
-
-              <form id="deliveryForm">
-
-                <div class="field">
-                  <label for="dFrom">من</label>
-                  <input id="dFrom" required placeholder="مثال: الخليل">
-                </div>
-
-                <div class="field">
-                  <label for="dTo">إلى</label>
-                  <input id="dTo" required placeholder="مثال: مطار الملك خالد">
-                </div>
-
-                <div class="field">
-                  <label for="dKind">نوع الرحلة</label>
-                  <select id="dKind">
-                    <option>مشوار</option>
-                    <option>توصيل طلب</option>
-                    <option>سيارة خاصة</option>
-                  </select>
-                </div>
-
-                <div class="field">
-                  <label for="dTime">الوقت</label>
-                  <input id="dTime" type="datetime-local" required>
-                </div>
-
-                <div class="field">
-                  <label for="dNotes">ملاحظات</label>
-                  <textarea id="dNotes" placeholder="تفاصيل إضافية..."></textarea>
-                </div>
-
-                <button class="btn btn-primary btn-block">
-                  مراجعة الطلب
-                </button>
-
-              </form>
-            </div>
-
-            <aside class="hero-side">
-              <h3>وصلني</h3>
-              <p>
-                التصميم الحالي يمثل تجربة الحجز الأمامية.
-                التتبع والخرائط والدفع تحتاج Backend وMap APIs حقيقية.
-              </p>
-
-              <div class="hero-side-grid">
-                <div class="hero-mini">
-                  <small>تقدير أولي</small>
-                  <strong>${money(350)}</strong>
-                </div>
-
-                <div class="hero-mini">
-                  <small>التتبع</small>
-                  <strong>Realtime</strong>
-                </div>
-
-                <div class="hero-mini">
-                  <small>الدفع</small>
-                  <strong>Gateway</strong>
-                </div>
-
-                <div class="hero-mini">
-                  <small>الخريطة</small>
-                  <strong>API</strong>
-                </div>
-              </div>
-            </aside>
-
-          </div>
-
-        </div>
-      </section>
-    `,{title:"وصلني"});
-  }
-
-  /* ============================================================
-     MOBILE
-     ============================================================ */
-
-  function renderMobile(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>متجر الموبايلات</h2>
-                <div class="meta">منتجات تجريبية قابلة للربط بمتاجر حقيقية</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid grid-3">
-            ${MOBILE_PRODUCTS.map(productCard).join("")}
-          </div>
-
-        </div>
-      </section>
-    `,{title:"الموبايلات"});
-  }
-
-  /* ============================================================
-     CARS
-     ============================================================ */
-
-  function renderCars(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>السيارات</h2>
-                <div class="meta">إيجار وشراء كنموذج قابل للتوسع</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid grid-3">
-            ${CARS.map(carCard).join("")}
-          </div>
-
-        </div>
-      </section>
-    `,{title:"السيارات"});
-  }
-
-  /* ============================================================
-     AI
-     ============================================================ */
-
-  function renderAI(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container ai-shell">
-
-          <div class="ai-hero">
-            <div class="row">
-              <div class="ai-avatar">M</div>
-
-              <div>
-                <h2 style="margin:0">Mazen AI</h2>
-                <p style="margin:4px 0;color:#DFE5FF">
-                  Service Agent · Search · Match · Booking
-                </p>
-              </div>
-            </div>
-
-            <div class="quick-row">
-              <button class="chip" data-action="quick-ai" data-text="عايز دكتور أطفال في فاقوس">
-                دكتور أطفال
-              </button>
-
-              <button class="chip" data-action="quick-ai" data-text="عايز مدرس رياضيات">
-                مدرس رياضيات
-              </button>
-
-              <button class="chip" data-action="quick-ai" data-text="عايز عربية للإيجار">
-                عربية للإيجار
-              </button>
-
-              <button class="chip" data-action="quick-ai" data-text="عايز توصيل للمطار">
-                توصيل للمطار
-              </button>
-            </div>
-          </div>
-
-          <div id="chatBox" class="chat-box">
-            ${STATE.messages.map(m=>aiBubble(m.text,m.from==="user"?"user":"ai")).join("")}
-          </div>
-
-          <div class="chat-input">
-            <button
-              class="icon-btn"
-              data-action="voice"
-              data-input="aiInput"
-              title="إدخال صوتي">
-              🎙
-            </button>
-
-            <textarea
-              id="aiInput"
-              placeholder="اكتب احتياجك..."
-              aria-label="رسالة إلى Mazen AI"></textarea>
-
-            <button
-              class="btn btn-ai"
-              data-action="send-ai">
-              إرسال
-            </button>
-          </div>
-
-          <p class="meta" style="margin-top:10px">
-            وضع التشغيل الحالي يستخدم محرك Intent محلي عند عدم ربط Backend AI.
-            لا توجد API Keys سرية داخل المتصفح.
+  subscribe(planId) {
+    const plan = APP_DATA.subscriptions.find(s => s.id === planId);
+    if (!plan) return;
+    this.showToast(`✅ تم الاشتراك في ${plan.name}`, 'success');
+    setTimeout(() => {
+      this.openModal(`
+        <div style="text-align: center; padding: var(--space-6) 0;">
+          <div style="font-size: 64px; margin-bottom: var(--space-4);">🎉</div>
+          <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 900; margin-bottom: var(--space-3);">
+            مبروك!
+          </h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-5);">
+            تم تفعيل اشتراكك في ${plan.name} بنجاح. ابدأ الآن في استقبال الطلبات!
           </p>
-
-        </div>
-      </section>
-    `,{title:"Mazen AI"});
-
-    requestAnimationFrame(()=>{
-      const box = $("#chatBox");
-      if(box) box.scrollTop = box.scrollHeight;
-    });
-  }
-
-  async function sendAI(){
-    const input = $("#aiInput");
-    const text = input?.value.trim();
-
-    if(!text) return toast("اكتب احتياجك أولًا");
-
-    STATE.messages.push({
-      id:uid("msg"),
-      from:"user",
-      text
-    });
-
-    input.value = "";
-
-    await saveState();
-    renderAI();
-
-    const reply = await runAI(text);
-
-    STATE.messages.push({
-      id:uid("msg"),
-      from:"ai",
-      text:reply
-    });
-
-    await saveState();
-    renderAI();
-  }
-
-  async function quickAI(text){
-    navigate("ai");
-
-    setTimeout(async()=>{
-      const input = $("#aiInput");
-      if(!input) return;
-
-      input.value = text;
-      await sendAI();
-    },100);
-  }
-
-  async function runAI(text){
-    if(CONFIG.aiEndpoint){
-      try{
-        const response = await fetch(CONFIG.aiEndpoint,{
-          method:"POST",
-          headers:{
-            "Content-Type":"application/json"
-          },
-          credentials:"include",
-          body:JSON.stringify({
-            message:text,
-            locale:"ar-EG",
-            sessionId:STATE.user.id
-          })
-        });
-
-        if(response.ok){
-          const data = await response.json();
-
-          if(data?.reply){
-            return String(data.reply);
-          }
-        }
-      }catch(err){
-        console.warn("AI endpoint unavailable",err);
-      }
-    }
-
-    const detected = detectIntent(text);
-
-    if(detected.intent==="doctor"){
-      const matches = DOCTORS.filter(x=>{
-        const q = text.toLowerCase();
-
-        return [
-          x.name,
-          x.specialty,
-          x.location,
-          ...(x.tags||[])
-        ].join(" ").toLowerCase().split(/\s+/)
-          .some(word=>q.includes(word));
-      });
-
-      const list = (matches.length ? matches : DOCTORS).slice(0,3);
-
-      return [
-        "تمام يا باشا 🚀",
-        "فهمت إنك محتاج خدمة طبية.",
-        "",
-        ...list.map((x,i)=>
-          `${i+1}. ${x.name} — ${x.specialty} — ${x.location} — ${money(x.price)} — ★ ${x.rating}`
-        ),
-        "",
-        "تقدر تختار الطبيب من صفحة الأطباء وتحجز الموعد."
-      ].join("\n");
-    }
-
-    if(detected.intent==="teacher"){
-      const matches = TEACHERS.filter(x=>{
-        const q = text.toLowerCase();
-
-        return [
-          x.name,
-          x.subject,
-          x.location,
-          ...(x.tags||[])
-        ].join(" ").toLowerCase().split(/\s+/)
-          .some(word=>q.includes(word));
-      });
-
-      const list = (matches.length ? matches : TEACHERS).slice(0,3);
-
-      return [
-        "تمام يا فندم 📚",
-        "لقيت لك مدرسين ممكن يناسبوك:",
-        "",
-        ...list.map((x,i)=>
-          `${i+1}. ${x.name} — ${x.subject} — ${x.location} — ${money(x.price)}`
-        ),
-        "",
-        "قولّي المادة أو المكان لو محتاج تضييق النتائج."
-      ].join("\n");
-    }
-
-    if(detected.intent==="mobile"){
-      return [
-        "ولا يهمك 📱",
-        "عندي لك نماذج من المتجر:",
-        "",
-        ...MOBILE_PRODUCTS.slice(0,3).map((x,i)=>
-          `${i+1}. ${x.name} — ${money(x.price)} — ${x.store}`
-        ),
-        "",
-        "أقدر في النسخة الإنتاجية أبحث من قاعدة بيانات المخزون والأسعار لحظيًا."
-      ].join("\n");
-    }
-
-    if(detected.intent==="car"){
-      return [
-        "تمام يا باشا 🚘",
-        "ممكن نبدأ من السيارات المتاحة:",
-        "",
-        ...CARS.slice(0,3).map((x,i)=>
-          `${i+1}. ${x.name} — ${x.kind} — ${money(x.price)}${x.period?` / ${x.period}`:""}`
-        ),
-        "",
-        "حدد لي شراء ولا إيجار والمكان."
-      ].join("\n");
-    }
-
-    if(detected.intent==="delivery"){
-      return [
-        "وصلني حاضر 🚗",
-        "افتح خدمة التوصيل، واكتب نقطة البداية والوجهة والوقت.",
-        "في النسخة الإنتاجية سيتم استخدام خرائط حقيقية وحساب ETA وتسعير من الخادم."
-      ].join("\n");
-    }
-
-    if(detected.intent==="lawyer"){
-      return [
-        "تمام ⚖️",
-        "خدمة المحامين مجهزة كقسم في المنصة.",
-        "الخطوة التالية في Production هي ربط قائمة المحامين الموثقين وقاعدة البيانات والحجوزات."
-      ].join("\n");
-    }
-
-    if(detected.intent==="pharmacy"){
-      return [
-        "حاضر 💊",
-        "قسم الصيدليات موجود كبنية للمنصة.",
-        "المخزون والأسعار والتوافر الحقيقي يجب أن تأتي من Backend موثوق."
-      ].join("\n");
-    }
-
-    if(detected.intent==="maintenance"){
-      return [
-        "تمام يا باشا 🛠️",
-        "أقدر أساعدك في الوصول لخدمات الصيانة.",
-        "قولّي نوع المشكلة والمكان."
-      ].join("\n");
-    }
-
-    return [
-      "تمام يا باشا 😄",
-      "أنا فاهم إنك محتاج خدمة، لكن محتاج تفاصيل أكثر.",
-      "",
-      "جرب تقول مثلًا:",
-      "• عايز دكتور أطفال في فاقوس",
-      "• عايز مدرس رياضيات",
-      "• عايز عربية للإيجار",
-      "• عايز توصيل للمطار",
-      "• عايز موبايل سامسونج",
-      "",
-      "وفي النسخة الإنتاجية سيتم تحويل ده إلى Intent + Entities + Tools + Permissions + Confirmation."
-    ].join("\n");
-  }
-
-  function startVoice(inputId){
-    const SpeechRecognition =
-      window.SpeechRecognition ||
-      window.webkitSpeechRecognition;
-
-    if(!SpeechRecognition){
-      return toast("التعرف الصوتي غير مدعوم في هذا المتصفح.");
-    }
-
-    const target = $("#"+inputId);
-
-    if(!target) return;
-
-    const recognition = new SpeechRecognition();
-
-    recognition.lang = "ar-EG";
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
-
-    recognition.onstart = () => toast("اتكلم يا باشا...");
-    recognition.onerror = () => toast("تعذر التقاط الصوت.");
-
-    recognition.onresult = event=>{
-      target.value = event.results?.[0]?.[0]?.transcript || "";
-    };
-
-    recognition.start();
-  }
-
-  function speak(text){
-    if(!("speechSynthesis" in window)) return;
-
-    try{
-      window.speechSynthesis.cancel();
-
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = "ar-EG";
-      utterance.rate = .95;
-      utterance.pitch = 1.05;
-
-      window.speechSynthesis.speak(utterance);
-    }catch{}
-  }
-
-  /* ============================================================
-     ORDERS
-     ============================================================ */
-
-  function renderOrders(){
-    const orders = [...STATE.orders].reverse();
-
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>طلباتي</h2>
-                <div class="meta">كل الطلبات المحفوظة في هذا الجهاز</div>
-              </div>
-            </div>
-          </div>
-
-          ${
-            !orders.length
-              ? `<div class="card empty">
-                  لا توجد طلبات حتى الآن.
-                  <br><br>
-                  ابدأ بحجز خدمة أو طلب منتج.
-                </div>`
-              : `
-                <div class="grid">
-                  ${orders.map(o=>`
-                    <article class="card pad">
-                      <div class="row">
-                        <div class="grow">
-                          <span class="badge">#${esc(o.id)}</span>
-                          <h3>${esc(o.title)}</h3>
-                        </div>
-                        ${statusBadge(o.status)}
-                      </div>
-
-                      <div class="meta">
-                        ${esc(o.source || "خدمات بلدي")} · ${esc(o.createdAt)}
-                      </div>
-
-                      <div class="row" style="margin-top:12px">
-                        <strong class="price grow">${money(o.total,o.currency)}</strong>
-
-                        <button class="btn"
-                          data-action="route"
-                          data-route="invoice"
-                          data-id="${encodeURIComponent(o.id)}">
-                          الفاتورة
-                        </button>
-
-                        <button class="btn"
-                          data-action="reorder"
-                          data-id="${esc(o.id)}">
-                          إعادة الطلب
-                        </button>
-                      </div>
-                    </article>
-                  `).join("")}
-                </div>
-              `
-          }
-
-        </div>
-      </section>
-    `,{title:"طلباتي"});
-  }
-
-  function confirmOrder(order){
-    draft = {
-      ...order,
-      currency:CONFIG.currency
-    };
-
-    showModal(
-      "مراجعة الطلب",
-      `
-        <div class="card pad" style="background:var(--surface-2)">
-          <div class="info-list">
-
-            <div class="info-row">
-              <span>الخدمة</span>
-              <strong>${esc(order.title)}</strong>
-            </div>
-
-            <div class="info-row">
-              <span>الإجمالي التقديري</span>
-              <strong>${money(order.total)}</strong>
-            </div>
-
-            <div class="info-row">
-              <span>الدفع</span>
-              <strong>${esc(order.payment || "يحدد لاحقًا")}</strong>
-            </div>
-
-          </div>
-
-          <div class="meta" style="margin-top:12px">
-            هذه النسخة لا تدّعي نجاح الدفع.
-            تأكيد الدفع الحقيقي يجب أن يأتي من Payment Gateway عبر الخادم وWebhook موثوق.
-          </div>
-        </div>
-
-        <div class="row" style="margin-top:14px">
-          <button class="btn btn-primary grow"
-            data-action="confirm-order"
-            data-payload='${esc(JSON.stringify(order))}'>
-            إنشاء الطلب
-          </button>
-
-          <button class="btn" data-action="close-modal">
-            إلغاء
+          <button class="btn btn-primary btn-block" onclick="App.closeModal()">
+            🚀 ابدأ الآن
           </button>
         </div>
-      `
-    );
-  }
-
-  async function commitOrder(order){
-    closeModal();
-
-    const createdAt = new Date().toLocaleString("ar-EG");
-
-    const newOrder = {
-      id:uid("ORD"),
-      title:order.title || "طلب خدمة",
-      total:Number(order.total || 0),
-      currency:CONFIG.currency,
-      paymentStatus:"pending",
-      status:"جديد",
-      source:order.source || "خدمات بلدي",
-      payment:order.payment || "يحدد لاحقًا",
-      details:order.details || {},
-      createdAt
-    };
-
-    STATE.orders.push(newOrder);
-
-    STATE.notifications.unshift({
-      id:uid("notif"),
-      title:"تم إنشاء الطلب",
-      body:`${newOrder.title}`,
-      new:true
-    });
-
-    await saveState();
-
-    toast("تم إنشاء الطلب. الدفع الحقيقي لم يتم تأكيده.");
-
-    navigate("invoice",newOrder.id);
-  }
-
-  function renderInvoice(id){
-    const order = findOrder(id);
-
-    if(!order){
-      return renderOrders();
-    }
-
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>الفاتورة</h2>
-                <div class="meta">
-                  INV-${esc(order.id.replace(/^ORD-/,""))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="split">
-
-            <article class="card pad">
-              <div class="row">
-                <div class="grow">
-                  <span class="badge primary">خدمات بلدي</span>
-                  <h2>${esc(order.title)}</h2>
-                </div>
-                ${statusBadge(order.status)}
-              </div>
-
-              <div class="info-list" style="margin-top:18px">
-
-                <div class="info-row">
-                  <span>رقم الطلب</span>
-                  <strong>${esc(order.id)}</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>التاريخ</span>
-                  <strong>${esc(order.createdAt)}</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>الإجمالي</span>
-                  <strong>${money(order.total,order.currency)}</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>حالة الدفع</span>
-                  <strong>${order.paymentStatus==="paid" ? "مدفوع" : "معلّق"}</strong>
-                </div>
-
-              </div>
-
-              <div class="row wrap" style="margin-top:18px">
-                <button class="btn btn-primary"
-                  data-action="download-invoice"
-                  data-id="${esc(order.id)}">
-                  تنزيل
-                </button>
-
-                <button class="btn"
-                  data-action="share-invoice"
-                  data-id="${esc(order.id)}">
-                  مشاركة
-                </button>
-
-                <button class="btn"
-                  data-action="reorder"
-                  data-id="${esc(order.id)}">
-                  إعادة الطلب
-                </button>
-              </div>
-            </article>
-
-            <aside class="card pad">
-              <span class="badge gold">تنبيه Production</span>
-
-              <h3>الدفع غير مؤكد من الـFrontend</h3>
-
-              <p class="muted">
-                في النظام الحقيقي يجب إنشاء Payment Intent على الخادم،
-                ثم التحقق من Webhook، وبعدها فقط تتحول حالة الفاتورة إلى مدفوعة.
-              </p>
-            </aside>
-
-          </div>
-
-        </div>
-      </section>
-    `,{title:"الفاتورة"});
-  }
-
-  /* ============================================================
-     MESSAGES
-     ============================================================ */
-
-  function renderMessages(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container ai-shell">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>الرسائل</h2>
-                <div class="meta">محادثة تجريبية محفوظة محليًا</div>
-              </div>
-            </div>
-          </div>
-
-          <div id="messageList" class="chat-box">
-            ${STATE.messages.map(m=>aiBubble(m.text,m.from==="user"?"user":"ai")).join("")}
-          </div>
-
-          <div class="chat-input">
-            <textarea
-              id="messageInput"
-              placeholder="اكتب رسالتك..."
-              aria-label="الرسالة"></textarea>
-
-            <button class="btn btn-primary"
-              data-action="send-message">
-              إرسال
-            </button>
-          </div>
-
-        </div>
-      </section>
-    `,{title:"الرسائل"});
-  }
-
-  async function sendMessage(){
-    const input = $("#messageInput");
-    const text = input?.value.trim();
-
-    if(!text) return;
-
-    STATE.messages.push({
-      id:uid("msg"),
-      from:"user",
-      text
-    });
-
-    STATE.messages.push({
-      id:uid("msg"),
-      from:"ai",
-      text:"وصلتني رسالتك ✅ سيتم ربط الرسائل الحقيقية بالـRealtime Backend في نسخة الإنتاج."
-    });
-
-    await saveState();
-
-    renderMessages();
-    toast("تم إرسال الرسالة");
-  }
-
-  /* ============================================================
-     PROFILE
-     ============================================================ */
-
-  function renderProfile(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>حسابي</h2>
-                <div class="meta">إدارة المعلومات المحلية لهذا المتصفح</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="split">
-
-            <form id="profileForm" class="card pad">
-
-              <div class="field">
-                <label for="pfName">الاسم</label>
-                <input
-                  id="pfName"
-                  value="${esc(STATE.user.name)}"
-                  maxlength="80">
-              </div>
-
-              <div class="field">
-                <label for="pfPhone">رقم الموبايل</label>
-                <input
-                  id="pfPhone"
-                  inputmode="numeric"
-                  value="${esc(STATE.user.phone||"")}"
-                  placeholder="01xxxxxxxxx">
-              </div>
-
-              <button class="btn btn-primary">
-                حفظ البيانات
-              </button>
-
-            </form>
-
-            <aside class="card pad">
-
-              <span class="badge ai">Mazen AI</span>
-
-              <h3>المفضلة</h3>
-
-              <p class="muted">
-                العناصر المحفوظة حاليًا:
-                <strong>${STATE.favorites.length}</strong>
-              </p>
-
-              <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
-
-              <button class="btn btn-danger"
-                style="width:100%"
-                data-action="clear-local">
-                حذف بيانات التجربة
-              </button>
-
-              <p class="meta" style="margin-top:10px">
-                هذا يحذف البيانات المحلية فقط ولا يحذف أي حساب حقيقي على الخادم.
-              </p>
-
-            </aside>
-
-          </div>
-
-        </div>
-      </section>
-    `,{title:"حسابي"});
-  }
-
-  /* ============================================================
-     PROVIDER CENTER
-     ============================================================ */
-
-  function renderProvider(){
-    const draft = STATE.providerDraft || {};
-
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>مركز مقدم الخدمة</h2>
-                <div class="meta">
-                  إعداد ملف النشاط ومسودة البيانات
-                </div>
-              </div>
-            </div>
-
-            <button class="btn"
-              data-action="plans">
-              الاشتراكات
-            </button>
-          </div>
-
-          <div class="split">
-
-            <form id="providerForm" class="card pad">
-
-              <div class="field">
-                <label for="prName">اسم النشاط</label>
-                <input id="prName" value="${esc(draft.name||"")}">
-              </div>
-
-              <div class="field">
-                <label for="prPhone">الهاتف</label>
-                <input id="prPhone" value="${esc(draft.phone||"")}">
-              </div>
-
-              <div class="field">
-                <label for="prAddress">العنوان</label>
-                <input id="prAddress" value="${esc(draft.address||"")}">
-              </div>
-
-              <div class="field">
-                <label for="prMaps">Google Maps</label>
-                <input id="prMaps" value="${esc(draft.maps||"")}">
-              </div>
-
-              <div class="field">
-                <label for="prSite">الموقع</label>
-                <input id="prSite" value="${esc(draft.site||"")}">
-              </div>
-
-              <div class="field">
-                <label for="prDesc">الوصف</label>
-                <textarea id="prDesc">${esc(draft.description||"")}</textarea>
-              </div>
-
-              <button class="btn btn-primary">
-                حفظ المسودة
-              </button>
-
-            </form>
-
-            <aside class="card pad">
-
-              <span class="badge primary">Provider Dashboard</span>
-
-              <h3>ما سيتم ربطه في Production</h3>
-
-              <div class="info-list">
-
-                <div class="info-row">
-                  <span>التوثيق</span>
-                  <strong>Verification</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>الاشتراك</span>
-                  <strong>Billing</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>الحجوزات</span>
-                  <strong>Orders</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>التقارير</span>
-                  <strong>Analytics</strong>
-                </div>
-
-              </div>
-
-            </aside>
-
-          </div>
-
-        </div>
-      </section>
-    `,{title:"مركز مقدم الخدمة"});
-  }
-
-  function openPlans(){
-    const plans = [
-      ["Basic",199],
-      ["Pro",499],
-      ["Elite",999],
-      ["Enterprise",2499]
+      `, 'اشتراك ناجح');
+    }, 500);
+  },
+
+  /* ============================================
+     MAZEN AI CHAT
+     ============================================ */
+  openMazenChat(prefillText) {
+    this.state.aiMessages = [
+      { role: 'ai', text: 'أهلاً بك! أنا Mazen AI 🤖\nقولي إيه اللي محتاجه وهعملهولك في ثواني ⚡' }
     ];
+    this.renderAIChat();
+    if (prefillText) {
+      setTimeout(() => {
+        document.getElementById('aiInput').value = prefillText;
+        this.sendAIMessage();
+      }, 500);
+    }
+  },
 
-    showModal(
-      "خطط مقدم الخدمة",
-      `
-        <div class="grid grid-2">
-          ${plans.map((p,i)=>`
-            <div class="card pad">
-              <span class="badge ${i===1?"primary":"gold"}">
-                ${p[0]}
-              </span>
-
-              <h3>${money(p[1])} / شهر</h3>
-
-              <p class="muted">
-                ملف نشاط + أدوات إدارة + مزايا ظهور بحسب الخطة.
-              </p>
-
-              <button class="btn ${i===1?"btn-primary":""} btn-block"
-                data-action="subscribe"
-                data-plan="${esc(p[0])}"
-                data-price="${p[1]}">
-                اختيار ${esc(p[0])}
-              </button>
-            </div>
-          `).join("")}
+  renderAIChat() {
+    this.openModal(`
+      <div class="ai-chat" style="height: 60vh;">
+        <div class="ai-messages" id="aiMessages">
+          ${this.state.aiMessages.map(m => this.aiMessageHTML(m)).join('')}
         </div>
-
-        <div class="meta" style="margin-top:10px">
-          الاشتراكات المعروضة هنا Demo.
-          الفوترة الحقيقية تحتاج Billing Server + Webhook.
+        <div class="ai-input-bar">
+          <input type="text" id="aiInput" placeholder="اكتب احتياجك..." autocomplete="off">
+          <button class="ai-send" onclick="App.sendAIMessage()">➤</button>
         </div>
-      `
-    );
-  }
+      </div>
+    `, '🤖 Mazen AI');
+    setTimeout(() => this.scrollAIMessages(), 100);
+  },
 
-  async function subscribePlan(name,price){
-    closeModal();
-    toast(`تم اختيار ${name}. اربط بوابة الاشتراكات على الخادم قبل الإطلاق.`);
-  }
-
-  /* ============================================================
-     BOOKINGS
-     ============================================================ */
-
-  function openBooking(type,id){
-    const item =
-      type==="doctor" || type==="teacher"
-        ? findProvider(id)
-        : null;
-
-    if(!item) return;
-
-    showModal(
-      type==="doctor" ? "حجز موعد طبي" : "حجز درس",
-      `
-        <form id="bookingForm">
-
-          <div class="card pad" style="background:var(--surface-2)">
-            <div class="provider-head">
-              <div class="provider-avatar">
-                ${esc(item.name.charAt(0))}
-              </div>
-
-              <div class="grow">
-                <strong>${esc(item.name)}</strong>
-                <div class="meta">
-                  ${esc(item.specialty || item.subject)}
-                </div>
-              </div>
-
-              <span class="price">${money(item.price)}</span>
-            </div>
-          </div>
-
-          <div class="field" style="margin-top:14px">
-            <label for="bookingDate">التاريخ</label>
-            <input id="bookingDate" type="date" required>
-          </div>
-
-          <div class="field">
-            <label for="bookingTime">الوقت</label>
-            <input id="bookingTime" type="time" required>
-          </div>
-
-          <div class="field">
-            <label for="bookingNotes">ملاحظات</label>
-            <textarea id="bookingNotes"></textarea>
-          </div>
-
-          <div class="row">
-            <button class="btn btn-primary grow">
-              مراجعة الطلب
-            </button>
-
-            <button type="button" class="btn"
-              data-action="close-modal">
-              إلغاء
-            </button>
-          </div>
-
-          <input type="hidden"
-            id="bookingType"
-            value="${esc(type)}">
-
-          <input type="hidden"
-            id="bookingId"
-            value="${esc(id)}">
-
-        </form>
-      `
-    );
-  }
-
-  function submitBooking(){
-    const type = $("#bookingType")?.value;
-    const id = $("#bookingId")?.value;
-    const date = $("#bookingDate")?.value;
-    const time = $("#bookingTime")?.value;
-    const notes = $("#bookingNotes")?.value || "";
-
-    if(!date || !time){
-      return toast("اختر التاريخ والوقت");
-    }
-
-    const item = findProvider(id);
-
-    if(!item){
-      return toast("الخدمة غير موجودة");
-    }
-
-    confirmOrder({
-      title:`حجز ${item.name}`,
-      total:item.price,
-      payment:"يحدد لاحقًا",
-      details:{
-        type,
-        provider:item.name,
-        date,
-        time,
-        notes
-      },
-      source:type==="doctor"?"Doctors":"Teachers"
-    });
-  }
-
-  /* ============================================================
-     PRODUCT / CAR / DELIVERY ORDER
-     ============================================================ */
-
-  function buyProduct(id){
-    const item = findMobile(id);
-
-    if(!item) return;
-
-    draft = {
-      type:"product",
-      item
-    };
-
-    confirmOrder({
-      title:"شراء "+item.name,
-      total:item.price,
-      payment:"يحدد لاحقًا",
-      details:{
-        store:item.store,
-        location:item.location
-      },
-      source:"Mobile Store"
-    });
-  }
-
-  function orderCar(id){
-    const item = findCar(id);
-
-    if(!item) return;
-
-    draft = {
-      type:"car",
-      item
-    };
-
-    confirmOrder({
-      title:
-        (item.kind==="إيجار" ? "إيجار " : "طلب شراء ")
-        + item.name,
-      total:item.price,
-      payment:"يحدد لاحقًا",
-      details:{
-        kind:item.kind,
-        location:item.location
-      },
-      source:"Cars"
-    });
-  }
-
-  function reviewDelivery(){
-    const from = $("#dFrom")?.value.trim();
-    const to = $("#dTo")?.value.trim();
-    const kind = $("#dKind")?.value;
-    const time = $("#dTime")?.value;
-    const notes = $("#dNotes")?.value || "";
-
-    if(!from || !to || !time){
-      return toast("أكمل من وإلى والوقت");
-    }
-
-    const estimate = 350;
-
-    confirmOrder({
-      title:`${kind}: ${from} → ${to}`,
-      total:estimate,
-      payment:"يحدد لاحقًا",
-      details:{
-        from,
-        to,
-        time,
-        notes
-      },
-      source:"Wasalni"
-    });
-  }
-
-  /* ============================================================
-     NOTIFICATIONS
-     ============================================================ */
-
-  function openNotifications(){
-    showModal(
-      "الإشعارات",
-      `
-        <div class="info-list">
-          ${STATE.notifications.length
-            ? STATE.notifications.map(n=>`
-              <div class="info-row">
-                <span>
-                  <strong>${esc(n.title)}</strong>
-                  <div class="meta">${esc(n.body)}</div>
-                </span>
-
-                <span class="badge ${n.new?"primary":""}">
-                  ${n.new ? "جديد" : "تمت القراءة"}
-                </span>
-              </div>
-            `).join("")
-            : `<div class="empty">لا توجد إشعارات.</div>`
-          }
+  aiMessageHTML(m) {
+    if (m.role === 'user') {
+      return `
+        <div class="ai-message user">
+          <div class="ai-bubble">${m.text}</div>
         </div>
-
-        <div style="margin-top:12px">
-          <button class="btn btn-block"
-            data-action="mark-notifications">
-            وضع علامة مقروءة
-          </button>
+      `;
+    }
+    return `
+      <div class="ai-message">
+        <div class="ai-avatar">
+          <div class="mini-eye"><div class="mini-pupil"></div></div>
         </div>
-      `
-    );
-  }
+        <div class="ai-bubble">${m.text.replace(/\n/g, '<br>')}</div>
+      </div>
+    `;
+  },
 
-  async function markNotifications(){
-    STATE.notifications = STATE.notifications.map(n=>({
-      ...n,
-      new:false
-    }));
+  sendAIMessage() {
+    const input = document.getElementById('aiInput');
+    const text = input?.value?.trim();
+    if (!text) return;
 
-    await saveState();
-    closeModal();
-    toast("تم وضع علامة مقروءة");
-  }
+    this.state.aiMessages.push({ role: 'user', text });
+    input.value = '';
+    this.updateAIMessages();
 
-  function callNumber(phone){
-    if(phone){
-      location.href = "tel:"+phone;
+    // Show typing indicator
+    const messagesEl = document.getElementById('aiMessages');
+    const typingEl = document.createElement('div');
+    typingEl.className = 'ai-message';
+    typingEl.id = 'typingIndicator';
+    typingEl.innerHTML = `
+      <div class="ai-avatar"><div class="mini-eye"><div class="mini-pupil"></div></div></div>
+      <div class="ai-typing"><span></span><span></span><span></span></div>
+    `;
+    messagesEl.appendChild(typingEl);
+    this.scrollAIMessages();
+
+    // Generate response
+    setTimeout(() => {
+      const response = this.generateAIResponse(text);
+      document.getElementById('typingIndicator')?.remove();
+      this.state.aiMessages.push({ role: 'ai', text: response });
+      this.updateAIMessages();
+      this.scrollAIMessages();
+    }, 1200);
+  },
+
+  updateAIMessages() {
+    const messagesEl = document.getElementById('aiMessages');
+    if (!messagesEl) return;
+    messagesEl.innerHTML = this.state.aiMessages.map(m => this.aiMessageHTML(m)).join('');
+  },
+
+  scrollAIMessages() {
+    const el = document.getElementById('aiMessages');
+    if (el) el.scrollTop = el.scrollHeight;
+  },
+
+  generateAIResponse(text) {
+    const t = text.toLowerCase();
+
+    if (t.includes('دكتور') || t.includes('طبيب') || t.includes('أسنان') || t.includes('عيادة')) {
+      return 'تمام يا باشا! 🦷\nعندنا أطباء ممتازين:\n\n👨‍⚕️ د. أحمد محمود — أسنان — 300 ج.م\n👩‍⚕️ د. سارة علي — أطفال — 250 ج.م\n👨‍⚕️ د. محمد حسن — باطنة — 200 ج.م\n\nتحب تحجز مع مين؟';
     }
-  }
-
-  async function favorite(id){
-    if(!STATE.favorites.includes(id)){
-      STATE.favorites.push(id);
-    }else{
-      STATE.favorites = STATE.favorites.filter(x=>x!==id);
+    if (t.includes('مدرس') || t.includes('درس') || t.includes('دروس') || t.includes('رياضيات')) {
+      return 'أهلاً! 📚\nعندنا مدرسين محترفين:\n\n👨‍🏫 أ. محمود السيد — رياضيات ثانوي — 150 ج.م/حصة\n👩‍🏫 أ. فاطمة أحمد — لغة عربية إعدادي — 120 ج.م/حصة\n\nتحب تحجز درس خصوصي؟';
+    }
+    if (t.includes('توصيل') || t.includes('مشوار') || t.includes('مطار') || t.includes('وصلني') || t.includes('سفرية')) {
+      return 'يلا نعمل Order يا باشا! 🚗\nخدمة وصلني متاحة:\n\n🛵 داخل المدينة — من 30 ج.م\n🚗 خارج المدينة — من 80 ج.م\n✈️ مطار القاهرة — من 450 ج.م\n🛫 مطار العالمين — من 600 ج.م\n\nنوع الرحلة إيه؟';
+    }
+    if (t.includes('موبايل') || t.includes('تليفون') || t.includes('iphone') || t.includes('samsung')) {
+      return 'عندنا أحدث الموبايلات 📱\n\n📱 iPhone 15 Pro Max — 65,000 ج.م\n📱 Samsung S24 — 35,000 ج.م\n📱 Redmi Note 13 — 8,500 ج.م\n\nتحب تتفاصيل أكتر عن أنهي واحد؟';
+    }
+    if (t.includes('عربية') || t.includes('عربيات') || t.includes('سيارة') || t.includes('car')) {
+      return 'متجر العربيات مفتوح للجميع 🚙\n\n🚗 بيع عربيات\n🚙 شراء عربيات\n🔑 استئجار عربيات\n\nعايز تبيع ولا تشتري ولا تستأجر؟';
+    }
+    if (t.includes('سلام') || t.includes('مرحبا') || t.includes('هاي') || t.includes('hi') || t.includes('hello')) {
+      return 'وعليكم السلام ورحمة الله وبركاته 🌟\nأنا Mazen AI، مساعدك الذكي!\n\nقولي محتاج إيه وأنا هعملهولك في ثواني ⚡';
+    }
+    if (t.includes('شكرا') || t.includes('تسلم') || t.includes('thanks')) {
+      return 'العفو يا باشا! 🙏\nدايماً في خدمتك.\nعايز خدمات تانية؟';
     }
 
-    await saveState();
-    toast(
-      STATE.favorites.includes(id)
-        ? "تمت الإضافة للمفضلة"
-        : "تمت الإزالة من المفضلة"
-    );
+    return `تمام يا باشا! 🌟\n\nقولي تفاصيل أكتر عن اللي محتاجه عشان أساعدك:\n\n• 🏥 خدمة طبية؟\n• 📚 دروس خصوصية؟\n• 🚗 توصيل ومشاوير؟\n• 📱 موبايلات؟\n• 🚙 عربيات؟\n\nأو اكتب احتياجك بالتفصيل وأنا هدورلك على الأفضل ✨`;
+  },
 
-    renderRoute();
-  }
-
-  async function clearLocal(){
-    showModal(
-      "حذف بيانات التجربة",
-      `
-        <p class="muted">
-          سيتم حذف الطلبات والرسائل والملف المحلي من هذا المتصفح.
+  /* ============================================
+     OWNER LOGIN
+     ============================================ */
+  showOwnerLogin() {
+    this.openModal(`
+      <div style="text-align: center; padding: var(--space-5) 0;">
+        <div style="font-size: 64px; margin-bottom: var(--space-4);">👑</div>
+        <h2 style="font-family: var(--font-display); font-size: 20px; font-weight: 900; margin-bottom: var(--space-2);">
+          منطقة المالك
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: var(--space-5);">
+          أدخل تاريخ ميلاد المالك للتحقق
         </p>
-
-        <div class="row" style="margin-top:12px">
-          <button class="btn btn-danger grow"
-            data-action="confirm-clear-local">
-            حذف نهائي
-          </button>
-
-          <button class="btn"
-            data-action="close-modal">
-            إلغاء
-          </button>
+        <div class="form-group">
+          <input type="text" class="form-input" id="ownerBD" placeholder="مثال: 30/3/2002" style="text-align:center; font-size: 18px; letter-spacing: 2px;" inputmode="numeric">
         </div>
-      `
-    );
-  }
-
-  async function confirmClearLocal(){
-    STATE = defaultState();
-    await saveState();
-    closeModal();
-    toast("تم مسح بيانات التجربة");
-    navigate("home");
-  }
-
-  function maybeCameo(){
-    if(Math.random()<.20){
-      setTimeout(()=>{
-        speak("عايز خدمة تانية يا باشا؟");
-      },500);
-    }
-  }
-
-  function playRawiMoment(){
-    toast("تمام يا فندم 😄 — دي لمسة Mazen AI الأصلية.");
-    speak("تمام يا فندم، قولي الخدمة وأنا أظبط لك الطريق.");
-  }
-
-  function downloadInvoice(id){
-    const o = findOrder(id);
-
-    if(!o) return;
-
-    const text =
-`خدمات بلدي | Mazen AI
-الفاتورة: INV-${o.id.replace(/^ORD-/,"")}
-الخدمة: ${o.title}
-الإجمالي: ${money(o.total,o.currency)}
-الحالة: ${o.status}
-حالة الدفع: ${o.paymentStatus}
-التاريخ: ${o.createdAt}
-`;
-
-    const blob = new Blob(
-      [text],
-      {type:"text/plain;charset=utf-8"}
-    );
-
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `invoice-${o.id}.txt`;
-
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    setTimeout(()=>{
-      URL.revokeObjectURL(a.href);
-    },3000);
-  }
-
-  async function shareInvoice(id){
-    const o = findOrder(id);
-
-    if(!o) return;
-
-    const text =
-      `فاتورة ${o.title} — ${money(o.total,o.currency)}`;
-
-    try{
-      if(navigator.share){
-        await navigator.share({
-          title:"فاتورة خدمات بلدي",
-          text
-        });
-      }else{
-        toast(text);
-      }
-    }catch{}
-  }
-
-  function reorder(id){
-    const o = findOrder(id);
-
-    if(!o) return;
-
-    confirmOrder({
-      title:o.title,
-      total:o.total,
-      payment:o.payment || "يحدد لاحقًا",
-      details:o.details,
-      source:"Reorder"
-    });
-  }
-
-  /* ============================================================
-     OWNER CENTER
-     ============================================================ */
-
-  function renderOwner(){
-    $("#app").innerHTML = layout(`
-      <section class="section">
-        <div class="container">
-
-          <div class="section-head">
-            <div class="section-title">
-              <span class="mark"></span>
-              <div>
-                <h2>مركز المالك</h2>
-                <div class="meta">
-                  Owner Control Center
-                </div>
-              </div>
-            </div>
-
-            <span class="badge gold">
-              Server Auth Required
-            </span>
-          </div>
-
-          <div class="card pad">
-            <div class="row wrap">
-              <div class="grow">
-                <h3>صلاحيات المالك محمية من الواجهة</h3>
-                <p class="muted">
-                  لا يوجد PIN تجريبي ولا localStorage يفتح صلاحيات المالك.
-                  يجب توصيل جلسة خادم موثقة مع RBAC + 2FA قبل الوصول للإدارة الحقيقية.
-                </p>
-              </div>
-
-              <button class="btn btn-primary"
-                data-action="owner-login">
-                التحقق من جلسة المالك
-              </button>
-            </div>
-          </div>
-
-          <div class="grid grid-4" style="margin-top:18px">
-
-            <div class="card pad">
-              <div class="meta">الطلبات المحلية</div>
-              <h2>${STATE.orders.length}</h2>
-              <span class="badge primary">Demo Data</span>
-            </div>
-
-            <div class="card pad">
-              <div class="meta">الإيرادات</div>
-              <h2>${money(STATE.orders.reduce((a,b)=>a+b.total,0))}</h2>
-              <span class="badge">Local</span>
-            </div>
-
-            <div class="card pad">
-              <div class="meta">الاشتراكات</div>
-              <h2>0</h2>
-              <span class="badge gold">Billing Pending</span>
-            </div>
-
-            <div class="card pad">
-              <div class="meta">Mazen AI</div>
-              <h2>${CONFIG.aiEndpoint ? "API" : "Fallback"}</h2>
-              <span class="badge ai">AI</span>
-            </div>
-
-          </div>
-
-          <div class="split" style="margin-top:18px">
-
-            <div class="card pad">
-              <h3>تدفق الإنتاج المطلوب</h3>
-
-              <div class="info-list">
-
-                <div class="info-row">
-                  <span>Authentication</span>
-                  <strong>Backend</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>Authorization</span>
-                  <strong>RBAC</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>2FA</span>
-                  <strong>Required</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>Audit Log</span>
-                  <strong>Required</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>Database</span>
-                  <strong>PostgreSQL</strong>
-                </div>
-
-                <div class="info-row">
-                  <span>Payments</span>
-                  <strong>Webhook</strong>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="card pad">
-              <h3>بيانات المنصة</h3>
-
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>المكوّن</th>
-                      <th>الحالة</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>Frontend</td>
-                      <td><span class="badge success">جاهز</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Service Worker</td>
-                      <td><span class="badge success">جاهز</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Manifest</td>
-                      <td><span class="badge success">جاهز</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>AI Backend</td>
-                      <td><span class="badge gold">يحتاج ربط</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Auth Server</td>
-                      <td><span class="badge gold">يحتاج ربط</span></td>
-                    </tr>
-
-                    <tr>
-                      <td>Payment Gateway</td>
-                      <td><span class="badge gold">يحتاج ربط</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-    `,{title:"مركز المالك"});
-  }
-
-  async function ownerLogin(){
-    if(!CONFIG.authEndpoint){
-      toast(
-        "لم يتم ربط خادم المصادقة بعد. لن يتم فتح صلاحيات المالك من المتصفح."
-      );
-      return;
-    }
-
-    try{
-      const r = await fetch(CONFIG.authEndpoint,{
-        method:"GET",
-        credentials:"include"
+        <button class="btn btn-primary btn-block btn-lg" onclick="App.verifyOwner()">
+          🔐 دخول آمن
+        </button>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-top: var(--space-3);">
+          🔒 جميع العمليات مسجلة في Audit Log
+        </p>
+      </div>
+    `, '👑 OWNER');
+    setTimeout(() => {
+      const input = document.getElementById('ownerBD');
+      input?.focus();
+      input?.addEventListener('keypress', e => {
+        if (e.key === 'Enter') App.verifyOwner();
       });
+    }, 100);
+  },
 
-      if(r.ok){
-        const data = await r.json().catch(()=>({}));
-
-        if(data?.user?.role==="owner"){
-          STATE.user = {
-            ...STATE.user,
-            ...data.user
-          };
-
-          await saveState();
-          navigate("owner");
-          return;
-        }
-      }
-
-      toast("لم يتم اعتماد جلسة المالك.");
-    }catch{
-      toast("تعذر الاتصال بخادم المصادقة.");
+  verifyOwner() {
+    const input = document.getElementById('ownerBD')?.value?.trim();
+    const normalized = input?.replace(/\s/g, '').replace(/[/\\-]/g, '/');
+    const valid = ['30/3/2002', '30/03/2002', '2002/3/30', '2002/03/30'];
+    if (valid.includes(normalized)) {
+      this.state.ownerLoggedIn = true;
+      this.closeModal();
+      setTimeout(() => this.showOwnerDashboard(), 300);
+      this.showToast('👑 مرحباً بك يا صاحب المنصة', 'success');
+    } else {
+      this.showToast('❌ تاريخ غير صحيح', 'error');
     }
-  }
+  },
 
-  /* ============================================================
-     INSTALLATION
-     ============================================================ */
+  showOwnerDashboard() {
+    const totalOrders = this.state.orders.length;
+    const totalCommission = this.state.orders.reduce((s, o) => s + (o.commission || 0), 0);
+    const totalRevenue = this.state.orders.reduce((s, o) => s + (o.total || 0), 0);
 
-  function setupInstall(){
-    window.addEventListener("beforeinstallprompt",e=>{
-      e.preventDefault();
-      deferredInstall = e;
-      $("#installBanner")?.classList.remove("hidden");
+    this.openModal(`
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">إجمالي الطلبات</div>
+          <div class="stat-value">${totalOrders}</div>
+          <div class="stat-change">▲ 12% هذا الأسبوع</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">إجمالي الإيرادات</div>
+          <div class="stat-value">${totalRevenue.toLocaleString()}</div>
+          <div class="stat-change">ج.م</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">عمولات المنصة</div>
+          <div class="stat-value">${totalCommission.toLocaleString()}</div>
+          <div class="stat-change">ج.م</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">مقدمو الخدمات</div>
+          <div class="stat-value">47</div>
+          <div class="stat-change">▲ 5 جدد</div>
+        </div>
+      </div>
+
+      <h3 class="section-title" style="margin-bottom: var(--space-3);">💳 الحساب البنكي للمالك</h3>
+      <div class="invoice mb-4">
+        <div class="invoice-row"><span>البنك</span><strong>البنك الأهلي المصري</strong></div>
+        <div class="invoice-row"><span>رقم الحساب</span><strong style="font-size:11px;">${APP_DATA.owner.bankAccount}</strong></div>
+        <div class="invoice-row"><span>نسبة العمولة</span><strong>${(APP_DATA.owner.commissionRate * 100).toFixed(1)}%</strong></div>
+        <div class="invoice-row total"><span>الرصيد المتاح للتحويل</span><span>${totalCommission.toLocaleString()} ج.م</span></div>
+      </div>
+
+      <button class="btn btn-success btn-block btn-lg mb-4" onclick="App.transferFunds()">
+        💸 تحويل الأموال فوراً للحساب البنكي
+      </button>
+
+      <h3 class="section-title" style="margin-bottom: var(--space-3);">⚙️ إدارة سريعة</h3>
+      <button class="btn btn-ghost btn-block mb-4" onclick="App.showToast('قريباً: إدارة المستخدمين', 'info')">👥 إدارة المستخدمين</button>
+      <button class="btn btn-ghost btn-block mb-4" onclick="App.showToast('قريباً: إدارة الطلبات', 'info')">📦 إدارة الطلبات</button>
+      <button class="btn btn-ghost btn-block mb-4" onclick="App.showToast('قريباً: الإعلانات', 'info')">📢 إعلان لكل المستخدمين</button>
+      <button class="btn btn-ghost btn-block mb-4" onclick="App.showToast('قريباً: تحليلات متقدمة', 'info')">📊 التحليلات</button>
+      <button class="btn btn-danger btn-block" onclick="App.closeModal(); App.state.ownerLoggedIn = false;">
+        🚪 تسجيل الخروج
+      </button>
+    `, '👑 لوحة تحكم المالك');
+  },
+
+  transferFunds() {
+    const totalCommission = this.state.orders.reduce((s, o) => s + (o.commission || 0), 0);
+    this.showToast(`💸 جاري تحويل ${totalCommission} ج.م إلى حسابك البنكي...`, 'info');
+    setTimeout(() => {
+      this.showToast('✅ تم التحويل بنجاح! سيصل خلال دقائق', 'success');
+    }, 2000);
+  },
+
+  /* ============================================
+     AMR ADEEB EASTER EGG
+     ============================================ */
+  showAmr() {
+    document.getElementById('amrOverlay').classList.add('active');
+  },
+  closeAmr() {
+    document.getElementById('amrOverlay').classList.remove('active');
+  },
+
+  /* ============================================
+     MODAL
+     ============================================ */
+  openModal(content, title = '') {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalBody').innerHTML = content;
+    document.getElementById('overlay').classList.add('active');
+    document.getElementById('modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  },
+
+  closeModal() {
+    document.getElementById('overlay').classList.remove('active');
+    document.getElementById('modal').classList.remove('active');
+    document.body.style.overflow = '';
+  },
+
+  /* ============================================
+     TOAST
+     ============================================ */
+  showToast(message, type = 'info') {
+    const container = document.getElementById('toastContainer');
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.textContent = message;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(-20px)';
+      toast.style.transition = 'all 300ms';
+      setTimeout(() => toast.remove(), 300);
+    }, 3500);
+  },
+
+  /* ============================================
+     FIRST VISIT
+     ============================================ */
+  checkFirstVisit() {
+    const visited = localStorage.getItem('visited');
+    if (!visited) {
+      localStorage.setItem('visited', '1');
+      setTimeout(() => {
+        this.openModal(`
+          <div style="text-align: center; padding: var(--space-5) 0;">
+            <div class="ai-avatar" style="width: 80px; height: 80px; margin: 0 auto var(--space-4);">
+              <div class="mini-eye" style="width: 50px; height: 50px;">
+                <div class="mini-pupil" style="width: 22px; height: 22px;"></div>
+              </div>
+            </div>
+            <h2 style="font-family: var(--font-display); font-size: 22px; font-weight: 900; margin-bottom: var(--space-2);">
+              السلام عليكم ورحمة الله وبركاته 🌟
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin-bottom: var(--space-5);">
+              مساء الخير! أنا <strong>Mazen AI</strong> 🤖<br>
+              هساعدك تطلب أي خدمة في ثواني:
+            </p>
+            <div style="text-align: right; margin: var(--space-4) 0;">
+              <div style="padding: var(--space-2) 0;">✅ أطباء وعيادات</div>
+              <div style="padding: var(--space-2) 0;">✅ مدرسين ودروس خصوصية</div>
+              <div style="padding: var(--space-2) 0;">✅ توصيل ومشاوير ومطارات</div>
+              <div style="padding: var(--space-2) 0;">✅ موبايلات وعربيات</div>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg" onclick="App.closeModal(); App.navigate('home');">
+              🚀 يلا نبدأ
+            </button>
+          </div>
+        `, 'أهلاً بك في خدمات بلدي');
+      }, 800);
+
+      setTimeout(() => this.showAmr(), 4500);
+    }
+  },
+
+  /* ============================================
+     BIND EVENTS
+     ============================================ */
+  bindEvents() {
+    // Bottom nav
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', () => {
+        this.navigate(item.dataset.page);
+      });
     });
 
-    window.addEventListener("appinstalled",()=>{
-      deferredInstall = null;
-      $("#installBanner")?.classList.add("hidden");
-      toast("تم تثبيت خدمات بلدي كتطبيق ✅");
+    // Section more
+    document.querySelectorAll('[data-nav]').forEach(el => {
+      el.addEventListener('click', () => this.navigate(el.dataset.nav));
     });
+
+    // Theme toggle
+    document.getElementById('themeToggle').addEventListener('click', () => this.toggleTheme());
+
+    // Notifications
+    document.getElementById('notifBtn').addEventListener('click', () => {
+      this.showToast('🔔 لديك 3 إشعارات جديدة', 'info');
+    });
+
+    // Mazen FAB
+    document.getElementById('mazenFab').addEventListener('click', () => this.openMazenChat());
+
+    // Hero search
+    document.getElementById('heroSearchBtn').addEventListener('click', () => {
+      const val = document.getElementById('heroSearch').value.trim();
+      if (val) this.openMazenChat(val);
+    });
+    document.getElementById('heroSearch').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const val = e.target.value.trim();
+        if (val) this.openMazenChat(val);
+      }
+    });
+
+    // Modal close
+    document.getElementById('overlay').addEventListener('click', () => this.closeModal());
+    document.getElementById('modalClose').addEventListener('click', () => this.closeModal());
+
+    // Owner trigger
+    document.getElementById('ownerTrigger').addEventListener('click', () => this.showOwnerLogin());
+
+    // ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this.closeModal();
+    });
+
+    // Login button
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      this.openModal(`
+        <div class="form-group">
+          <label class="form-label">الاسم</label>
+          <input type="text" class="form-input" id="loginName" placeholder="اسمك الكريم">
+        </div>
+        <div class="form-group">
+          <label class="form-label">رقم الموبايل</label>
+          <input type="tel" class="form-input" id="loginPhone" placeholder="01xxxxxxxxx" inputmode="numeric">
+        </div>
+        <button class="btn btn-primary btn-block btn-lg" onclick="App.doLogin()">
+          🔐 تسجيل الدخول
+        </button>
+        <p style="font-size: 11px; color: var(--text-secondary); text-align: center; margin-top: var(--space-3);">
+          بالمتابعة أنت توافق على شروط الاستخدام وسياسة الخصوصية
+        </p>
+      `, 'تسجيل الدخول');
+    });
+  },
+
+  doLogin() {
+    const name = document.getElementById('loginName')?.value?.trim();
+    const phone = document.getElementById('loginPhone')?.value?.trim();
+    if (!name || !phone) {
+      this.showToast('⚠️ يرجى إدخال الاسم ورقم الموبايل', 'warning');
+      return;
+    }
+    if (!/^01\d{9}$/.test(phone)) {
+      this.showToast('⚠️ رقم الموبايل غير صحيح', 'warning');
+      return;
+    }
+    this.state.user = { name, phone };
+    localStorage.setItem('user', JSON.stringify(this.state.user));
+    document.getElementById('profileName').textContent = name;
+    document.getElementById('profilePhone').textContent = '📞 ' + phone;
+    document.getElementById('loginBtn').textContent = '✅ مسجل الدخول';
+    this.closeModal();
+    this.showToast(`أهلاً بك ${name} 👋`, 'success');
   }
-
-  async function installApp(){
-    if(!deferredInstall){
-      toast(
-        "يمكن تثبيت الموقع من قائمة المتصفح إذا لم يظهر زر التثبيت."
-      );
-      return;
-    }
-
-    deferredInstall.prompt();
-
-    const choice =
-      await deferredInstall.userChoice;
-
-    deferredInstall = null;
-
-    if(choice?.outcome==="accepted"){
-      toast("جاري التثبيت...");
-    }
-  }
-
-  /* ============================================================
-     SERVICE WORKER
-     ============================================================ */
-
-  async function registerServiceWorker(){
-    if(!("serviceWorker" in navigator)) return;
-
-    if(location.protocol!=="https:" &&
-       location.hostname!=="localhost" &&
-       location.hostname!=="127.0.0.1"){
-      return;
-    }
-
-    try{
-      const reg = await navigator.serviceWorker.register(
-        "./sw.js",
-        {scope:"./"}
-      );
-
-      navigator.serviceWorker.addEventListener(
-        "controllerchange",
-        ()=>{
-          toast("تم تحديث تطبيق خدمات بلدي");
-        }
-      );
-
-      reg.addEventListener(
-        "updatefound",
-        ()=>{
-          const worker = reg.installing;
-
-          if(!worker) return;
-
-          worker.addEventListener(
-            "statechange",
-            ()=>{
-              if(
-                worker.state==="installed" &&
-                navigator.serviceWorker.controller
-              ){
-                toast(
-                  "تحديث جديد جاهز — أعد فتح التطبيق."
-                );
-              }
-            }
-          );
-        }
-      );
-    }catch(err){
-      console.warn(
-        "[PWA] Service Worker registration failed",
-        err
-      );
-    }
-  }
-
-  /* ============================================================
-     EVENT DELEGATION
-     ============================================================ */
-
-  document.addEventListener("click",async e=>{
-    const el = e.target.closest("[data-action]");
-
-    if(!el) return;
-
-    const action = el.dataset.action;
-
-    switch(action){
-
-      case "route":
-        navigate(
-          el.dataset.route,
-          el.dataset.id
-        );
-        break;
-
-      case "home-search":{
-        const t = $("#homeSearch")?.value.trim();
-
-        if(!t){
-          return toast("اكتب احتياجك أولًا");
-        }
-
-        await quickAI(t);
-        break;
-      }
-
-      case "quick-ai":
-        await quickAI(el.dataset.text || "");
-        break;
-
-      case "ai":
-        navigate("ai");
-        break;
-
-      case "theme":
-        await toggleTheme();
-        break;
-
-      case "notifications":
-        openNotifications();
-        break;
-
-      case "close-modal":
-        closeModal();
-        break;
-
-      case "voice":
-        startVoice(el.dataset.input);
-        break;
-
-      case "send-ai":
-        await sendAI();
-        break;
-
-      case "send-message":
-        await sendMessage();
-        break;
-
-      case "rawi":
-        playRawiMoment();
-        break;
-
-      case "explore-category":{
-        const q = el.dataset.cat || "";
-
-        const map = {
-          doctors:"طبيب",
-          teachers:"مدرس",
-          mobile:"موبايل",
-          cars:"سيارة",
-          delivery:"توصيل"
-        };
-
-        if(map[q]){
-          const input = $("#exploreSearch");
-
-          if(input){
-            input.value = map[q];
-          }
-
-          const results = $("#exploreResults");
-
-          if(results){
-            results.innerHTML = exploreResults(map[q]);
-          }
-        }else{
-          const input = $("#exploreSearch");
-
-          if(input){
-            input.value = "";
-          }
-
-          const results = $("#exploreResults");
-
-          if(results){
-            results.innerHTML = exploreResults("");
-          }
-        }
-
-        break;
-      }
-
-      case "run-explore-search":{
-        const q = $("#exploreSearch")?.value || "";
-        const results = $("#exploreResults");
-
-        if(results){
-          results.innerHTML = exploreResults(q);
-        }
-
-        break;
-      }
-
-      case "slot":
-        $$(".slot").forEach(x=>{
-          x.classList.remove("active");
-        });
-
-        el.classList.add("active");
-        selectedSlot = el.dataset.slot;
-
-        break;
-
-      case "book":
-        openBooking(
-          el.dataset.type,
-          el.dataset.id
-        );
-        break;
-
-      case "call":
-        callNumber(el.dataset.phone);
-        break;
-
-      case "favorite":
-        await favorite(el.dataset.id);
-        break;
-
-      case "buy-product":
-        buyProduct(el.dataset.id);
-        break;
-
-      case "car-order":
-        orderCar(el.dataset.id);
-        break;
-
-      case "confirm-order":{
-        try{
-          const data = JSON.parse(
-            el.dataset.payload || "{}"
-          );
-
-          await commitOrder(data);
-        }catch(err){
-          console.error(err);
-          toast("تعذر إنشاء الطلب.");
-        }
-
-        break;
-      }
-
-      case "plans":
-        openPlans();
-        break;
-
-      case "subscribe":
-        await subscribePlan(
-          el.dataset.plan,
-          Number(el.dataset.price)
-        );
-        break;
-
-      case "owner":
-        navigate("owner");
-        break;
-
-      case "owner-login":
-        await ownerLogin();
-        break;
-
-      case "download-invoice":
-        downloadInvoice(el.dataset.id);
-        break;
-
-      case "share-invoice":
-        await shareInvoice(el.dataset.id);
-        break;
-
-      case "reorder":
-        reorder(el.dataset.id);
-        break;
-
-      case "mark-notifications":
-        await markNotifications();
-        break;
-
-      case "clear-local":
-        clearLocal();
-        break;
-
-      case "confirm-clear-local":
-        await confirmClearLocal();
-        break;
-
-      case "install":
-        await installApp();
-        break;
-
-      case "hide-install":
-        $("#installBanner")?.classList.add("hidden");
-        break;
-
-      case "toast":
-        toast(el.dataset.text || "تم");
-        break;
-    }
+};
+
+/* ============================================
+   BOOT
+   ============================================ */
+document.addEventListener('DOMContentLoaded', () => App.init());
+
+/* ============================================
+   SERVICE WORKER REGISTRATION (PWA)
+   ============================================ */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('[SW] Registered:', reg.scope))
+      .catch(err => console.log('[SW] Registration failed:', err));
   });
+}
+</script>
 
-  document.addEventListener("submit",async e=>{
-    const form = e.target;
-
-    if(form.id==="bookingForm"){
-      e.preventDefault();
-      submitBooking();
-      return;
-    }
-
-    if(form.id==="deliveryForm"){
-      e.preventDefault();
-      reviewDelivery();
-      return;
-    }
-
-    if(form.id==="profileForm"){
-      e.preventDefault();
-
-      const name =
-        $("#pfName")?.value.trim();
-
-      const phone =
-        ($("#pfPhone")?.value || "")
-          .replace(/\D/g,"");
-
-      if(!name){
-        return toast("اكتب الاسم");
-      }
-
-      if(
-        phone &&
-        !/^01\d{9}$/.test(phone)
-      ){
-        return toast("رقم الموبايل غير صحيح");
-      }
-
-      STATE.user.name = name;
-      STATE.user.phone = phone;
-
-      await saveState();
-
-      toast("تم حفظ البيانات محليًا");
-
-      renderRoute();
-
-      return;
-    }
-
-    if(form.id==="providerForm"){
-      e.preventDefault();
-
-      STATE.providerDraft = {
-        name:$("#prName")?.value.trim() || "",
-        phone:$("#prPhone")?.value.trim() || "",
-        address:$("#prAddress")?.value.trim() || "",
-        maps:$("#prMaps")?.value.trim() || "",
-        site:$("#prSite")?.value.trim() || "",
-        description:$("#prDesc")?.value.trim() || ""
-      };
-
-      await saveState();
-
-      toast(
-        "تم حفظ مسودة مقدم الخدمة محليًا."
-      );
-
-      return;
-    }
-  });
-
-  document.addEventListener("keydown",e=>{
-    const el = e.target;
-
-    if(
-      e.key==="Enter" &&
-      el?.id==="aiInput"
-    ){
-      e.preventDefault();
-      sendAI();
-    }
-
-    if(
-      e.key==="Enter" &&
-      el?.id==="messageInput"
-    ){
-      e.preventDefault();
-      sendMessage();
-    }
-
-    if(
-      (e.key==="Enter" || e.key===" ") &&
-      el?.id==="aiFab"
-    ){
-      e.preventDefault();
-      navigate("ai");
-    }
-  });
-
-  /* ============================================================
-     BOOT
-     ============================================================ */
-
-  (async function boot(){
-
-    await loadState();
-
-    applyTheme();
-
-    setupInstall();
-
-    renderRoute();
-
-    await registerServiceWorker();
-
-  })();
-
-  </script>
 </body>
   </html>

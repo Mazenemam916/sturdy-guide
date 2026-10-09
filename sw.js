@@ -1,344 +1,58 @@
-/* خدمات بلدي | Mazen AI — Real Service Worker */
+const CACHE_NAME = 'khadmat-baladi-v1.0.0';
+const RUNTIME = 'khadmat-runtime-v1';
 
-const VERSION = "balady-shell-v6.0.0";
-
-const SHELL = `${VERSION}-shell`;
-const RUNTIME = `${VERSION}-runtime`;
-const IMAGE = `${VERSION}-image`;
-const FONT = `${VERSION}-font`;
-
-const APP_SHELL = [
-  "./",
-  "./index.html",
-  "./manifest.json",
-  "./offline.html",
-  "./icon-192.png",
-  "./icon-512.png"
+const PRECACHE = [
+  './',
+  './index.html',
+  './manifest.json'
 ];
 
-const MAX_RUNTIME = 80;
-const MAX_IMAGES = 80;
-
-/* Install */
-self.addEventListener("install", event => {
-  event.waitUntil(
-    (async () => {
-      const cache = await caches.open(SHELL);
-
-      await Promise.all(
-        APP_SHELL.map(url =>
-          cache
-            .add(new Request(url, { cache: "reload" }))
-            .catch(() => null)
-        )
-      );
-
-      await self.skipWaiting();
-    })()
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting())
   );
 });
 
-/* Activate */
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    (async () => {
-      const names = await caches.keys();
-
-      await Promise.all(
-        names
-          .filter(
-            name =>
-              ![
-                SHELL,
-                RUNTIME,
-                IMAGE,
-                FONT
-              ].includes(name)
-          )
-          .map(name => caches.delete(name))
-      );
-
-      await self.clients.claim();
-    })()
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.filter(k => k !== CACHE_NAME && k !== RUNTIME).map(k => caches.delete(k))
+    )).then(() => self.clients.claim())
   );
 });
 
-/* Limit cache size */
-async function trimCache(cacheName, maxItems) {
-  const cache = await caches.open(cacheName);
-  const keys = await cache.keys();
+self.addEventListener('fetch', (e) => {
+  if (e.request.method !== 'GET') return;
+  const url = new URL(e.request.url);
+  if (url.protocol === 'chrome-extension:') return;
 
-  if (keys.length <= maxItems) {
-    return;
-  }
-
-  const oldKeys = keys.slice(
-    0,
-    keys.length - maxItems
+  e.respondWith(
+    fetch(e.request).then(res => {
+      if (res.ok) {
+        const clone = res.clone();
+        caches.open(RUNTIME).then(c => c.put(e.request, clone));
+      }
+      return res;
+    }).catch(() => caches.match(e.request))
   );
-
-  await Promise.all(
-    oldKeys.map(key =>
-      cache.delete(key)
-    )
-  );
-}
-
-/* Cache first */
-async function cacheFirst(
-  request,
-  cacheName,
-  maxItems
-) {
-  const cached = await caches.match(request);
-
-  if (cached) {
-    return cached;
-  }
-
-  try {
-    const response = await fetch(request);
-
-    if (
-      response.ok ||
-      response.type === "opaque"
-    ) {
-      const cache =
-        await caches.open(cacheName);
-
-      await cache.put(
-        request,
-        response.clone()
-      );
-
-      await trimCache(
-        cacheName,
-        maxItems
-      );
-    }
-
-    return response;
-  } catch {
-    return Response.error();
-  }
-}
-
-/* Stale while revalidate */
-async function staleWhileRevalidate(
-  request,
-  cacheName
-) {
-  const cached =
-    await caches.match(request);
-
-  const network =
-    fetch(request)
-      .then(async response => {
-        if (response.ok) {
-          const cache =
-            await caches.open(cacheName);
-
-          await cache.put(
-            request,
-            response.clone()
-          );
-        }
-
-        return response;
-      })
-      .catch(() => null);
-
-  return (
-    cached ||
-    (await network) ||
-    Response.error()
-  );
-}
-
-/* Fetch */
-self.addEventListener("fetch", event => {
-  const request = event.request;
-
-  if (request.method !== "GET") {
-    return;
-  }
-
-  const url =
-    new URL(request.url);
-
-  /*
-    لا تقم بتخزين API calls.
-    البيانات الحساسة يجب أن تأتي من الخادم.
-  */
-  if (
-    url.pathname.includes("/api/")
-  ) {
-    return;
-  }
-
-  /*
-    Navigation:
-    Network First
-    ثم Cache
-    ثم Offline fallback
-  */
-  if (
-    request.mode === "navigate"
-  ) {
-    event.respondWith(
-      (async () => {
-        try {
-          const response =
-            await fetch(request);
-
-          const cache =
-            await caches.open(SHELL);
-
-          await cache.put(
-            request,
-            response.clone()
-          );
-
-          return response;
-        } catch {
-          const cached =
-            await caches.match(request) ||
-            await caches.match(
-              "./index.html"
-            );
-
-          return (
-            cached ||
-            await caches.match(
-              "./offline.html"
-            ) ||
-            new Response(
-              `
-              <!doctype html>
-              <html lang="ar" dir="rtl">
-              <head>
-                <meta charset="utf-8">
-                <meta name="viewport"
-                  content="width=device-width,initial-scale=1">
-                <title>غير متصل</title>
-              </head>
-              <body
-                style="
-                  font-family:system-ui;
-                  padding:40px;
-                  text-align:center;
-                "
-              >
-                <h1>
-                  أنت غير متصل بالإنترنت
-                </h1>
-                <p>
-                  حاول الاتصال بالإنترنت ثم أعد المحاولة.
-                </p>
-              </body>
-              </html>
-              `,
-              {
-                headers: {
-                  "Content-Type":
-                    "text/html;charset=utf-8"
-                }
-              }
-            )
-          );
-        }
-      })()
-    );
-
-    return;
-  }
-
-  /*
-    Google Fonts:
-    Stale While Revalidate
-  */
-  if (
-    url.hostname ===
-      "fonts.googleapis.com" ||
-    url.hostname ===
-      "fonts.gstatic.com"
-  ) {
-    event.respondWith(
-      staleWhileRevalidate(
-        request,
-        FONT
-      )
-    );
-
-    return;
-  }
-
-  /*
-    Images:
-    Cache First
-  */
-  if (
-    request.destination === "image"
-  ) {
-    event.respondWith(
-      cacheFirst(
-        request,
-        IMAGE,
-        MAX_IMAGES
-      )
-    );
-
-    return;
-  }
-
-  /*
-    Same-origin assets:
-    Cache First
-  */
-  if (
-    url.origin ===
-    self.location.origin
-  ) {
-    event.respondWith(
-      cacheFirst(
-        request,
-        RUNTIME,
-        MAX_RUNTIME
-      )
-    );
-  }
 });
 
-/*
-  يسمح للواجهة بإجبار
-  Service Worker القديم على التحديث.
-*/
-self.addEventListener(
-  "message",
-  event => {
-    if (
-      event.data?.type ===
-      "SKIP_WAITING"
-    ) {
-      self.skipWaiting();
-    }
-  }
-);
+self.addEventListener('push', (e) => {
+  const data = e.data?.json() ?? {};
+  e.waitUntil(
+    self.registration.showNotification(data.title || 'خدمات بلدي', {
+      body: data.body || 'لديك إشعار جديد',
+      icon: 'icons/icon-192x192.png',
+      badge: 'icons/icon-192x192.png',
+      dir: 'rtl',
+      lang: 'ar',
+      vibrate: [200, 100, 200],
+      data: { url: data.url || './' }
+    })
+  );
+});
 
-/*
-  Background Sync hook
-  جاهز للطلبات المؤجلة في المستقبل.
-*/
-self.addEventListener(
-  "sync",
-  event => {
-    if (
-      event.tag ===
-      "balady-order-sync"
-    ) {
-      event.waitUntil(
-        Promise.resolve()
-      );
-    }
-  }
-);
+self.addEventListener('notificationclick', (e) => {
+  e.notification.close();
+  e.waitUntil(clients.openWindow(e.notification.data?.url || './'));
+});
